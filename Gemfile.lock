@@ -2,12 +2,21 @@ PATH
   remote: .
   specs:
     jekyll-notion (0.0.0)
+      activesupport
+      i18n
       jekyll (>= 3.7, < 5.0)
+      notion-ruby-client
       notion_to_md
 
 GEM
   remote: https://rubygems.org/
   specs:
+    activesupport (6.1.4.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     colorator (1.1.0)
@@ -71,6 +80,7 @@ GEM
       rb-fsevent (~> 0.10, >= 0.10.3)
       rb-inotify (~> 0.9, >= 0.9.10)
     mercenary (0.4.0)
+    minitest (5.15.0)
     multipart-post (2.1.1)
     notion-ruby-client (0.0.8)
       faraday (>= 1.0)
@@ -92,7 +102,10 @@ GEM
       ffi (~> 1.9)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
+    tzinfo (2.0.4)
+      concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
+    zeitwerk (2.5.3)
 
 PLATFORMS
   x86_64-darwin-19

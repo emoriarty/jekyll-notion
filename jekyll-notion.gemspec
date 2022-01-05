@@ -18,8 +18,11 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = ">= 2.5.0"
 
+  spec.add_dependency "activesupport"
+  spec.add_dependency "i18n"
   spec.add_dependency "jekyll", ">= 3.7", "< 5.0"
   spec.add_dependency "notion_to_md"
+  spec.add_dependency "notion-ruby-client"
 
   spec.add_development_dependency "bundler"
   #spec.add_development_dependency "nokogiri", "~> 1.6"
