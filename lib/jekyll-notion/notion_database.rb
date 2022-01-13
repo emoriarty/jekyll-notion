@@ -23,12 +23,16 @@ module JekyllNotion
       @config.dig('database', 'filter')
     end
 
+    def sort
+      @config.dig('database', 'sort')
+    end
+
     def id
       @config.dig('database', 'id')
     end
 
     def query 
-      { id: id, filter: filter }
+      { id: id, filter: filter, sort: sort }
     end
   end
 end
