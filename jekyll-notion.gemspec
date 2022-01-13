@@ -11,20 +11,19 @@ Gem::Specification.new do |spec|
   spec.homepage         = "https://github.com/emoriarty/jekyll-notion"
   spec.license          = "MIT"
 
-  spec.files            = Dir["lib/**/*"]
+  spec.files            = Dir["lib/**/*", "README.md"]
   spec.extra_rdoc_files = Dir["README.md", "LICENSE.txt"]
   #spec.test_files       = spec.files.grep(%r!^spec/!)
   spec.require_paths    = ["lib"]
 
   spec.required_ruby_version = ">= 2.5.0"
 
-  spec.add_dependency "activesupport"
-  spec.add_dependency "i18n"
+  spec.add_dependency "activesupport", "~> 6"
   spec.add_dependency "jekyll", ">= 3.7", "< 5.0"
-  spec.add_dependency "notion_to_md"
-  spec.add_dependency "notion-ruby-client"
+  spec.add_dependency "notion_to_md", "~> 0"
+  spec.add_dependency "notion-ruby-client", "~> 0"
 
-  spec.add_development_dependency "bundler"
+  spec.add_development_dependency "bundler", "~> 2"
   #spec.add_development_dependency "nokogiri", "~> 1.6"
   #spec.add_development_dependency "rake", "~> 12.0"
   #spec.add_development_dependency "rspec", "~> 3.0"

@@ -1,12 +1,11 @@
 PATH
   remote: .
   specs:
-    jekyll-notion (0.0.0)
-      activesupport
-      i18n
+    jekyll-notion (0.0.0.alpha)
+      activesupport (~> 6)
       jekyll (>= 3.7, < 5.0)
-      notion-ruby-client
-      notion_to_md
+      notion-ruby-client (~> 0)
+      notion_to_md (~> 0)
 
 GEM
   remote: https://rubygems.org/
