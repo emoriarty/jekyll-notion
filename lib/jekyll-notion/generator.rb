@@ -39,15 +39,12 @@ module JekyllNotion
 
     def make_frontmatter
       <<-CONTENT
----
+#{config['frontmatter'].to_yaml}
 id: #{current_page.id}
 layout: #{current_page.layout}
 title: #{current_page.title}
 date: #{current_page.created_datetime.to_s}
-nav: blog
-banner: #{current_page.cover}
-image: #{current_page.cover || '/assets/images/blog/b-4-cover.jpg'}
-thumb: #{current_page.cover}
+cover: #{current_page.cover}
 ---
       CONTENT
     end
