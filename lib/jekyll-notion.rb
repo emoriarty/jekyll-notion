@@ -1,3 +1,4 @@
+require 'jekyll'
 require 'notion'
 require 'notion_to_md/logger'
 require 'logger'
