@@ -5,7 +5,7 @@ require 'notion'
 require 'notion_to_md'
 require 'logger'
 require 'active_support/inflector'
-require 'jekyll/generator'
+require 'jekyll-notion/generator'
 
 NotionToMd::Logger.level = Logger::ERROR
 
