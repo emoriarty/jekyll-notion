@@ -1,10 +1,5 @@
 # frozen_string_literal: true
 
-require 'active_support/inflector'
-require 'notion'
-require 'notion_to_md'
-require_relative './notion_database'
-
 module JekyllNotion
   class Generator < Jekyll::Generator
     attr_reader :current_page

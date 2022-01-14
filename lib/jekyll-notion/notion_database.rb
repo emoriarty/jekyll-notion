@@ -1,4 +1,4 @@
-require_relative './notion_page'
+# frozen_string_literal: true
 
 module JekyllNotion
   class NotionDatabase

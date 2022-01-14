@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllNotion
   class NotionPage
     attr_reader :page, :layout
