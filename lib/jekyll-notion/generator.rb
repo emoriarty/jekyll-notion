@@ -20,7 +20,7 @@ module JekyllNotion
 
     def make_page
       new_post = DocumentWithoutAFile.new(
-        "#{Dir.pwd}/_#{config['collection']}/#{make_filename}",
+        "#{Dir.pwd}/_#{config.dig('database', 'collection')}/#{make_filename}",
         { site: @site, collection: collection }
       )
       new_post.content = "#{make_frontmatter}\n\n#{make_md}"
@@ -34,7 +34,7 @@ module JekyllNotion
 
     def make_frontmatter
       <<-CONTENT
-#{config['frontmatter'].to_yaml}
+#{config.dig('database', 'frontmatter').to_yaml}
 id: #{current_page.id}
 layout: #{current_page.layout}
 title: #{current_page.title}
@@ -49,7 +49,7 @@ cover: #{current_page.cover}
     end
 
     def collection
-      @site.send(config['collection'].to_sym)
+      @site.send(config.dig('database', 'collection').to_sym)
     end
 
     def config
