@@ -34,7 +34,7 @@ module JekyllNotion
 
     def make_frontmatter
       <<-CONTENT
-#{config['frontmatter'].to_yaml}
+#{config.dig('database', 'frontmatter').to_yaml}
 id: #{current_page.id}
 layout: #{current_page.layout}
 title: #{current_page.title}
