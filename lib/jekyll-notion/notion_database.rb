@@ -7,14 +7,14 @@ module JekyllNotion
       @config = config
     end
 
-    def pages
+    def pages(&block)
       @pages ||= @notion.database_query(query)[:results].map do |page|
         NotionPage.new(page: page, layout: config['layout'])
       end
-      
+
       return @pages unless block_given?
 
-      @pages.each { |page| yield page }
+      @pages.each(&block)
     end
 
     private
@@ -35,7 +35,7 @@ module JekyllNotion
       @config.dig('database', 'id')
     end
 
-    def query 
+    def query
       { id: id, filter: filter, sort: sort }
     end
   end
