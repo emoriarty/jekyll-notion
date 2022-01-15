@@ -2,6 +2,8 @@
 
 module JekyllNotion
   class Generator < Jekyll::Generator
+    priority :lowest
+
     attr_reader :current_page
 
     def initialize(plugin)
@@ -20,9 +22,10 @@ module JekyllNotion
 
     def make_page
       new_post = DocumentWithoutAFile.new(
-        "#{Dir.pwd}/_#{config['collection']}/#{make_filename}",
+        "#{Dir.pwd}/_#{config.dig('database', 'collection')}/#{make_filename}",
         { site: @site, collection: collection }
       )
+      p make_frontmatter
       new_post.content = "#{make_frontmatter}\n\n#{make_md}"
       new_post.read
       new_post
@@ -34,13 +37,13 @@ module JekyllNotion
 
     def make_frontmatter
       <<-CONTENT
-#{config['frontmatter'].to_yaml}
-id: #{current_page.id}
-layout: #{current_page.layout}
-title: #{current_page.title}
-date: #{current_page.created_datetime.to_s}
-cover: #{current_page.cover}
----
+  #{config.dig('database', 'frontmatter').to_yaml}
+  id: #{current_page.id}
+  layout: #{current_page.layout}
+  title: #{current_page.title}
+  date: #{current_page.created_datetime.to_s}
+  cover: #{current_page.cover}
+  ---
       CONTENT
     end
 
@@ -49,7 +52,7 @@ cover: #{current_page.cover}
     end
 
     def collection
-      @site.send(config['collection'].to_sym)
+      @site.send(config.dig('database', 'collection').to_sym)
     end
 
     def config

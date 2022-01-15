@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module JekyllNotion
   class NotionDatabase
     def initialize(config:)
@@ -8,8 +7,9 @@ module JekyllNotion
     end
 
     def pages
+      puts @config
       @pages ||= @notion.database_query(query)[:results].map do |page|
-        NotionPage.new(page: page, layout: @config['layout'])
+        NotionPage.new(page: page, layout: @config.dig('database', 'layout'))
       end
       
       return @pages unless block_given?
