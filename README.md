@@ -39,20 +39,17 @@ notion:
   database:
     id: b91d5...
     collection: posts
-    layout: post
     filter: { "property": "Published", "checkbox": { "equals": true } }
     sort: { "propery": "Last ordered", "direction": "ascending" }
     frontmatter:
-      prop_1: blabla
-      prop_2: albalb
+      layout: post
 ```
 
 The other properties are:
 * `collection`: what collection each page belongs to,
-* `layout`: the collection layout,
 * `filter`: the database query filter,
 * `sort`: the database query sort,
-* `frontmatter`: additonal frontmatter to append to each page in the collection.
+* `frontmatter`: additional frontmatter to append to each page in the collection.
 
 Note: Only one database is available.
 
