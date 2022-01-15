@@ -9,7 +9,7 @@ module JekyllNotion
 
     def pages
       @pages ||= @notion.database_query(query)[:results].map do |page|
-        NotionPage.new(page: page, layout: @config['layout'])
+        NotionPage.new(page: page, layout: config['layout'])
       end
       
       return @pages unless block_given?
@@ -18,6 +18,10 @@ module JekyllNotion
     end
 
     private
+
+    def config
+      @config['database']
+    end
 
     def filter
       @config.dig('database', 'filter')
