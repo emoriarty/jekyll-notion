@@ -57,3 +57,24 @@ The other properties are:
 Note: Only one database is available.
 
 And that's all. Each page in the notion database will be included in the selected collection.
+
+## Notion properties
+
+Below, page notion default properties are set in each page frontmatter.
+
+* id: id
+* title: properties > Name > title > plain_text
+* cover: cover > external > url
+* date: created_time
+
+## Page filename
+
+There are two kinds of collections: posts and others.
+
+When the collection is posts, the filename format contains the `created_time` property plus the page title as specified in [jekyll docs](https://jekyllrb.com/docs/posts/#creating-posts).
+
+```
+YEAR-MONTH-DAY-title.MARKUP
+```
+
+Any other collection, the filename is the page title.
