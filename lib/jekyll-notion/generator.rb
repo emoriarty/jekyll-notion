@@ -28,7 +28,7 @@ module JekyllNotion
 
     def make_page
       new_post = DocumentWithoutAFile.new(
-        "#{Dir.pwd}/_#{config.dig('database', 'collection')}/#{make_filename}",
+        "#{Dir.pwd}/_#{collection_name}/#{make_filename}",
         { site: @site, collection: collection }
       )
       new_post.content = "#{make_frontmatter}\n\n#{make_md}"
@@ -44,7 +44,6 @@ module JekyllNotion
       <<-CONTENT
 #{config.dig('database', 'frontmatter').to_yaml}
 id: #{current_page.id}
-layout: #{current_page.layout}
 title: #{current_page.title}
 date: #{current_page.created_datetime.to_s}
 cover: #{current_page.cover}
@@ -53,11 +52,19 @@ cover: #{current_page.cover}
     end
 
     def make_filename
-      "#{current_page.created_date.to_s}-#{current_page.title.downcase.parameterize}.md"
+      if collection_name == 'posts'
+        "#{current_page.created_date.to_s}-#{current_page.title.downcase.parameterize}.md"
+      else
+        "#{current_page.title.downcase.parameterize}.md"
+      end
+    end
+
+    def collection_name
+      config.dig('database', 'collection')
     end
 
     def collection
-      @site.send(config.dig('database', 'collection').to_sym)
+      @site.send(collection_name.to_sym)
     end
 
     def config
