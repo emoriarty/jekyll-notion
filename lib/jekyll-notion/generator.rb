@@ -4,10 +4,6 @@ module JekyllNotion
   class Generator < Jekyll::Generator
     attr_reader :current_page
 
-    def initialize(plugin)
-      super(plugin)
-    end
-
     def generate(site)
       @site = site
 
@@ -41,19 +37,19 @@ module JekyllNotion
     end
 
     def make_frontmatter
-      <<-CONTENT
-#{config.dig('database', 'frontmatter').to_yaml}
-id: #{current_page.id}
-title: #{current_page.title}
-date: #{current_page.created_datetime.to_s}
-cover: #{current_page.cover}
----
+      <<~CONTENT
+        #{config.dig('database', 'frontmatter').to_yaml}
+        id: #{current_page.id}
+        title: #{current_page.title}
+        date: #{current_page.created_datetime}
+        cover: #{current_page.cover}
+        ---
       CONTENT
     end
 
     def make_filename
       if collection_name == 'posts'
-        "#{current_page.created_date.to_s}-#{current_page.title.downcase.parameterize}.md"
+        "#{current_page.created_date}-#{current_page.title.downcase.parameterize}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
       end
@@ -68,7 +64,7 @@ cover: #{current_page.cover}
     end
 
     def config
-      @config ||= @site.config["notion"] || {}
+      @config ||= @site.config['notion'] || {}
     end
 
     def notion_token?
