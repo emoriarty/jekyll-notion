@@ -44,7 +44,6 @@ module JekyllNotion
       <<-CONTENT
 #{config.dig('database', 'frontmatter').to_yaml}
 id: #{current_page.id}
-layout: #{current_page.layout}
 title: #{current_page.title}
 date: #{current_page.created_datetime.to_s}
 cover: #{current_page.cover}
