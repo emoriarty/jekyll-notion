@@ -10,7 +10,7 @@ module JekyllNotion
     end
 
     def title
-      page.dig(:properties, :Name, :title).inject('') do |acc, slug|
+      page.dig(:properties, :Name, :title).inject("") do |acc, slug|
         acc + slug[:plain_text]
       end
     end
@@ -32,7 +32,7 @@ module JekyllNotion
     end
 
     def created_datetime
-      DateTime.parse(page['created_time'])
+      DateTime.parse(page["created_time"])
     end
 
     def updated_date
@@ -40,7 +40,7 @@ module JekyllNotion
     end
 
     def updated_datetime
-      DateTime.parse(page['last_edited_time'])
+      DateTime.parse(page["last_edited_time"])
     end
 
     def url

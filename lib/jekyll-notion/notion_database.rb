@@ -9,10 +9,10 @@ module JekyllNotion
 
     def pages(&block)
       @pages ||= @notion.database_query(query)[:results].map do |page|
-        NotionPage.new(page: page, layout: config['layout'])
+        NotionPage.new(:page => page, :layout => config["layout"])
       end
 
-      return @pages unless block_given?
+      return @pages unless block
 
       @pages.each(&block)
     end
@@ -20,23 +20,23 @@ module JekyllNotion
     private
 
     def config
-      @config['database']
+      @config["database"]
     end
 
     def filter
-      @config.dig('database', 'filter')
+      @config.dig("database", "filter")
     end
 
     def sort
-      @config.dig('database', 'sort')
+      @config.dig("database", "sort")
     end
 
     def id
-      @config.dig('database', 'id')
+      @config.dig("database", "id")
     end
 
     def query
-      { id: id, filter: filter, sort: sort }
+      { :id => id, :filter => filter, :sort => sort }
     end
   end
 end

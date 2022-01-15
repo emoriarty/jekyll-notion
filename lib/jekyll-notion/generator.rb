@@ -14,18 +14,18 @@ module JekyllNotion
     end
 
     def read_notion_database
-      @db = NotionDatabase.new(config: config)
+      @db = NotionDatabase.new(:config => config)
       @db.pages do |page|
         @current_page = page
         collection.docs << make_page
-        Jekyll.logger.info('Jekyll Notion:', "New notion page at #{collection.docs.last.path}")
+        Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
       end
     end
 
     def make_page
       new_post = DocumentWithoutAFile.new(
         "#{Dir.pwd}/_#{collection_name}/#{make_filename}",
-        { site: @site, collection: collection }
+        { :site => @site, :collection => collection }
       )
       new_post.content = "#{make_frontmatter}\n\n#{make_md}"
       new_post.read
@@ -33,12 +33,12 @@ module JekyllNotion
     end
 
     def make_md
-      NotionToMd::Converter.new(page_id: current_page.id).convert
+      NotionToMd::Converter.new(:page_id => current_page.id).convert
     end
 
     def make_frontmatter
       <<~CONTENT
-        #{config.dig('database', 'frontmatter').to_yaml}
+        #{config.dig("database", "frontmatter").to_yaml}
         id: #{current_page.id}
         title: #{current_page.title}
         date: #{current_page.created_datetime}
@@ -48,7 +48,7 @@ module JekyllNotion
     end
 
     def make_filename
-      if collection_name == 'posts'
+      if collection_name == "posts"
         "#{current_page.created_date}-#{current_page.title.downcase.parameterize}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
@@ -56,7 +56,7 @@ module JekyllNotion
     end
 
     def collection_name
-      config.dig('database', 'collection')
+      config.dig("database", "collection")
     end
 
     def collection
@@ -64,12 +64,12 @@ module JekyllNotion
     end
 
     def config
-      @config ||= @site.config['notion'] || {}
+      @config ||= @site.config["notion"] || {}
     end
 
     def notion_token?
-      if ENV['NOTION_TOKEN'].nil? || ENV['NOTION_TOKEN'].empty?
-        Jekyll.logger.error('Jekyll Notion:', 'NOTION_TOKEN not provided. Cannot read from Notion.')
+      if ENV["NOTION_TOKEN"].nil? || ENV["NOTION_TOKEN"].empty?
+        Jekyll.logger.error("Jekyll Notion:", "NOTION_TOKEN not provided. Cannot read from Notion.")
         return false
       end
       true
@@ -77,7 +77,7 @@ module JekyllNotion
 
     def config?
       if config.empty?
-        Jekyll.logger.error('Jekyll Notion:', 'No config provided.')
+        Jekyll.logger.error("Jekyll Notion:", "No config provided.")
         return false
       end
       true

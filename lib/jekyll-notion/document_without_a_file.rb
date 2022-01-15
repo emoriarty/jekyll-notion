@@ -6,7 +6,7 @@ module JekyllNotion
       if content =~ YAML_FRONT_MATTER_REGEXP
         self.content = Regexp.last_match.post_match
         data_file = SafeYAML.load(Regexp.last_match(1))
-        merge_data!(data_file, source: 'YAML front matter') if data_file
+        merge_data!(data_file, :source => "YAML front matter") if data_file
       end
     end
   end
