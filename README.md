@@ -59,10 +59,14 @@ And that's all. Each page in the notion database will be included in the selecte
 
 Below, page notion default properties are set in each page frontmatter.
 
-* id: id
-* title: properties > Name > title > plain_text
-* cover: cover > external > url
-* date: created_time
+```
+---
+id: id
+title: properties > Name > title > plain_text
+cover: cover > external > url
+date: created_time
+---
+```
 
 ## Page filename
 
