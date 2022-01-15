@@ -1,5 +1,6 @@
 # jekyll-notion
-Import pages from notion.
+
+Import notion pages to a jekyll collection.
 
 ## Installation
 
@@ -48,7 +49,7 @@ notion:
 
 The other properties are:
 * `collection`: what collection each page belongs to,
-* `layout`: the layout for each page,
+* `layout`: the collection layout,
 * `filter`: the database query filter,
 * `sort`: the database query sort,
 * `frontmatter`: additonal frontmatter to append to each page in the collection.
