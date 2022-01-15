@@ -1,1 +1,4 @@
+require: rubocop-jekyll
+inherit_gem:
+  rubocop-jekyll: .rubocop.yml
 inherit_from: .rubocop_todo.yml
