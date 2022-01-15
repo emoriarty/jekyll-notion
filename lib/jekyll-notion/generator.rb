@@ -15,8 +15,8 @@ module JekyllNotion
       @db = NotionDatabase.new(config: config)
       @db.pages do |page|
         @current_page = page
-        site.posts.docs << make_page
-        Jekyll.logger.info("New page from notion", site.posts.docs.last.path)
+        collection.docs << make_page
+        Jekyll.logger.info('New page from notion', collection.docs.last.path)
       end
     end
 
