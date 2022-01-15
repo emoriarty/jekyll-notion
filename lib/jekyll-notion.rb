@@ -10,7 +10,7 @@ require 'jekyll-notion/generator'
 NotionToMd::Logger.level = Logger::ERROR
 
 Notion.configure do |config|
-    config.token = ENV['NOTION_TOKEN']
+  config.token = ENV['NOTION_TOKEN']
 end
 
 module JekyllNotion

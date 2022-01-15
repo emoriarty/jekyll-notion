@@ -10,11 +10,19 @@ module JekyllNotion
 
     def generate(site)
       @site = site
+
+      return unless notion_token?
+      return unless config?
+
+      read_notion_database
+    end
+
+    def read_notion_database
       @db = NotionDatabase.new(config: config)
       @db.pages do |page|
         @current_page = page
         collection.docs << make_page
-        Jekyll.logger.info('New page from notion', collection.docs.last.path)
+        Jekyll.logger.info('Jekyll Notion:', "New notion page at #{collection.docs.last.path}")
       end
     end
 
@@ -54,6 +62,22 @@ cover: #{current_page.cover}
 
     def config
       @config ||= @site.config["notion"] || {}
+    end
+
+    def notion_token?
+      if ENV['NOTION_TOKEN'].nil? || ENV['NOTION_TOKEN'].empty?
+        Jekyll.logger.error('Jekyll Notion:', 'NOTION_TOKEN not provided. Cannot read from Notion.')
+        return false
+      end
+      true
+    end
+
+    def config?
+      if config.empty?
+        Jekyll.logger.error('Jekyll Notion:', 'No config provided.')
+        return false
+      end
+      true
     end
   end
 end
