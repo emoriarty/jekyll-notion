@@ -7,15 +7,14 @@ module JekyllNotion
     def generate(site)
       @site = site
 
-      return unless notion_token?
-      return unless config?
+      return unless notion_token? && config? && collection?
 
       read_notion_database
     end
 
     def read_notion_database
       @db = NotionDatabase.new(:config => config)
-      @db.pages do |page|
+      @db.pages.each do |page|
         @current_page = page
         collection.docs << make_page
         Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
@@ -60,7 +59,7 @@ module JekyllNotion
     end
 
     def collection
-      @site.send(collection_name.to_sym)
+      @collection ||= @site.send(collection_name.to_sym)
     end
 
     def config
@@ -78,6 +77,14 @@ module JekyllNotion
     def config?
       if config.empty?
         Jekyll.logger.error("Jekyll Notion:", "No config provided.")
+        return false
+      end
+      true
+    end
+
+    def collection?
+      if collection_name.nil?
+        Jekyll.logger.error("Jekyll Notion:", "No collection is provided.")
         return false
       end
       true
