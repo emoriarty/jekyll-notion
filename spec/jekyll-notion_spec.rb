@@ -22,7 +22,6 @@ describe(JekyllNotion) do
       "notion" => notion_config
     }, overrides))
   end
-  let(:site) { Jekyll::Site.new(config) }
   let(:notion_token) { 'secret_0987654321' }
   let(:notion_config) do
     {
@@ -37,10 +36,15 @@ describe(JekyllNotion) do
       }
     }
   end
+  let(:notion_results) { { results: get_notion_results } }
+  let(:notion_to_md_converter_output) { '' }
+  let(:notion_to_md_converter) { double('Converter', convert: notion_to_md_converter_output) }
+  let(:site) { Jekyll::Site.new(config) }
 
   before do
     allow(ENV).to receive(:[]).with('NOTION_TOKEN').and_return(notion_token)
-    allow_any_instance_of(Notion::Client).to receive(:database_query).and_return({ results: [] })
+    allow_any_instance_of(Notion::Client).to receive(:database_query).and_return(notion_results)
+    allow(NotionToMd::Converter).to receive(:new).and_return(notion_to_md_converter)
   end
 
   describe 'with NOTION_TOKEN' do
