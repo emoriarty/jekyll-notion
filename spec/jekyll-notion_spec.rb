@@ -97,7 +97,7 @@ describe(JekyllNotion) do
     end
 
     context 'when database id is not present' do
-      let(:notion_config) { { 'database' => { id: nil } } }
+      let(:notion_config) { { 'database' => { id: nil, 'collection' => 'posts' } } }
 
       it 'does not query notion database' do
         expect_any_instance_of(Notion::Client).not_to receive(:database_query)
