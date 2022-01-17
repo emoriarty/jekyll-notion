@@ -4,6 +4,7 @@ require "spec_helper"
 
 describe(JekyllNotion) do
   let(:overrides) { {} }
+  let(:collection) { 'posts' }
   let(:config) do
     Jekyll.configuration(Jekyll::Utils.deep_merge_hashes({
       "full_rebuild" => true,
@@ -27,7 +28,7 @@ describe(JekyllNotion) do
     {
       "database" => {
         "id" => "b0e688e199af4295ae80b67eb52f2e2f",
-        "collection" => "posts",
+        "collection" => collection,
         "filter" => { "property" => "Done", "checkbox" => { "equals" => true } },
         "sort" => { "propery" => "Last ordered", "direction" => "ascending" },
         "frontmatter" => {
@@ -36,18 +37,17 @@ describe(JekyllNotion) do
       }
     }
   end
-  let(:notion_results) { { results: get_notion_results } }
-  let(:notion_to_md_converter_output) { '' }
-  let(:notion_to_md_converter) { double('Converter', convert: notion_to_md_converter_output) }
   let(:site) { Jekyll::Site.new(config) }
 
   before do
     allow(ENV).to receive(:[]).with('NOTION_TOKEN').and_return(notion_token)
-    allow_any_instance_of(Notion::Client).to receive(:database_query).and_return(notion_results)
-    allow(NotionToMd::Converter).to receive(:new).and_return(notion_to_md_converter)
+    allow_any_instance_of(Notion::Client).to receive(:database_query).and_return({ results: notion_client_query })
+    allow(NotionToMd::Converter).to receive(:new) do |page_id:|
+      double('NotionToMd::Converter', convert: md_files[page_id])
+    end
   end
 
-  describe 'with NOTION_TOKEN' do
+  describe 'NOTION_TOKEN' do
     context 'when not present' do
       let(:notion_token) { nil }
 
@@ -72,7 +72,7 @@ describe(JekyllNotion) do
     end
   end
 
-  describe 'with config' do
+  describe 'config' do
     context 'when not present' do
       let(:notion_config) { nil }
 
@@ -121,6 +121,30 @@ describe(JekyllNotion) do
     it 'queries notion database' do
       expect_any_instance_of(Notion::Client).to receive(:database_query)
       site.process
+    end
+  end
+
+  describe 'generate' do
+    before(:each) { site.process }
+
+    it 'stores into designated collection' do
+      expect(site.collections[collection].size).to be == md_files.size
+    end
+
+    it 'post filename is consistent' do
+      site.posts.each do |post|
+        expect(post.path).to match(/_posts\/\d{4}-\d{2}-\d{2}-.*.md$/)
+      end
+    end
+
+    context 'when collection is not posts' do
+      let (:collection) { 'films' }
+
+      it 'filename does not contain date' do
+        site.collections[collection].each do |film|
+          expect(film.path).to match(/_films\/.*.md$/)
+        end
+      end
     end
   end
 end

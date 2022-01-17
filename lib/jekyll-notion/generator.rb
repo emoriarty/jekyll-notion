@@ -15,7 +15,6 @@ module JekyllNotion
     def read_notion_database
       @db = NotionDatabase.new(:config => config)
       @db.pages.each do |page|
-        p page
         @current_page = page
         collection.docs << make_page
         Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
@@ -60,7 +59,7 @@ module JekyllNotion
     end
 
     def collection
-      @collection ||= @site.send(collection_name.to_sym)
+      @collection ||= @site.collections[collection_name]
     end
 
     def config

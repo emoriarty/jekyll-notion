@@ -13,6 +13,12 @@ RSpec.configure do |config|
   SOURCE_DIR = File.expand_path("fixtures/my_site", __dir__)
   DEST_DIR   = File.expand_path("dest", __dir__)
   NOTION_RESULTS = YAML.load_file(File.expand_path("fixtures/notion/results.yml", (__dir__)))
+  MD_FILES = Dir[File.expand_path("fixtures/md_files/*.md", (__dir__))].inject({}) do |memo, file|
+    value = File.read(file)
+    key = File.basename(file, '.md')
+    memo[key] = value
+    memo
+  end
 
   def source_dir(*files)
     File.join(SOURCE_DIR, *files)
@@ -22,7 +28,11 @@ RSpec.configure do |config|
     File.join(DEST_DIR, *files)
   end
 
-  def get_notion_results
+  def notion_client_query
     NOTION_RESULTS
+  end
+
+  def md_files
+    MD_FILES
   end
 end
