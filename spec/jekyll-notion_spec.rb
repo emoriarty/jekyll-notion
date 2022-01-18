@@ -4,7 +4,6 @@ require "spec_helper"
 
 describe(JekyllNotion) do
   let(:overrides) { {} }
-  let(:collection) { 'posts' }
   let(:config) do
     Jekyll.configuration(Jekyll::Utils.deep_merge_hashes({
       "full_rebuild" => true,
@@ -24,16 +23,18 @@ describe(JekyllNotion) do
     }, overrides))
   end
   let(:notion_token) { 'secret_0987654321' }
+  let(:collection) { 'posts' }
+  let(:filter) { nil }
+  let(:sort) { nil }
+  let(:frontmatter) { nil }
   let(:notion_config) do
     {
       "database" => {
         "id" => "b0e688e199af4295ae80b67eb52f2e2f",
         "collection" => collection,
-        "filter" => { "property" => "Done", "checkbox" => { "equals" => true } },
-        "sort" => { "propery" => "Last ordered", "direction" => "ascending" },
-        "frontmatter" => {
-          "layout" => "post"
-        }
+        "filter" => filter,
+        "sort" => sort,
+        "frontmatter" => frontmatter
       }
     }
   end
