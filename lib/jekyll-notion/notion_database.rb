@@ -35,9 +35,10 @@ module JekyllNotion
 
     def id?
       if id.nil? || id.empty?
-        Jekyll.logger.error("Jekyll Notion:", "database id is not provided. Cannot read from Notion.")
+        Jekyll.logger.error("Jekyll Notion:",
+                            "database id is not provided. Cannot read from Notion.")
         return false
-      end 
+      end
       true
     end
 
