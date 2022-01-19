@@ -1,0 +1,140 @@
+--- !ruby/array:Hashie::Array
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 044a22f3-fe73-4987-951d-db7009ebc8d4
+  created_time: '2022-01-06T20:27:00.000Z'
+  last_edited_time: '2022-01-06T21:06:00.000Z'
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b0e688e1-99af-4295-ae80-b67eb52f2e2f
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Tags: !ruby/hash:Notion::Messages::Message
+      id: ":jB^"
+      type: multi_select
+      multi_select: !ruby/array:Hashie::Array []
+    Done: !ruby/hash:Notion::Messages::Message
+      id: ArbV
+      type: checkbox
+      checkbox: false
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: akjakjd
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: akjakjd
+        href:
+  url: https://www.notion.so/akjakjd-044a22f3fe734987951ddb7009ebc8d4
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 11c7f5b0-4994-467a-bae2-fd19b142022c
+  created_time: '2022-01-06T20:27:00.000Z'
+  last_edited_time: '2022-01-06T21:06:00.000Z'
+  cover: !ruby/hash:Notion::Messages::Message
+    type: external
+    external: !ruby/hash:Notion::Messages::Message
+      url: https://julieguiraud.files.wordpress.com/2021/12/dolls-houses-g3d17cf857_1920.jpg
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b0e688e1-99af-4295-ae80-b67eb52f2e2f
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Tags: !ruby/hash:Notion::Messages::Message
+      id: ":jB^"
+      type: multi_select
+      multi_select: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        id: 2cc940d6-0de0-4270-b9dc-c830f3190a26
+        name: Freelancing
+        color: pink
+      - !ruby/hash:Notion::Messages::Message
+        id: ba3f57e8-ef60-4eb6-b37e-fb8493354518
+        name: Organisation
+        color: pink
+      - !ruby/hash:Notion::Messages::Message
+        id: 1dbb08d1-5455-4149-bd6f-1fbaa1e7e907
+        name: Parentalité
+        color: brown
+    Done: !ruby/hash:Notion::Messages::Message
+      id: ArbV
+      type: checkbox
+      checkbox: true
+    Publish Date: !ruby/hash:Notion::Messages::Message
+      id: NGU<
+      type: date
+      date: !ruby/hash:Notion::Messages::Message
+        start: '2021-12-09'
+        end:
+        time_zone:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: C’est mercredi, je joue à la poupée
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: true
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: C’est mercredi, je joue à la poupée
+        href:
+  url: https://www.notion.so/C-est-mercredi-je-joue-la-poup-e-11c7f5b04994467abae2fd19b142022c
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 233ddee1-97e1-4624-885b-5f53544b9975
+  created_time: '2022-01-06T20:27:00.000Z'
+  last_edited_time: '2022-01-06T21:07:00.000Z'
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b0e688e1-99af-4295-ae80-b67eb52f2e2f
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Tags: !ruby/hash:Notion::Messages::Message
+      id: ":jB^"
+      type: multi_select
+      multi_select: !ruby/array:Hashie::Array []
+    Done: !ruby/hash:Notion::Messages::Message
+      id: ArbV
+      type: checkbox
+      checkbox: true
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Un autre article
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Un autre article
+        href:
+  url: https://www.notion.so/Un-autre-article-233ddee197e14624885b5f53544b9975

@@ -7,14 +7,12 @@ module JekyllNotion
       @config = config
     end
 
-    def pages(&block)
+    def pages
+      return [] unless id?
+
       @pages ||= @notion.database_query(query)[:results].map do |page|
         NotionPage.new(:page => page, :layout => config["layout"])
       end
-
-      return @pages unless block
-
-      @pages.each(&block)
     end
 
     private
@@ -33,6 +31,15 @@ module JekyllNotion
 
     def id
       @config.dig("database", "id")
+    end
+
+    def id?
+      if id.nil? || id.empty?
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "database id is not provided. Cannot read from Notion.")
+        return false
+      end
+      true
     end
 
     def query

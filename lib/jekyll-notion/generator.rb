@@ -7,15 +7,14 @@ module JekyllNotion
     def generate(site)
       @site = site
 
-      return unless notion_token?
-      return unless config?
+      return unless notion_token? && config?
 
       read_notion_database
     end
 
     def read_notion_database
       @db = NotionDatabase.new(:config => config)
-      @db.pages do |page|
+      @db.pages.each do |page|
         @current_page = page
         collection.docs << make_page
         Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
@@ -38,13 +37,18 @@ module JekyllNotion
 
     def make_frontmatter
       <<~CONTENT
-        #{config.dig("database", "frontmatter").to_yaml}
+        ---
         id: #{current_page.id}
         title: #{current_page.title}
         date: #{current_page.created_datetime}
         cover: #{current_page.cover}
+        #{frontmatter}
         ---
       CONTENT
+    end
+
+    def frontmatter
+      config.dig("database", "frontmatter").to_a.map { |k, v| "#{k}: #{v}" }.join('\n')
     end
 
     def make_filename
@@ -56,11 +60,11 @@ module JekyllNotion
     end
 
     def collection_name
-      config.dig("database", "collection")
+      config.dig("database", "collection") || "posts"
     end
 
     def collection
-      @site.send(collection_name.to_sym)
+      @collection ||= @site.collections[collection_name]
     end
 
     def config
@@ -69,7 +73,7 @@ module JekyllNotion
 
     def notion_token?
       if ENV["NOTION_TOKEN"].nil? || ENV["NOTION_TOKEN"].empty?
-        Jekyll.logger.error("Jekyll Notion:", "NOTION_TOKEN not provided. Cannot read from Notion.")
+        Jekyll.logger.warn("Jekyll Notion:", "NOTION_TOKEN not provided. Cannot read from Notion.")
         return false
       end
       true
@@ -77,7 +81,7 @@ module JekyllNotion
 
     def config?
       if config.empty?
-        Jekyll.logger.error("Jekyll Notion:", "No config provided.")
+        Jekyll.logger.warn("Jekyll Notion:", "No config provided.")
         return false
       end
       true

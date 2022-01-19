@@ -46,7 +46,7 @@ notion:
 ```
 
 The other properties are:
-* `collection`: what collection each page belongs to,
+* `collection`: the collection each page belongs to (posts by default),
 * `filter`: the database query filter,
 * `sort`: the database query sort,
 * `frontmatter`: additional frontmatter to append to each page in the collection.
