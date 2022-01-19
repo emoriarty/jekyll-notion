@@ -156,4 +156,23 @@ describe(JekyllNotion) do
       end
     end
   end
+
+  context "when multiple frontmatter properties" do
+    let(:frontmatter) { { :option_1 => "uno", :option_2 => "dos", :option_3 => "tres" } }
+
+    it "is added into page data" do
+      site.posts.each do |post|
+        expect(post.data).to include(*frontmatter.keys.map(&:to_s))
+      end
+    end
+  end
+  context "when complex frontmatter properties" do
+    let(:frontmatter) { { :url => "https://regardsprotestants.com/wp-content/uploads/2020/06/balblart-e1591697827166.jpg?size=276" } }
+
+    it "is added into page data" do
+      site.posts.each do |post|
+        expect(post.data).to include(*frontmatter.keys.map(&:to_s))
+      end
+    end
+  end
 end

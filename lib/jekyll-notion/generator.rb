@@ -48,7 +48,7 @@ module JekyllNotion
     end
 
     def frontmatter
-      config.dig("database", "frontmatter").to_a.map { |k, v| "#{k}: #{v}" }.join('\n')
+      config.dig("database", "frontmatter").to_a.map { |k, v| "#{k}: #{v}" }.join("\n")
     end
 
     def make_filename
