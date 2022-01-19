@@ -23,7 +23,7 @@ describe(JekyllNotion) do
     }, overrides))
   end
   let(:notion_token) { "secret_0987654321" }
-  let(:collection) { "posts" }
+  let(:collection) { nil }
   let(:filter) { nil }
   let(:sort) { nil }
   let(:frontmatter) { nil }
@@ -105,16 +105,8 @@ describe(JekyllNotion) do
     end
   end
 
-  context "when config.database.collection is not present" do
-    let(:notion_config) { { "database" => { "id" => "bh29h", "collection" => nil } } }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
-    end
-  end
-
-  it "stores pages into designated collection" do
-    expect(site.collections[collection].size).to be == md_files.size
+  it "stores pages into posts collection" do
+    expect(site.posts.size).to be == md_files.size
   end
 
   it "post filename matches YYYY-MM-DD-title.md format" do

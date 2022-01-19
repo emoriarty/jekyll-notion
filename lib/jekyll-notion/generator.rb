@@ -7,7 +7,7 @@ module JekyllNotion
     def generate(site)
       @site = site
 
-      return unless notion_token? && config? && collection?
+      return unless notion_token? && config?
 
       read_notion_database
     end
@@ -60,7 +60,7 @@ module JekyllNotion
     end
 
     def collection_name
-      config.dig("database", "collection")
+      config.dig("database", "collection") || "posts"
     end
 
     def collection
@@ -82,14 +82,6 @@ module JekyllNotion
     def config?
       if config.empty?
         Jekyll.logger.warn("Jekyll Notion:", "No config provided.")
-        return false
-      end
-      true
-    end
-
-    def collection?
-      if collection_name.nil?
-        Jekyll.logger.warn("Jekyll Notion:", "No collection is provided.")
         return false
       end
       true
