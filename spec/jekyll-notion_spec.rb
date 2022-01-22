@@ -148,11 +148,17 @@ describe(JekyllNotion) do
   end
 
   context "when frontmatter is provided" do
-    let(:frontmatter) { { :layout => "post" } }
+    let(:frontmatter) { { :layout => "post", :title => 'a_title_from_config' } }
 
     it "is added into page data" do
       site.posts.each do |post|
         expect(post.data["layout"]).to eq("post")
+      end
+    end
+
+    it "does not overwrite default fronmatter" do
+      site.posts.each do |post|
+        expect(post.data["title"]).not_to eq("a_title_from_config")
       end
     end
   end
@@ -166,6 +172,7 @@ describe(JekyllNotion) do
       end
     end
   end
+
   context "when complex frontmatter properties" do
     let(:frontmatter) { { :url => "https://regardsprotestants.com/wp-content/uploads/2020/06/balblart-e1591697827166.jpg?size=276" } }
 

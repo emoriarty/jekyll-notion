@@ -68,6 +68,8 @@ date: created_time
 ---
 ```
 
+Any property provided in the frontmatter config that matches a default property will be overwritten by the default value.
+
 ## Page filename
 
 There are two kinds of collections: posts and others.
