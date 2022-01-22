@@ -148,7 +148,7 @@ describe(JekyllNotion) do
   end
 
   context "when frontmatter is provided" do
-    let(:frontmatter) { { :layout => "post", :title => 'a_title_from_config' } }
+    let(:frontmatter) { { :layout => "post", :title => "a_title_from_config" } }
 
     it "is added into page data" do
       site.posts.each do |post|
@@ -164,7 +164,7 @@ describe(JekyllNotion) do
   end
 
   context "when multiple frontmatter properties" do
-    let(:frontmatter) { { :option_1 => "uno", :option_2 => "dos", :option_3 => "tres" } }
+    let(:frontmatter) { { :option1 => "uno", :option2 => "dos", :option3 => "tres" } }
 
     it "is added into page data" do
       site.posts.each do |post|
@@ -174,7 +174,9 @@ describe(JekyllNotion) do
   end
 
   context "when complex frontmatter properties" do
-    let(:frontmatter) { { :url => "https://regardsprotestants.com/wp-content/uploads/2020/06/balblart-e1591697827166.jpg?size=276" } }
+    let(:frontmatter) do
+      { :url => "https://regardsprotestants.com/wp-content/uploads/2020/06/balblart-e1591697827166.jpg?size=276" }
+    end
 
     it "is added into page data" do
       site.posts.each do |post|

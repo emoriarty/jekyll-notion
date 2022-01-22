@@ -47,10 +47,10 @@ module JekyllNotion
 
     def notion_frontmatter
       {
-        id: current_page.id,
-        title: current_page.title,
-        date: current_page.created_datetime,
-        cover: current_page.cover
+        :id    => current_page.id,
+        :title => current_page.title,
+        :date  => current_page.created_datetime,
+        :cover => current_page.cover,
       }
     end
 
