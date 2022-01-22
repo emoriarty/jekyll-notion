@@ -124,7 +124,7 @@ describe(JekyllNotion) do
 
     it "filename does not contain date" do
       site.collections[collection].each do |film|
-        expect(film.path).to match(%r!_films/.*.md$!)
+        expect(film.path).not_to match(%r!_films/\d{4}-\d{2}-\d{2}-.*.md$!)
       end
     end
   end
