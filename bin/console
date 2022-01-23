@@ -1,0 +1,31 @@
+#!/usr/bin/env ruby
+require 'rubygems'
+# Prepares the $LOAD_PATH by adding to it lib directories of all gems in the
+# project's bundle:
+require 'bundler/setup'
+require "irb"
+require 'irb/completion'
+
+require 'pathname'
+
+ROOT_PATH = Pathname.new( __dir__).parent
+APP_PATH = ROOT_PATH / 'lib/jekyll-notion.rb'
+
+IRB.conf[:PROMPT_MODE]  = :SIMPLE
+IRB.conf[:AUTO_INDENT] = true
+IRB.conf[:USE_READLINE] = true
+require 'irb/ext/save-history'
+IRB.conf[:SAVE_HISTORY] = 100
+IRB.conf[:HISTORY_FILE] = "#{ENV['HOME']}/.irb-save-history"
+
+# Improvements for Ruby's IRB console
+require 'irbtools/configure'
+# https://github.com/janlelis/irbtools
+Irbtools.start
+
+def reload!
+  reset!
+end
+
+require APP_PATH
+IRB.start

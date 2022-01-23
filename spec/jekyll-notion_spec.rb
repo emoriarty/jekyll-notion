@@ -27,6 +27,7 @@ describe(JekyllNotion) do
   let(:filter) { nil }
   let(:sort) { nil }
   let(:frontmatter) { nil }
+  let(:properties) { nil }
   let(:notion_config) do
     {
       "database" => {
@@ -35,6 +36,7 @@ describe(JekyllNotion) do
         "filter"      => filter,
         "sort"        => sort,
         "frontmatter" => frontmatter,
+        "properties"  => properties,
       },
     }
   end
@@ -182,6 +184,23 @@ describe(JekyllNotion) do
       site.posts.each do |post|
         expect(post.data).to include(*frontmatter.keys.map(&:to_s))
       end
+    end
+  end
+
+  context "when properties are present in config" do
+    let(:properties) do
+      [
+        "Multi Select",
+        "Select",
+        "Person",
+        "Tags",
+        "Numbers",
+        "Phone",
+        "Date",
+        "File",
+        "Email",
+        "Checkbox",
+      ]
     end
   end
 end

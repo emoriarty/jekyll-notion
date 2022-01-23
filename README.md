@@ -50,6 +50,7 @@ The other properties are:
 * `filter`: the database query filter,
 * `sort`: the database query sort,
 * `frontmatter`: additional frontmatter to append to each page in the collection.
+* `properties`: additional properties from notion to set in frontmatter.
 
 Note: Only one database is available.
 
@@ -69,6 +70,55 @@ date: created_time
 ```
 
 Any property provided in the frontmatter config that matches a default property will be overwritten by the default value.
+
+### Custom properties
+In addition to default properties, custom properties are supported.
+
+Custom properties must be provided at the config level as follows.
+
+```yml
+notion:
+  database:
+    id: b91d5...
+    collection: posts
+    properties:
+      - tags
+```
+
+The `tags` property is a multi_select type, so all its values are joined by comma in the frontmatter output.
+
+```
+---
+id: id
+title: properties > Name > title > plain_text
+cover: cover > external > url
+date: created_time
+tags: tag1, tag2, tag3
+---
+```
+
+The supported properties are:
+
+* `title`
+* `rich_text`
+* `number`
+* `select`
+* `multi_select`
+* `date`
+* `people`
+* `files`
+* `checkbox`
+* `url`
+* `email`
+* `phone_number`
+* `created_time`
+* `created_by`
+* `last_edited_time`
+* `last_edited_by`
+
+Advanced types like `formula`, `relation` and `rollup` are not supported.
+
+
 
 ## Page filename
 
