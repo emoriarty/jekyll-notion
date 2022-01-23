@@ -139,9 +139,11 @@
   object: page
   id: 9dc17c9c-9d2e-469d-bbf0-f9648f3288d3
   created_time: '2022-01-23T12:31:00.000Z'
-  last_edited_time: '2022-01-23T16:16:00.000Z'
+  last_edited_time: '2022-01-23T22:46:00.000Z'
   cover:
-  icon:
+  icon: !ruby/hash:Notion::Messages::Message
+    type: emoji
+    emoji: "\U0001F4A5"
   parent: !ruby/hash:Notion::Messages::Message
     type: database_id
     database_id: 1ae33dd5-f331-4402-9480-69517fa40ae2
@@ -213,8 +215,8 @@
         name: me.jpeg
         type: file
         file: !ruby/hash:Notion::Messages::Message
-          url: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220123T163203Z&X-Amz-Expires=3600&X-Amz-Signature=2399c0a34b0a99863783f05b7f33d17ec1993e6f4c04d191f6b3bd19ea9a2ad6&X-Amz-SignedHeaders=host&x-id=GetObject
-          expiry_time: '2022-01-23T17:32:03.217Z'
+          url: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220123T224905Z&X-Amz-Expires=3600&X-Amz-Signature=32652d2f500c88b6207477dad708c8e2243100378fade27e6e1128d241905896&X-Amz-SignedHeaders=host&x-id=GetObject
+          expiry_time: '2022-01-23T23:49:05.212Z'
     Email: !ruby/hash:Notion::Messages::Message
       id: x{cw
       type: email
