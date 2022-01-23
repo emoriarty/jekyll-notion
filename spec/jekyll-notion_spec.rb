@@ -184,4 +184,39 @@ describe(JekyllNotion) do
       end
     end
   end
+
+  it "adds id to page data" do
+    site.posts.each_with_index do |post, index|
+      id = notion_client_query[index].id
+      expect(post.data).to include("id" => id)
+    end
+  end
+
+  it "adds title to page data" do
+    site.posts.each_with_index do |post, index|
+      title = notion_client_query[index].properties.Name.title[0].plain_text
+      expect(post.data).to include("title" => title)
+    end
+  end
+
+  it "adds cover to page data" do
+    site.posts.each_with_index do |post, index|
+      cover = notion_client_query[index].dig("cover", "external", "url")
+      expect(post.data).to include("cover" => cover)
+    end
+  end
+
+  it "adds icon to page data" do
+    site.posts.each_with_index do |post, index|
+      icon = notion_client_query[index].dig("icon", "emoji")
+      expect(post.data).to include("icon" => icon)
+    end
+  end
+
+  it "adds date to page data" do
+    site.posts.each_with_index do |post, index|
+      date = notion_client_query[index].created_time
+      expect(post.data).to include("date" => Time.parse(date))
+    end
+  end
 end

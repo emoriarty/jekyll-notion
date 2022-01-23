@@ -40,7 +40,7 @@ notion:
     id: b91d5...
     collection: posts
     filter: { "property": "Published", "checkbox": { "equals": true } }
-    sort: { "propery": "Last ordered", "direction": "ascending" }
+    sort: { "property": "Last ordered", "direction": "ascending" }
     frontmatter:
       layout: post
 ```
@@ -65,6 +65,7 @@ id: id
 title: properties > Name > title > plain_text
 cover: cover > external > url
 date: created_time
+icon: icon > emoji
 ---
 ```
 
