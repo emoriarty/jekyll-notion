@@ -51,7 +51,7 @@ module JekyllNotion
         :title => current_page.title,
         :date  => current_page.created_datetime,
         :cover => current_page.cover,
-        :icon => current_page.icon,
+        :icon  => current_page.icon,
       }
     end
 
