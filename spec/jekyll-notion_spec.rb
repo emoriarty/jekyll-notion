@@ -222,20 +222,47 @@ describe(JekyllNotion) do
     end
   end
 
-  context "when properties are present in config" do
+  context "when customt properties are present in config" do
     let(:properties) do
       [
         "Multi Select",
         "Select",
         "Person",
-        "Tags",
+        "File",
         "Numbers",
         "Phone",
         "Date",
-        "File",
         "Email",
         "Checkbox",
       ]
+    end
+
+    it "adds a multi_select type to page data" do
+      site.posts.each_with_index do |post, index|
+        multi_select = notion_client_query[index].properties.dig("Multi Select", "multi_select").map(&:name).join(', ')
+        expect(post.data).to include("multi_select" => multi_select.presence)
+      end
+    end
+
+    it "adds a select type to page data" do
+      site.posts.each_with_index do |post, index|
+        select = notion_client_query[index].properties.dig("Select", "select").name
+        expect(post.data).to include("select" => select.presence)
+      end
+    end
+
+    it "adds a people type to page data" do
+      site.posts.each_with_index do |post, index|
+        person = notion_client_query[index].properties.dig("Person", "people").map(&:name).join(', ')
+        expect(post.data).to include("person" => person.presence)
+      end
+    end
+
+    it "adds a files type to page data" do
+      site.posts.each_with_index do |post, index|
+        file = notion_client_query[index].properties.dig("File", "files").map(&:file).join(', ')
+        expect(post.data).to include("file" => file.presence)
+      end
     end
   end
 end

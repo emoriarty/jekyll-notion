@@ -52,7 +52,7 @@ module JekyllNotion
         :date  => current_page.created_datetime,
         :cover => current_page.cover,
         :icon  => current_page.icon,
-      }
+      }.merge(current_page.custom_props)
     end
 
     def config_frontmatter

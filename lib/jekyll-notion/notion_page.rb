@@ -46,5 +46,38 @@ module JekyllNotion
     def url
       page[:url]
     end
+
+    def custom_props
+      @props ||= page.properties.inject({}) do |memo, prop|
+        name = prop.first
+        value = prop.last # Notion::Messages::Message
+        type = value.type
+
+        next memo unless CustomProperty.respond_to?(type.to_sym)
+
+        memo[name.parameterize.underscore] = CustomProperty.send(type, value)
+        memo
+      end.compact
+    end
+
+    class CustomProperty
+      class << self
+        def multi_select(prop)
+          prop.multi_select.map(&:name).join(', ')
+        end
+
+        def select(prop)
+          prop["select"].name
+        end
+
+        def people(prop)
+          prop.people.map(&:name).join(', ')
+        end
+
+        def files(prop)
+          prop.files.map(&:file).join(', ')
+        end
+      end
+    end
   end
 end
