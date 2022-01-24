@@ -62,46 +62,38 @@ Below, page notion default properties are set in each page frontmatter.
 
 ```
 ---
-id: id
-title: properties > Name > title > plain_text
-cover: cover > external > url
-date: created_time
-icon: icon > emoji
+id: b2998...
+title: A title
+cover: https://img.bank.sh/an_image.jpg
+date: 2022-01-23T12:31:00.000Z
+icon: \U0001F4A5
 ---
 ```
 
 Any property provided in the frontmatter config that matches a default property will be overwritten by the default value.
 
 ### Custom properties
-In addition to default properties, custom properties are supported.
 
-Custom properties must be provided at the config level as follows.
+In addition to default properties, custom properties are also supported.
 
-```yml
-notion:
-  database:
-    id: b91d5...
-    collection: posts
-    properties:
-      - tags
-```
-
-The `tags` property is a multi_select type, so all its values are joined by comma in the frontmatter output.
+Custom properties are appended to page frontmatter by default. Every property name is snake cased.
+For example, two properties named `Multiple Options` and `Tags` will be transformed to `multiple_options` and `tags`, respectively.
 
 ```
 ---
-id: id
-title: properties > Name > title > plain_text
-cover: cover > external > url
-date: created_time
+id: b2998...
+title: A title
+cover: https://img.bank.sh/an_image.jpg
+date: 2022-01-23T12:31:00.000Z
+icon: \U0001F4A5
 tags: tag1, tag2, tag3
+multiple_options: option1, option2
 ---
 ```
 
 The supported properties are:
 
 * `title`
-* `rich_text`
 * `number`
 * `select`
 * `multi_select`
@@ -117,9 +109,7 @@ The supported properties are:
 * `last_edited_time`
 * `last_edited_by`
 
-Advanced types like `formula`, `relation` and `rollup` are not supported.
-
-
+`rich_text as advanced types like `formula`, `relation` and `rollup` are not supported.
 
 ## Page filename
 

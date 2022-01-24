@@ -222,7 +222,7 @@ describe(JekyllNotion) do
     end
   end
 
-  context "when customt properties are present in config" do
+  context "when custom properties are present in config" do
     let(:properties) do
       [
         "Multi Select",
