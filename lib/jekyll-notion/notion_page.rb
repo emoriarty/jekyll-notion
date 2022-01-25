@@ -61,11 +61,12 @@ module JekyllNotion
 
     def default_props
       @default_props ||= {
-        :id    => id,
-        :title => title,
-        :date  => created_datetime,
-        :cover => cover,
-        :icon  => icon,
+        :id           => id,
+        :title        => title,
+        :date         => created_datetime,
+        :cover        => cover,
+        :icon         => icon,
+        :updated_date => updated_datetime,
       }
     end
 
