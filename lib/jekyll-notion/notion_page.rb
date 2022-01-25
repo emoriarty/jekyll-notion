@@ -48,7 +48,7 @@ module JekyllNotion
     end
 
     def custom_props
-      @custom_props ||= page.properties.inject({}) do |memo, prop|
+      @custom_props ||= page.properties.each_with_object({}) do |prop, memo|
         name = prop.first
         value = prop.last # Notion::Messages::Message
         type = value.type
@@ -56,8 +56,7 @@ module JekyllNotion
         next memo unless CustomProperty.respond_to?(type.to_sym)
 
         memo[name.parameterize.underscore] = CustomProperty.send(type, value)
-        memo
-      end.compact
+      end.reject { |_k, v| v.presence.nil? }
     end
 
     def default_props
@@ -73,7 +72,7 @@ module JekyllNotion
     class CustomProperty
       class << self
         def multi_select(prop)
-          prop.multi_select.map(&:name).join(', ')
+          prop.multi_select.map(&:name).join(", ")
         end
 
         def select(prop)
@@ -81,11 +80,34 @@ module JekyllNotion
         end
 
         def people(prop)
-          prop.people.map(&:name).join(', ')
+          prop.people.map(&:name).join(", ")
         end
 
         def files(prop)
-          prop.files.map(&:file).join(', ')
+          prop.files.map { |f| f.file.url }.join(", ")
+        end
+
+        def phone_number(prop)
+          prop.phone_number
+        end
+
+        def number(prop)
+          prop.number
+        end
+
+        def email(prop)
+          prop.email
+        end
+
+        def checkbox(prop)
+          prop.checkbox.to_s
+        end
+
+        # date type properties not supported:
+        # - end
+        # - time_zone
+        def date(prop)
+          prop.date.start
         end
       end
     end

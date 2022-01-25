@@ -223,23 +223,10 @@ describe(JekyllNotion) do
   end
 
   context "when custom properties are present in config" do
-    let(:properties) do
-      [
-        "Multi Select",
-        "Select",
-        "Person",
-        "File",
-        "Numbers",
-        "Phone",
-        "Date",
-        "Email",
-        "Checkbox",
-      ]
-    end
-
     it "adds a multi_select type to page data" do
       site.posts.each_with_index do |post, index|
-        multi_select = notion_client_query[index].properties.dig("Multi Select", "multi_select").map(&:name).join(', ')
+        multi_select = notion_client_query[index].properties.dig("Multi Select",
+                                                                 "multi_select").map(&:name).join(", ")
         expect(post.data).to include("multi_select" => multi_select.presence)
       end
     end
@@ -253,15 +240,91 @@ describe(JekyllNotion) do
 
     it "adds a people type to page data" do
       site.posts.each_with_index do |post, index|
-        person = notion_client_query[index].properties.dig("Person", "people").map(&:name).join(', ')
-        expect(post.data).to include("person" => person.presence)
+        person = notion_client_query[index].properties.dig("Person",
+                                                           "people").map(&:name).join(", ")
+        if person.presence.nil?
+          expect(post.data).not_to include("person")
+        else
+          expect(post.data).to include("person" => person.presence)
+        end
       end
     end
 
     it "adds a files type to page data" do
       site.posts.each_with_index do |post, index|
-        file = notion_client_query[index].properties.dig("File", "files").map(&:file).join(', ')
-        expect(post.data).to include("file" => file.presence)
+        file = notion_client_query[index].properties.dig("File", "files").map { |f| f.file.url }.join(", ")
+        if file.presence.nil?
+          expect(post.data).not_to include("file")
+        else
+          expect(post.data).to include("file" => file.presence)
+        end
+      end
+    end
+
+    it "adds a number type to page data" do
+      site.posts.each_with_index do |post, index|
+        number = notion_client_query[index].properties.dig("Numbers", "number")
+        if number.presence.nil?
+          expect(post.data).not_to include("numbers")
+        else
+          expect(post.data).to include("numbers" => number)
+        end
+      end
+    end
+
+    it "adds a phone_number type to page data" do
+      site.posts.each_with_index do |post, index|
+        phone_number = notion_client_query[index].properties.dig("Phone", "phone_number")
+        if phone_number.nil?
+          expect(post.data).not_to include("phone")
+        else
+          expect(post.data).to include("phone" => phone_number)
+        end
+      end
+    end
+
+    it "adds an email type to page data" do
+      site.posts.each_with_index do |post, index|
+        email = notion_client_query[index].properties.dig("Email", "email")
+        if email.nil?
+          expect(post.data).not_to include("email")
+        else
+          expect(post.data).to include("email" => email)
+        end
+      end
+    end
+
+    it "adds a checkbox type to page data" do
+      site.posts.each_with_index do |post, index|
+        checkbox = notion_client_query[index].properties.dig("Checkbox", "checkbox")
+        expect(post.data).to include("checkbox" => checkbox)
+      end
+    end
+
+    it "adds a date type to page data" do
+      site.posts.each_with_index do |post, index|
+        date = notion_client_query[index].properties.dig("New Date", "date", "start")
+        if date.presence.nil?
+          expect(post.data).not_to include("new_date")
+        else
+          expect(post.data).to include("new_date" => Date.parse(date))
+        end
+      end
+    end
+  end
+
+  context "when a custom and default property have the same name (date)" do
+    it "cannot overwrite the default property" do
+      site.posts.each_with_index do |post, index|
+        date = notion_client_query[index].properties.dig("Date", "date", "start")
+        expect(post.data['date']).not_to eq(date)
+      end
+    end
+
+    it "default property keeps intact" do
+      site.posts.each_with_index do |post, index|
+        created_time = notion_client_query[index].created_time
+        expect(post.data['date']).to eq(Jekyll::Utils.parse_date created_time)
       end
     end
   end

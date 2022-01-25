@@ -30,18 +30,6 @@
       id: TFSp
       type: people
       people: !ruby/array:Hashie::Array []
-    Tags: !ruby/hash:Notion::Messages::Message
-      id: UT?x
-      type: multi_select
-      multi_select: !ruby/array:Hashie::Array
-      - !ruby/hash:Notion::Messages::Message
-        id: be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8
-        name: tag1
-        color: green
-      - !ruby/hash:Notion::Messages::Message
-        id: 83961a4e-e3a8-442d-8b47-6a2e43bacd85
-        name: tag2
-        color: gray
     File: !ruby/hash:Notion::Messages::Message
       id: x`rF
       type: files
@@ -49,7 +37,7 @@
     Checkbox: !ruby/hash:Notion::Messages::Message
       id: "|MPu"
       type: checkbox
-      checkbox: false
+      checkbox: true
     Name: !ruby/hash:Notion::Messages::Message
       id: title
       type: title
@@ -100,14 +88,6 @@
       id: TFSp
       type: people
       people: !ruby/array:Hashie::Array []
-    Tags: !ruby/hash:Notion::Messages::Message
-      id: UT?x
-      type: multi_select
-      multi_select: !ruby/array:Hashie::Array
-      - !ruby/hash:Notion::Messages::Message
-        id: 3b7a831b-ad2b-4a5b-8e90-6c6de8d0b8e3
-        name: tag3
-        color: red
     File: !ruby/hash:Notion::Messages::Message
       id: x`rF
       type: files
@@ -191,14 +171,13 @@
         start: '2022-01-28'
         end:
         time_zone:
-    Tags: !ruby/hash:Notion::Messages::Message
-      id: UT?x
-      type: multi_select
-      multi_select: !ruby/array:Hashie::Array
-      - !ruby/hash:Notion::Messages::Message
-        id: be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8
-        name: tag1
-        color: green
+    New Date: !ruby/hash:Notion::Messages::Message
+      id: T~YB
+      type: date
+      date: !ruby/hash:Notion::Messages::Message
+        start: '2022-01-28'
+        end:
+        time_zone:
     Numbers: !ruby/hash:Notion::Messages::Message
       id: a~dg
       type: number
@@ -206,7 +185,7 @@
     Phone: !ruby/hash:Notion::Messages::Message
       id: k]Ei
       type: phone_number
-      phone_number: '983788379'
+      phone_number: '0033998378837'
     File: !ruby/hash:Notion::Messages::Message
       id: x`rF
       type: files

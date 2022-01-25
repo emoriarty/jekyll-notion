@@ -93,7 +93,6 @@ multiple_options: option1, option2
 
 The supported properties are:
 
-* `title`
 * `number`
 * `select`
 * `multi_select`
@@ -104,12 +103,10 @@ The supported properties are:
 * `url`
 * `email`
 * `phone_number`
-* `created_time`
-* `created_by`
-* `last_edited_time`
-* `last_edited_by`
 
-`rich_text as advanced types like `formula`, `relation` and `rollup` are not supported.
+`created_time`, `last_edited_time`, `created_by`, `last_edited_by`, `title`, `rich_text` as advanced types like `formula`, `relation` and `rollup` are not supported.
+
+Check notion documentation about [property values](https://developers.notion.com/reference/property-value-object#all-property-values).
 
 ## Page filename
 
