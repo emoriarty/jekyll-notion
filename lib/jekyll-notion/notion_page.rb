@@ -48,7 +48,7 @@ module JekyllNotion
     end
 
     def custom_props
-      @props ||= page.properties.inject({}) do |memo, prop|
+      @custom_props ||= page.properties.inject({}) do |memo, prop|
         name = prop.first
         value = prop.last # Notion::Messages::Message
         type = value.type
@@ -58,6 +58,16 @@ module JekyllNotion
         memo[name.parameterize.underscore] = CustomProperty.send(type, value)
         memo
       end.compact
+    end
+
+    def default_props
+      @default_props ||= {
+        :id    => id,
+        :title => title,
+        :date  => created_datetime,
+        :cover => cover,
+        :icon  => icon,
+      }
     end
 
     class CustomProperty
