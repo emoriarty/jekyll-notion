@@ -252,7 +252,9 @@ describe(JekyllNotion) do
 
     it "adds a files type to page data" do
       site.posts.each_with_index do |post, index|
-        file = notion_client_query[index].properties.dig("File", "files").map { |f| f.file.url }.join(", ")
+        file = notion_client_query[index].properties.dig("File", "files").map do |f|
+          f.file.url
+        end.join(", ")
         if file.presence.nil?
           expect(post.data).not_to include("file")
         else
@@ -317,14 +319,14 @@ describe(JekyllNotion) do
     it "cannot overwrite the default property" do
       site.posts.each_with_index do |post, index|
         date = notion_client_query[index].properties.dig("Date", "date", "start")
-        expect(post.data['date']).not_to eq(date)
+        expect(post.data["date"]).not_to eq(date)
       end
     end
 
     it "default property keeps intact" do
       site.posts.each_with_index do |post, index|
         created_time = notion_client_query[index].created_time
-        expect(post.data['date']).to eq(Jekyll::Utils.parse_date created_time)
+        expect(post.data["date"]).to eq(Jekyll::Utils.parse_date(created_time))
       end
     end
   end
