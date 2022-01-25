@@ -36,23 +36,17 @@ module JekyllNotion
     end
 
     def make_frontmatter
-      data = Jekyll::Utils.deep_merge_hashes(config_frontmatter, notion_frontmatter)
-      page_frontmatter = data.to_a.map { |k, v| "#{k}: #{v}" }.join("\n")
+      data = Jekyll::Utils.deep_merge_hashes(config_frontmatter, page_frontmatter)
+      frontmatter = data.to_a.map { |k, v| "#{k}: #{v}" }.join("\n")
       <<~CONTENT
         ---
-        #{page_frontmatter}
+        #{frontmatter}
         ---
       CONTENT
     end
 
-    def notion_frontmatter
-      {
-        :id    => current_page.id,
-        :title => current_page.title,
-        :date  => current_page.created_datetime,
-        :cover => current_page.cover,
-        :icon  => current_page.icon,
-      }
+    def page_frontmatter
+      Jekyll::Utils.deep_merge_hashes(current_page.custom_props, current_page.default_props)
     end
 
     def config_frontmatter
