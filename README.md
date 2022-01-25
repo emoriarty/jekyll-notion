@@ -50,7 +50,6 @@ The other properties are:
 * `filter`: the database query filter,
 * `sort`: the database query sort,
 * `frontmatter`: additional frontmatter to append to each page in the collection.
-* `properties`: additional properties from notion to set in frontmatter.
 
 Note: Only one database is available.
 
@@ -76,7 +75,7 @@ Any property provided in the frontmatter config that matches a default property 
 
 In addition to default properties, custom properties are also supported.
 
-Custom properties are appended to page frontmatter by default. Every property name is snake cased.
+Custom properties are appended to page frontmatter by default. Every property name is snake-cased.
 For example, two properties named `Multiple Options` and `Tags` will be transformed to `multiple_options` and `tags`, respectively.
 
 ```
