@@ -222,6 +222,13 @@ describe(JekyllNotion) do
     end
   end
 
+  it "adds updated_date to page data" do
+    site.posts.each_with_index do |post, index|
+      last_edited_time = notion_client_query[index].last_edited_time
+      expect(post.data).to include("updated_date" => Time.parse(last_edited_time))
+    end
+  end
+
   context "when custom properties are present in config" do
     it "adds a multi_select type to page data" do
       site.posts.each_with_index do |post, index|

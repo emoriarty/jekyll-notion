@@ -66,6 +66,7 @@ module JekyllNotion
         :date  => created_datetime,
         :cover => cover,
         :icon  => icon,
+        :updated_date => updated_datetime
       }
     end
 
