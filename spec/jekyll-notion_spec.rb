@@ -233,8 +233,8 @@ describe(JekyllNotion) do
     it "adds a multi_select type to page data" do
       site.posts.each_with_index do |post, index|
         multi_select = notion_client_query[index].properties.dig("Multi Select",
-                                                                 "multi_select").map(&:name).join(", ")
-        expect(post.data).to include("multi_select" => multi_select.presence)
+                                                                 "multi_select").map(&:name)
+        expect(post.data).to include("multi_select" => multi_select)
       end
     end
 
@@ -248,12 +248,8 @@ describe(JekyllNotion) do
     it "adds a people type to page data" do
       site.posts.each_with_index do |post, index|
         person = notion_client_query[index].properties.dig("Person",
-                                                           "people").map(&:name).join(", ")
-        if person.presence.nil?
-          expect(post.data).not_to include("person")
-        else
-          expect(post.data).to include("person" => person.presence)
-        end
+                                                           "people").map(&:name)
+        expect(post.data).to include("person" => person)
       end
     end
 
@@ -261,12 +257,8 @@ describe(JekyllNotion) do
       site.posts.each_with_index do |post, index|
         file = notion_client_query[index].properties.dig("File", "files").map do |f|
           f.file.url
-        end.join(", ")
-        if file.presence.nil?
-          expect(post.data).not_to include("file")
-        else
-          expect(post.data).to include("file" => file.presence)
         end
+        expect(post.data).to include("file" => file)
       end
     end
 

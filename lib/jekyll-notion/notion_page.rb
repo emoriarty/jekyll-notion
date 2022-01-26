@@ -73,7 +73,8 @@ module JekyllNotion
     class CustomProperty
       class << self
         def multi_select(prop)
-          prop.multi_select.map(&:name).join(", ")
+          multi_select = prop.multi_select.map(&:name).join(", ")
+          "[#{multi_select}]"
         end
 
         def select(prop)
@@ -81,11 +82,13 @@ module JekyllNotion
         end
 
         def people(prop)
-          prop.people.map(&:name).join(", ")
+          people = prop.people.map(&:name).join(", ")
+          "[#{people}]"
         end
 
         def files(prop)
-          prop.files.map { |f| f.file.url }.join(", ")
+          files = prop.files.map { |f| f.file.url }.join(", ")
+          "[#{files}]"
         end
 
         def phone_number(prop)

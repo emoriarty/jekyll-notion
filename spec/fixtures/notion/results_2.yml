@@ -14,11 +14,7 @@
     Multi Select: !ruby/hash:Notion::Messages::Message
       id: "<{n{"
       type: multi_select
-      multi_select: !ruby/array:Hashie::Array
-      - !ruby/hash:Notion::Messages::Message
-        id: 1be80fca-a275-4384-8268-6bb2f6a21616
-        name: mselect2
-        color: pink
+      multi_select: !ruby/array:Hashie::Array []
     Select: !ruby/hash:Notion::Messages::Message
       id: ">zjF"
       type: select
@@ -159,11 +155,19 @@
       - !ruby/hash:Notion::Messages::Message
         object: user
         id: a4e89628-577b-404f-b62b-36abe7f65fc7
-        name: Julie Guiraud
+        name: Michael Corleone
         avatar_url: https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg
         type: person
         person: !ruby/hash:Notion::Messages::Message
-          email: gjulia20@gmail.com
+          email: blabla1@test.com
+      - !ruby/hash:Notion::Messages::Message
+        object: user
+        id: a4e89628-577b-404f-b62b-36abe7f65fc7
+        name: Al Capone
+        avatar_url: https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg
+        type: person
+        person: !ruby/hash:Notion::Messages::Message
+          email: blabla2@test.com
     Date: !ruby/hash:Notion::Messages::Message
       id: T~YB
       type: date
@@ -192,6 +196,12 @@
       files: !ruby/array:Hashie::Array
       - !ruby/hash:Notion::Messages::Message
         name: me.jpeg
+        type: file
+        file: !ruby/hash:Notion::Messages::Message
+          url: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220123T224905Z&X-Amz-Expires=3600&X-Amz-Signature=32652d2f500c88b6207477dad708c8e2243100378fade27e6e1128d241905896&X-Amz-SignedHeaders=host&x-id=GetObject
+          expiry_time: '2022-01-23T23:49:05.212Z'
+      - !ruby/hash:Notion::Messages::Message
+        name: me1.jpeg
         type: file
         file: !ruby/hash:Notion::Messages::Message
           url: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220123%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220123T224905Z&X-Amz-Expires=3600&X-Amz-Signature=32652d2f500c88b6207477dad708c8e2243100378fade27e6e1128d241905896&X-Amz-SignedHeaders=host&x-id=GetObject
