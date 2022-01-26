@@ -248,11 +248,12 @@ describe(JekyllNotion) do
     it "adds a people type to page data" do
       site.posts.each_with_index do |post, index|
         person = notion_client_query[index].properties.dig("Person",
-                                                           "people").map(&:name).join(", ")
+                                                           "people").map(&:name)
         if person.presence.nil?
           expect(post.data).not_to include("person")
         else
-          expect(post.data).to include("person" => person.presence)
+          p post.data
+          expect(post.data).to include("person" => person)
         end
       end
     end

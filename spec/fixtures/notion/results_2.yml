@@ -159,11 +159,19 @@
       - !ruby/hash:Notion::Messages::Message
         object: user
         id: a4e89628-577b-404f-b62b-36abe7f65fc7
-        name: Julie Guiraud
+        name: Michael Corleone
         avatar_url: https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg
         type: person
         person: !ruby/hash:Notion::Messages::Message
-          email: gjulia20@gmail.com
+          email: blabla1@test.com
+      - !ruby/hash:Notion::Messages::Message
+        object: user
+        id: a4e89628-577b-404f-b62b-36abe7f65fc7
+        name: Al Capone
+        avatar_url: https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg
+        type: person
+        person: !ruby/hash:Notion::Messages::Message
+          email: blabla2@test.com
     Date: !ruby/hash:Notion::Messages::Message
       id: T~YB
       type: date
