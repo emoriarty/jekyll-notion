@@ -83,7 +83,7 @@ module JekyllNotion
 
         def people(prop)
           people = prop.people.map(&:name).join(", ")
-          people.present? ? "[#{people}]" : nil
+          "[#{people}]"
         end
 
         def files(prop)
