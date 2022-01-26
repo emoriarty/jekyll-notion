@@ -87,8 +87,8 @@ module JekyllNotion
         end
 
         def files(prop)
-          files = prop.files.map { |f| f.file.url }
-          "[#{files.join(", ")}]"
+          files = prop.files.map { |f| f.file.url }.join(", ")
+          "[#{files}]"
         end
 
         def phone_number(prop)

@@ -258,7 +258,7 @@ describe(JekyllNotion) do
         file = notion_client_query[index].properties.dig("File", "files").map do |f|
           f.file.url
         end
-        expect(post.data).to include("file" => file.is_a?(String) ? [] : file)
+        expect(post.data).to include("file" => file)
       end
     end
 
