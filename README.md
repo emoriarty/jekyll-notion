@@ -59,6 +59,8 @@ And that's all. Each page in the notion database will be included in the selecte
 
 Below, page notion default properties are set in each page frontmatter.
 
+Default properties include  `title`, created_time`, `last_edited_time`, `icon` and `cover.
+
 ```
 ---
 id: b2998...
@@ -103,7 +105,7 @@ The supported properties are:
 * `email`
 * `phone_number`
 
-`created_time`, `last_edited_time`, `created_by`, `last_edited_by`, `title`, `rich_text` as advanced types like `formula`, `relation` and `rollup` are not supported.
+`created_by`, `last_edited_by`, `rich_text` as advanced types like `formula`, `relation` and `rollup` are not supported.
 
 Check notion documentation about [property values](https://developers.notion.com/reference/property-value-object#all-property-values).
 
