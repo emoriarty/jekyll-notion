@@ -257,12 +257,8 @@ describe(JekyllNotion) do
       site.posts.each_with_index do |post, index|
         file = notion_client_query[index].properties.dig("File", "files").map do |f|
           f.file.url
-        end.join(", ")
-        if file.presence.nil?
-          expect(post.data).not_to include("file")
-        else
-          expect(post.data).to include("file" => file.presence)
         end
+        expect(post.data).to include("file" => file.is_a?(String) ? [] : file)
       end
     end
 
