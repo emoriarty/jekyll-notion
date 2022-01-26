@@ -14,11 +14,7 @@
     Multi Select: !ruby/hash:Notion::Messages::Message
       id: "<{n{"
       type: multi_select
-      multi_select: !ruby/array:Hashie::Array
-      - !ruby/hash:Notion::Messages::Message
-        id: 1be80fca-a275-4384-8268-6bb2f6a21616
-        name: mselect2
-        color: pink
+      multi_select: !ruby/array:Hashie::Array []
     Select: !ruby/hash:Notion::Messages::Message
       id: ">zjF"
       type: select

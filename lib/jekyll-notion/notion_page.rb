@@ -73,7 +73,8 @@ module JekyllNotion
     class CustomProperty
       class << self
         def multi_select(prop)
-          prop.multi_select.map(&:name).join(", ")
+          multi_select = prop.multi_select.map(&:name).join(", ")
+          "[#{multi_select}]"
         end
 
         def select(prop)
