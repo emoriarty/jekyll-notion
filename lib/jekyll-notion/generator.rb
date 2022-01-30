@@ -55,7 +55,7 @@ module JekyllNotion
 
     def make_filename
       if collection_name == "posts"
-        "#{current_page.created_date}-#{current_page.title.downcase.parameterize}.md"
+        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title, mode: 'latin')}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
       end
