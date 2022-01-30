@@ -66,7 +66,7 @@ module JekyllNotion
     end
 
     def collection
-      @collection ||= @site.collections[collection_name]
+      @site.collections[collection_name]
     end
 
     def config
