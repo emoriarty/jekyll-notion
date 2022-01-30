@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-notion (0.1.2)
+    jekyll-notion (0.1.3)
       activesupport (~> 6)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 0)
@@ -55,7 +55,7 @@ GEM
     forwardable-extended (2.6.0)
     hashie (5.0.0)
     http_parser.rb (0.8.0)
-    i18n (1.8.11)
+    i18n (1.9.1)
       concurrent-ruby (~> 1.0)
     jekyll (4.2.1)
       addressable (~> 2.4)
@@ -146,7 +146,7 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
-    zeitwerk (2.5.3)
+    zeitwerk (2.5.4)
 
 PLATFORMS
   x86_64-darwin-19
