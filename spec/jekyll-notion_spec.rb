@@ -329,4 +329,14 @@ describe(JekyllNotion) do
       end
     end
   end
+
+  context "when site is processed a second time" do
+    before(:each) do
+      site.process
+    end
+
+    it "the posts collection is not empty" do
+      expect(site.posts).not_to be_empty
+    end
+  end
 end
