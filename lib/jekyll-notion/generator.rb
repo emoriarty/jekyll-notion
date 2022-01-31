@@ -9,7 +9,7 @@ module JekyllNotion
 
       return unless notion_token? && config?
 
-      if docs.empty?
+      if fetch_on_watch? || docs.empty?
         read_notion_database 
       else
         collection.docs = docs
@@ -80,6 +80,10 @@ module JekyllNotion
 
     def config
       @config ||= @site.config["notion"] || {}
+    end
+
+    def fetch_on_watch?
+      config["fetch_on_watch"].present?
     end
 
     def notion_token?

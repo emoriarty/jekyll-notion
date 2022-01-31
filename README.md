@@ -36,6 +36,7 @@ Once your notion database has been shared, specify the `id` in your `_config.yml
 
 ```yml
 notion:
+  fetch_on_watch: false
   database:
     id: b91d5...
     collection: posts
@@ -45,7 +46,10 @@ notion:
       layout: post
 ```
 
-The other properties are:
+`fetch_on_watch` enables fetching notion pages in watch mode. By default is off, so only retrieves pages in the first build.
+
+`database` properties are:
+* `id`: the notion database unique identifier,
 * `collection`: the collection each page belongs to (posts by default),
 * `filter`: the database query filter,
 * `sort`: the database query sort,
