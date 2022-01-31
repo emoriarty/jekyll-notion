@@ -9,7 +9,11 @@ module JekyllNotion
 
       return unless notion_token? && config?
 
-      read_notion_database
+      if docs.empty?
+        read_notion_database 
+      else
+        collection.docs = docs
+      end
     end
 
     def read_notion_database
@@ -19,6 +23,11 @@ module JekyllNotion
         collection.docs << make_page
         Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
       end
+      @docs = collection.docs
+    end
+
+    def docs
+      @docs ||= []
     end
 
     def make_page

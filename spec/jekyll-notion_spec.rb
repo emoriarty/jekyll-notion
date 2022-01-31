@@ -338,5 +338,13 @@ describe(JekyllNotion) do
     it "the posts collection is not empty" do
       expect(site.posts).not_to be_empty
     end
+
+    it "the posts collection is the same length" do
+      expect(site.posts.size).to be(notion_client_query.size)
+    end
+
+    it "does not query notion database" do
+      expect(notion_client).to have_received(:database_query).once
+    end
   end
 end
