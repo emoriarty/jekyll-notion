@@ -36,6 +36,7 @@ Once your notion database has been shared, specify the `id` in your `_config.yml
 
 ```yml
 notion:
+  fetch_on_watch: false
   database:
     id: b91d5...
     collection: posts
@@ -45,13 +46,16 @@ notion:
       layout: post
 ```
 
-The other properties are:
+`fetch_on_watch` when set to `true` it allows fetching notion pages on each rebuild. By default is off, pages are only retrieved in the first build.
+
+`database` properties are:
+* `id`: the notion database unique identifier,
 * `collection`: the collection each page belongs to (posts by default),
 * `filter`: the database query filter,
 * `sort`: the database query sort,
 * `frontmatter`: additional frontmatter to append to each page in the collection.
 
-Note: Only one database is available.
+Note: Only one notion database is available.
 
 And that's all. Each page in the notion database will be included in the selected collection.
 

@@ -9,7 +9,11 @@ module JekyllNotion
 
       return unless notion_token? && config?
 
-      read_notion_database
+      if fetch_on_watch? || docs.empty?
+        read_notion_database
+      else
+        collection.docs = docs
+      end
     end
 
     def read_notion_database
@@ -19,6 +23,11 @@ module JekyllNotion
         collection.docs << make_page
         Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
       end
+      @docs = collection.docs
+    end
+
+    def docs
+      @docs ||= []
     end
 
     def make_page
@@ -55,7 +64,8 @@ module JekyllNotion
 
     def make_filename
       if collection_name == "posts"
-        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title, mode: 'latin')}.md"
+        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title,
+                                                              :mode => "latin")}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
       end
@@ -71,6 +81,10 @@ module JekyllNotion
 
     def config
       @config ||= @site.config["notion"] || {}
+    end
+
+    def fetch_on_watch?
+      config["fetch_on_watch"].present?
     end
 
     def notion_token?
