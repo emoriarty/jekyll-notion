@@ -10,7 +10,7 @@ module JekyllNotion
       return unless notion_token? && config?
 
       if fetch_on_watch? || docs.empty?
-        read_notion_database 
+        read_notion_database
       else
         collection.docs = docs
       end
@@ -64,7 +64,8 @@ module JekyllNotion
 
     def make_filename
       if collection_name == "posts"
-        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title, mode: 'latin')}.md"
+        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title,
+                                                              :mode => "latin")}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
       end

@@ -46,7 +46,7 @@ notion:
       layout: post
 ```
 
-`fetch_on_watch` enables fetching notion pages in watch mode. By default is off, so only retrieves pages in the first build.
+`fetch_on_watch` when set to `true` it allows fetching notion pages on each rebuild. By default is off, pages are only retrieved in the first build.
 
 `database` properties are:
 * `id`: the notion database unique identifier,
@@ -55,7 +55,7 @@ notion:
 * `sort`: the database query sort,
 * `frontmatter`: additional frontmatter to append to each page in the collection.
 
-Note: Only one database is available.
+Note: Only one notion database is available.
 
 And that's all. Each page in the notion database will be included in the selected collection.
 

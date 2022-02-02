@@ -28,9 +28,11 @@ describe(JekyllNotion) do
   let(:sort) { nil }
   let(:frontmatter) { nil }
   let(:properties) { nil }
+  let(:fetch_on_watch) { nil }
   let(:notion_config) do
     {
-      "database" => {
+      "fetch_on_watch" => fetch_on_watch,
+      "database"       => {
         "id"          => "b0e688e199af4295ae80b67eb52f2e2f",
         "collection"  => collection,
         "filter"      => filter,
@@ -345,6 +347,18 @@ describe(JekyllNotion) do
 
     it "does not query notion database" do
       expect(notion_client).to have_received(:database_query).once
+    end
+  end
+
+  context "when fetch_on_watch is true" do
+    let(:fetch_on_watch) { true }
+
+    before(:each) do
+      site.process
+    end
+
+    it "queries notion database as many times as the site rebuild" do
+      expect(notion_client).to have_received(:database_query).twice
     end
   end
 end
