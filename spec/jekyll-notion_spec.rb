@@ -141,12 +141,30 @@ describe(JekyllNotion) do
         .with(hash_including(:filter => filter))
     end
   end
+  
+  context "when filter is not provided" do
+    let(:filter) { nil }
+
+    it do
+      expect(notion_client).not_to have_received(:database_query)
+        .with(hash_including(:filter => filter))
+    end
+  end
 
   context "when sort is provided" do
     let(:sort) { { :propery => "Last ordered", :direction => "ascending" } }
 
     it {
       expect(notion_client).to have_received(:database_query)
+        .with(hash_including(:sort => sort))
+    }
+  end
+
+  context "when sort is not provided" do
+    let(:sort) { nil }
+
+    it {
+      expect(notion_client).not_to have_received(:database_query)
         .with(hash_including(:sort => sort))
     }
   end

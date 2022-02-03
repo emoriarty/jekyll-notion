@@ -43,7 +43,7 @@ module JekyllNotion
     end
 
     def query
-      { :id => id, :filter => filter, :sort => sort }
+      { :id => id, :filter => filter, :sort => sort }.compact
     end
   end
 end
