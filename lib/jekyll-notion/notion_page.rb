@@ -113,6 +113,10 @@ module JekyllNotion
         def date(prop)
           prop.date.start
         end
+
+        def url(prop)
+          prop.url
+        end
       end
     end
   end

@@ -332,6 +332,18 @@ describe(JekyllNotion) do
         end
       end
     end
+
+    it "adds a url type to page data" do
+      site.posts.each_with_index do |post, index|
+        url = notion_client_query[index].properties.dig("Url", "url")
+        if url.nil?
+          expect(post.data).not_to include("url")
+        else
+          expect(post.data).to include("url" => url)
+        end
+      end
+    end
+
   end
 
   context "when a custom and default property have the same name (date)" do
