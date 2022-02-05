@@ -77,7 +77,6 @@ module JekyllNotion
     end
 
     def current_collection
-      puts current_db.collection
       @site.collections[current_db.collection]
     end
 
