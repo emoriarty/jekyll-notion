@@ -16,8 +16,9 @@ describe(JekyllNotion) do
         "name" => "Dr. Moriarty",
       },
       "collections"  => {
-        "posts" => { "output" => true },
-        "films" => { "output" => false },
+        "posts"   => { "output" => true },
+        "films"   => { "output" => false },
+        "recipes" => { "output" => false },
       },
       "notion"       => notion_config,
     }, overrides))
@@ -44,7 +45,7 @@ describe(JekyllNotion) do
   end
   let(:site) { Jekyll::Site.new(config) }
   let(:notion_client) do
-    double("Notion::Client", :database_query => { :results => notion_client_query })
+    double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
   end
 
   before do
@@ -141,7 +142,7 @@ describe(JekyllNotion) do
         .with(hash_including(:filter => filter))
     end
   end
-  
+
   context "when filter is not provided" do
     let(:filter) { nil }
 
@@ -389,6 +390,46 @@ describe(JekyllNotion) do
 
     it "queries notion database as many times as the site rebuild" do
       expect(notion_client).to have_received(:database_query).twice
+    end
+  end
+
+  context "when multiple databases", :focus do
+    let(:posts_id) { "b0e688e199af4295ae80b67eb52f2e2f" }
+    let(:recipes_id) { "f0e688e199af4295ae80b67eb52f2e2r" }
+    let(:posts_results) { NOTION_RESULTS_2 }
+    let(:recipes_results) { NOTION_RESULTS }
+    let(:notion_config) do
+      {
+        "databases" => [
+          {
+            "id" => posts_id,
+          },
+          {
+            "id"         => recipes_id,
+            "collection" => "recipes",
+          },
+        ],
+      }
+    end
+
+    context "with posts database" do
+      let(:notion_client) do
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
+      end
+
+      it "stores default database in posts collection" do
+        expect(site.posts).not_to be_empty
+      end
+    end
+
+    context "with recipes database" do
+      let(:notion_client) do
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
+      end
+
+      it "stores recipes database in recipes collection" do
+        expect(site.collections["recipes"]).not_to be_empty
+      end
     end
   end
 end

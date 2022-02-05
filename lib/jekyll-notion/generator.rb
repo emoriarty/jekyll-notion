@@ -2,7 +2,7 @@
 
 module JekyllNotion
   class Generator < Jekyll::Generator
-    attr_reader :current_page
+    attr_reader :current_page, :current_db
 
     def generate(site)
       @site = site
@@ -16,14 +16,23 @@ module JekyllNotion
       end
     end
 
+    protected
+
     def read_notion_database
-      @db = NotionDatabase.new(:config => config)
-      @db.pages.each do |page|
-        @current_page = page
-        collection.docs << make_page
-        Jekyll.logger.info("Jekyll Notion:", "New notion page at #{collection.docs.last.path}")
+      databases.each do |db_config|
+        @current_db = NotionDatabase.new(:config => db_config)
+        @current_db.pages.each do |page|
+          @current_page = page
+          current_collection.docs << make_page
+          Jekyll.logger.info("Jekyll Notion:",
+                             "New notion page at #{current_collection.docs.last.path}")
+        end
+        @docs = current_collection.docs
       end
-      @docs = collection.docs
+    end
+
+    def databases
+      config["databases"] || [config["database"]]
     end
 
     def docs
@@ -32,8 +41,8 @@ module JekyllNotion
 
     def make_page
       new_post = DocumentWithoutAFile.new(
-        "#{Dir.pwd}/_#{collection_name}/#{make_filename}",
-        { :site => @site, :collection => collection }
+        "#{Dir.pwd}/_#{current_db.collection}/#{make_filename}",
+        { :site => @site, :collection => current_collection }
       )
       new_post.content = "#{make_frontmatter}\n\n#{make_md}"
       new_post.read
@@ -45,7 +54,7 @@ module JekyllNotion
     end
 
     def make_frontmatter
-      data = Jekyll::Utils.deep_merge_hashes(config_frontmatter, page_frontmatter)
+      data = Jekyll::Utils.deep_merge_hashes(current_db.frontmatter, page_frontmatter)
       frontmatter = data.to_a.map { |k, v| "#{k}: #{v}" }.join("\n")
       <<~CONTENT
         ---
@@ -58,12 +67,8 @@ module JekyllNotion
       Jekyll::Utils.deep_merge_hashes(current_page.custom_props, current_page.default_props)
     end
 
-    def config_frontmatter
-      config.dig("database", "frontmatter") || {}
-    end
-
     def make_filename
-      if collection_name == "posts"
+      if current_db.collection == "posts"
         "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title,
                                                               :mode => "latin")}.md"
       else
@@ -71,12 +76,9 @@ module JekyllNotion
       end
     end
 
-    def collection_name
-      config.dig("database", "collection") || "posts"
-    end
-
-    def collection
-      @site.collections[collection_name]
+    def current_collection
+      puts current_db.collection
+      @site.collections[current_db.collection]
     end
 
     def config
