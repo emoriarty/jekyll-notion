@@ -210,6 +210,10 @@
       id: x{cw
       type: email
       email: hola@test.com
+    Url: !ruby/hash:Notion::Messages::Message
+      id: h!Nw
+      type: url
+      url: https://test.com
     Checkbox: !ruby/hash:Notion::Messages::Message
       id: "|MPu"
       type: checkbox
