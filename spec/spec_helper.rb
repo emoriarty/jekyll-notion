@@ -12,7 +12,8 @@ RSpec.configure do |config|
 
   SOURCE_DIR = File.expand_path("fixtures/my_site", __dir__)
   DEST_DIR   = File.expand_path("dest", __dir__)
-  NOTION_RESULTS = YAML.load_file(File.expand_path("fixtures/notion/results_2.yml", __dir__))
+  NOTION_RESULTS = YAML.load_file(File.expand_path("fixtures/notion/results.yml", __dir__))
+  NOTION_RESULTS_2 = YAML.load_file(File.expand_path("fixtures/notion/results_2.yml", __dir__))
   MD_FILES = Dir[File.expand_path("fixtures/md_files/*.md",
                                   __dir__)].each_with_object({}) do |file, memo|
     value = File.read(file)
@@ -29,7 +30,7 @@ RSpec.configure do |config|
   end
 
   def notion_client_query
-    NOTION_RESULTS
+    NOTION_RESULTS_2
   end
 
   def md_files

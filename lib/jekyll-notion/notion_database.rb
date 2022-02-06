@@ -11,27 +11,39 @@ module JekyllNotion
       return [] unless id?
 
       @pages ||= @notion.database_query(query)[:results].map do |page|
-        NotionPage.new(:page => page, :layout => config["layout"])
+        NotionPage.new(:page => page, :layout => layout)
       end
     end
 
-    private
-
     def config
-      @config["database"]
+      @config || {}
     end
 
     def filter
-      @config.dig("database", "filter")
+      config["filter"]
     end
 
     def sort
-      @config.dig("database", "sort")
+      config["sort"]
     end
 
     def id
-      @config.dig("database", "id")
+      config["id"]
     end
+
+    def frontmatter
+      config["frontmatter"] || {}
+    end
+
+    def collection
+      config["collection"] || "posts"
+    end
+
+    def layout
+      config["layout"]
+    end
+
+    private
 
     def id?
       if id.nil? || id.empty?
