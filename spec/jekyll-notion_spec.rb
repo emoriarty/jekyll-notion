@@ -141,7 +141,7 @@ describe(JekyllNotion) do
         .with(hash_including(:filter => filter))
     end
   end
-  
+
   context "when filter is not provided" do
     let(:filter) { nil }
 
@@ -343,7 +343,6 @@ describe(JekyllNotion) do
         end
       end
     end
-
   end
 
   context "when a custom and default property have the same name (date)" do
