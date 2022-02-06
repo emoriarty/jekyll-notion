@@ -12,7 +12,7 @@ module JekyllNotion
       if fetch_on_watch? || collections.empty?
         read_notion_database
       else
-        collections.each_pair { |key, val| @site.collections[key] = val } 
+        collections.each_pair { |key, val| @site.collections[key] = val }
       end
     end
 
@@ -24,11 +24,7 @@ module JekyllNotion
         @current_db.pages.each do |page|
           @current_page = page
           current_collection.docs << make_page
-          Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
-          Jekyll.logger.info("", "Path => #{current_collection.docs.last.path}") if @site.config.dig(
-            "collections", current_db.collection, "output"
-          )
-          Jekyll.logger.debug("", "Props => #{page_frontmatter.keys.inspect}")
+          log_new_page
         end
         # Store current collection
         collections[current_db.collection] = current_collection
@@ -106,6 +102,17 @@ module JekyllNotion
         return false
       end
       true
+    end
+
+    def log_new_page
+      Jekyll.logger.info("Jekyll Notion:", "Page => #{current_page.title}")
+      if @site.config.dig(
+        "collections", current_db.collection, "output"
+      )
+        Jekyll.logger.info("",
+                           "Path => #{current_collection.docs.last.path}")
+      end
+      Jekyll.logger.debug("", "Props => #{page_frontmatter.keys.inspect}")
     end
   end
 end
