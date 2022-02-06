@@ -392,7 +392,7 @@ describe(JekyllNotion) do
     end
   end
 
-  context "when multiple databases", :focus do
+  context "when multiple databases" do
     let(:posts_id) { "b0e688e199af4295ae80b67eb52f2e2f" }
     let(:recipes_id) { "f0e688e199af4295ae80b67eb52f2e2r" }
     let(:posts_results) { NOTION_RESULTS_2 }
@@ -416,7 +416,7 @@ describe(JekyllNotion) do
         double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
       end
 
-      it "stores default database in posts collection" do
+      it "posts collection is not empty" do
         expect(site.posts).not_to be_empty
       end
     end
@@ -426,7 +426,7 @@ describe(JekyllNotion) do
         double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
       end
 
-      it "stores recipes database in recipes collection" do
+      it "recipes collection is not empty" do
         expect(site.collections["recipes"]).not_to be_empty
       end
     end

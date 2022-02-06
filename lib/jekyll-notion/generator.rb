@@ -9,10 +9,10 @@ module JekyllNotion
 
       return unless notion_token? && config?
 
-      if fetch_on_watch? || docs.empty?
+      if fetch_on_watch? || collections.empty?
         read_notion_database
       else
-        collection.docs = docs
+        collections.each_pair { |key, val| @site.collections[key] = val } 
       end
     end
 
@@ -30,7 +30,8 @@ module JekyllNotion
           )
           Jekyll.logger.debug("", "Props => #{page_frontmatter.keys.inspect}")
         end
-        @docs = current_collection.docs
+        # Store current collection
+        collections[current_db.collection] = current_collection
       end
     end
 
@@ -38,8 +39,8 @@ module JekyllNotion
       config["databases"] || [config["database"]]
     end
 
-    def docs
-      @docs ||= []
+    def collections
+      @collections ||= {}
     end
 
     def make_page
