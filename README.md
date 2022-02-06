@@ -32,13 +32,44 @@ Export the notion secret token in an environment variable named `NOTION_TOKEN`.
 $ export NOTION_TOKEN=<secret_...>
 ```
 
-Once your notion database has been shared, specify the `id` in your `_config.yml` as follows.
+Once your notion database has been shared, specify the  database `id` in your `_config.yml` as follows.
 
 ```yml
 notion:
-  fetch_on_watch: false
   database:
-    id: b91d5...
+    id: e42383cd-4975-4897-b967-ce453760499f
+```
+
+### Mutiple dabatases
+
+You can also define multiple databases as follows.
+
+```yml
+notion:
+  databases:
+    - id: b0e688e1-99af-4295-ae80-b67eb52f2e2f
+    - id: 2190450d-4cb3-4739-a5c8-340c4110fe21
+      collection: recipes
+    - id: e42383cd-4975-4897-b967-ce453760499f 
+      collection: films
+```
+
+When no collection is defined, the `posts` collection is used by default.
+
+### Database options
+
+Each dabatase support the following options.
+
+* `id`: the notion database unique identifier,
+* `collection`: the collection each page belongs to (posts by default),
+* `filter`: the database query filter,
+* `sort`: the database query sort,
+* `frontmatter`: additional front matter to append to each page in the collection.
+
+```yml
+notion:
+  database:
+    id: e42383cd-4975-4897-b967-ce453760499f
     collection: posts
     filter: { "property": "Published", "checkbox": { "equals": true } }
     sort: { "property": "Last ordered", "direction": "ascending" }
@@ -46,42 +77,46 @@ notion:
       layout: post
 ```
 
-`fetch_on_watch` when set to `true` it allows fetching notion pages on each rebuild. By default is off, pages are only retrieved in the first build.
+Note that you can also use [front matter defaults](https://jekyllrb.com/docs/configuration/front-matter-defaults/) to declare common key value pairs per collection.
 
-`database` properties are:
-* `id`: the notion database unique identifier,
-* `collection`: the collection each page belongs to (posts by default),
-* `filter`: the database query filter,
-* `sort`: the database query sort,
-* `frontmatter`: additional frontmatter to append to each page in the collection.
+### Watch
 
-Note: Only one notion database is available.
+By default, databases are only requested during the first build. Subsequent builds use the results from the cache.
+
+Set `fetch_on_watch` to true to allow request on each rebuild.
+
+```yml
+notion:
+  fetch_on_watch: true
+  database:
+    id: e42383cd-4975-4897-b967-ce453760499f
+```
 
 And that's all. Each page in the notion database will be included in the selected collection.
 
 ## Notion properties
 
-Below, page notion default properties are set in each page frontmatter.
+Below, default properties per notion page are set for each document front matter.
 
-Default properties include  `title`, created_time`, `last_edited_time`, `icon` and `cover.
+Notion properties include page `id`, `title`, `created_time`, `last_edited_time`, `icon` and `cover`.
 
 ```
 ---
-id: b2998...
-title: A title
+id: e42383cd-4975-4897-b967-ce453760499f
+title: An amazing post
 cover: https://img.bank.sh/an_image.jpg
 date: 2022-01-23T12:31:00.000Z
 icon: \U0001F4A5
 ---
 ```
 
-Any property provided in the frontmatter config that matches a default property will be overwritten by the default value.
+Default properties prevail over custom properties declared in the front matter config.
 
 ### Custom properties
 
 In addition to default properties, custom properties are also supported.
 
-Custom properties are appended to page frontmatter by default. Every property name is snake-cased.
+Custom properties are appended to the page frontmatter by default. Every property name are downcased and snake-cased.
 For example, two properties named `Multiple Options` and `Tags` will be transformed to `multiple_options` and `tags`, respectively.
 
 ```
@@ -96,7 +131,7 @@ multiple_options: option1, option2
 ---
 ```
 
-The supported properties are:
+The supported property types are:
 
 * `number`
 * `select`
