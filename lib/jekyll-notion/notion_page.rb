@@ -61,7 +61,7 @@ module JekyllNotion
 
     def default_props
       @default_props ||= {
-        "id"          => id,
+        "id"           => id,
         "title"        => title,
         "date"         => created_datetime,
         "cover"        => cover,
