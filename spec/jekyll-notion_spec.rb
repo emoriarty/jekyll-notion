@@ -344,7 +344,6 @@ describe(JekyllNotion) do
         end
       end
     end
-
   end
 
   context "when a custom and default property have the same name (date)" do

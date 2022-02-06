@@ -24,8 +24,11 @@ module JekyllNotion
         @current_db.pages.each do |page|
           @current_page = page
           current_collection.docs << make_page
-          Jekyll.logger.info("Jekyll Notion:",
-                             "New notion page at #{current_collection.docs.last.path}")
+          Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
+          Jekyll.logger.info("", "Path => #{current_collection.docs.last.path}") if @site.config.dig(
+            "collections", current_db.collection, "output"
+          )
+          Jekyll.logger.debug("", "Props => #{page_frontmatter.keys.inspect}")
         end
         @docs = current_collection.docs
       end
