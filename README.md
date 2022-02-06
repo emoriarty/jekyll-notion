@@ -121,7 +121,7 @@ For example, two properties named `Multiple Options` and `Tags` will be transfor
 
 ```
 ---
-id: b2998...
+id: 2190450d-4cb3-4739-a5c8-340c4110fe21
 title: A title
 cover: https://img.bank.sh/an_image.jpg
 date: 2022-01-23T12:31:00.000Z
