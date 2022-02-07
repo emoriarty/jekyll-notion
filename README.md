@@ -45,6 +45,10 @@ notion:
 You can also define multiple databases as follows.
 
 ```yml
+collections:
+  - recipes
+  - films
+
 notion:
   databases:
     - id: b0e688e1-99af-4295-ae80-b67eb52f2e2f
