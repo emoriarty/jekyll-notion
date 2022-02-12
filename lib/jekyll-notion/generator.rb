@@ -23,6 +23,8 @@ module JekyllNotion
         @current_db = NotionDatabase.new(:config => db_config)
         @current_db.pages.each do |page|
           @current_page = page
+          next if file_exists?(make_path)
+
           current_collection.docs << make_page
           log_new_page
         end
@@ -39,15 +41,34 @@ module JekyllNotion
       @collections ||= {}
     end
 
+     # Checks if a file already exists in the site source
+    def file_exists?(file_path)
+      File.exist? @site.in_source_dir(file_path)
+    end
+
     def make_page
       new_post = DocumentWithoutAFile.new(
-        "#{Dir.pwd}/_#{current_db.collection}/#{make_filename}",
+        make_path,
         { :site => @site, :collection => current_collection }
       )
       new_post.content = "#{make_frontmatter}\n\n#{make_md}"
       new_post.read
       new_post
     end
+
+    def make_path
+      "_#{current_db.collection}/#{make_filename}"
+    end
+
+    def make_filename
+      if current_db.collection == "posts"
+        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title,
+                                                              :mode => "latin")}.md"
+      else
+        "#{current_page.title.downcase.parameterize}.md"
+      end
+    end
+
 
     def make_md
       NotionToMd::Converter.new(:page_id => current_page.id).convert
@@ -65,15 +86,6 @@ module JekyllNotion
 
     def page_frontmatter
       Jekyll::Utils.deep_merge_hashes(current_page.custom_props, current_page.default_props)
-    end
-
-    def make_filename
-      if current_db.collection == "posts"
-        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title,
-                                                              :mode => "latin")}.md"
-      else
-        "#{current_page.title.downcase.parameterize}.md"
-      end
     end
 
     def current_collection

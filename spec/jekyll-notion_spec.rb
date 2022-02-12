@@ -4,6 +4,7 @@ require "spec_helper"
 
 describe(JekyllNotion) do
   let(:overrides) { {} }
+  let(:source_dir) { SOURCE_DIR }
   let(:config) do
     Jekyll.configuration(Jekyll::Utils.deep_merge_hashes({
       "full_rebuild" => true,
@@ -16,7 +17,6 @@ describe(JekyllNotion) do
         "name" => "Dr. Moriarty",
       },
       "collections"  => {
-        "posts"   => { "output" => true },
         "films"   => { "output" => false },
         "recipes" => { "output" => false },
       },
@@ -50,8 +50,6 @@ describe(JekyllNotion) do
 
   before do
     allow(ENV).to receive(:[]).with("NOTION_TOKEN").and_return(notion_token)
-    # allow_any_instance_of(Notion::Client).to receive(:database_query)
-    #   .and_return({ :results => notion_client_query })
     allow(Notion::Client).to receive(:new).and_return(notion_client)
     allow(NotionToMd::Converter).to receive(:new) do |page_id:|
       double("NotionToMd::Converter", :convert => md_files[page_id])
@@ -428,6 +426,28 @@ describe(JekyllNotion) do
 
       it "recipes collection is not empty" do
         expect(site.collections["recipes"]).not_to be_empty
+      end
+    end
+  end
+
+  context "when there is a post present in source dir" do
+    let(:source_dir) { SOURCE_DIR_2 }
+    
+    it "adds one more document to posts collection" do
+      expect(site.posts.size).to be == (NOTION_RESULTS_2.size + 1)
+    end
+
+    context "with a document matching the same filename" do
+      let(:notion_client) do
+        # NOTION_RESULTS_3 contains one page with the same date and title
+        # as the post present in SOURCE_DIR_2 
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 })
+      end
+
+      it "only local document is kept" do
+        # notion pages are processed after Jekyll has generated local documents
+        # so, the last element in the collection must be an instance of a Jekyll:Document
+        expect(site.posts.last).to be_an_instance_of(Jekyll::Document)
       end
     end
   end
