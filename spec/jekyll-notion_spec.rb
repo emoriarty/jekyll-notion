@@ -432,7 +432,7 @@ describe(JekyllNotion) do
 
   context "when there is a post present in source dir" do
     let(:source_dir) { SOURCE_DIR_2 }
-    
+
     it "adds one more document to posts collection" do
       expect(site.posts.size).to be == (NOTION_RESULTS_2.size + 1)
     end
@@ -440,7 +440,7 @@ describe(JekyllNotion) do
     context "with a document matching the same filename" do
       let(:notion_client) do
         # NOTION_RESULTS_3 contains one page with the same date and title
-        # as the post present in SOURCE_DIR_2 
+        # as the post present in SOURCE_DIR_2
         double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 })
       end
 

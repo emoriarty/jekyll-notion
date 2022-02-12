@@ -41,7 +41,7 @@ module JekyllNotion
       @collections ||= {}
     end
 
-     # Checks if a file already exists in the site source
+    # Checks if a file already exists in the site source
     def file_exists?(file_path)
       File.exist? @site.in_source_dir(file_path)
     end
@@ -68,7 +68,6 @@ module JekyllNotion
         "#{current_page.title.downcase.parameterize}.md"
       end
     end
-
 
     def make_md
       NotionToMd::Converter.new(:page_id => current_page.id).convert
