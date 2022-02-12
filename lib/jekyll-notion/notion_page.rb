@@ -87,7 +87,7 @@ module JekyllNotion
         end
 
         def files(prop)
-          files = prop.files.map { |f| f.file.url }.join(", ")
+          files = prop.files.map { |f| "\"#{f.file.url}\"" }.join(", ")
           "[#{files}]"
         end
 
