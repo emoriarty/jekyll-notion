@@ -17,5 +17,4 @@ end
 module JekyllNotion
   autoload :DocumentWithoutAFile, "jekyll-notion/document_without_a_file"
   autoload :NotionDatabase, "jekyll-notion/notion_database"
-  autoload :NotionPage, "jekyll-notion/notion_page"
 end
