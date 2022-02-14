@@ -62,15 +62,15 @@ module JekyllNotion
 
     def make_filename
       if current_db.collection == "posts"
-        "#{current_page.created_time.to_date.to_s}-#{Jekyll::Utils.slugify(current_page.title,
-                                                              :mode => "latin")}.md"
+        "#{current_page.created_time.to_date}-#{Jekyll::Utils.slugify(current_page.title,
+                                                                      :mode => "latin")}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
       end
     end
 
     def make_md
-      NotionToMd::Converter.new(:page_id => current_page.id).convert(frontmatter: true)
+      NotionToMd::Converter.new(:page_id => current_page.id).convert(:frontmatter => true)
     end
 
     def current_collection
