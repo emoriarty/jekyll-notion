@@ -255,4 +255,80 @@ describe(JekyllNotion) do
       end
     end
   end
+
+  it 'id is mapped into collection doc' do
+    expect(site.posts.first.data).to include("id" => NOTION_RESULTS.first.id)
+  end
+
+  it 'created_time is mapped into collection doc' do
+    expect(site.posts.first.data).to include("created_time" => Time.parse(NOTION_RESULTS.first.created_time))
+  end
+
+  it 'last_edited_time is mapped into collection doc' do
+    expect(site.posts.first.data).to include("last_edited_time" => Time.parse(NOTION_RESULTS.first.last_edited_time))
+  end
+
+  it 'cover is mapped into collection doc' do
+    expect(site.posts.first.data).to include("cover" => NOTION_RESULTS.first.cover.dig("external", "url"))
+  end
+
+  it 'icon is mapped into collection doc' do
+    expect(site.posts.first.data).to include("icon" => NOTION_RESULTS.first.icon.emoji)
+  end
+
+  it 'archived is mapped into collection doc' do
+    expect(site.posts.first.data).to include("archived" => NOTION_RESULTS.first.archived)
+  end
+
+  it 'archived is mapped into collection doc' do
+    expect(site.posts.first.data).to include("archived" => NOTION_RESULTS.first.archived)
+  end
+
+  it 'multi_select type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Multi Select", "multi_select").map(&:name)
+    expect(site.posts.first.data).to include("multi_select" => expected_value)
+  end
+
+  it 'select type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Select", "select").name
+    expect(site.posts.first.data).to include("select" => expected_value)
+  end
+
+  it 'people type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Person",
+                                                           "people").map(&:name)
+    expect(site.posts.first.data).to include("person" => expected_value)
+  end
+
+  it 'number type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Numbers", "number")
+    expect(site.posts.first.data).to include("numbers" => expected_value)
+  end
+
+  it 'phone_number type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Phone", "phone_number")
+    expect(site.posts.first.data).to include("phone" => expected_value.to_i)
+  end
+
+  it 'files type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("File", "files").map do |f|
+          f.file.url
+        end
+    expect(site.posts.first.data).to include("file" => expected_value)
+  end
+ 
+  it 'email type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Email", "email")
+    expect(site.posts.first.data).to include("email" => expected_value)
+  end
+ 
+  it 'checkbox type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.dig("Checkbox", "checkbox")
+    expect(site.posts.first.data).to include("checkbox" => expected_value)
+  end
+ 
+  it 'title type is mapped into collection doc' do
+    expected_value = NOTION_RESULTS.first.properties.Name.title[0].plain_text
+    expect(site.posts.first.data).to include("title" => expected_value)
+  end
 end
