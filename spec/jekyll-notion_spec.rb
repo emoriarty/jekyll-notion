@@ -332,4 +332,9 @@ describe(JekyllNotion) do
     expected_value = NOTION_RESULTS.first.properties.Name.title[0].plain_text
     expect(site.posts.first.data).to include("title" => expected_value)
   end
+
+  it "date type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Date", "date", "start")
+    expect(site.posts.first.data).to include("date" => Time.parse(expected_value))
+  end
 end
