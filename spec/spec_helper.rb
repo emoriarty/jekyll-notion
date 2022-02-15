@@ -27,10 +27,6 @@ RSpec.configure do |config|
     File.join(DEST_DIR, *files)
   end
 
-  def notion_client_query
-    NOTION_RESULTS_2
-  end
-
   def md_files
     MD_FILES
   end
