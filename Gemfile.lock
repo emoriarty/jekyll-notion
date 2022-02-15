@@ -2,7 +2,6 @@ PATH
   remote: .
   specs:
     jekyll-notion (0.2.2)
-      activesupport (~> 6)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 0)
       notion_to_md (~> 0)
@@ -91,7 +90,8 @@ GEM
       faraday (>= 1.0)
       faraday_middleware
       hashie
-    notion_to_md (0.1.0)
+    notion_to_md (0.2.0)
+      activesupport (~> 6)
       notion-ruby-client (~> 0.0.8)
     parallel (1.21.0)
     parser (3.1.0.0)

@@ -51,7 +51,7 @@ module JekyllNotion
         make_path,
         { :site => @site, :collection => current_collection }
       )
-      new_post.content = "#{make_frontmatter}\n\n#{make_md}"
+      new_post.content = make_md
       new_post.read
       new_post
     end
@@ -62,29 +62,15 @@ module JekyllNotion
 
     def make_filename
       if current_db.collection == "posts"
-        "#{current_page.created_date}-#{Jekyll::Utils.slugify(current_page.title,
-                                                              :mode => "latin")}.md"
+        "#{current_page.created_time.to_date}-#{Jekyll::Utils.slugify(current_page.title,
+                                                                      :mode => "latin")}.md"
       else
         "#{current_page.title.downcase.parameterize}.md"
       end
     end
 
     def make_md
-      NotionToMd::Converter.new(:page_id => current_page.id).convert
-    end
-
-    def make_frontmatter
-      data = Jekyll::Utils.deep_merge_hashes(current_db.frontmatter, page_frontmatter)
-      frontmatter = data.to_a.map { |k, v| "#{k}: #{v}" }.join("\n")
-      <<~CONTENT
-        ---
-        #{frontmatter}
-        ---
-      CONTENT
-    end
-
-    def page_frontmatter
-      Jekyll::Utils.deep_merge_hashes(current_page.custom_props, current_page.default_props)
+      NotionToMd::Converter.new(:page_id => current_page.id).convert(:frontmatter => true)
     end
 
     def current_collection
@@ -96,7 +82,7 @@ module JekyllNotion
     end
 
     def fetch_on_watch?
-      config["fetch_on_watch"].present?
+      config["fetch_on_watch"] == true
     end
 
     def notion_token?
@@ -123,7 +109,7 @@ module JekyllNotion
         Jekyll.logger.info("",
                            "Path => #{current_collection.docs.last.path}")
       end
-      Jekyll.logger.debug("", "Props => #{page_frontmatter.keys.inspect}")
+      Jekyll.logger.debug("", "Props => #{current_collection.docs.last.data.keys.inspect}")
     end
   end
 end

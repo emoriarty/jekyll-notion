@@ -27,25 +27,21 @@ describe(JekyllNotion) do
   let(:collection) { nil }
   let(:filter) { nil }
   let(:sort) { nil }
-  let(:frontmatter) { nil }
-  let(:properties) { nil }
   let(:fetch_on_watch) { nil }
   let(:notion_config) do
     {
       "fetch_on_watch" => fetch_on_watch,
       "database"       => {
-        "id"          => "b0e688e199af4295ae80b67eb52f2e2f",
-        "collection"  => collection,
-        "filter"      => filter,
-        "sort"        => sort,
-        "frontmatter" => frontmatter,
-        "properties"  => properties,
+        "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
+        "collection" => collection,
+        "filter"     => filter,
+        "sort"       => sort,
       },
     }
   end
   let(:site) { Jekyll::Site.new(config) }
   let(:notion_client) do
-    double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
+    double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
   end
 
   before do
@@ -109,26 +105,26 @@ describe(JekyllNotion) do
   end
 
   it "stores pages into posts collection" do
-    expect(site.posts.size).to be == md_files.size
+    expect(site.posts.size).to be == NOTION_RESULTS.size
   end
 
   it "post filename matches YYYY-MM-DD-title.md format" do
-    site.posts.each do |post|
-      expect(post.path).to match(%r!_posts/\d{4}-\d{2}-\d{2}-.*.md$!)
-    end
+    expect(site.posts.first.path).to match(%r!_posts/\d{4}-\d{2}-\d{2}-.*.md$!)
   end
 
   context "when collection is not posts" do
     let(:collection) { "films" }
 
-    it "stores pages into designated collection" do
-      expect(site.collections[collection].size).to be == md_files.size
+    it "stores page into designated collection" do
+      expect(site.collections[collection].size).to be == NOTION_RESULTS.size
+    end
+
+    it "does not store page into posts collection" do
+      expect(site.posts.size).to be == 0
     end
 
     it "filename does not contain date" do
-      site.collections[collection].each do |film|
-        expect(film.path).not_to match(%r!_films/\d{4}-\d{2}-\d{2}-.*.md$!)
-      end
+      expect(site.collections[collection].first.path).not_to match(%r!_films/\d{4}-\d{2}-\d{2}-.*.md$!)
     end
   end
 
@@ -168,198 +164,6 @@ describe(JekyllNotion) do
     }
   end
 
-  context "when frontmatter is provided" do
-    let(:frontmatter) { { :layout => "post", :title => "a_title_from_config" } }
-
-    it "is added into page data" do
-      site.posts.each do |post|
-        expect(post.data["layout"]).to eq("post")
-      end
-    end
-
-    it "does not overwrite default fronmatter" do
-      site.posts.each do |post|
-        expect(post.data["title"]).not_to eq("a_title_from_config")
-      end
-    end
-  end
-
-  context "when multiple frontmatter properties" do
-    let(:frontmatter) { { :option1 => "uno", :option2 => "dos", :option3 => "tres" } }
-
-    it "is added into page data" do
-      site.posts.each do |post|
-        expect(post.data).to include(*frontmatter.keys.map(&:to_s))
-      end
-    end
-  end
-
-  context "when complex frontmatter properties" do
-    let(:frontmatter) do
-      { :url => "https://regardsprotestants.com/wp-content/uploads/2020/06/balblart-e1591697827166.jpg?size=276" }
-    end
-
-    it "is added into page data" do
-      site.posts.each do |post|
-        expect(post.data).to include(*frontmatter.keys.map(&:to_s))
-      end
-    end
-  end
-
-  it "adds id to page data" do
-    site.posts.each_with_index do |post, index|
-      id = notion_client_query[index].id
-      expect(post.data).to include("id" => id)
-    end
-  end
-
-  it "adds title to page data" do
-    site.posts.each_with_index do |post, index|
-      title = notion_client_query[index].properties.Name.title[0].plain_text
-      expect(post.data).to include("title" => title)
-    end
-  end
-
-  it "adds cover to page data" do
-    site.posts.each_with_index do |post, index|
-      cover = notion_client_query[index].dig("cover", "external", "url")
-      expect(post.data).to include("cover" => cover)
-    end
-  end
-
-  it "adds icon to page data" do
-    site.posts.each_with_index do |post, index|
-      icon = notion_client_query[index].dig("icon", "emoji")
-      expect(post.data).to include("icon" => icon)
-    end
-  end
-
-  it "adds date to page data" do
-    site.posts.each_with_index do |post, index|
-      date = notion_client_query[index].created_time
-      expect(post.data).to include("date" => Time.parse(date))
-    end
-  end
-
-  it "adds updated_date to page data" do
-    site.posts.each_with_index do |post, index|
-      last_edited_time = notion_client_query[index].last_edited_time
-      expect(post.data).to include("updated_date" => Time.parse(last_edited_time))
-    end
-  end
-
-  context "when custom properties are present in config" do
-    it "adds a multi_select type to page data" do
-      site.posts.each_with_index do |post, index|
-        multi_select = notion_client_query[index].properties.dig("Multi Select",
-                                                                 "multi_select").map(&:name)
-        expect(post.data).to include("multi_select" => multi_select)
-      end
-    end
-
-    it "adds a select type to page data" do
-      site.posts.each_with_index do |post, index|
-        select = notion_client_query[index].properties.dig("Select", "select").name
-        expect(post.data).to include("select" => select.presence)
-      end
-    end
-
-    it "adds a people type to page data" do
-      site.posts.each_with_index do |post, index|
-        person = notion_client_query[index].properties.dig("Person",
-                                                           "people").map(&:name)
-        expect(post.data).to include("person" => person)
-      end
-    end
-
-    it "adds a files type to page data" do
-      site.posts.each_with_index do |post, index|
-        file = notion_client_query[index].properties.dig("File", "files").map do |f|
-          f.file.url
-        end
-        expect(post.data).to include("file" => file)
-      end
-    end
-
-    it "adds a number type to page data" do
-      site.posts.each_with_index do |post, index|
-        number = notion_client_query[index].properties.dig("Numbers", "number")
-        if number.presence.nil?
-          expect(post.data).not_to include("numbers")
-        else
-          expect(post.data).to include("numbers" => number)
-        end
-      end
-    end
-
-    it "adds a phone_number type to page data" do
-      site.posts.each_with_index do |post, index|
-        phone_number = notion_client_query[index].properties.dig("Phone", "phone_number")
-        if phone_number.nil?
-          expect(post.data).not_to include("phone")
-        else
-          expect(post.data).to include("phone" => phone_number)
-        end
-      end
-    end
-
-    it "adds an email type to page data" do
-      site.posts.each_with_index do |post, index|
-        email = notion_client_query[index].properties.dig("Email", "email")
-        if email.nil?
-          expect(post.data).not_to include("email")
-        else
-          expect(post.data).to include("email" => email)
-        end
-      end
-    end
-
-    it "adds a checkbox type to page data" do
-      site.posts.each_with_index do |post, index|
-        checkbox = notion_client_query[index].properties.dig("Checkbox", "checkbox")
-        expect(post.data).to include("checkbox" => checkbox)
-      end
-    end
-
-    it "adds a date type to page data" do
-      site.posts.each_with_index do |post, index|
-        date = notion_client_query[index].properties.dig("New Date", "date", "start")
-        if date.presence.nil?
-          expect(post.data).not_to include("new_date")
-        else
-          expect(post.data).to include("new_date" => Date.parse(date))
-        end
-      end
-    end
-
-    it "adds a url type to page data" do
-      site.posts.each_with_index do |post, index|
-        url = notion_client_query[index].properties.dig("Url", "url")
-        if url.nil?
-          expect(post.data).not_to include("url")
-        else
-          expect(post.data).to include("url" => url)
-        end
-      end
-    end
-  end
-
-  context "when a custom and default property have the same name (date)" do
-    it "cannot overwrite the default property" do
-      site.posts.each_with_index do |post, index|
-        date = notion_client_query[index].properties.dig("Date", "date", "start")
-        expect(post.data["date"]).not_to eq(date)
-      end
-    end
-
-    it "default property keeps intact" do
-      site.posts.each_with_index do |post, index|
-        created_time = notion_client_query[index].created_time
-        expect(post.data["date"]).to eq(Jekyll::Utils.parse_date(created_time))
-      end
-    end
-  end
-
   context "when site is processed a second time" do
     before(:each) do
       site.process
@@ -370,7 +174,7 @@ describe(JekyllNotion) do
     end
 
     it "the posts collection is the same length" do
-      expect(site.posts.size).to be(notion_client_query.size)
+      expect(site.posts.size).to be(NOTION_RESULTS.size)
     end
 
     it "does not query notion database" do
@@ -414,8 +218,8 @@ describe(JekyllNotion) do
         double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
       end
 
-      it "posts collection is not empty" do
-        expect(site.posts).not_to be_empty
+      it "stores pages in posts collection" do
+        expect(site.posts.size).to be == NOTION_RESULTS_2.size
       end
     end
 
@@ -424,8 +228,8 @@ describe(JekyllNotion) do
         double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
       end
 
-      it "recipes collection is not empty" do
-        expect(site.collections["recipes"]).not_to be_empty
+      it "stores pages in recipes collection" do
+        expect(site.collections["recipes"].size).to be == NOTION_RESULTS.size
       end
     end
   end
@@ -434,7 +238,7 @@ describe(JekyllNotion) do
     let(:source_dir) { SOURCE_DIR_2 }
 
     it "adds one more document to posts collection" do
-      expect(site.posts.size).to be == (NOTION_RESULTS_2.size + 1)
+      expect(site.posts.size).to be == (NOTION_RESULTS.size + 1)
     end
 
     context "with a document matching the same filename" do
@@ -450,5 +254,92 @@ describe(JekyllNotion) do
         expect(site.posts.last).to be_an_instance_of(Jekyll::Document)
       end
     end
+  end
+
+  it "id is mapped into collection doc" do
+    expect(site.posts.first.data).to include("id" => NOTION_RESULTS.first.id)
+  end
+
+  it "created_time is mapped into collection doc" do
+    expect(site.posts.first.data).to include("created_time" => Time.parse(NOTION_RESULTS.first.created_time))
+  end
+
+  it "last_edited_time is mapped into collection doc" do
+    expect(site.posts.first.data).to include("last_edited_time" => Time.parse(NOTION_RESULTS.first.last_edited_time))
+  end
+
+  it "cover is mapped into collection doc" do
+    expect(site.posts.first.data).to include("cover" => NOTION_RESULTS.first.cover.dig("external",
+                                                                                       "url"))
+  end
+
+  it "icon is mapped into collection doc" do
+    expect(site.posts.first.data).to include("icon" => NOTION_RESULTS.first.icon.emoji)
+  end
+
+  it "archived is mapped into collection doc" do
+    expect(site.posts.first.data).to include("archived" => NOTION_RESULTS.first.archived)
+  end
+
+  it "archived is mapped into collection doc" do
+    expect(site.posts.first.data).to include("archived" => NOTION_RESULTS.first.archived)
+  end
+
+  it "multi_select type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Multi Select", "multi_select").map(&:name)
+    expect(site.posts.first.data).to include("multi_select" => expected_value)
+  end
+
+  it "select type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Select", "select").name
+    expect(site.posts.first.data).to include("select" => expected_value)
+  end
+
+  it "people type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Person",
+                                                         "people").map(&:name)
+    expect(site.posts.first.data).to include("person" => expected_value)
+  end
+
+  it "number type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Numbers", "number")
+    expect(site.posts.first.data).to include("numbers" => expected_value)
+  end
+
+  it "phone_number type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Phone", "phone_number")
+    expect(site.posts.first.data).to include("phone" => expected_value.to_i)
+  end
+
+  it "files type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("File", "files").map do |f|
+      f.file.url
+    end
+    expect(site.posts.first.data).to include("file" => expected_value)
+  end
+
+  it "email type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Email", "email")
+    expect(site.posts.first.data).to include("email" => expected_value)
+  end
+
+  it "checkbox type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Checkbox", "checkbox")
+    expect(site.posts.first.data).to include("checkbox" => expected_value)
+  end
+
+  it "title type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.Name.title[0].plain_text
+    expect(site.posts.first.data).to include("title" => expected_value)
+  end
+
+  it "date type is mapped into collection doc" do
+    expected_value = NOTION_RESULTS.first.properties.dig("Date", "date", "start")
+    expect(site.posts.first.data).to include("date" => Time.parse(expected_value))
+  end
+
+  it "page is stored in destination directory" do
+    expected_path = site.posts.first.destination('.')
+    expect(File).to exist(expected_path)
   end
 end

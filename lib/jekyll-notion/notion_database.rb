@@ -11,7 +11,7 @@ module JekyllNotion
       return [] unless id?
 
       @pages ||= @notion.database_query(query)[:results].map do |page|
-        NotionPage.new(:page => page, :layout => layout)
+        NotionToMd::Page.new(:page => page)
       end
     end
 
@@ -31,16 +31,8 @@ module JekyllNotion
       config["id"]
     end
 
-    def frontmatter
-      config["frontmatter"] || {}
-    end
-
     def collection
       config["collection"] || "posts"
-    end
-
-    def layout
-      config["layout"]
     end
 
     private
