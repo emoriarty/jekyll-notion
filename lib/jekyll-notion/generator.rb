@@ -82,7 +82,7 @@ module JekyllNotion
     end
 
     def fetch_on_watch?
-      config["fetch_on_watch"].present?
+      config["fetch_on_watch"] == true
     end
 
     def notion_token?
