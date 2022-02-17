@@ -13,6 +13,7 @@ Notion.configure do |config|
 end
 
 module JekyllNotion
+  autoload :CollectionGenerator, "jekyll-notion/collection_generator"
   autoload :DocumentWithoutAFile, "jekyll-notion/document_without_a_file"
   autoload :NotionDatabase, "jekyll-notion/notion_database"
 end
