@@ -43,7 +43,7 @@ module JekyllNotion
     def make_filename(page)
       if @db.collection == "posts"
         "#{page.created_time.to_date}-#{Jekyll::Utils.slugify(page.title,
-                                                                      :mode => "latin")}.md"
+                                                              :mode => "latin")}.md"
       else
         "#{page.title.downcase.parameterize}.md"
       end

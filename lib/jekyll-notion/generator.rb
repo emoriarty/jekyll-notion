@@ -21,7 +21,7 @@ module JekyllNotion
     def read_notion_database
       databases.each do |db_config|
         db = NotionDatabase.new(:config => db_config)
-        new_collection = CollectionGenerator.new(db: db, site: @site).generate
+        new_collection = CollectionGenerator.new(:db => db, :site => @site).generate
         # Caching current collection
         collections[db.collection] = new_collection
       end

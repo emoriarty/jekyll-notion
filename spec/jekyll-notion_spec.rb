@@ -339,7 +339,7 @@ describe(JekyllNotion) do
   end
 
   it "page is stored in destination directory" do
-    expected_path = site.posts.first.destination('.')
+    expected_path = site.posts.first.destination(".")
     expect(File).to exist(expected_path)
   end
 end
