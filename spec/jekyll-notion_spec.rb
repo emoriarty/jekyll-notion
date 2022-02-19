@@ -46,6 +46,7 @@ describe(JekyllNotion) do
 
   before do
     allow(ENV).to receive(:[]).with("NOTION_TOKEN").and_return(notion_token)
+    allow(ENV).to receive(:[]).with("JEKYLL_ENV").and_return('production')
     allow(Notion::Client).to receive(:new).and_return(notion_client)
     allow(NotionToMd::Converter).to receive(:new) do |page_id:|
       double("NotionToMd::Converter", :convert => md_files[page_id])
