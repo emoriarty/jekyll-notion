@@ -343,4 +343,26 @@ describe(JekyllNotion) do
     expected_path = site.posts.first.destination(".")
     expect(File).to exist(expected_path)
   end
+
+  context("when using data") do
+    let(:data_name) { "films" }
+    let(:notion_config) do
+      {
+        "database"       => {
+          "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
+          "data" => data_name,
+          "filter"     => filter,
+          "sort"       => sort,
+        },
+      }
+    end
+    let(:notion_client) do
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS })
+    end
+
+    it "stores database in films data object" do
+      p site.collections
+      expect(site.data["films"].size).to be == NOTION_FILMS.size
+    end
+  end
 end
