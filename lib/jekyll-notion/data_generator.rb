@@ -1,12 +1,15 @@
 module JekyllNotion
-  class DataGenerator
-    def initialize(db:, site:)
-      @db = db
-      @site = site
+  class DataGenerator < AbstractGenerator
+    def generate
+      @site.data[@db.data] = data
+      # Caching current data
+      @plugin.data[@db.data] = data
     end
 
-    def generate
-      @site.data[@db.data] = @db.pages.map(&:props)
+    private
+
+    def data
+      @data ||= @db.pages.map(&:props)
     end
   end
 end

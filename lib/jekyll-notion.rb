@@ -14,6 +14,7 @@ end
 
 module JekyllNotion
   autoload :GeneratorFactory, "jekyll-notion/generator_factory"
+  autoload :AbstractGenerator, "jekyll-notion/abstract_generator"
   autoload :CollectionGenerator, "jekyll-notion/collection_generator"
   autoload :DataGenerator, "jekyll-notion/data_generator"
   autoload :DocumentWithoutAFile, "jekyll-notion/document_without_a_file"

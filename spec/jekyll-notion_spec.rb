@@ -360,8 +360,11 @@ describe(JekyllNotion) do
       double("Notion::Client", :database_query => { :results => NOTION_FILMS })
     end
 
-    it "stores database in films data object" do
-      p site.collections
+    it "creates a films key in data object" do
+      expect(site.data).to have_key(data_name)
+    end
+
+    it "contains the same size as the returned films" do
       expect(site.data["films"].size).to be == NOTION_FILMS.size
     end
   end

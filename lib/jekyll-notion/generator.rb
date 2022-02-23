@@ -33,7 +33,7 @@ module JekyllNotion
     def read_notion_database
       databases.each do |db_config|
         db = NotionDatabase.new(:config => db_config)
-        GeneratorFactory.new(:db => db, :site => @site, :parent => self).generate
+        GeneratorFactory.for(:db => db, :site => @site, :plugin => self).generate
       end
     end
 
