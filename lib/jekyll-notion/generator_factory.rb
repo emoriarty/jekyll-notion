@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllNotion
   class GeneratorFactory
     def self.for(db:, site:, plugin:)

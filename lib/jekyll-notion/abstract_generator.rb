@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllNotion
   class AbstractGenerator
     def initialize(db:, site:, plugin:)
