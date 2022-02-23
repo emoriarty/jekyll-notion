@@ -1,10 +1,7 @@
-module JekyllNotion
-  class CollectionGenerator
-    def initialize(db:, site:)
-      @db = db
-      @site = site
-    end
+# frozen_string_literal: true
 
+module JekyllNotion
+  class CollectionGenerator < AbstractGenerator
     def generate
       @db.pages.each do |page|
         next if file_exists?(make_path(page))
@@ -12,7 +9,8 @@ module JekyllNotion
         collection.docs << make_doc(page)
         log_new_page(page)
       end
-      collection
+      # Caching current collection
+      @plugin.collections[@db.collection] = collection
     end
 
     def collection

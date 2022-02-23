@@ -16,23 +16,25 @@ module JekyllNotion
       end
     end
 
-    protected
-
-    def read_notion_database
-      databases.each do |db_config|
-        db = NotionDatabase.new(:config => db_config)
-        new_collection = CollectionGenerator.new(:db => db, :site => @site).generate
-        # Caching current collection
-        collections[db.collection] = new_collection
-      end
-    end
-
     def databases
       config["databases"] || [config["database"]]
     end
 
     def collections
       @collections ||= {}
+    end
+
+    def data
+      @data ||= {}
+    end
+
+    protected
+
+    def read_notion_database
+      databases.each do |db_config|
+        db = NotionDatabase.new(:config => db_config)
+        GeneratorFactory.for(:db => db, :site => @site, :plugin => self).generate
+      end
     end
 
     def config

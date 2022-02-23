@@ -1,0 +1,417 @@
+--- !ruby/array:Hashie::Array
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: b11c7a8f-e80d-4767-b263-a48d56670cca
+  created_time: '2022-02-19T23:34:00.000Z'
+  last_edited_time: '2022-02-19T23:35:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b264f9dd-76fd-45e3-a014-d7e7e069a5dc
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Created: !ruby/hash:Notion::Messages::Message
+      id: OoEJ
+      type: created_time
+      created_time: '2022-02-19T23:34:00.000Z'
+    year: !ruby/hash:Notion::Messages::Message
+      id: QhPM
+      type: number
+      number: 1969
+    poster: !ruby/hash:Notion::Messages::Message
+      id: SZe;
+      type: url
+      url: https://upload.wikimedia.org/wikipedia/en/7/77/Il_Grande_Silenzio_Poster.png
+    director: !ruby/hash:Notion::Messages::Message
+      id: nGgM
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Sergio Corbucci
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Sergio Corbucci
+        href:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: I
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: I
+        href:
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: l grande silenzio
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: true
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: l grande silenzio
+        href:
+  url: https://www.notion.so/Il-grande-silenzio-b11c7a8fe80d4767b263a48d56670cca
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 16dc3c20-3812-4e73-851e-11b64d9366c9
+  created_time: '2022-02-19T23:33:00.000Z'
+  last_edited_time: '2022-02-19T23:33:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b264f9dd-76fd-45e3-a014-d7e7e069a5dc
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Created: !ruby/hash:Notion::Messages::Message
+      id: OoEJ
+      type: created_time
+      created_time: '2022-02-19T23:33:00.000Z'
+    year: !ruby/hash:Notion::Messages::Message
+      id: QhPM
+      type: number
+      number: 1966
+    poster: !ruby/hash:Notion::Messages::Message
+      id: SZe;
+      type: url
+      url: https://upload.wikimedia.org/wikipedia/en/6/61/Djangofilm.jpg
+    director: !ruby/hash:Notion::Messages::Message
+      id: nGgM
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Segio Corbucci
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Segio Corbucci
+        href:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Django
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Django
+        href:
+  url: https://www.notion.so/Django-16dc3c2038124e73851e11b64d9366c9
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: df8fb86a-5c52-4aa5-b2d1-cf2fd4446ad2
+  created_time: '2022-02-19T23:33:00.000Z'
+  last_edited_time: '2022-02-19T23:34:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b264f9dd-76fd-45e3-a014-d7e7e069a5dc
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Created: !ruby/hash:Notion::Messages::Message
+      id: OoEJ
+      type: created_time
+      created_time: '2022-02-19T23:33:00.000Z'
+    year: !ruby/hash:Notion::Messages::Message
+      id: QhPM
+      type: number
+      number: 1968
+    poster: !ruby/hash:Notion::Messages::Message
+      id: SZe;
+      type: url
+      url: https://upload.wikimedia.org/wikipedia/en/f/f6/Il-mercenario-italian-movie-poster-md.jpg
+    director: !ruby/hash:Notion::Messages::Message
+      id: nGgM
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Sergio Corbucci
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Sergio Corbucci
+        href:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Il mercenario
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: true
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Il mercenario
+        href:
+  url: https://www.notion.so/Il-mercenario-df8fb86a5c524aa5b2d1cf2fd4446ad2
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 8f2264ad-4a9a-4ff3-afef-c69f5626c440
+  created_time: '2022-02-19T23:29:00.000Z'
+  last_edited_time: '2022-02-19T23:31:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b264f9dd-76fd-45e3-a014-d7e7e069a5dc
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Created: !ruby/hash:Notion::Messages::Message
+      id: OoEJ
+      type: created_time
+      created_time: '2022-02-19T23:29:00.000Z'
+    year: !ruby/hash:Notion::Messages::Message
+      id: QhPM
+      type: number
+      number: 1966
+    poster: !ruby/hash:Notion::Messages::Message
+      id: SZe;
+      type: url
+      url: https://upload.wikimedia.org/wikipedia/en/4/45/Good_the_bad_and_the_ugly_poster.jpg
+    director: !ruby/hash:Notion::Messages::Message
+      id: nGgM
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Segio Leone
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Segio Leone
+        href:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Il buono, il brutto, il cattivo
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: true
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Il buono, il brutto, il cattivo
+        href:
+  url: https://www.notion.so/Il-buono-il-brutto-il-cattivo-8f2264ad4a9a4ff3afefc69f5626c440
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 0ace4cc3-4974-4c5f-a3b2-b4338a19b678
+  created_time: '2022-02-19T23:29:00.000Z'
+  last_edited_time: '2022-02-19T23:30:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b264f9dd-76fd-45e3-a014-d7e7e069a5dc
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Created: !ruby/hash:Notion::Messages::Message
+      id: OoEJ
+      type: created_time
+      created_time: '2022-02-19T23:29:00.000Z'
+    year: !ruby/hash:Notion::Messages::Message
+      id: QhPM
+      type: number
+      number: 1965
+    poster: !ruby/hash:Notion::Messages::Message
+      id: SZe;
+      type: url
+      url: https://upload.wikimedia.org/wikipedia/en/0/09/For_a_Few_Dollars_More-ita-poster.jpg
+    director: !ruby/hash:Notion::Messages::Message
+      id: nGgM
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Segio Leone
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Segio Leone
+        href:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Per qualche dollaro in più
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: true
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Per qualche dollaro in più
+        href:
+  url: https://www.notion.so/Per-qualche-dollaro-in-pi-0ace4cc349744c5fa3b2b4338a19b678
+- !ruby/hash:Notion::Messages::Message
+  object: page
+  id: 5cfed4de-3bdc-4f43-ae8b-a653a7a2219b
+  created_time: '2022-02-05T16:31:00.000Z'
+  last_edited_time: '2022-02-19T23:32:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  cover:
+  icon:
+  parent: !ruby/hash:Notion::Messages::Message
+    type: database_id
+    database_id: b264f9dd-76fd-45e3-a014-d7e7e069a5dc
+  archived: false
+  properties: !ruby/hash:Notion::Messages::Message
+    Created: !ruby/hash:Notion::Messages::Message
+      id: OoEJ
+      type: created_time
+      created_time: '2022-02-05T16:31:00.000Z'
+    year: !ruby/hash:Notion::Messages::Message
+      id: QhPM
+      type: number
+      number: 1964
+    poster: !ruby/hash:Notion::Messages::Message
+      id: SZe;
+      type: url
+      url: https://upload.wikimedia.org/wikipedia/en/f/f0/Fistful-of-Dollars-poster.jpg
+    director: !ruby/hash:Notion::Messages::Message
+      id: nGgM
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Segio Leone
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: false
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Segio Leone
+        href:
+    Name: !ruby/hash:Notion::Messages::Message
+      id: title
+      type: title
+      title: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        type: text
+        text: !ruby/hash:Notion::Messages::Message
+          content: Per un pugno di dollari
+          link:
+        annotations: !ruby/hash:Notion::Messages::Message
+          bold: true
+          italic: false
+          strikethrough: false
+          underline: false
+          code: false
+          color: default
+        plain_text: Per un pugno di dollari
+        href:
+  url: https://www.notion.so/Per-un-pugno-di-dollari-5cfed4de3bdc4f43ae8ba653a7a2219b

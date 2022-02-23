@@ -35,6 +35,10 @@ module JekyllNotion
       config["collection"] || "posts"
     end
 
+    def data
+      config["data"]
+    end
+
     private
 
     def id?
