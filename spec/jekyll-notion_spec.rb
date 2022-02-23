@@ -46,7 +46,7 @@ describe(JekyllNotion) do
 
   before do
     allow(ENV).to receive(:[]).with("NOTION_TOKEN").and_return(notion_token)
-    allow(ENV).to receive(:[]).with("JEKYLL_ENV").and_return('production')
+    allow(ENV).to receive(:[]).with("JEKYLL_ENV").and_return("production")
     allow(Notion::Client).to receive(:new).and_return(notion_client)
     allow(NotionToMd::Converter).to receive(:new) do |page_id:|
       double("NotionToMd::Converter", :convert => md_files[page_id])
@@ -348,11 +348,11 @@ describe(JekyllNotion) do
     let(:data_name) { "films" }
     let(:notion_config) do
       {
-        "database"       => {
-          "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
-          "data" => data_name,
-          "filter"     => filter,
-          "sort"       => sort,
+        "database" => {
+          "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
+          "data"   => data_name,
+          "filter" => filter,
+          "sort"   => sort,
         },
       }
     end
