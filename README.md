@@ -40,6 +40,8 @@ notion:
     id: e42383cd-4975-4897-b967-ce453760499f
 ```
 
+After running `jekyll build` (or `serve`) command, the `posts` collection is loaded with pages of the notion database specified in the configuration. 
+
 ### Mutiple dabatases
 
 You can also define multiple databases as follows.
@@ -58,7 +60,20 @@ notion:
       collection: films
 ```
 
-When no collection is defined, the `posts` collection is used by default.
+In this example, the notion database `b0e688e1-99af-4295-ae80-b67eb52f2e2f` pages are mapped into the posts collection. `recipes` and `films` will contain the database pages `2190450d-4cb3-4739-a5c8-340c4110fe21` and  `e42383cd-4975-4897-b967-ce453760499f`, respectively.
+
+### data
+
+Instead of storing notion pages in a collection, you can also map to the data object. Declare the data property as follows.
+
+```yml
+notion:
+  database:
+    id: e42383cd-4975-4897-b967-ce453760499f
+    data: films
+```
+
+Unlike collections, only the properties of the notion page are assigned to the each data item. The body of the notion page is omitted.
 
 ### Database options
 
