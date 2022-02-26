@@ -25,7 +25,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (1.9.3)
+    faraday (1.10.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)
@@ -54,7 +54,7 @@ GEM
     forwardable-extended (2.6.0)
     hashie (5.0.0)
     http_parser.rb (0.8.0)
-    i18n (1.9.1)
+    i18n (1.10.0)
       concurrent-ruby (~> 1.0)
     jekyll (4.2.1)
       addressable (~> 2.4)
@@ -90,7 +90,7 @@ GEM
       faraday (>= 1.0)
       faraday_middleware
       hashie
-    notion_to_md (0.2.0)
+    notion_to_md (0.2.1)
       activesupport (~> 6)
       notion-ruby-client (~> 0.0.8)
     parallel (1.21.0)
