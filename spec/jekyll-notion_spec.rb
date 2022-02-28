@@ -367,5 +367,19 @@ describe(JekyllNotion) do
     it "contains the same size as the returned films" do
       expect(site.data["films"].size).to be == NOTION_FILMS.size
     end
+
+    context "when site is processed a second time" do
+      before(:each) do
+        site.process
+      end
+
+      it "the data films is not nil" do
+        expect(site.data["films"]).not_to be_nil
+      end
+
+      it "does not query notion database" do
+        expect(notion_client).to have_received(:database_query).once
+      end
+    end
   end
 end

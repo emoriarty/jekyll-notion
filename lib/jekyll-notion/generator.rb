@@ -9,10 +9,11 @@ module JekyllNotion
 
       return unless notion_token? && config?
 
-      if fetch_on_watch? || collections.empty?
+      if fetch_on_watch? || collections_and_data_empty?
         read_notion_database
       else
         collections.each_pair { |key, val| @site.collections[key] = val }
+        data.each_pair { |key, val| @site.data[key] = val }
       end
     end
 
@@ -29,6 +30,10 @@ module JekyllNotion
     end
 
     protected
+
+    def collections_and_data_empty?
+      collections.empty? && data.empty?
+    end
 
     def read_notion_database
       databases.each do |db_config|
