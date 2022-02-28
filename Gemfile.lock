@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-notion (1.1.0)
+    jekyll-notion (1.1.1)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 0)
       notion_to_md (~> 0)
@@ -71,7 +71,7 @@ GEM
       rouge (~> 3.0)
       safe_yaml (~> 1.0)
       terminal-table (~> 2.0)
-    jekyll-sass-converter (2.1.0)
+    jekyll-sass-converter (2.2.0)
       sassc (> 2.0.1, < 3.0)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
