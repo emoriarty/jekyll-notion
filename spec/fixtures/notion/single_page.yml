@@ -1,0 +1,112 @@
+--- !ruby/hash:Notion::Messages::Message
+object: page
+id: 9dc17c9c-9d2e-469d-bbf0-f9648f3288d3
+created_time: '2022-01-23T12:31:00.000Z'
+last_edited_time: '2022-02-13T23:05:00.000Z'
+cover: !ruby/hash:Notion::Messages::Message
+  type: external
+  external: !ruby/hash:Notion::Messages::Message
+    url: https://www.notion.so/images/page-cover/met_canaletto_1720.jpg
+icon: !ruby/hash:Notion::Messages::Message
+  type: emoji
+  emoji: "\U0001F4A5"
+parent: !ruby/hash:Notion::Messages::Message
+  type: database_id
+  database_id: 1ae33dd5-f331-4402-9480-69517fa40ae2
+archived: false
+properties: !ruby/hash:Notion::Messages::Message
+  Multi Select: !ruby/hash:Notion::Messages::Message
+    id: "<{n{"
+    type: multi_select
+    multi_select: !ruby/array:Hashie::Array
+    - !ruby/hash:Notion::Messages::Message
+      id: ddf5e30e-fde6-4023-98a4-864674e8ae87
+      name: mselect1
+      color: gray
+    - !ruby/hash:Notion::Messages::Message
+      id: 1be80fca-a275-4384-8268-6bb2f6a21616
+      name: mselect2
+      color: pink
+    - !ruby/hash:Notion::Messages::Message
+      id: 32e731fc-3fee-41d8-83f5-398b2981f1ac
+      name: mselect3
+      color: blue
+  Select: !ruby/hash:Notion::Messages::Message
+    id: ">zjF"
+    type: select
+    select: !ruby/hash:Notion::Messages::Message
+      id: fa788fbc-176b-49cb-be2e-552cc985cf7c
+      name: select1
+      color: yellow
+  Person: !ruby/hash:Notion::Messages::Message
+    id: TFSp
+    type: people
+    people: !ruby/array:Hashie::Array
+    - !ruby/hash:Notion::Messages::Message
+      object: user
+      id: a4e89628-577b-404f-b62b-36abe7f65fc7
+      name: John Rambo
+      avatar_url: https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg
+      type: person
+      person: !ruby/hash:Notion::Messages::Message
+        email: john.rambo@test.com
+  Date: !ruby/hash:Notion::Messages::Message
+    id: T~YB
+    type: date
+    date: !ruby/hash:Notion::Messages::Message
+      start: '2022-01-28'
+      end:
+      time_zone:
+  Tags: !ruby/hash:Notion::Messages::Message
+    id: UT?x
+    type: multi_select
+    multi_select: !ruby/array:Hashie::Array
+    - !ruby/hash:Notion::Messages::Message
+      id: be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8
+      name: tag1
+      color: green
+  Numbers: !ruby/hash:Notion::Messages::Message
+    id: a~dg
+    type: number
+    number: 12
+  Phone: !ruby/hash:Notion::Messages::Message
+    id: k]Ei
+    type: phone_number
+    phone_number: '983788379'
+  File: !ruby/hash:Notion::Messages::Message
+    id: x`rF
+    type: files
+    files: !ruby/array:Hashie::Array
+    - !ruby/hash:Notion::Messages::Message
+      name: me.jpeg
+      type: file
+      file: !ruby/hash:Notion::Messages::Message
+        url: https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg
+        expiry_time: '2022-02-14T13:58:48.196Z'
+  Email: !ruby/hash:Notion::Messages::Message
+    id: x{cw
+    type: email
+    email: hola@test.com
+  Checkbox: !ruby/hash:Notion::Messages::Message
+    id: "|MPu"
+    type: checkbox
+    checkbox: false
+  Name: !ruby/hash:Notion::Messages::Message
+    id: title
+    type: title
+    title: !ruby/array:Hashie::Array
+    - !ruby/hash:Notion::Messages::Message
+      type: text
+      text: !ruby/hash:Notion::Messages::Message
+        content: Page 1
+        link:
+      annotations: !ruby/hash:Notion::Messages::Message
+        bold: false
+        italic: false
+        strikethrough: false
+        underline: false
+        code: false
+        color: default
+      plain_text: Page 1
+      href:
+url: https://www.notion.so/Page-1-9dc17c9c9d2e469dbbf0f9648f3288d3

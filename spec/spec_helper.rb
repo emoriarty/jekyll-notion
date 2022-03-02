@@ -17,6 +17,7 @@ RSpec.configure do |config|
   NOTION_RESULTS_2 = YAML.load_file(File.expand_path("fixtures/notion/results_2.yml", __dir__))
   NOTION_RESULTS_3 = YAML.load_file(File.expand_path("fixtures/notion/results_3.yml", __dir__))
   NOTION_FILMS = YAML.load_file(File.expand_path("fixtures/notion/films.yml", __dir__))
+  NOTION_PAGE = YAML.load_file(File.expand_path("fixtures/notion/single_page.yml", __dir__))
   MD_FILES = Dir[File.expand_path("fixtures/md_files/*.md",
                                   __dir__)].each_with_object({}) do |file, memo|
     value = File.read(file)

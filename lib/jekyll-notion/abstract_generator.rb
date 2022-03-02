@@ -2,8 +2,8 @@
 
 module JekyllNotion
   class AbstractGenerator
-    def initialize(db:, site:, plugin:)
-      @db = db
+    def initialize(notion_resource:, site:, plugin:)
+      @notion_resource = notion_resource
       @site = site
       @plugin = plugin
     end

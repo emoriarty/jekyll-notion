@@ -2,11 +2,11 @@
 
 module JekyllNotion
   class GeneratorFactory
-    def self.for(db:, site:, plugin:)
-      if db.data.nil?
-        CollectionGenerator.new(:db => db, :site => site, :plugin => plugin)
+    def self.for(notion_resource:, site:, plugin:)
+      if notion_resource.is_a?(NotionDatabase) && notion_resource.data.nil?
+        CollectionGenerator.new(:notion_resource => notion_resource, :site => site, :plugin => plugin)
       else
-        DataGenerator.new(:db => db, :site => site, :plugin => plugin)
+        DataGenerator.new(:notion_resource => notion_resource, :site => site, :plugin => plugin)
       end
     end
   end

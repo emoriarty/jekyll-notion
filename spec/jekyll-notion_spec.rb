@@ -381,5 +381,33 @@ describe(JekyllNotion) do
         expect(notion_client).to have_received(:database_query).once
       end
     end
+
+    context "with a notion page" do
+      let(:data_name) { "page" }
+      let(:notion_config) do
+        {
+          "page" => {
+            "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
+            "data"   => data_name
+          },
+        }
+      end
+      let(:notion_client) do
+        double("Notion::Client", :database_query => { :results => nil })
+        double("Notion::Client", :page => NOTION_PAGE)
+      end
+
+      before(:each) do
+        site.process
+      end
+
+      it "creates a page key in data object" do
+        expect(site.data).to have_key(data_name)
+      end
+
+      it "the data page is not nil" do
+        expect(site.data["page"]).not_to be_nil
+      end
+    end
   end
 end
