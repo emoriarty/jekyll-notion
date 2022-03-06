@@ -387,14 +387,14 @@ describe(JekyllNotion) do
       let(:notion_config) do
         {
           "page" => {
-            "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
-            "data"   => data_name
+            "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
+            "data" => data_name,
           },
         }
       end
       let(:notion_client) do
         double("Notion::Client", :database_query => { :results => nil })
-        double("Notion::Client", :page => NOTION_PAGE)
+        double("Notion::Client", :page => NOTION_PAGE, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       before(:each) do
@@ -408,6 +408,31 @@ describe(JekyllNotion) do
       it "the data page is not nil" do
         expect(site.data["page"]).not_to be_nil
       end
+    end
+  end
+
+  context("when using collection and data") do
+    let(:data_name) { "films" }
+    let(:collection_name) { "movies" }
+    let(:notion_config) do
+      {
+        "database" => {
+          "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
+          "data"   => data_name,
+          "collection" => collection_name,
+        },
+      }
+    end
+    let(:notion_client) do
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS })
+    end
+
+    it "creates the data key" do
+      expect(site.data).to have_key(data_name)
+    end
+
+    it "does not create the collection " do
+      expect(site.collections).not_to have_key(collection_name)
     end
   end
 end

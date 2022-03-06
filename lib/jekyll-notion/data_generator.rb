@@ -15,10 +15,10 @@ module JekyllNotion
 
     def data
       @data ||= if @notion_resource.is_a?(NotionDatabase)
-        @notion_resource.fetch.map(&:props)
-      else
-        @notion_resource.fetch&.props
-      end
+                  @notion_resource.fetch.map(&:props)
+                else
+                  @notion_resource.fetch&.props
+                end
     end
 
     def log_pages

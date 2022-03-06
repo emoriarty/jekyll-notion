@@ -6,11 +6,11 @@ module JekyllNotion
     def fetch
       return nil unless id?
 
-      @fetch ||= NotionToMd::Page.new(:page => @notion.page(query))
+      @fetch ||= NotionToMd::Page.new(:page   => @notion.page(query),
+                                      :blocks => @notion.block_children(query))
     end
 
     def data
-      puts config
       config["data"]
     end
 
