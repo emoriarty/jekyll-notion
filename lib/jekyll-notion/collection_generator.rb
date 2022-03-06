@@ -3,7 +3,7 @@
 module JekyllNotion
   class CollectionGenerator < AbstractGenerator
     def generate
-      @notion_resource.pages.each do |page|
+      @notion_resource.fetch.each do |page|
         next if file_exists?(make_path(page))
 
         collection.docs << make_doc(page)

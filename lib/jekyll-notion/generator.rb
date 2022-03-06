@@ -23,7 +23,7 @@ module JekyllNotion
     end
 
     def pages
-      config["pages"] || []
+      config["pages"] || [config["page"]]
     end
 
     def collections
