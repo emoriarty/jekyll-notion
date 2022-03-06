@@ -11,7 +11,7 @@ module JekyllNotion
       return [] unless id?
 
       @pages ||= @notion.database_query(query)[:results].map do |page|
-        NotionToMd::Page.new(:page => page)
+        NotionToMd::Page.new(:page => page, :blocks => nil)
       end
     end
 
