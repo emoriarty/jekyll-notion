@@ -41,7 +41,7 @@ describe(JekyllNotion) do
   end
   let(:site) { Jekyll::Site.new(config) }
   let(:notion_client) do
-    double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
+    double("Notion::Client", :database_query => { :results => NOTION_RESULTS }, :block_children => NOTION_PAGE_BLOCKS)
   end
 
   before do
@@ -216,7 +216,7 @@ describe(JekyllNotion) do
 
     context "with posts database" do
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 }, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "stores pages in posts collection" do
@@ -226,7 +226,7 @@ describe(JekyllNotion) do
 
     context "with recipes database" do
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS }, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "stores pages in recipes collection" do
@@ -246,7 +246,7 @@ describe(JekyllNotion) do
       let(:notion_client) do
         # NOTION_RESULTS_3 contains one page with the same date and title
         # as the post present in SOURCE_DIR_2
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 })
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 }, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "only local document is kept" do
@@ -357,7 +357,7 @@ describe(JekyllNotion) do
       }
     end
     let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS })
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS }, :block_children => NOTION_PAGE_BLOCKS)
     end
 
     it "creates a films key in data object" do
@@ -380,6 +380,62 @@ describe(JekyllNotion) do
       it "does not query notion database" do
         expect(notion_client).to have_received(:database_query).once
       end
+    end
+
+    context "with a notion page" do
+      let(:data_name) { "page" }
+      let(:notion_config) do
+        {
+          "page" => {
+            "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
+            "data" => data_name,
+          },
+        }
+      end
+      let(:notion_client) do
+        double("Notion::Client", :database_query => { :results => nil }, :page => NOTION_PAGE, :block_children => NOTION_PAGE_BLOCKS)
+      end
+
+      before(:each) do
+        site.process
+      end
+
+      it "creates a page key in data object" do
+        expect(site.data).to have_key(data_name)
+      end
+
+      it "the data page is not nil" do
+        expect(site.data["page"]).not_to be_nil
+      end
+
+      it "there's a content key" do
+        expect(site.data["page"]).to have_key("content")
+      end
+    end
+  end
+
+  context("when using collection and data") do
+    let(:data_name) { "films" }
+    let(:collection_name) { "movies" }
+    let(:notion_config) do
+      {
+        "database" => {
+          "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
+          "data"   => data_name,
+          "collection" => collection_name,
+        },
+      }
+    end
+    let(:notion_client) do
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS }, :block_children => NOTION_PAGE_BLOCKS)
+    end
+
+    it "creates the data key" do
+      expect(site.data).to have_key(data_name)
+    end
+
+    it "does not create the collection " do
+      expect(site.collections).not_to have_key(collection_name)
     end
   end
 end

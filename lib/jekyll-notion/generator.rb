@@ -10,7 +10,8 @@ module JekyllNotion
       return unless notion_token? && config?
 
       if fetch_on_watch? || collections_and_data_empty?
-        read_notion_database
+        read_notion_databases
+        read_notion_pages
       else
         collections.each_pair { |key, val| @site.collections[key] = val }
         data.each_pair { |key, val| @site.data[key] = val }
@@ -19,6 +20,10 @@ module JekyllNotion
 
     def databases
       config["databases"] || [config["database"]]
+    end
+
+    def pages
+      config["pages"] || [config["page"]]
     end
 
     def collections
@@ -35,10 +40,17 @@ module JekyllNotion
       collections.empty? && data.empty?
     end
 
-    def read_notion_database
+    def read_notion_databases
       databases.each do |db_config|
         db = NotionDatabase.new(:config => db_config)
-        GeneratorFactory.for(:db => db, :site => @site, :plugin => self).generate
+        GeneratorFactory.for(:notion_resource => db, :site => @site, :plugin => self).generate
+      end
+    end
+
+    def read_notion_pages
+      pages.each do |page_config|
+        page = NotionPage.new(:config => page_config)
+        GeneratorFactory.for(:notion_resource => page, :site => @site, :plugin => self).generate
       end
     end
 

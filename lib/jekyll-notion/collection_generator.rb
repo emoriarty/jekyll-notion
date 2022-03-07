@@ -3,18 +3,18 @@
 module JekyllNotion
   class CollectionGenerator < AbstractGenerator
     def generate
-      @db.pages.each do |page|
+      @notion_resource.fetch.each do |page|
         next if file_exists?(make_path(page))
 
         collection.docs << make_doc(page)
         log_new_page(page)
       end
       # Caching current collection
-      @plugin.collections[@db.collection] = collection
+      @plugin.collections[@notion_resource.collection] = collection
     end
 
     def collection
-      @site.collections[@db.collection]
+      @site.collections[@notion_resource.collection]
     end
 
     private
@@ -35,11 +35,11 @@ module JekyllNotion
     end
 
     def make_path(page)
-      "_#{@db.collection}/#{make_filename(page)}"
+      "_#{@notion_resource.collection}/#{make_filename(page)}"
     end
 
     def make_filename(page)
-      if @db.collection == "posts"
+      if @notion_resource.collection == "posts"
         "#{page.created_time.to_date}-#{Jekyll::Utils.slugify(page.title,
                                                               :mode => "latin")}.md"
       else
@@ -54,7 +54,7 @@ module JekyllNotion
     def log_new_page(page)
       Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
       if @site.config.dig(
-        "collections", @db.collection, "output"
+        "collections", @notion_resource.collection, "output"
       )
         Jekyll.logger.info("",
                            "Path => #{collection.docs.last.path}")
