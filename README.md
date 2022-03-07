@@ -1,6 +1,6 @@
 # jekyll-notion
 
-Import notion pages to a jekyll collection.
+Import notion pages to a jekyll collection or data.
 
 ## Installation
 
@@ -32,15 +32,16 @@ Export the notion secret token in an environment variable named `NOTION_TOKEN`.
 $ export NOTION_TOKEN=<secret_...>
 ```
 
-Once your notion database has been shared, specify the  database `id` in your `_config.yml` as follows.
+Once your [notion database](https://www.notion.so/help/intro-to-databases) has been shared, specify the database `id` in your `_config.yml` as follows.
 
 ```yml
 notion:
   database:
-    id: e42383cd-4975-4897-b967-ce453760499f
+    id: 5cfed4de3bdc4f43ae8ba653a7a2219b
 ```
 
 After running `jekyll build` (or `serve`) command, the `posts` collection is loaded with pages of the notion database specified in the configuration. 
+
 
 ### Mutiple dabatases
 
@@ -53,27 +54,51 @@ collections:
 
 notion:
   databases:
-    - id: b0e688e1-99af-4295-ae80-b67eb52f2e2f
-    - id: 2190450d-4cb3-4739-a5c8-340c4110fe21
+    - id: b0e688e199af4295ae80b67eb52f2e2f
+    - id: 2190450d4cb34739a5c8340c4110fe21
       collection: recipes
-    - id: e42383cd-4975-4897-b967-ce453760499f 
+    - id: e42383cd49754897b967ce453760499f 
       collection: films
 ```
 
-In this example, the notion database `b0e688e1-99af-4295-ae80-b67eb52f2e2f` pages are mapped into the posts collection. `recipes` and `films` will contain the database pages `2190450d-4cb3-4739-a5c8-340c4110fe21` and  `e42383cd-4975-4897-b967-ce453760499f`, respectively.
+### Data
 
-### data
-
-Instead of storing notion pages in a collection, you can also map to the data object. Declare the data property as follows.
+Instead of storing notion pages in a collection, you can also map to the data object. Use the `data` property instead of `collection`.
 
 ```yml
 notion:
   database:
-    id: e42383cd-4975-4897-b967-ce453760499f
+    id: e42383cd49754897b967ce453760499f
     data: films
 ```
 
-Unlike collections, only the properties of the notion page are assigned to the each data item. The body of the notion page is omitted.
+Page properties and body are stored as a hash data.
+
+As a particular characteristic, the page is stored in a key named `content`.
+
+```html
+<p>{{ site.data.films.content }}</p>
+```
+
+The rest of properties as mapped as expected.
+
+### Pages
+
+Individual Notion pages can also be mapped to data. Just define the `pages` or `page` property as follows.
+
+```yaml
+notion:
+  pages:
+    - id: e42383cd49754897b967ce453760499f
+      data: about
+    - id: b0e688e199af4295ae80b67eb52f2e2f
+      data: contact
+    - id: 2190450d4cb34739a5c8340c4110fe21
+      data: footer
+
+```
+
+_This feature is only available for data._
 
 ### Database options
 
@@ -87,7 +112,7 @@ Each dabatase support the following options.
 ```yml
 notion:
   database:
-    id: e42383cd-4975-4897-b967-ce453760499f
+    id: e42383cd49754897b967ce453760499f
     collection: posts
     filter: { "property": "Published", "checkbox": { "equals": true } }
     sort: { "property": "Last ordered", "direction": "ascending" }
@@ -103,7 +128,7 @@ Set `fetch_on_watch` to true to allow request on each rebuild.
 notion:
   fetch_on_watch: true
   database:
-    id: e42383cd-4975-4897-b967-ce453760499f
+    id: e42383cd49754897b967ce453760499f
 ```
 
 And that's all. Each page in the notion database will be included in the selected collection.
