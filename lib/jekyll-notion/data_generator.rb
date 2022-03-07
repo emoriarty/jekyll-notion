@@ -15,22 +15,23 @@ module JekyllNotion
 
     def data
       @data ||= if @notion_resource.is_a?(NotionDatabase)
-                  @notion_resource.fetch.map(&:props)
+                  pages = @notion_resource.fetch
+                  pages.map { |page| page.props.merge({ "content" => page.body }) }
                 else
-                  @notion_resource.fetch&.props
+                  page = @notion_resource.fetch
+                  page.props.merge({ "content" => page.body }) unless page.nil?
                 end
     end
 
     def log_pages
-      if @notion_resource.is_a?(NotionDatabase)
-        @notion_resource.fetch.each do |page|
-          Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
-          Jekyll.logger.debug("", "Props => #{page.props.keys.inspect}")
+      if data.is_a?(Array)
+        data.each do |page|
+          Jekyll.logger.info("Jekyll Notion:", "Page => #{page["title"]}")
+          Jekyll.logger.debug("", "Props => #{page.keys.inspect}")
         end
       else
-        page = @notion_resource.fetch
-        Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
-        Jekyll.logger.debug("", "Props => #{page.props.keys.inspect}")
+        Jekyll.logger.info("Jekyll Notion:", "Page => #{data["title"]}")
+        Jekyll.logger.debug("", "Props => #{data.keys.inspect}")
       end
     end
   end

@@ -41,7 +41,7 @@ describe(JekyllNotion) do
   end
   let(:site) { Jekyll::Site.new(config) }
   let(:notion_client) do
-    double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
+    double("Notion::Client", :database_query => { :results => NOTION_RESULTS }, :block_children => NOTION_PAGE_BLOCKS)
   end
 
   before do
@@ -216,7 +216,7 @@ describe(JekyllNotion) do
 
     context "with posts database" do
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 })
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 }, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "stores pages in posts collection" do
@@ -226,7 +226,7 @@ describe(JekyllNotion) do
 
     context "with recipes database" do
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS })
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS }, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "stores pages in recipes collection" do
@@ -246,7 +246,7 @@ describe(JekyllNotion) do
       let(:notion_client) do
         # NOTION_RESULTS_3 contains one page with the same date and title
         # as the post present in SOURCE_DIR_2
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 })
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 }, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "only local document is kept" do
@@ -357,7 +357,7 @@ describe(JekyllNotion) do
       }
     end
     let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS })
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS }, :block_children => NOTION_PAGE_BLOCKS)
     end
 
     it "creates a films key in data object" do
@@ -393,8 +393,7 @@ describe(JekyllNotion) do
         }
       end
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => nil })
-        double("Notion::Client", :page => NOTION_PAGE, :block_children => NOTION_PAGE_BLOCKS)
+        double("Notion::Client", :database_query => { :results => nil }, :page => NOTION_PAGE, :block_children => NOTION_PAGE_BLOCKS)
       end
 
       before(:each) do
@@ -407,6 +406,10 @@ describe(JekyllNotion) do
 
       it "the data page is not nil" do
         expect(site.data["page"]).not_to be_nil
+      end
+
+      it "there's a content key" do
+        expect(site.data["page"]).to have_key("content")
       end
     end
   end
@@ -424,7 +427,7 @@ describe(JekyllNotion) do
       }
     end
     let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS })
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS }, :block_children => NOTION_PAGE_BLOCKS)
     end
 
     it "creates the data key" do
