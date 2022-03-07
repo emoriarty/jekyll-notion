@@ -6,7 +6,7 @@ module JekyllNotion
     def fetch
       return [] unless id?
 
-      @pages ||= @notion.database_query(query)[:results].map do |page|
+      @fetch ||= @notion.database_query(query)[:results].map do |page|
         NotionToMd::Page.new(:page => page, :blocks => @notion.block_children(:id => page.id))
       end
     end
