@@ -19,11 +19,11 @@ module JekyllNotion
       config["sort"]
     end
 
-    def collection
+    def collection_name
       config["collection"] || "posts"
     end
 
-    def data
+    def data_name
       config["data"]
     end
 
