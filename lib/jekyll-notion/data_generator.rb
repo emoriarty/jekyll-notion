@@ -4,9 +4,9 @@ module JekyllNotion
   class DataGenerator < AbstractGenerator
     def generate
       unless data.nil?
-        @site.data[@notion_resource.data] = data
+        @site.data[@notion_resource.data_name] = data
         # Caching current data in Generator instance (plugin)
-        @plugin.data[@notion_resource.data] = data
+        @plugin.data[@notion_resource.data_name] = data
         log_pages
       end
     end

@@ -10,8 +10,12 @@ module JekyllNotion
                                       :blocks => @notion.block_children(query))
     end
 
-    def data
+    def data_name
       config["data"]
+    end
+
+    def collection_name
+      nil
     end
 
     private

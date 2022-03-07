@@ -3,7 +3,7 @@
 module JekyllNotion
   class GeneratorFactory
     def self.for(notion_resource:, site:, plugin:)
-      if notion_resource.is_a?(NotionDatabase) && notion_resource.data.nil?
+      if notion_resource.is_a?(NotionDatabase) && notion_resource.data_name.nil?
         CollectionGenerator.new(:notion_resource => notion_resource, :site => site,
                                 :plugin => plugin)
       else

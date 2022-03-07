@@ -10,11 +10,11 @@ module JekyllNotion
         log_new_page(page)
       end
       # Caching current collection
-      @plugin.collections[@notion_resource.collection] = collection
+      @plugin.collections[@notion_resource.collection_name] = collection
     end
 
     def collection
-      @site.collections[@notion_resource.collection]
+      @site.collections[@notion_resource.collection_name]
     end
 
     private
@@ -35,11 +35,11 @@ module JekyllNotion
     end
 
     def make_path(page)
-      "_#{@notion_resource.collection}/#{make_filename(page)}"
+      "_#{@notion_resource.collection_name}/#{make_filename(page)}"
     end
 
     def make_filename(page)
-      if @notion_resource.collection == "posts"
+      if @notion_resource.collection_name == "posts"
         "#{page.created_time.to_date}-#{Jekyll::Utils.slugify(page.title,
                                                               :mode => "latin")}.md"
       else
@@ -54,7 +54,7 @@ module JekyllNotion
     def log_new_page(page)
       Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
       if @site.config.dig(
-        "collections", @notion_resource.collection, "output"
+        "collections", @notion_resource.collection_name, "output"
       )
         Jekyll.logger.info("",
                            "Path => #{collection.docs.last.path}")
