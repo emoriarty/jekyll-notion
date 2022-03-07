@@ -19,7 +19,7 @@ module JekyllNotion
                   pages.map { |page| page.props.merge({ "content" => page.body }) }
                 else
                   page = @notion_resource.fetch
-                  page.props.merge({ "content" => page.body }) unless page.nil?
+                  page&.props&.merge({ "content" => page.body })
                 end
     end
 
