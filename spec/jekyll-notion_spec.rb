@@ -41,7 +41,8 @@ describe(JekyllNotion) do
   end
   let(:site) { Jekyll::Site.new(config) }
   let(:notion_client) do
-    double("Notion::Client", :database_query => { :results => NOTION_RESULTS }, :block_children => NOTION_PAGE_BLOCKS)
+    double("Notion::Client", :database_query => { :results => NOTION_RESULTS },
+                             :block_children => NOTION_PAGE_BLOCKS)
   end
 
   before do
@@ -216,7 +217,8 @@ describe(JekyllNotion) do
 
     context "with posts database" do
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 }, :block_children => NOTION_PAGE_BLOCKS)
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 },
+                                 :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "stores pages in posts collection" do
@@ -226,7 +228,8 @@ describe(JekyllNotion) do
 
     context "with recipes database" do
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS }, :block_children => NOTION_PAGE_BLOCKS)
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS },
+                                 :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "stores pages in recipes collection" do
@@ -246,7 +249,8 @@ describe(JekyllNotion) do
       let(:notion_client) do
         # NOTION_RESULTS_3 contains one page with the same date and title
         # as the post present in SOURCE_DIR_2
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 }, :block_children => NOTION_PAGE_BLOCKS)
+        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 },
+                                 :block_children => NOTION_PAGE_BLOCKS)
       end
 
       it "only local document is kept" do
@@ -357,7 +361,8 @@ describe(JekyllNotion) do
       }
     end
     let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS }, :block_children => NOTION_PAGE_BLOCKS)
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS },
+                               :block_children => NOTION_PAGE_BLOCKS)
     end
 
     it "creates a films key in data object" do
@@ -393,7 +398,8 @@ describe(JekyllNotion) do
         }
       end
       let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => nil }, :page => NOTION_PAGE, :block_children => NOTION_PAGE_BLOCKS)
+        double("Notion::Client", :database_query => { :results => nil }, :page => NOTION_PAGE,
+:block_children => NOTION_PAGE_BLOCKS)
       end
 
       before(:each) do
@@ -420,14 +426,15 @@ describe(JekyllNotion) do
     let(:notion_config) do
       {
         "database" => {
-          "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
-          "data"   => data_name,
+          "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
+          "data"       => data_name,
           "collection" => collection_name,
         },
       }
     end
     let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS }, :block_children => NOTION_PAGE_BLOCKS)
+      double("Notion::Client", :database_query => { :results => NOTION_FILMS },
+                               :block_children => NOTION_PAGE_BLOCKS)
     end
 
     it "creates the data key" do
