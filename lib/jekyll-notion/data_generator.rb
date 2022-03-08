@@ -16,11 +16,30 @@ module JekyllNotion
     def data
       @data ||= if @notion_resource.is_a?(NotionDatabase)
                   pages = @notion_resource.fetch
-                  pages.map { |page| page.props.merge({ "content" => page.body }) }
+                  pages.map { |page| page.props.merge({ "content" => convert(page) }) }
                 else
                   page = @notion_resource.fetch
-                  page&.props&.merge({ "content" => page.body })
+                  page&.props&.merge({ "content" => convert(page) })
                 end
+    end
+
+    # Convert the notion page body using the site.converters.
+    #
+    # Returns String the converted content.
+    def convert(page)
+      converters.reduce(page.body) do |output, converter|
+        converter.convert output
+      rescue StandardError => e
+        Jekyll.logger.error "Conversion error:",
+                            "#{converter.class} encountered an error while "\
+                            "converting notion page '#{page.title}':"
+        Jekyll.logger.error("", e.to_s)
+        raise e
+      end
+    end
+
+    def converters
+      @converters ||= @site.converters.select { |c| c.matches(".md") }.tap(&:sort!)
     end
 
     def log_pages
