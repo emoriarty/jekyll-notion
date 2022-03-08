@@ -16,7 +16,7 @@ module JekyllNotion
     def data
       @data ||= if @notion_resource.is_a?(NotionDatabase)
                   pages = @notion_resource.fetch
-                  pages.map { |page| page.props.merge({ "content" => page.body }) }
+                  pages.map { |page| page.props.merge({ "content" => convert(page) }) }
                 else
                   page = @notion_resource.fetch
                   page&.props&.merge({ "content" => convert(page) })
@@ -32,7 +32,7 @@ module JekyllNotion
       rescue StandardError => e
         Jekyll.logger.error "Conversion error:",
                             "#{converter.class} encountered an error while "\
-                            "converting '#{page.title}':"
+                            "converting notion page '#{page.title}':"
         Jekyll.logger.error("", e.to_s)
         raise e
       end
