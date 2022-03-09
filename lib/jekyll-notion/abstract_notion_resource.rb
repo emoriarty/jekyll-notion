@@ -19,6 +19,14 @@ module JekyllNotion
       raise "Do not use the AbstractNotionResource class. Implement the fetch method in a subclass."
     end
 
+    def collection_name
+      raise "Do not use the AbstractGenerator class. Implement the collection_name method in a subclass."
+    end
+
+    def data_name
+      raise "Do not use the AbstractGenerator class. Implement the data_name method in a subclass."
+    end
+
     protected
 
     def id?
