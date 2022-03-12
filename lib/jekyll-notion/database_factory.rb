@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 module JekyllNotion
-  class GeneratorFactory
+  class DatabaseFactory
     def self.for(notion_resource:, site:, plugin:)
-      if notion_resource.is_a?(NotionDatabase) && notion_resource.data_name.nil?
+      if notion_resource.data_name.nil?
         CollectionGenerator.new(:notion_resource => notion_resource, :site => site,
                                 :plugin => plugin)
       else
