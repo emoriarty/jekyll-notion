@@ -7,7 +7,7 @@ module JekyllNotion
       super(site, base, dir, name)
     end
 
-    def read_yaml(base, name, opts = {})
+    def read_yaml(base, name, _opts = {})
       filename = @path || site.in_source_dir(base, name)
       Jekyll.logger.debug "Reading:", relative_path
 

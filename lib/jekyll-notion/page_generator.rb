@@ -9,7 +9,8 @@ module JekyllNotion
     end
 
     def make_page(notion_page)
-      JekyllNotion::PageWithoutAFile.new(@site, @site.source, "", "#{notion_page.title}.md", make_md)
+      JekyllNotion::PageWithoutAFile.new(@site, @site.source, "", "#{notion_page.title}.md",
+                                         make_md)
     end
 
     def log_page(notion_page)

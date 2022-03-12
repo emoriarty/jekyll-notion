@@ -5,7 +5,7 @@ module JekyllNotion
     def self.for(notion_resource:, site:, plugin:)
       if notion_resource.data_name.nil?
         PageGenerator.new(:notion_resource => notion_resource, :site => site,
-                                :plugin => plugin)
+                          :plugin => plugin)
       else
         DataGenerator.new(:notion_resource => notion_resource, :site => site, :plugin => plugin)
       end
