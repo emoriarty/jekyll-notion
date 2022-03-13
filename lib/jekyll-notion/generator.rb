@@ -43,14 +43,14 @@ module JekyllNotion
     def read_notion_databases
       databases.each do |db_config|
         db = NotionDatabase.new(:config => db_config)
-        GeneratorFactory.for(:notion_resource => db, :site => @site, :plugin => self).generate
+        DatabaseFactory.for(:notion_resource => db, :site => @site, :plugin => self).generate
       end
     end
 
     def read_notion_pages
       pages.each do |page_config|
         page = NotionPage.new(:config => page_config)
-        GeneratorFactory.for(:notion_resource => page, :site => @site, :plugin => self).generate
+        PageFactory.for(:notion_resource => page, :site => @site, :plugin => self).generate
       end
     end
 
