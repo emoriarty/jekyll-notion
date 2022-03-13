@@ -4,8 +4,10 @@ module JekyllNotion
   class PageGenerator < AbstractGenerator
     def generate
       notion_page = @notion_resource.fetch
-      @site.pages << make_page(notion_page)
-      log_page(notion_page)
+      unless notion_page.nil?
+        @site.pages << make_page(notion_page)
+        log_page(notion_page)
+      end
     end
 
     def make_page(notion_page)
