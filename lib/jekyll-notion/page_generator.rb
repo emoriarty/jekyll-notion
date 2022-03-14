@@ -5,8 +5,10 @@ module JekyllNotion
     def generate
       notion_page = @notion_resource.fetch
       unless notion_page.nil?
-        @site.pages << make_page(notion_page)
+        page = make_page(notion_page)
+        @site.pages << page
         log_page(notion_page)
+        @plugin.pages << page
       end
     end
 

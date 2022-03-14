@@ -1,12 +1,15 @@
 # frozen_string_literal: true
 
 require "spec_helper"
+require "support/check_config"
+require "support/collection"
+require "support/data"
+require "support/page"
 
 describe(JekyllNotion) do
-  let(:overrides) { {} }
   let(:source_dir) { SOURCE_DIR }
   let(:config) do
-    Jekyll.configuration(Jekyll::Utils.deep_merge_hashes({
+    Jekyll.configuration({
       "full_rebuild" => true,
       "source"       => source_dir,
       "destination"  => dest_dir,
@@ -16,34 +19,14 @@ describe(JekyllNotion) do
       "author"       => {
         "name" => "Dr. Moriarty",
       },
-      "collections"  => {
-        "films"   => { "output" => false },
-        "recipes" => { "output" => false },
-      },
+      "collections"  => collections,
       "notion"       => notion_config,
-    }, overrides))
+    })
   end
   let(:notion_token) { "secret_0987654321" }
-  let(:collection) { nil }
-  let(:filter) { nil }
-  let(:sort) { nil }
-  let(:fetch_on_watch) { nil }
-  let(:notion_config) do
-    {
-      "fetch_on_watch" => fetch_on_watch,
-      "database"       => {
-        "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
-        "collection" => collection,
-        "filter"     => filter,
-        "sort"       => sort,
-      },
-    }
-  end
+  let(:collections) { nil }
+  let(:notion_config) { nil }
   let(:site) { Jekyll::Site.new(config) }
-  let(:notion_client) do
-    double("Notion::Client", :database_query => { :results => NOTION_RESULTS },
-                             :block_children => NOTION_PAGE_BLOCKS)
-  end
 
   before do
     allow(ENV).to receive(:[]).with("NOTION_TOKEN").and_return(notion_token)
@@ -58,391 +41,306 @@ describe(JekyllNotion) do
     site.process
   end
 
-  context "when NOTION_TOKEN not present" do
-    let(:notion_token) { nil }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
+  context "with a notion database" do
+    let(:notion_client) do
+      double("Notion::Client", :database_query => { :results => NOTION_RESULTS },
+                               :block_children => NOTION_PAGE_BLOCKS)
     end
-  end
-
-  context "when NOTION_TOKEN is empty" do
-    let(:notion_token) { "" }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
-    end
-  end
-
-  context "when config is not present" do
-    let(:notion_config) { nil }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
-    end
-  end
-
-  context "when config is empty" do
-    let(:notion_config) { {} }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
-    end
-  end
-
-  context "when config.database is not present" do
-    let(:notion_config) { { "database" => nil } }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
-    end
-  end
-
-  context "when config.database.id is not present" do
-    let(:notion_config) { { "database" => { :id => nil } } }
-
-    it "does not query notion database" do
-      expect(notion_client).not_to have_received(:database_query)
-    end
-  end
-
-  it "stores pages into posts collection" do
-    expect(site.posts.size).to be == NOTION_RESULTS.size
-  end
-
-  it "post filename matches YYYY-MM-DD-title.md format" do
-    expect(site.posts.first.path).to match(%r!_posts/\d{4}-\d{2}-\d{2}-.*.md$!)
-  end
-
-  context "when collection is not posts" do
-    let(:collection) { "films" }
-
-    it "stores page into designated collection" do
-      expect(site.collections[collection].size).to be == NOTION_RESULTS.size
-    end
-
-    it "does not store page into posts collection" do
-      expect(site.posts.size).to be == 0
-    end
-
-    it "filename does not contain date" do
-      expect(site.collections[collection].first.path).not_to match(%r!_films/\d{4}-\d{2}-\d{2}-.*.md$!)
-    end
-  end
-
-  context "when filter is provided" do
-    let(:filter) { { :property => "blabla", :checkbox => { :equals => true } } }
-
-    it do
-      expect(notion_client).to have_received(:database_query)
-        .with(hash_including(:filter => filter))
-    end
-  end
-
-  context "when filter is not provided" do
-    let(:filter) { nil }
-
-    it do
-      expect(notion_client).not_to have_received(:database_query)
-        .with(hash_including(:filter => filter))
-    end
-  end
-
-  context "when sort is provided" do
-    let(:sort) { { :propery => "Last ordered", :direction => "ascending" } }
-
-    it {
-      expect(notion_client).to have_received(:database_query)
-        .with(hash_including(:sort => sort))
-    }
-  end
-
-  context "when sort is not provided" do
-    let(:sort) { nil }
-
-    it {
-      expect(notion_client).not_to have_received(:database_query)
-        .with(hash_including(:sort => sort))
-    }
-  end
-
-  context "when site is processed a second time" do
-    before(:each) do
-      site.process
-    end
-
-    it "the posts collection is not empty" do
-      expect(site.posts).not_to be_empty
-    end
-
-    it "the posts collection is the same length" do
-      expect(site.posts.size).to be(NOTION_RESULTS.size)
-    end
-
-    it "does not query notion database" do
-      expect(notion_client).to have_received(:database_query).once
-    end
-  end
-
-  context "when fetch_on_watch is true" do
-    let(:fetch_on_watch) { true }
-
-    before(:each) do
-      site.process
-    end
-
-    it "queries notion database as many times as the site rebuild" do
-      expect(notion_client).to have_received(:database_query).twice
-    end
-  end
-
-  context "when multiple databases" do
-    let(:posts_id) { "b0e688e199af4295ae80b67eb52f2e2f" }
-    let(:recipes_id) { "f0e688e199af4295ae80b67eb52f2e2r" }
-    let(:posts_results) { NOTION_RESULTS_2 }
-    let(:recipes_results) { NOTION_RESULTS }
-    let(:notion_config) do
-      {
-        "databases" => [
-          {
-            "id" => posts_id,
-          },
-          {
-            "id"         => recipes_id,
-            "collection" => "recipes",
-          },
-        ],
-      }
-    end
-
-    context "with posts database" do
-      let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_2 },
-                                 :block_children => NOTION_PAGE_BLOCKS)
-      end
-
-      it "stores pages in posts collection" do
-        expect(site.posts.size).to be == NOTION_RESULTS_2.size
-      end
-    end
-
-    context "with recipes database" do
-      let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS },
-                                 :block_children => NOTION_PAGE_BLOCKS)
-      end
-
-      it "stores pages in recipes collection" do
-        expect(site.collections["recipes"].size).to be == NOTION_RESULTS.size
-      end
-    end
-  end
-
-  context "when there is a post present in source dir" do
-    let(:source_dir) { SOURCE_DIR_2 }
-
-    it "adds one more document to posts collection" do
-      expect(site.posts.size).to be == (NOTION_RESULTS.size + 1)
-    end
-
-    context "with a document matching the same filename" do
-      let(:notion_client) do
-        # NOTION_RESULTS_3 contains one page with the same date and title
-        # as the post present in SOURCE_DIR_2
-        double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 },
-                                 :block_children => NOTION_PAGE_BLOCKS)
-      end
-
-      it "only local document is kept" do
-        # notion pages are processed after Jekyll has generated local documents
-        # so, the last element in the collection must be an instance of a Jekyll:Document
-        expect(site.posts.last).to be_an_instance_of(Jekyll::Document)
-      end
-    end
-  end
-
-  it "id is mapped into collection doc" do
-    expect(site.posts.first.data).to include("id" => NOTION_RESULTS.first.id)
-  end
-
-  it "created_time is mapped into collection doc" do
-    expect(site.posts.first.data).to include("created_time" => Time.parse(NOTION_RESULTS.first.created_time))
-  end
-
-  it "last_edited_time is mapped into collection doc" do
-    expect(site.posts.first.data).to include("last_edited_time" => Time.parse(NOTION_RESULTS.first.last_edited_time))
-  end
-
-  it "cover is mapped into collection doc" do
-    expect(site.posts.first.data).to include("cover" => NOTION_RESULTS.first.cover.dig("external",
-                                                                                       "url"))
-  end
-
-  it "icon is mapped into collection doc" do
-    expect(site.posts.first.data).to include("icon" => NOTION_RESULTS.first.icon.emoji)
-  end
-
-  it "archived is mapped into collection doc" do
-    expect(site.posts.first.data).to include("archived" => NOTION_RESULTS.first.archived)
-  end
-
-  it "archived is mapped into collection doc" do
-    expect(site.posts.first.data).to include("archived" => NOTION_RESULTS.first.archived)
-  end
-
-  it "multi_select type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Multi Select", "multi_select").map(&:name)
-    expect(site.posts.first.data).to include("multi_select" => expected_value)
-  end
-
-  it "select type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Select", "select").name
-    expect(site.posts.first.data).to include("select" => expected_value)
-  end
-
-  it "people type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Person",
-                                                         "people").map(&:name)
-    expect(site.posts.first.data).to include("person" => expected_value)
-  end
-
-  it "number type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Numbers", "number")
-    expect(site.posts.first.data).to include("numbers" => expected_value)
-  end
-
-  it "phone_number type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Phone", "phone_number")
-    expect(site.posts.first.data).to include("phone" => expected_value.to_i)
-  end
-
-  it "files type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("File", "files").map do |f|
-      f.file.url
-    end
-    expect(site.posts.first.data).to include("file" => expected_value)
-  end
-
-  it "email type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Email", "email")
-    expect(site.posts.first.data).to include("email" => expected_value)
-  end
-
-  it "checkbox type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Checkbox", "checkbox")
-    expect(site.posts.first.data).to include("checkbox" => expected_value)
-  end
-
-  it "title type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.Name.title[0].plain_text
-    expect(site.posts.first.data).to include("title" => expected_value)
-  end
-
-  it "date type is mapped into collection doc" do
-    expected_value = NOTION_RESULTS.first.properties.dig("Date", "date", "start")
-    expect(site.posts.first.data).to include("date" => Time.parse(expected_value))
-  end
-
-  it "page is stored in destination directory" do
-    expected_path = site.posts.first.destination(".")
-    expect(File).to exist(expected_path)
-  end
-
-  context("when using data") do
-    let(:data_name) { "films" }
     let(:notion_config) do
       {
         "database" => {
-          "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
-          "data"   => data_name,
-          "filter" => filter,
-          "sort"   => sort,
+          "id" => "b0e688e199af4295ae80b67eb52f2e2f",
         },
       }
     end
-    let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS },
-                               :block_children => NOTION_PAGE_BLOCKS)
+
+    include_examples "check settings" do
+      let(:query) { :database_query }
     end
 
-    it "creates a films key in data object" do
-      expect(site.data).to have_key(data_name)
+    it_behaves_like "a jekyll collection" do
+      let(:collection_name) { "posts" }
     end
 
-    it "contains the same size as the returned films" do
-      expect(site.data["films"].size).to be == NOTION_FILMS.size
-    end
-
-    context "when site is processed a second time" do
-      before(:each) do
-        site.process
-      end
-
-      it "the data films is not nil" do
-        expect(site.data["films"]).not_to be_nil
-      end
-
-      it "does not query notion database" do
-        expect(notion_client).to have_received(:database_query).once
-      end
-    end
-
-    context "with a notion page" do
-      let(:data_name) { "page" }
+    context "when data is declared" do
       let(:notion_config) do
         {
-          "page" => {
+          "database" => {
             "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
             "data" => data_name,
           },
         }
       end
-      let(:notion_client) do
-        double("Notion::Client", :database_query => { :results => nil }, :page => NOTION_PAGE,
-:block_children => NOTION_PAGE_BLOCKS)
+      let(:notion_client) {
+        double("Notion::Client", :database_query => { :results => NOTION_FILMS },
+                                :block_children => NOTION_PAGE_BLOCKS)
+      }
+
+      it_behaves_like "a jekyll data object" do
+        let(:data_name) { "films" }
+        let(:size) { NOTION_FILMS.size }
+      end
+
+      context "with a collection in the same configuration object" do
+        let(:collection_name) { "movies" }
+        let(:data_name) { "films" }
+        let(:notion_config) do
+          {
+            "database" => {
+              "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
+              "data"       => data_name,
+              "collection" => collection_name,
+            },
+          }
+        end
+
+        it "creates the data key" do
+          expect(site.data).to have_key(data_name)
+        end
+
+        it "does not create the collection " do
+          expect(site.collections).not_to have_key(collection_name)
+        end
+      end
+    end
+
+    context "when database is nil" do
+      let(:notion_config) { { "database" => nil } }
+
+      it "does not query notion database" do
+        expect(notion_client).not_to have_received(:database_query)
+      end
+    end
+
+    context "when no database id is present" do
+      let(:notion_config) { { "database" => { :id => nil } } }
+
+      it "does not query notion database" do
+        expect(notion_client).not_to have_received(:database_query)
+      end
+    end
+
+    it "stores pages into posts collection" do
+      expect(site.posts.size).to be == NOTION_RESULTS.size
+    end
+
+    it "each item filename matches YYYY-MM-DD-title.md format" do
+      site.posts.each do |post|
+        expect(post.path).to match(%r!_posts/\d{4}-\d{2}-\d{2}-.*.md$!)
+      end
+    end
+
+    context "when a collection films is defined" do
+      let(:collection) { "films" }
+      let(:collections) do
+        {
+          "films" => { "output" => true },
+        }
+      end
+      let(:notion_config) do
+        {
+          "database" => {
+            "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
+            "collection" => collection,
+          },
+        }
+      end
+
+      it_behaves_like "a jekyll collection" do
+        let(:collection_name) { collection }
+      end
+
+      it "stores page into films collection" do
+        expect(site.collections[collection].size).to be == NOTION_RESULTS.size
+      end
+
+      it "does not store page into posts collection" do
+        expect(site.posts.size).to be == 0
+      end
+
+      it "each item filename does not contain date" do
+        site.collections[collection].each do |film|
+          expect(film.path).not_to match(%r!_films/\d{4}-\d{2}-\d{2}-.*.md$!)
+        end
+      end
+    end
+
+    context "when filter is provided" do
+      let(:filter) { { :property => "blabla", :checkbox => { :equals => true } } }
+      let(:notion_config) do
+        {
+          "database" => {
+            "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
+            "filter" => filter,
+          },
+        }
+      end
+
+      it do
+        expect(notion_client).to have_received(:database_query)
+          .with(hash_including(:filter => filter))
+      end
+    end
+
+    context "when filter is not provided" do
+      it do
+        expect(notion_client).not_to have_received(:database_query)
+          .with(hash_including(:filter => nil))
+      end
+    end
+
+    context "when sort is provided" do
+      let(:sort) { { :propery => "Last ordered", :direction => "ascending" } }
+      let(:notion_config) do
+        {
+          "database" => {
+            "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
+            "sort" => sort,
+          },
+        }
+      end
+
+      it do
+        expect(notion_client).to have_received(:database_query)
+          .with(hash_including(:sort => sort))
+      end
+    end
+
+    context "when sort is not provided" do
+      it do
+        expect(notion_client).not_to have_received(:database_query)
+          .with(hash_including(:sort => nil))
+      end
+    end
+
+    context "with fetch_on_watch true" do
+      let(:notion_config) do
+        {
+          "fetch_on_watch" => true,
+          "database"       => {
+            "id" => "b0e688e199af4295ae80b67eb52f2e2f",
+          },
+        }
       end
 
       before(:each) do
         site.process
       end
 
-      it "creates a page key in data object" do
-        expect(site.data).to have_key(data_name)
+      it "queries notion database as many times as the site rebuild" do
+        expect(notion_client).to have_received(:database_query).twice
+      end
+    end
+
+    context "when multiple databases" do
+      let(:posts_results) { NOTION_RESULTS_2 }
+      let(:recipes_results) { NOTION_RESULTS }
+      let(:collection) { "recipes" }
+      let(:collections) do
+        {
+          "recipes" => { "output" => true },
+        }
+      end
+      let(:notion_config) do
+        {
+          "databases" => [
+            {
+              "id" => "b0e688e199af4295ae80b67eb52f2e2f",
+            },
+            {
+              "id"         => "f0e688e199af4295ae80b67eb52f2e2r",
+              "collection" => "recipes",
+            },
+          ],
+        }
       end
 
-      it "the data page is not nil" do
-        expect(site.data["page"]).not_to be_nil
+      context "with posts database" do
+        let(:notion_client) do
+          double("Notion::Client", :database_query => { :results => posts_results },
+                                   :block_children => NOTION_PAGE_BLOCKS)
+        end
+
+        it "stores pages in posts collection" do
+          expect(site.posts.size).to be == posts_results.size
+        end
       end
 
-      it "there's a content key" do
-        expect(site.data["page"]).to have_key("content")
+      context "with recipes database" do
+        let(:notion_client) do
+          double("Notion::Client", :database_query => { :results => recipes_results },
+                                   :block_children => NOTION_PAGE_BLOCKS)
+        end
+
+        it "stores pages in recipes collection" do
+          expect(site.collections["recipes"].size).to be == recipes_results.size
+        end
+      end
+    end
+
+    context "when there is a post present in source dir" do
+      let(:source_dir) { SOURCE_DIR_2 }
+
+      it "adds one more document to posts collection" do
+        expect(site.posts.size).to be == (NOTION_RESULTS.size + 1)
+      end
+
+      context "with a document matching the same filename" do
+        let(:notion_client) do
+          # NOTION_RESULTS_3 contains one page with the same date and title
+          # as the post present in SOURCE_DIR_2
+          double("Notion::Client", :database_query => { :results => NOTION_RESULTS_3 },
+                                   :block_children => NOTION_PAGE_BLOCKS)
+        end
+
+        it "only local document is kept" do
+          # notion pages are processed after Jekyll has generated local documents
+          # so, the last element in the collection must be an instance of a Jekyll:Document
+          expect(site.posts.last).to be_an_instance_of(Jekyll::Document)
+        end
       end
     end
   end
 
-  context("when using collection and data") do
-    let(:data_name) { "films" }
-    let(:collection_name) { "movies" }
+  context "with a notion page" do
+    let(:notion_client) do
+      double("Notion::Client", :database_query => { :results => nil }, :page => NOTION_PAGE,
+:block_children => NOTION_PAGE_BLOCKS)
+    end
     let(:notion_config) do
       {
-        "database" => {
-          "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
-          "data"       => data_name,
-          "collection" => collection_name,
+        "page" => {
+          "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
         },
       }
     end
-    let(:notion_client) do
-      double("Notion::Client", :database_query => { :results => NOTION_FILMS },
-                               :block_children => NOTION_PAGE_BLOCKS)
+    
+    include_examples "check settings" do
+      let(:query) { :page }
     end
 
-    it "creates the data key" do
-      expect(site.data).to have_key(data_name)
+    it_behaves_like "a jekyll page" do
+      let(:collection_name) { "posts" }
     end
 
-    it "does not create the collection " do
-      expect(site.collections).not_to have_key(collection_name)
+    context "when data is declared" do
+      let(:notion_config) do
+        {
+          "page" => {
+            "id"   => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
+            "data" => "page",
+          },
+        }
+      end
+
+      it_behaves_like "a jekyll data object" do
+        let(:data_name) { "page" }
+        let(:size) { 18 }
+      end
+
+      it "does not create the page" do
+        expect(site.pages).to be_empty
+      end
     end
   end
 end
