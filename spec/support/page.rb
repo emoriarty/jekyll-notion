@@ -88,18 +88,4 @@ RSpec.shared_examples "a jekyll page" do
     expected_path = site.pages.first.destination(".")
     expect(File).to exist(expected_path)
   end
-
-  context "when site is processed a second time" do
-    before(:each) do
-      site.process
-    end
-
-    it "pages is not empty" do
-      expect(site.pages).not_to be_empty
-    end
-
-    it "does not query notion database" do
-      expect(notion_client).to have_received(:page).once
-    end
-  end
 end

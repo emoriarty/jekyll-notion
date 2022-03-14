@@ -319,8 +319,20 @@ describe(JekyllNotion) do
       let(:query) { :page }
     end
 
-    it_behaves_like "a jekyll page" do
-      let(:collection_name) { "posts" }
+    it_behaves_like "a jekyll page"
+
+    context "when site is processed a second time" do
+      before(:each) do
+        site.process
+      end
+
+      it "pages is not empty" do
+        expect(site.pages).not_to be_empty
+      end
+
+      it "does not query notion database" do
+        expect(notion_client).to have_received(:page).once
+      end
     end
 
     context "when data is declared" do
@@ -340,6 +352,34 @@ describe(JekyllNotion) do
 
       it "does not create the page" do
         expect(site.pages).to be_empty
+      end
+    end
+
+    context "with multiple pages" do
+      let(:notion_config) do
+        {
+          "pages" => [{
+            "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
+          }, {
+            "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
+          }],
+        }
+      end
+
+      it_behaves_like "a jekyll page"
+
+      context "when site is processed a second time" do
+        before(:each) do
+          site.process
+        end
+
+        it "pages is not empty" do
+          expect(site.pages).not_to be_empty
+        end
+
+        it "does not query notion database" do
+          expect(notion_client).to have_received(:page).twice
+        end
       end
     end
   end
