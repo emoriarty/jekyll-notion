@@ -60,7 +60,7 @@ notion:
       collection: films
 ```
 
-After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections include the pages of the notion databases declared. 
+After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections will loaded with pages from the notion databases. 
 
 #### Database options
 
@@ -90,7 +90,7 @@ notion:
     id: 5cfed4de3bdc4f43ae8ba653a7a2219b
 ```
 
-As the databases, we can set up multiple pages.
+As databases, we can set up multiple pages.
 
 ```yaml
 notion:
@@ -98,12 +98,11 @@ notion:
     - id: e42383cd49754897b967ce453760499f
     - id: b0e688e199af4295ae80b67eb52f2e2f
     - id: 2190450d4cb34739a5c8340c4110fe21
-
 ```
 
 ### Data
 
-Instead of storing notion pages in a collection or as a page, you can also map to the data object. Use the `data` property instead of `collection`.
+Instead of storing notion pages in a collection or as pages, you can also map to the data object. Use the `data` property instead of `collection`.
 
 ```yml
 notion:
