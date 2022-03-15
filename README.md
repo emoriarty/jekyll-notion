@@ -22,15 +22,17 @@ plugins:
   - jekyll-notion
 ```
 
-## Setup
+## Usage
 
 Before using the gem create an integration and generate a secret token. Check [notion getting started guide](https://developers.notion.com/docs/getting-started) to learn more.
 
-Export the notion secret token in an environment variable named `NOTION_TOKEN`.
+Once you have youe secret, export it in an environment variable named `NOTION_TOKEN`.
 
 ```bash
 $ export NOTION_TOKEN=<secret_...>
 ```
+
+### Databases
 
 Once your [notion database](https://www.notion.so/help/intro-to-databases) has been shared, specify the database `id` in your `_config.yml` as follows.
 
@@ -40,12 +42,9 @@ notion:
     id: 5cfed4de3bdc4f43ae8ba653a7a2219b
 ```
 
-After running `jekyll build` (or `serve`) command, the `posts` collection is loaded with pages of the notion database specified in the configuration. 
+By default, the notion pages contained in the database will be loaded into the `posts` collection.
 
-
-### Mutiple dabatases
-
-You can also define multiple databases as follows.
+You can also define __multiple databases__ as follows.
 
 ```yml
 collections:
@@ -61,46 +60,9 @@ notion:
       collection: films
 ```
 
-### Data
+After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections include the pages of the notion databases declared. 
 
-Instead of storing notion pages in a collection, you can also map to the data object. Use the `data` property instead of `collection`.
-
-```yml
-notion:
-  database:
-    id: e42383cd49754897b967ce453760499f
-    data: films
-```
-
-Page properties and body are stored as a hash data.
-
-As a particular characteristic, the page is stored in a key named `content`.
-
-```html
-<p>{{ site.data.films.content }}</p>
-```
-
-The rest of properties as mapped as expected.
-
-### Pages
-
-Individual Notion pages can also be mapped to data. Just define the `pages` or `page` property as follows.
-
-```yaml
-notion:
-  pages:
-    - id: e42383cd49754897b967ce453760499f
-      data: about
-    - id: b0e688e199af4295ae80b67eb52f2e2f
-      data: contact
-    - id: 2190450d4cb34739a5c8340c4110fe21
-      data: footer
-
-```
-
-_This feature is only available for data._
-
-### Database options
+#### Database options
 
 Each dabatase support the following options.
 
@@ -117,6 +79,63 @@ notion:
     filter: { "property": "Published", "checkbox": { "equals": true } }
     sort: { "property": "Last ordered", "direction": "ascending" }
 ```
+
+### Pages
+
+Individual Notion pages can also be loaded into Jekyll. Just define the `page` property as follows.
+
+```yml
+notion:
+  page:
+    id: 5cfed4de3bdc4f43ae8ba653a7a2219b
+```
+
+As the databases, we can set up multiple pages.
+
+```yaml
+notion:
+  pages:
+    - id: e42383cd49754897b967ce453760499f
+    - id: b0e688e199af4295ae80b67eb52f2e2f
+    - id: 2190450d4cb34739a5c8340c4110fe21
+
+```
+
+### Data
+
+Instead of storing notion pages in a collection or as a page, you can also map to the data object. Use the `data` property instead of `collection`.
+
+```yml
+notion:
+  databases:
+    - id: b0e688e199af4295ae80b67eb52f2e2f
+    - id: e42383cd49754897b967ce453760499f
+      data: films
+  pages:
+    - id: e42383cd49754897b967ce453760499f
+    - id: b0e688e199af4295ae80b67eb52f2e2f
+      data: about
+```
+
+Page properties and body of the notion page are stored as a hash object.
+
+In the previous example, data objects can be accesses as follows.
+
+```html
+<ul>
+{% for film in site.data.films %}
+  <li>{{ film.title }}</li>
+{% endfor %}
+</ul>
+```
+
+Notice, the page body is stored in the key `content`.
+
+```html
+{{ site.data.about.content }}
+```
+
+The rest of properties are mapped as expected. See below.
 
 ### Watch
 
