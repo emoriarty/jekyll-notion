@@ -174,12 +174,12 @@ Please, refer to the [notion_to_md](https://github.com/emoriarty/notion_to_md/) 
 
 ## Page filename
 
-There are two kinds of collections: posts and others.
+There are two kinds of documents in Jekyll: posts and others.
 
-When the collection is posts, the filename format contains the `created_time` property plus the page title as specified in [jekyll docs](https://jekyllrb.com/docs/posts/#creating-posts).
+When the document is a post, the filename format contains the `created_time` property plus the page title as specified in [jekyll docs](https://jekyllrb.com/docs/posts/#creating-posts).
 
 ```
 YEAR-MONTH-DAY-title.MARKUP
 ```
 
-Any other collection, the filename is the page title.
+The filename for any other document is the page title.
