@@ -60,7 +60,7 @@ notion:
       collection: films
 ```
 
-After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections will loaded with pages from the notion databases. 
+After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections will be loaded with pages from the notion databases. 
 
 #### Database options
 
@@ -100,9 +100,13 @@ notion:
     - id: 2190450d4cb34739a5c8340c4110fe21
 ```
 
+The filename of the generated page is the notion page title. Check [below](#page-filename) for more info.
+
+All properties assigned to a notion page will be interpreted by jekyll as front matter. For example, if the permalink property is set to notion, jekyll will use it to create the proper path for that page as [expected](https://jekyllrb.com/docs/permalinks/#front-matter).
+
 ### Data
 
-Instead of storing notion pages in a collection or as pages, you can also map to the data object. Use the `data` property instead of `collection`.
+Instead of storing the notion pages in a collection or in the pages list, you can assign them to the data object.Just declare the `data` property next to the page or database id.
 
 ```yml
 notion:
@@ -134,7 +138,7 @@ Notice, the page body is stored in the key `content`.
 {{ site.data.about.content }}
 ```
 
-The rest of properties are mapped as expected. See below.
+The rest of properties are mapped as expected. For more info go to [notion properties](#notion-properties).
 
 ### Watch
 
