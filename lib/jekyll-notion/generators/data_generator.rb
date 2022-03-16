@@ -28,7 +28,7 @@ module JekyllNotion
     # Returns String the converted content.
     def convert(page)
       converters.reduce(page.body) do |output, converter|
-        converter.convert output
+        converter.convert(output)
       rescue StandardError => e
         Jekyll.logger.error "Conversion error:",
                             "#{converter.class} encountered an error while "\
@@ -44,14 +44,16 @@ module JekyllNotion
 
     def log_pages
       if data.is_a?(Array)
-        data.each do |page|
-          Jekyll.logger.info("Jekyll Notion:", "Page => #{page["title"]}")
-          Jekyll.logger.debug("", "Props => #{page.keys.inspect}")
-        end
+        data.each { |page| log_page(page, Array.to_s) }
       else
-        Jekyll.logger.info("Jekyll Notion:", "Page => #{data["title"]}")
-        Jekyll.logger.debug("", "Props => #{data.keys.inspect}")
+        log_page(data, Hash.to_s)
       end
+    end
+
+    def log_page(page, type)
+      Jekyll.logger.info("Jekyll Notion:", "Page => #{page["title"]}")
+      Jekyll.logger.info("", "#{type} => site.data.#{@notion_resource.data_name}")
+      Jekyll.logger.debug("", "Props => #{page.keys.inspect}")
     end
   end
 end

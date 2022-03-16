@@ -57,7 +57,7 @@ module JekyllNotion
         "collections", @notion_resource.collection_name, "output"
       )
         Jekyll.logger.info("",
-                           "Path => #{collection.docs.last.path}")
+                           "URL => #{collection.docs.last.url}")
       end
       Jekyll.logger.debug("", "Props => #{collection.docs.last.data.keys.inspect}")
     end

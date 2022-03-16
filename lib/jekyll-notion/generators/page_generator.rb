@@ -19,7 +19,7 @@ module JekyllNotion
 
     def log_page(notion_page)
       Jekyll.logger.info("Jekyll Notion:", "Page => #{notion_page.title}")
-      Jekyll.logger.info("", "Path => #{@site.pages.last.path}")
+      Jekyll.logger.info("", "URL => #{@site.pages.last.url}")
       Jekyll.logger.debug("", "Props => #{notion_page.props.keys.inspect}")
     end
 
