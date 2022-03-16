@@ -102,7 +102,7 @@ notion:
 
 The filename of the generated page is the notion page title. Check [below](#page-filename) for more info.
 
-All properties assigned to a notion page will be interpreted by jekyll as front matter. For example, if the permalink property is set to notion, jekyll will use it to create the proper path for that page as [expected](https://jekyllrb.com/docs/permalinks/#front-matter).
+All properties assigned to a notion page will be interpreted by jekyll as front matter. For example, if the [permalink](https://jekyllrb.com/docs/permalinks/#front-matter) property is set to `/about/` in the notion page, jekyll will use it to create the corresponding path at the output directory at `/about/index.html`.
 
 ### Data
 
