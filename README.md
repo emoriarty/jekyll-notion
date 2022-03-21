@@ -1,6 +1,6 @@
 # jekyll-notion
 
-Import notion pages to a jekyll collection or data.
+Import notion pages to jekyll.
 
 ## Installation
 
