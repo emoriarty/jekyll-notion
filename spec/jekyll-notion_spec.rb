@@ -190,19 +190,19 @@ describe(JekyllNotion) do
     end
 
     context "when sort is provided" do
-      let(:sort) { { :propery => "Last ordered", :direction => "ascending" } }
+      let(:sorts) { [{ :timestamp=> "created_time", :direction => "ascending" }] }
       let(:notion_config) do
         {
           "database" => {
             "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
-            "sort" => sort,
+            "sorts" => sorts,
           },
         }
       end
 
       it do
         expect(notion_client).to have_received(:database_query)
-          .with(hash_including(:sort => sort))
+          .with(hash_including(:sorts => sorts))
       end
     end
 
@@ -347,7 +347,7 @@ describe(JekyllNotion) do
 
       it_behaves_like "a jekyll data object" do
         let(:data_name) { "page" }
-        let(:size) { 18 }
+        let(:size) { 19 } # properties + body content
       end
 
       it "does not create the page" do
