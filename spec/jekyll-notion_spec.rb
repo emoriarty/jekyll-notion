@@ -48,9 +48,9 @@ describe(JekyllNotion) do
     end
     let(:notion_config) do
       {
-        "database" => {
+        "databases" => [{
           "id" => "b0e688e199af4295ae80b67eb52f2e2f",
-        },
+        }],
       }
     end
 
@@ -65,10 +65,10 @@ describe(JekyllNotion) do
     context "when data is declared" do
       let(:notion_config) do
         {
-          "database" => {
+          "databases" => [{
             "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
             "data" => data_name,
-          },
+          }],
         }
       end
       let(:notion_client) do
@@ -86,11 +86,11 @@ describe(JekyllNotion) do
         let(:data_name) { "films" }
         let(:notion_config) do
           {
-            "database" => {
+            "databases" => [{
               "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
               "data"       => data_name,
               "collection" => collection_name,
-            },
+            }],
           }
         end
 
@@ -104,8 +104,8 @@ describe(JekyllNotion) do
       end
     end
 
-    context "when database is nil" do
-      let(:notion_config) { { "database" => nil } }
+    context "when databases is nil" do
+      let(:notion_config) { { "databases" => nil } }
 
       it "does not query notion database" do
         expect(notion_client).not_to have_received(:database_query)
@@ -113,7 +113,7 @@ describe(JekyllNotion) do
     end
 
     context "when no database id is present" do
-      let(:notion_config) { { "database" => { :id => nil } } }
+      let(:notion_config) { { "databases" => [{ :id => nil }] } }
 
       it "does not query notion database" do
         expect(notion_client).not_to have_received(:database_query)
@@ -139,10 +139,10 @@ describe(JekyllNotion) do
       end
       let(:notion_config) do
         {
-          "database" => {
+          "databases" => [{
             "id"         => "b0e688e199af4295ae80b67eb52f2e2f",
             "collection" => collection,
-          },
+          }],
         }
       end
 
@@ -169,10 +169,10 @@ describe(JekyllNotion) do
       let(:filter) { { :property => "blabla", :checkbox => { :equals => true } } }
       let(:notion_config) do
         {
-          "database" => {
+          "databases" => [{
             "id"     => "b0e688e199af4295ae80b67eb52f2e2f",
             "filter" => filter,
-          },
+          }],
         }
       end
 
@@ -193,10 +193,10 @@ describe(JekyllNotion) do
       let(:sorts) { [{ :timestamp => "created_time", :direction => "ascending" }] }
       let(:notion_config) do
         {
-          "database" => {
+          "databases" => [{
             "id"    => "b0e688e199af4295ae80b67eb52f2e2f",
             "sorts" => sorts,
-          },
+          }],
         }
       end
 
@@ -217,9 +217,9 @@ describe(JekyllNotion) do
       let(:notion_config) do
         {
           "fetch_on_watch" => true,
-          "database"       => {
+          "databases"       => [{
             "id" => "b0e688e199af4295ae80b67eb52f2e2f",
-          },
+          }],
         }
       end
 

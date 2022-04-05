@@ -20,7 +20,9 @@ module JekyllNotion
     end
 
     def config_databases
-      config["databases"] || [config["database"]]
+      Jekyll.logger.warn("Jekyll Notion:", "database property is deprecated, use databases instead.") if config["database"]
+
+      config["databases"] || []
     end
 
     def config_pages
