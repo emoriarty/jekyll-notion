@@ -20,13 +20,19 @@ module JekyllNotion
     end
 
     def config_databases
-      Jekyll.logger.warn("Jekyll Notion:", "database property is deprecated, use databases instead.") if config["database"]
+      if config["database"]
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "database property is deprecated, use databases instead.")
+      end
 
       config["databases"] || []
     end
 
     def config_pages
-      Jekyll.logger.warn("Jekyll Notion:", "page property is deprecated, use pages instead.") if config["page"]
+      if config["page"]
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "page property is deprecated, use pages instead.")
+      end
       config["pages"] || []
     end
 

@@ -217,7 +217,7 @@ describe(JekyllNotion) do
       let(:notion_config) do
         {
           "fetch_on_watch" => true,
-          "databases"       => [{
+          "databases"      => [{
             "id" => "b0e688e199af4295ae80b67eb52f2e2f",
           }],
         }
