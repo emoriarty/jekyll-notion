@@ -309,9 +309,9 @@ describe(JekyllNotion) do
     end
     let(:notion_config) do
       {
-        "page" => {
+        "pages" => [{
           "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-        },
+        }],
       }
     end
 
@@ -338,10 +338,10 @@ describe(JekyllNotion) do
     context "when data is declared" do
       let(:notion_config) do
         {
-          "page" => {
+          "pages" => [{
             "id"   => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
             "data" => "page",
-          },
+          }],
         }
       end
 

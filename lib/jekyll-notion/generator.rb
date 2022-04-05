@@ -24,7 +24,8 @@ module JekyllNotion
     end
 
     def config_pages
-      config["pages"] || [config["page"]]
+      Jekyll.logger.warn("Jekyll Notion:", "page property is deprecated, use pages instead.") if config["page"]
+      config["pages"] || []
     end
 
     def collections
