@@ -17,9 +17,9 @@ module JekyllNotion
 
     def sorts
       if config["sort"]
-        Jekyll.logger.warn("Jekyll Notion:", "sort property will be deprecated, use sorts instead")
+        Jekyll.logger.warn("Jekyll Notion:", "sort property is deprecated, use sorts instead")
       end
-      config["sorts"] || config["sort"]
+      config["sorts"]
     end
 
     def collection_name
