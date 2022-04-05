@@ -7,7 +7,7 @@ module JekyllNotion
       return [] unless id?
 
       @fetch ||= @notion.database_query(query)[:results].map do |page|
-        NotionToMd::Page.new(:page => page, :blocks => @notion.block_children(:id => page.id))
+        NotionToMd::Page.new(:page => page, :blocks => @notion.block_children(:block_id => page.id))
       end
     end
 
@@ -15,8 +15,11 @@ module JekyllNotion
       config["filter"]
     end
 
-    def sort
-      config["sort"]
+    def sorts
+      if config["sort"]
+        Jekyll.logger.warn("Jekyll Notion:", "sort property will be deprecated, use sorts instead")
+      end
+      config["sorts"] || config["sort"]
     end
 
     def collection_name
@@ -30,7 +33,7 @@ module JekyllNotion
     private
 
     def query
-      { :id => id, :filter => filter, :sort => sort }.compact
+      { :database_id => id, :filter => filter, :sorts => sorts }.compact
     end
   end
 end

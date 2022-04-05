@@ -42,7 +42,7 @@ module JekyllNotion
     protected
 
     def cache_empty?
-      collections.empty? && pages.empty? && data.empty? 
+      collections.empty? && pages.empty? && data.empty?
     end
 
     def read_notion_databases

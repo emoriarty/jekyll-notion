@@ -4,6 +4,12 @@
   id: 0b8c4501-2092-46c1-b800-529623746afc
   created_time: '2022-01-01T12:31:00.000Z'
   last_edited_time: '2022-01-01T12:36:00.000Z'
+  created_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
+  last_edited_by: !ruby/hash:Notion::Messages::Message
+    object: user
+    id: db313571-0280-411f-a6de-70e826421d12
   cover:
   icon:
   parent: !ruby/hash:Notion::Messages::Message
@@ -12,11 +18,11 @@
   archived: false
   properties: !ruby/hash:Notion::Messages::Message
     Multi Select: !ruby/hash:Notion::Messages::Message
-      id: "<{n{"
+      id: "%3C%7Bn%7B"
       type: multi_select
       multi_select: !ruby/array:Hashie::Array []
     Select: !ruby/hash:Notion::Messages::Message
-      id: ">zjF"
+      id: "%3EzjF"
       type: select
       select: !ruby/hash:Notion::Messages::Message
         id: fa788fbc-176b-49cb-be2e-552cc985cf7c
@@ -26,14 +32,46 @@
       id: TFSp
       type: people
       people: !ruby/array:Hashie::Array []
+    Date: !ruby/hash:Notion::Messages::Message
+      id: T~YB
+      type: date
+      date:
+    Tags: !ruby/hash:Notion::Messages::Message
+      id: UT%3Fx
+      type: multi_select
+      multi_select: !ruby/array:Hashie::Array
+      - !ruby/hash:Notion::Messages::Message
+        id: be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8
+        name: tag1
+        color: green
+      - !ruby/hash:Notion::Messages::Message
+        id: 83961a4e-e3a8-442d-8b47-6a2e43bacd85
+        name: tag2
+        color: gray
+    Numbers: !ruby/hash:Notion::Messages::Message
+      id: a~dg
+      type: number
+      number:
+    Rich Text: !ruby/hash:Notion::Messages::Message
+      id: jJWo
+      type: rich_text
+      rich_text: !ruby/array:Hashie::Array []
+    Phone: !ruby/hash:Notion::Messages::Message
+      id: k%5DEi
+      type: phone_number
+      phone_number:
     File: !ruby/hash:Notion::Messages::Message
-      id: x`rF
+      id: x%60rF
       type: files
       files: !ruby/array:Hashie::Array []
+    Email: !ruby/hash:Notion::Messages::Message
+      id: x%7Bcw
+      type: email
+      email:
     Checkbox: !ruby/hash:Notion::Messages::Message
-      id: "|MPu"
+      id: "%7CMPu"
       type: checkbox
-      checkbox: true
+      checkbox: false
     Name: !ruby/hash:Notion::Messages::Message
       id: title
       type: title

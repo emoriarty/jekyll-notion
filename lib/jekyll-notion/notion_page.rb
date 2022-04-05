@@ -6,8 +6,8 @@ module JekyllNotion
     def fetch
       return nil unless id?
 
-      @fetch ||= NotionToMd::Page.new(:page   => @notion.page(query),
-                                      :blocks => @notion.block_children(query))
+      @fetch ||= NotionToMd::Page.new(:page   => @notion.page({ :page_id => id }),
+                                      :blocks => @notion.block_children({ :block_id => id }))
     end
 
     def data_name
@@ -16,12 +16,6 @@ module JekyllNotion
 
     def collection_name
       nil
-    end
-
-    private
-
-    def query
-      { :id => id }
     end
   end
 end

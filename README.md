@@ -68,8 +68,8 @@ Each dabatase support the following options.
 
 * `id`: the notion database unique identifier,
 * `collection`: the collection each page belongs to (posts by default),
-* `filter`: the database query filter,
-* `sort`: the database query sort,
+* `filter`: the database [filter property](https://developers.notion.com/reference/post-database-query-filter),
+* `sorts`: the database [sorts criteria](https://developers.notion.com/reference/post-database-query-sort),
 
 ```yml
 notion:
@@ -77,7 +77,7 @@ notion:
     id: e42383cd49754897b967ce453760499f
     collection: posts
     filter: { "property": "Published", "checkbox": { "equals": true } }
-    sort: { "property": "Last ordered", "direction": "ascending" }
+    sorts: [{ "timestamp": "created_time", "direction": "ascending" }]
 ```
 
 ### Pages

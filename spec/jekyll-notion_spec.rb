@@ -71,10 +71,10 @@ describe(JekyllNotion) do
           },
         }
       end
-      let(:notion_client) {
+      let(:notion_client) do
         double("Notion::Client", :database_query => { :results => NOTION_FILMS },
-                                :block_children => NOTION_PAGE_BLOCKS)
-      }
+                                 :block_children => NOTION_PAGE_BLOCKS)
+      end
 
       it_behaves_like "a jekyll data object" do
         let(:data_name) { "films" }
@@ -190,19 +190,19 @@ describe(JekyllNotion) do
     end
 
     context "when sort is provided" do
-      let(:sort) { { :propery => "Last ordered", :direction => "ascending" } }
+      let(:sorts) { [{ :timestamp => "created_time", :direction => "ascending" }] }
       let(:notion_config) do
         {
           "database" => {
-            "id"   => "b0e688e199af4295ae80b67eb52f2e2f",
-            "sort" => sort,
+            "id"    => "b0e688e199af4295ae80b67eb52f2e2f",
+            "sorts" => sorts,
           },
         }
       end
 
       it do
         expect(notion_client).to have_received(:database_query)
-          .with(hash_including(:sort => sort))
+          .with(hash_including(:sorts => sorts))
       end
     end
 
@@ -314,7 +314,7 @@ describe(JekyllNotion) do
         },
       }
     end
-    
+
     include_examples "check settings" do
       let(:query) { :page }
     end
@@ -347,7 +347,7 @@ describe(JekyllNotion) do
 
       it_behaves_like "a jekyll data object" do
         let(:data_name) { "page" }
-        let(:size) { 18 }
+        let(:size) { 19 } # properties + body content
       end
 
       it "does not create the page" do
@@ -362,7 +362,7 @@ describe(JekyllNotion) do
             "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
           }, {
             "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-          }],
+          },],
         }
       end
 

@@ -1,26 +1,26 @@
 PATH
   remote: .
   specs:
-    jekyll-notion (2.0.0)
+    jekyll-notion (2.1.0)
       jekyll (>= 3.7, < 5.0)
-      notion-ruby-client (~> 0)
-      notion_to_md (~> 1.0)
+      notion-ruby-client (~> 1.0.0)
+      notion_to_md (~> 1.2.0)
 
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (6.1.5)
+    activesupport (7.0.2.3)
       concurrent-ruby (~> 1.0, >= 1.0.2)
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
       tzinfo (~> 2.0)
-      zeitwerk (~> 2.3)
     addressable (2.8.0)
       public_suffix (>= 2.0.2, < 5.0)
     ast (2.4.2)
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
     diff-lcs (1.5.0)
+    dotenv (2.7.6)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -86,13 +86,15 @@ GEM
     mercenary (0.4.0)
     minitest (5.15.0)
     multipart-post (2.1.1)
-    notion-ruby-client (0.0.8)
+    notion-ruby-client (1.0.0)
+      activesupport (>= 6)
+      dotenv
       faraday (>= 1.0)
       faraday_middleware
-      hashie
-    notion_to_md (1.1.1)
-      activesupport (~> 6)
-      notion-ruby-client (~> 0.0.8)
+      hashie (~> 5)
+    notion_to_md (1.2.0)
+      activesupport (~> 7)
+      notion-ruby-client (~> 1)
     parallel (1.22.1)
     parser (3.1.1.0)
       ast (~> 2.4.1)
@@ -146,9 +148,9 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (1.8.0)
-    zeitwerk (2.5.4)
 
 PLATFORMS
+  ruby
   x86_64-darwin-19
 
 DEPENDENCIES

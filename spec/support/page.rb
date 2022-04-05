@@ -14,7 +14,7 @@ RSpec.shared_examples "a jekyll page" do
 
     it "cover is mapped into page data" do
       expect(site.pages.first.data).to include("cover" => NOTION_PAGE.cover.dig("external",
-                                                                                                                "url"))
+                                                                                "url"))
     end
 
     it "icon is mapped into page data" do
@@ -31,7 +31,7 @@ RSpec.shared_examples "a jekyll page" do
 
     it "multi_select type is mapped into page data" do
       expected_value = NOTION_PAGE.properties.dig("Multi Select",
-                                                           "multi_select").map(&:name)
+                                                  "multi_select").map(&:name)
       expect(site.pages.first.data).to include("multi_select" => expected_value)
     end
 
@@ -42,7 +42,7 @@ RSpec.shared_examples "a jekyll page" do
 
     it "people type is mapped into page data" do
       expected_value = NOTION_PAGE.properties.dig("Person",
-                                                           "people").map(&:name)
+                                                  "people").map(&:name)
       expect(site.pages.first.data).to include("person" => expected_value)
     end
 
