@@ -34,17 +34,17 @@ $ export NOTION_TOKEN=<secret_...>
 
 ### Databases
 
-Once your [notion database](https://www.notion.so/help/intro-to-databases) has been shared, specify the database `id` in your `_config.yml` as follows.
+Once the [notion database](https://www.notion.so/help/intro-to-databases) has been shared, specify the database `id` in the `_config.yml` file as follows.
 
 ```yml
 notion:
-  database:
-    id: 5cfed4de3bdc4f43ae8ba653a7a2219b
+  databases:
+    - id: 5cfed4de3bdc4f43ae8ba653a7a2219b
 ```
 
 By default, the notion pages contained in the database will be loaded into the `posts` collection.
 
-You can also define __multiple databases__ as follows.
+We can also define __multiple databases__ as follows.
 
 ```yml
 collections:
@@ -73,11 +73,11 @@ Each dabatase support the following options.
 
 ```yml
 notion:
-  database:
-    id: e42383cd49754897b967ce453760499f
-    collection: posts
-    filter: { "property": "Published", "checkbox": { "equals": true } }
-    sorts: [{ "timestamp": "created_time", "direction": "ascending" }]
+  databases:
+    - id: e42383cd49754897b967ce453760499f
+      collection: posts
+      filter: { "property": "Published", "checkbox": { "equals": true } }
+      sorts: [{ "timestamp": "created_time", "direction": "ascending" }]
 ```
 
 ### Pages
@@ -86,8 +86,8 @@ Individual Notion pages can also be loaded into Jekyll. Just define the `page` p
 
 ```yml
 notion:
-  page:
-    id: 5cfed4de3bdc4f43ae8ba653a7a2219b
+  pages:
+    - id: 5cfed4de3bdc4f43ae8ba653a7a2219b
 ```
 
 As databases, we can set up multiple pages.
@@ -122,7 +122,7 @@ notion:
 
 Page properties and body of the notion page are stored as a hash object.
 
-In the previous example, data objects can be accesses as follows.
+Data objects can be accessed as follows.
 
 ```html
 <ul>
@@ -149,30 +149,15 @@ Set `fetch_on_watch` to true to allow request on each rebuild.
 ```yml
 notion:
   fetch_on_watch: true
-  database:
-    id: e42383cd49754897b967ce453760499f
+  databases:
+    - id: e42383cd49754897b967ce453760499f
 ```
 
 And that's all. Each page in the notion database will be included in the selected collection.
 
 ## Notion properties
 
-Below, default properties per notion page are set for each document front matter.
-
-Notion page properties are `id`, `title`, `created_time`, `last_edited_time`, `icon`, `cover` and `archived`.
-
-```
----
-id: e42383cd-4975-4897-b967-ce453760499f
-title: An amazing post
-cover: https://img.bank.sh/an_image.jpg
-date: 2022-01-23T12:31:00.000Z
-icon: 💥
-archived: false
----
-```
-
-In addition to default properties, custom properties are also appended to front matter.
+Notion page properties are set for each document in the front matter.
 
 Please, refer to the [notion_to_md](https://github.com/emoriarty/notion_to_md/) gem to learn more.
 
