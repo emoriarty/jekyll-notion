@@ -2,7 +2,7 @@
 
 module JekyllNotion
   class DocumentWithoutAFile < Jekyll::Document
-    def read_content(_new_content, **_opts)
+    def read_content(**_opts)
       if content =~ YAML_FRONT_MATTER_REGEXP
         self.content = Regexp.last_match.post_match
         data_file = SafeYAML.load(Regexp.last_match(1))
