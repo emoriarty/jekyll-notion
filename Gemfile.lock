@@ -20,6 +20,7 @@ GEM
     colorator (1.1.0)
     concurrent-ruby (1.1.10)
     diff-lcs (1.5.0)
+    docile (1.4.0)
     dotenv (2.7.6)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
@@ -143,6 +144,12 @@ GEM
     safe_yaml (1.0.5)
     sassc (2.4.0)
       ffi (~> 1.9)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.4)
     terminal-table (2.0.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
     tzinfo (2.0.4)
@@ -158,6 +165,7 @@ DEPENDENCIES
   jekyll-notion!
   rspec (~> 3.0)
   rubocop-jekyll (~> 0.12.0)
+  simplecov (~> 0.21.0)
 
 BUNDLED WITH
-   2.2.4
+   2.2.10
