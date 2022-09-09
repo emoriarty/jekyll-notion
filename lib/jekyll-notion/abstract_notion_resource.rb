@@ -37,5 +37,11 @@ module JekyllNotion
       end
       true
     end
+
+    def build_blocks
+      NotionToMd::Blocks.build(block_id: id) do |nested_id|
+        @notion.block_children({ :block_id => nested_id })
+      end
+    end
   end
 end
