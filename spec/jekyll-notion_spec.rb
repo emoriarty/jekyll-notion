@@ -62,7 +62,7 @@ describe(JekyllNotion) do
       let(:collection_name) { "posts" }
     end
 
-    context "when data is declared", :focus do
+    context "when data is declared" do
       let(:notion_config) do
         {
           "databases" => [{
@@ -343,7 +343,7 @@ describe(JekyllNotion) do
       end
     end
 
-    context "when data is declared", :focus do
+    context "when data is declared" do
       let(:notion_config) do
         {
           "pages" => [{
