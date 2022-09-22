@@ -7,7 +7,7 @@ module JekyllNotion
       return nil unless id?
 
       @fetch ||= NotionToMd::Page.new(:page   => @notion.page({ :page_id => id }),
-                                      :blocks => build_blocks)
+                                      :blocks => build_blocks(id))
     end
 
     def data_name
