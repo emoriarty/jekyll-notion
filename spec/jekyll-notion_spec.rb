@@ -79,6 +79,14 @@ describe(JekyllNotion) do
       it_behaves_like "a jekyll data object" do
         let(:data_name) { "films" }
         let(:size) { NOTION_FILMS.size }
+
+        it "contains the content property" do
+          expect(site.data[data_name].first).to have_key("content")
+        end
+
+        it "content is not empty" do
+          expect(site.data[data_name].first['content']).not_to be_empty
+        end
       end
 
       context "with a collection in the same configuration object" do
@@ -348,6 +356,14 @@ describe(JekyllNotion) do
       it_behaves_like "a jekyll data object" do
         let(:data_name) { "page" }
         let(:size) { 19 } # properties + body content
+
+        it "contains the content property" do
+          expect(site.data[data_name]).to have_key("content")
+        end
+
+        it "content is not empty" do
+          expect(site.data[data_name]['content']).not_to be_empty
+        end
       end
 
       it "does not create the page" do
