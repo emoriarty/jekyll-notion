@@ -3,8 +3,8 @@ PATH
   specs:
     jekyll-notion (2.3.1)
       jekyll (>= 3.7, < 5.0)
-      notion-ruby-client (~> 1.0.0)
-      notion_to_md (~> 2.0.0)
+      notion-ruby-client (~> 1.0)
+      notion_to_md (~> 2.2)
 
 GEM
   remote: https://rubygems.org/
@@ -93,11 +93,11 @@ GEM
       faraday (>= 1.0)
       faraday_middleware
       hashie (~> 5)
-    notion_to_md (2.0.0)
+    notion_to_md (2.2.0)
       activesupport (~> 7)
       notion-ruby-client (~> 1)
     parallel (1.22.1)
-    parser (3.1.1.0)
+    parser (3.1.2.1)
       ast (~> 2.4.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
@@ -106,7 +106,7 @@ GEM
     rb-fsevent (0.11.2)
     rb-inotify (0.10.1)
       ffi (~> 1.0)
-    regexp_parser (2.2.1)
+    regexp_parser (2.6.0)
     rexml (3.2.5)
     rouge (3.30.0)
     rspec (3.11.0)
@@ -115,13 +115,13 @@ GEM
       rspec-mocks (~> 3.11.0)
     rspec-core (3.11.0)
       rspec-support (~> 3.11.0)
-    rspec-expectations (3.11.0)
+    rspec-expectations (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
     rspec-mocks (3.11.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.11.0)
-    rspec-support (3.11.0)
+    rspec-support (3.11.1)
     rubocop (1.18.4)
       parallel (~> 1.10)
       parser (>= 3.0.0.0)
@@ -131,12 +131,12 @@ GEM
       rubocop-ast (>= 1.8.0, < 2.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 3.0)
-    rubocop-ast (1.16.0)
+    rubocop-ast (1.21.0)
       parser (>= 3.1.1.0)
     rubocop-jekyll (0.12.0)
       rubocop (~> 1.18.0)
       rubocop-performance (~> 1.2)
-    rubocop-performance (1.13.3)
+    rubocop-performance (1.15.0)
       rubocop (>= 1.7.0, < 2.0)
       rubocop-ast (>= 0.4.0)
     ruby-progressbar (1.11.0)
@@ -164,8 +164,8 @@ DEPENDENCIES
   bundler (~> 2)
   jekyll-notion!
   rspec (~> 3.0)
-  rubocop-jekyll (~> 0.12.0)
-  simplecov (~> 0.21.0)
+  rubocop-jekyll (~> 0.12)
+  simplecov (~> 0.21)
 
 BUNDLED WITH
-   2.2.10
+   2.2.17
