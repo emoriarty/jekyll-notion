@@ -24,9 +24,9 @@ plugins:
 
 ## Usage
 
-Before using the gem create an integration and generate a secret token. Check [notion getting started guide](https://developers.notion.com/docs/getting-started) to learn more.
+Before using the gem, create an integration and generate a secret token. For more in-depth instructions, refer to the Notion "Getting Started" [guide](https://developers.notion.com/docs/getting-started).
 
-Once you have youe secret, export it in an environment variable named `NOTION_TOKEN`.
+Once you have your secret token, make sure to export it into an environment variable named `NOTION_TOKEN`.
 
 ```bash
 $ export NOTION_TOKEN=<secret_...>
