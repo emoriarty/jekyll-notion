@@ -34,7 +34,7 @@ $ export NOTION_TOKEN=<secret_...>
 
 ### Databases
 
-Once the [notion database](https://www.notion.so/help/intro-to-databases) has been shared, specify the database `id` in the `_config.yml` file as follows.
+Once the [notion database](https://developers.notion.com/docs/working-with-databases) has been shared, specify the database `id` in the `_config.yml` file as follows.
 
 ```yml
 notion:
