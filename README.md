@@ -56,11 +56,11 @@ notion:
     - id: b0e688e199af4295ae80b67eb52f2e2f
     - id: 2190450d4cb34739a5c8340c4110fe21
       collection: recipes
-    - id: e42383cd49754897b967ce453760499f 
+    - id: e42383cd49754897b967ce453760499f
       collection: films
 ```
 
-After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections will be loaded with pages from the notion databases. 
+After running `jekyll build` (or `serve`) command, the `posts`, `recipes` and `films` collections will be loaded with pages from the notion databases.
 
 #### Database options
 
@@ -195,6 +195,26 @@ If you're not interested in the cache or you just want to disable it, set the ˋ
 ```yaml
 notion:
   cache: false
+```
+
+### Fetch mode
+
+By default, plugin works so that during the build it pulls all the stuff from
+Notion and stores results in the cache. They won't be stored in your site's
+repository.
+
+If you want to configure the sync so your Notion's content will be under git
+control, then fetch mode comes in handy. While this mode is enabled, during
+the build plugin does nothing but instead it makes command `jekyll fetch_notion`
+available which will download all the markdown content according to database
+configuration (currently only database fetching is implemented) and place
+it in corresponding source directories.
+
+To make it enabled, the following configuration must be set:
+
+```yaml
+notion:
+  fetch_mode: true
 ```
 
 ## Notion properties

@@ -6,6 +6,7 @@ require "notion_to_md"
 require "logger"
 require "jekyll-notion/generator"
 require "vcr"
+require "jekyll-notion/commands/fetch_content"
 
 NotionToMd::Logger.level = Logger::ERROR
 
@@ -26,4 +27,5 @@ module JekyllNotion
   autoload :NotionDatabase, "jekyll-notion/notion_database"
   autoload :NotionPage, "jekyll-notion/notion_page"
   autoload :Cacheable, "jekyll-notion/cacheable"
+  autoload :FileCreator, "jekyll-notion/file_creator"
 end
