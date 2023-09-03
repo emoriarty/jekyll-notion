@@ -176,6 +176,8 @@ notion:
   cache_dir: another/folder
 ```
 
+The path must be relative to the working folder.
+
 #### Cleaning cache
 
 To clear the cache, delete the cache folder. If you want to remove a specific cache file, locate the file that matches the Notion resource ID and delete it.
