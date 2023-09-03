@@ -182,6 +182,15 @@ The path must be relative to the working folder.
 
 To clear the cache, delete the cache folder. If you want to remove a specific cache file, locate the file that matches the Notion resource ID and delete it.
 
+#### Disabling cache
+
+If you're not interested in the cache or you just want to disable it, set the ˋcache` option to false.
+
+```yaml
+notion:
+  cache: false
+```
+
 ## Notion properties
 
 Notion page properties are set for each document in the front matter.
