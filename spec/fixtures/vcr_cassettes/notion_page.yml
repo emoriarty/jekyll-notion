@@ -1,0 +1,1025 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.notion.com/v1/pages/9dc17c9c-9d2e-469d-bbf0-f9648f3288d3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:25 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 23355e8b-074d-4507-b356-1a4056c821d8
+      etag:
+      - W/"ef6-ZKQAS7YVh6eTN6ij+oA4eqPzu9c"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=RFPF83ZCe0PN3AAM4jyWFeMCB8bRuyMKFD9MJbM6wMA-1693823485-0-AZ2Xu3l+BP29a5iBZ0+V0l4N6vLJjlEmctSNBiRdAVwdGyHcZTpeRezCMDABAhJeRbJHjS4Kv5N5GPVh/rKhC7A=;
+        path=/; expires=Mon, 04-Sep-23 11:01:25 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8015900d7ecf2a63-CDG
+    body:
+      encoding: UTF-8
+      string: "{\"object\":\"page\",\"id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\",\"created_time\":\"2022-01-23T12:31:00.000Z\",\"last_edited_time\":\"2022-10-04T20:23:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"cover\":{\"type\":\"external\",\"external\":{\"url\":\"https://www.notion.so/images/page-cover/met_canaletto_1720.jpg\"}},\"icon\":{\"type\":\"emoji\",\"emoji\":\"\U0001F4A5\"},\"parent\":{\"type\":\"database_id\",\"database_id\":\"1ae33dd5-f331-4402-9480-69517fa40ae2\"},\"archived\":false,\"properties\":{\"Multi
+        Select\":{\"id\":\"%3C%7Bn%7B\",\"type\":\"multi_select\",\"multi_select\":[{\"id\":\"ddf5e30e-fde6-4023-98a4-864674e8ae87\",\"name\":\"mselect1\",\"color\":\"gray\"},{\"id\":\"1be80fca-a275-4384-8268-6bb2f6a21616\",\"name\":\"mselect2\",\"color\":\"pink\"},{\"id\":\"32e731fc-3fee-41d8-83f5-398b2981f1ac\",\"name\":\"mselect3\",\"color\":\"blue\"}]},\"Select\":{\"id\":\"%3EzjF\",\"type\":\"select\",\"select\":{\"id\":\"fa788fbc-176b-49cb-be2e-552cc985cf7c\",\"name\":\"select1\",\"color\":\"yellow\"}},\"Person\":{\"id\":\"TFSp\",\"type\":\"people\",\"people\":[{\"object\":\"user\",\"id\":\"a4e89628-577b-404f-b62b-36abe7f65fc7\",\"name\":\"Julie
+        Guiraud\",\"avatar_url\":\"https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg\",\"type\":\"person\",\"person\":{\"email\":\"gjulia20@gmail.com\"}}]},\"Date\":{\"id\":\"T~YB\",\"type\":\"date\",\"date\":{\"start\":\"2022-01-28\",\"end\":null,\"time_zone\":null}},\"Tags\":{\"id\":\"UT%3Fx\",\"type\":\"multi_select\",\"multi_select\":[{\"id\":\"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8\",\"name\":\"tag1\",\"color\":\"green\"}]},\"Numbers\":{\"id\":\"a~dg\",\"type\":\"number\",\"number\":12},\"Rich
+        Text\":{\"id\":\"jJWo\",\"type\":\"rich_text\",\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"This
+        is a \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"This
+        is a \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"rich_text\",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"rich_text\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"
+        property. With \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"
+        property. With \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"Italics\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Italics\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\".\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\".\",\"href\":null}]},\"Phone\":{\"id\":\"k%5DEi\",\"type\":\"phone_number\",\"phone_number\":\"983788379\"},\"File\":{\"id\":\"x%60rF\",\"type\":\"files\",\"files\":[{\"name\":\"me.jpeg\",\"type\":\"file\",\"file\":{\"url\":\"https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230904T103125Z&X-Amz-Expires=3600&X-Amz-Signature=250596ea09ae9ed8e592a155dd45f20476f0cf34c1dfb3b6032b5c41ccc03976&X-Amz-SignedHeaders=host&x-id=GetObject\",\"expiry_time\":\"2023-09-04T11:31:25.157Z\"}}]},\"Email\":{\"id\":\"x%7Bcw\",\"type\":\"email\",\"email\":\"hola@test.com\"},\"Checkbox\":{\"id\":\"%7CMPu\",\"type\":\"checkbox\",\"checkbox\":false},\"Name\":{\"id\":\"title\",\"type\":\"title\",\"title\":[{\"type\":\"text\",\"text\":{\"content\":\"Page
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Page
+        1\",\"href\":null}]}},\"url\":\"https://www.notion.so/Page-1-9dc17c9c9d2e469dbbf0f9648f3288d3\",\"public_url\":null}"
+  recorded_at: Mon, 04 Sep 2023 10:31:25 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/9dc17c9c-9d2e-469d-bbf0-f9648f3288d3/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:25 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 0056c93c-cd4e-4479-9759-c1a422b1a016
+      etag:
+      - W/"9605-WBiWzigSY41BiUi7T1D2Cnqh6CA"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=zV9.DMoAcK8C0inngqj20LuLYTy8LLr0lhSAvYCcE4E-1693823485-0-ATwQZAT2RzkxtE9LJKZfJwu/Sp4EFiZ51WyWUXNlb4+rh1hgzovbNWt1NTj2EITGCWNV90cpySxcXupmkZ6qvDo=;
+        path=/; expires=Mon, 04-Sep-23 11:01:25 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8015900f4e77d211-CDG
+    body:
+      encoding: UTF-8
+      string: "{\"object\":\"list\",\"results\":[{\"object\":\"block\",\"id\":\"2c3c3f04-448f-4921-aed9-880094afe981\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"image\",\"image\":{\"caption\":[{\"type\":\"text\",\"text\":{\"content\":\"John
+        Rambo having a coffee.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"John
+        Rambo having a coffee.\",\"href\":null}],\"type\":\"external\",\"external\":{\"url\":\"https://media.gqmagazine.fr/photos/5bb5a42b46d32e001186b6b5/16:9/w_1280,c_limit/Rambo_Fist_blood_-_017photo1.jpg\"}}},{\"object\":\"block\",\"id\":\"9a95bfa9-9ae0-4df9-9edc-7071be3b5e9b\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T22:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_1\",\"heading_1\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Heading
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Heading
+        1\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"8531af87-084f-44ad-9765-8e3a95949e21\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"c0464dfa-79df-4900-b951-08bca090927a\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T22:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_2\",\"heading_2\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Heading
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Heading
+        2\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"3c508c22-3236-45e6-a87f-e0a56df99ba0\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"a14768af-7278-4412-a72a-3774127d5f66\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T22:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Heading
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Heading
+        3\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"ffad3032-bd23-49a1-bab7-2e379bdef4ef\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis \",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"0a05c609-f785-458f-b9cd-923fe2bc2899\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lists\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lists\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"4650c82e-5809-40d8-bac0-025b181ae96d\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"104fbf5a-71e2-4850-964b-6c674f154c2f\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        2\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"d1aebea3-32d2-49e4-9cba-3ebed2f0dcf7\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        3\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"441edb5a-6dff-4eb0-9cd9-21ee9b787db2\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"c940676d-5bd3-4a72-aad6-4a7bae270b64\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        2\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"df1b3a3b-5d79-44df-af34-711f31fdee09\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        3\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"afe10ac3-04cf-4c79-8523-db40cdba0ade\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-03T12:45:00.000Z\",\"last_edited_time\":\"2022-09-03T12:45:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Nested
+        Lists\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Nested
+        Lists\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5db39f27-3de4-4469-94b8-3cf512f812e8\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-03T12:45:00.000Z\",\"last_edited_time\":\"2022-09-03T12:45:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":true,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"49fcc456-2bec-43af-81ba-962dc4cf9465\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-03T12:45:00.000Z\",\"last_edited_time\":\"2022-09-03T12:45:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":true,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"05427342-2a4c-4051-9345-01ba8eb26887\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Quotes\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Quotes\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"8839f961-85d0-49f4-b365-7abce7e537ad\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"quote\",\"quote\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Blablabla.
+        This is a very large quote. Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Nulla quis neque vel odio lobortis posuere nec sit amet erat. Morbi
+        congue velit quis ante accumsan volutpat. Nam ornare enim eu metus consectetur
+        facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        ut convallis erat, eget egestas magna. Nunc non orci at ante placerat pretium
+        in id justo. Morbi a mattis lacus. Nulla tempus, massa a cursus porta, risus
+        leo varius urna, euismod tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Blablabla.
+        This is a very large quote. Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Nulla quis neque vel odio lobortis posuere nec sit amet erat. Morbi
+        congue velit quis ante accumsan volutpat. Nam ornare enim eu metus consectetur
+        facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        ut convallis erat, eget egestas magna. Nunc non orci at ante placerat pretium
+        in id justo. Morbi a mattis lacus. Nulla tempus, massa a cursus porta, risus
+        leo varius urna, euismod tristique ante metus vitae lacus.\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"4e428819-9685-46b2-acad-33a609cc8710\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Callout\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Callout\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"eb470ab1-fa8a-42cb-816a-389b39d881db\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Callout.
+        \ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque
+        vel odio lobortis posuere nec sit amet erat. Morbi congue velit quis ante
+        accumsan volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget
+        egestas magna. Nunc non orci at ante placerat pretium in id justo. Morbi a
+        mattis lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Callout.
+        \ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque
+        vel odio lobortis posuere nec sit amet erat. Morbi congue velit quis ante
+        accumsan volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget
+        egestas magna. Nunc non orci at ante placerat pretium in id justo. Morbi a
+        mattis lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"href\":null}],\"icon\":{\"type\":\"emoji\",\"emoji\":\"\U0001F4A1\"},\"color\":\"gray_background\"}},{\"object\":\"block\",\"id\":\"40db4303-300c-46e2-ab21-e6eb5382d0f6\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Embed\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Embed\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5c631365-f7cd-4506-8699-8495fe054ba3\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"embed\",\"embed\":{\"caption\":[],\"url\":\"https://www.google.com/maps/place/Guadalajara,+Jal.,+M%C3%A9xico/@20.6737883,-103.3704326,13z/data=!3m1!4b1!4m5!3m4!1s0x8428b18cb52fd39b:0xd63d9302bf865750!8m2!3d20.6596988!4d-103.3496092\"}},{\"object\":\"block\",\"id\":\"c481f321-7cbc-47a0-beba-333021de2fb1\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Bookmark\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Bookmark\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"f84879f3-2670-4a6b-b1fd-e8fc3da09f88\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bookmark\",\"bookmark\":{\"caption\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla\",\"href\":null}],\"url\":\"https://enriq.me\"}},{\"object\":\"block\",\"id\":\"dca2c1e0-95fa-41a2-8eb3-62d814c7191c\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"divider\",\"divider\":{}},{\"object\":\"block\",\"id\":\"96950caf-66bf-4db7-809a-f0fb0076493c\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"equation\",\"equation\":{\"expression\":\"E=mc^2\"},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"E=mc^2\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"511d0765-ca1f-4b35-aa8c-8d3f6fbd0860\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Links\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Links\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"131bd7c8-418a-45fa-a53a-980c9df402c0\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet\",\"link\":{\"url\":\"https://google.fr/\"}},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet\",\"href\":\"https://google.fr/\"},{\"type\":\"text\",\"text\":{\"content\":\",
+        consectetur adipiscing elit. Nulla quis neque vel odio lobortis posuere nec
+        sit amet erat. Morbi congue velit quis ante accumsan volutpat. Nam ornare
+        enim eu metus consectetur facilisis. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Quisque ut convallis erat, eget egestas magna. Nunc non orci
+        at ante placerat pretium in id justo. Morbi a mattis lacus. \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\",
+        consectetur adipiscing elit. Nulla quis neque vel odio lobortis posuere nec
+        sit amet erat. Morbi congue velit quis ante accumsan volutpat. Nam ornare
+        enim eu metus consectetur facilisis. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Quisque ut convallis erat, eget egestas magna. Nunc non orci
+        at ante placerat pretium in id justo. Morbi a mattis lacus. \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"Nulla
+        tempus, massa a cursus porta, risus leo varius urna, euismod tristique ante
+        metus vitae lacus\",\"link\":{\"url\":\"https://swile.co/\"}},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Nulla
+        tempus, massa a cursus porta, risus leo varius urna, euismod tristique ante
+        metus vitae lacus\",\"href\":\"https://swile.co/\"},{\"type\":\"text\",\"text\":{\"content\":\".\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\".\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5f3b0190-111a-4c9f-bee1-0fd733d004bf\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Code\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Code\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"624e9289-dab7-4980-b266-636f57a7b8c0\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"code\",\"code\":{\"caption\":[],\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"function
+        fn(a) {\\n\\treturn a;\\n}\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"function
+        fn(a) {\\n\\treturn a;\\n}\",\"href\":null}],\"language\":\"javascript\"}},{\"object\":\"block\",\"id\":\"ac0beca3-f45e-4e38-9c34-cf1f6fad46f9\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-08-03T12:36:00.000Z\",\"last_edited_time\":\"2022-08-03T12:37:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"code\",\"code\":{\"caption\":[],\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"This
+        is a plain text\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"This
+        is a plain text\",\"href\":null}],\"language\":\"plain text\"}},{\"object\":\"block\",\"id\":\"afd5ba80-2c56-4a15-8e3e-ed4cd65660fa\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-08-03T12:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"To
+        do\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"To
+        do\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5ec52bf9-8923-4f9d-92d7-b4220016c1de\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"to_do\",\"to_do\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla
+        1\",\"href\":null}],\"checked\":true,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"f6e03735-cd6b-40e5-ace1-fc8ce5124628\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"to_do\",\"to_do\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla
+        2\",\"href\":null}],\"checked\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"9c7cbdbc-04e6-4df6-b89c-f9b726c4f68e\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"to_do\",\"to_do\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla
+        3\",\"href\":null}],\"checked\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"fe4cc13c-4a33-4df3-b4e7-f20560e04986\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"04395ba7-5858-4cdf-bcca-6e0656de3667\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:15:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"italic
+        \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"italic
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"bold \",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"bold
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"strike \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":true,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"strike
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"inline-code \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":true,\"color\":\"default\"},\"plain_text\":\"inline-code
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"underline\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":true,\"code\":false,\"color\":\"default\"},\"plain_text\":\"underline\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"fe993569-504e-49b6-8252-00120b69253b\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"6c48a070-7a58-4a73-a971-6cc72bed0860\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"italic\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"italic\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"173c6135-47dc-4341-933e-4ee39aa020d8\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"bold\",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"bold\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"120525d0-794f-413c-9c6e-78a57ed50a5d\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"strike-trough\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":true,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"strike-trough\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"524e6f1f-6461-4858-a6e0-be80d1c55847\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"underline\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":true,\"code\":false,\"color\":\"default\"},\"plain_text\":\"underline\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"6f903eac-0704-4f2f-958d-402d4612c369\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-10-04T20:23:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"inline-code\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":true,\"color\":\"default\"},\"plain_text\":\"inline-code\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"bc6fa4ec-7edf-468b-b436-59d9379f0b41\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-16T03:45:00.000Z\",\"last_edited_time\":\"2022-09-16T16:14:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Tables\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Tables\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"fffe8b14-de13-420e-af3b-c000cc73fb89\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-16T03:46:00.000Z\",\"last_edited_time\":\"2022-10-04T20:23:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":true,\"archived\":false,\"type\":\"table\",\"table\":{\"table_width\":3,\"has_column_header\":true,\"has_row_header\":false}}],\"next_cursor\":null,\"has_more\":false,\"type\":\"block\",\"block\":{}}"
+  recorded_at: Mon, 04 Sep 2023 10:31:25 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/5db39f27-3de4-4469-94b8-3cf512f812e8/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:25 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 12bf7402-e917-43a0-ba6f-08fa346d3b37
+      etag:
+      - W/"5e6-lPIpPMa1d+jzcEBK/XvP2v1OK70"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=l3anRcCBglZm6a8ouDlbJ0HehosgRtayZF2wLfMsJ.I-1693823485-0-AYkx8vz032lhYn37O/h1Fs8YJQg+ldDQej9b0iNeM5og8VxQBvpaMiUiAIM+IscHry/zRwmnUi2BjGasBjoe4Mc=;
+        path=/; expires=Mon, 04-Sep-23 11:01:25 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 80159011bee7f15c-CDG
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"a7084141-6cc5-42a4-add6-f29f8b74d8e8","parent":{"type":"block_id","block_id":"5db39f27-3de4-4469-94b8-3cf512f812e8"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":true,"archived":false,"type":"bulleted_list_item","bulleted_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        2","href":null}],"color":"default"}},{"object":"block","id":"b9f715d0-9b99-4519-8e55-72d099e3f455","parent":{"type":"block_id","block_id":"5db39f27-3de4-4469-94b8-3cf512f812e8"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"bulleted_list_item","bulleted_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        3","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:25 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/a7084141-6cc5-42a4-add6-f29f8b74d8e8/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:26 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 3ca9f146-904b-424c-bc11-1e624f198d34
+      etag:
+      - W/"321-LZy8N/Woy59mWLbAe+t6T21U4q8"
+      vary:
+      - Accept-Encoding
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=OQKhRY2HWhcbiPmJOB5KT9p_SHkcHlLZEsNvBfbrFHI-1693823486-0-AYZgW+UsWtWGsvxZFTL+h/iy5awr1APVJgdfKYHQ1BkKFcUiGMc90wYtSqH7Fsq8d0DayHOrN+58aWdofRpWifs=;
+        path=/; expires=Mon, 04-Sep-23 11:01:26 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 80159013793a0263-CDG
+      content-encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"540bd8c0-200e-4630-b87a-7827bcd311b0","parent":{"type":"block_id","block_id":"a7084141-6cc5-42a4-add6-f29f8b74d8e8"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"bulleted_list_item","bulleted_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        3","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:26 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/49fcc456-2bec-43af-81ba-962dc4cf9465/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:26 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 16f81264-a5fe-4227-8cee-79302d99ea20
+      etag:
+      - W/"5e6-Vw5yhjSCAK7eTGwD0WF5DHfkZtg"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=oUH08T00neLXy.UwrI12.sYCNrdZ41RF96p88PPr.yk-1693823486-0-AblfrBJH3m6LU5cRZnO9SgIhyDzV+tJFESBYWCU5X5NevxVoZV7bqGF7Jbc7LFPsrZurFL+kgECopjxS9FEi3PA=;
+        path=/; expires=Mon, 04-Sep-23 11:01:26 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 801590151a1601ed-CDG
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"9134a99f-b20a-4ba0-adfb-253a4da8ae10","parent":{"type":"block_id","block_id":"49fcc456-2bec-43af-81ba-962dc4cf9465"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":true,"archived":false,"type":"numbered_list_item","numbered_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        2","href":null}],"color":"default"}},{"object":"block","id":"a2e61f44-22d9-4454-aba9-0b34dc5d8b73","parent":{"type":"block_id","block_id":"49fcc456-2bec-43af-81ba-962dc4cf9465"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"numbered_list_item","numbered_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        3","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:26 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/9134a99f-b20a-4ba0-adfb-253a4da8ae10/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:26 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 5db51eaa-bf4d-41ae-bbb3-f44601bd9059
+      etag:
+      - W/"321-7/Q9CMRndQapTmeLIPyR2wm88qU"
+      vary:
+      - Accept-Encoding
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=PYCYvLFQLffTuUod0gbeiyxb74Js8IOzko0rIkgAv4Q-1693823486-0-AdorEzK6PX5iY9XfwFdvYyTJD1iKqmzugjdi2OZVvh9bOk1F0Zk76LLlC9IqY3QuJacd6zDpITHfYw1grn8Q29g=;
+        path=/; expires=Mon, 04-Sep-23 11:01:26 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 80159016ca7f029a-CDG
+      content-encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"32a9f186-d1ae-496c-98f6-f56df912ec18","parent":{"type":"block_id","block_id":"9134a99f-b20a-4ba0-adfb-253a4da8ae10"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"numbered_list_item","numbered_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        4","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        4","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:26 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/fffe8b14-de13-420e-af3b-c000cc73fb89/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:27 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - fccf979a-cdcd-4383-9a15-552571aad31b
+      etag:
+      - W/"c51-IaIQB4bp0ty8ctWIvcR4RwqFPoE"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=B_m1yR7SywWXXS4yuSjlkNFgcNivLoBShPxa6ps._pY-1693823487-0-Adsd012HmqSFntcRCfRH9WvEp12x5tGtVTqwOsNPOMN+yy1+RH30ZTxcvd5OzkSzD+CYyik0yx3yTejID/imY5k=;
+        path=/; expires=Mon, 04-Sep-23 11:01:27 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 80159018783202b1-CDG
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"9446a67d-ec5e-4738-85e7-7f3f028c5f4e","parent":{"type":"block_id","block_id":"fffe8b14-de13-420e-af3b-c000cc73fb89"},"created_time":"2022-09-16T03:46:00.000Z","last_edited_time":"2022-09-16T03:47:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"table_row","table_row":{"cells":[[],[{"type":"text","text":{"content":"Column
+        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Column
+        1","href":null}],[{"type":"text","text":{"content":"Column 1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Column
+        1","href":null}]]}},{"object":"block","id":"5db51bf0-5dbf-4c6c-9231-46ea9d1ecc2a","parent":{"type":"block_id","block_id":"fffe8b14-de13-420e-af3b-c000cc73fb89"},"created_time":"2022-09-16T03:46:00.000Z","last_edited_time":"2022-09-16T03:47:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"table_row","table_row":{"cells":[[{"type":"text","text":{"content":"Row
+        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Row
+        1","href":null}],[{"type":"text","text":{"content":"ñaña","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"ñaña","href":null}],[{"type":"text","text":{"content":"blabla","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"blabla","href":null}]]}},{"object":"block","id":"5f0644ce-d674-476d-8182-b2985abc8a87","parent":{"type":"block_id","block_id":"fffe8b14-de13-420e-af3b-c000cc73fb89"},"created_time":"2022-09-16T03:46:00.000Z","last_edited_time":"2022-09-16T03:47:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"table_row","table_row":{"cells":[[{"type":"text","text":{"content":"Row
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Row
+        2","href":null}],[{"type":"text","text":{"content":"prupru","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"prupru","href":null}],[{"type":"text","text":{"content":"tinonino","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"tinonino","href":null}]]}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:26 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/pages/9dc17c9c-9d2e-469d-bbf0-f9648f3288d3
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:27 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - fab8adba-5bf9-4357-856b-5c8b57639b2f
+      etag:
+      - W/"ef6-yDt/59Bf1XOxqRPwTQmycdmWiaE"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=DhLgm4noDQQJT5hiQqtgg8Z6AWQb1x_ZiDS6TZcmwPk-1693823487-0-AbQQJWnJhoUyatctD0qNeORoWJkHElNTTdl0FpblhK/TLAZL2Ly/91ggAEUqICqgbjQbtCaTsqC3Yb5u+L7xLc0=;
+        path=/; expires=Mon, 04-Sep-23 11:01:27 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8015901a580101bf-CDG
+    body:
+      encoding: UTF-8
+      string: "{\"object\":\"page\",\"id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\",\"created_time\":\"2022-01-23T12:31:00.000Z\",\"last_edited_time\":\"2022-10-04T20:23:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"cover\":{\"type\":\"external\",\"external\":{\"url\":\"https://www.notion.so/images/page-cover/met_canaletto_1720.jpg\"}},\"icon\":{\"type\":\"emoji\",\"emoji\":\"\U0001F4A5\"},\"parent\":{\"type\":\"database_id\",\"database_id\":\"1ae33dd5-f331-4402-9480-69517fa40ae2\"},\"archived\":false,\"properties\":{\"Multi
+        Select\":{\"id\":\"%3C%7Bn%7B\",\"type\":\"multi_select\",\"multi_select\":[{\"id\":\"ddf5e30e-fde6-4023-98a4-864674e8ae87\",\"name\":\"mselect1\",\"color\":\"gray\"},{\"id\":\"1be80fca-a275-4384-8268-6bb2f6a21616\",\"name\":\"mselect2\",\"color\":\"pink\"},{\"id\":\"32e731fc-3fee-41d8-83f5-398b2981f1ac\",\"name\":\"mselect3\",\"color\":\"blue\"}]},\"Select\":{\"id\":\"%3EzjF\",\"type\":\"select\",\"select\":{\"id\":\"fa788fbc-176b-49cb-be2e-552cc985cf7c\",\"name\":\"select1\",\"color\":\"yellow\"}},\"Person\":{\"id\":\"TFSp\",\"type\":\"people\",\"people\":[{\"object\":\"user\",\"id\":\"a4e89628-577b-404f-b62b-36abe7f65fc7\",\"name\":\"Julie
+        Guiraud\",\"avatar_url\":\"https://s3-us-west-2.amazonaws.com/public.notion-static.com/3e0bf8de-83a5-4579-8088-5a35021ab9cc/Foto_Perfil_Slack.jpg\",\"type\":\"person\",\"person\":{\"email\":\"gjulia20@gmail.com\"}}]},\"Date\":{\"id\":\"T~YB\",\"type\":\"date\",\"date\":{\"start\":\"2022-01-28\",\"end\":null,\"time_zone\":null}},\"Tags\":{\"id\":\"UT%3Fx\",\"type\":\"multi_select\",\"multi_select\":[{\"id\":\"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8\",\"name\":\"tag1\",\"color\":\"green\"}]},\"Numbers\":{\"id\":\"a~dg\",\"type\":\"number\",\"number\":12},\"Rich
+        Text\":{\"id\":\"jJWo\",\"type\":\"rich_text\",\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"This
+        is a \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"This
+        is a \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"rich_text\",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"rich_text\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"
+        property. With \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"
+        property. With \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"Italics\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Italics\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\".\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\".\",\"href\":null}]},\"Phone\":{\"id\":\"k%5DEi\",\"type\":\"phone_number\",\"phone_number\":\"983788379\"},\"File\":{\"id\":\"x%60rF\",\"type\":\"files\",\"files\":[{\"name\":\"me.jpeg\",\"type\":\"file\",\"file\":{\"url\":\"https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230904T103127Z&X-Amz-Expires=3600&X-Amz-Signature=1215cb42dc11192ac75ce34f709b1e09f8a3cfec232e34e97958f866bc310453&X-Amz-SignedHeaders=host&x-id=GetObject\",\"expiry_time\":\"2023-09-04T11:31:27.244Z\"}}]},\"Email\":{\"id\":\"x%7Bcw\",\"type\":\"email\",\"email\":\"hola@test.com\"},\"Checkbox\":{\"id\":\"%7CMPu\",\"type\":\"checkbox\",\"checkbox\":false},\"Name\":{\"id\":\"title\",\"type\":\"title\",\"title\":[{\"type\":\"text\",\"text\":{\"content\":\"Page
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Page
+        1\",\"href\":null}]}},\"url\":\"https://www.notion.so/Page-1-9dc17c9c9d2e469dbbf0f9648f3288d3\",\"public_url\":null}"
+  recorded_at: Mon, 04 Sep 2023 10:31:27 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/9dc17c9c-9d2e-469d-bbf0-f9648f3288d3/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:27 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 5e36a3b6-7d32-406b-9a29-d68ab13cc084
+      etag:
+      - W/"9605-WBiWzigSY41BiUi7T1D2Cnqh6CA"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=_2IN1SRYQbyTdvjD2zF7Pk.sBNT3GGyL4JtJDGrp0j0-1693823487-0-AS1NQZemP3oZXLDYFKX6fvejNVGfn0VdQNUHntVDaCWhrQkWHzA6Uc744I0vo1wao1gNpRuZEw318PNt5+29IoA=;
+        path=/; expires=Mon, 04-Sep-23 11:01:27 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8015901cd975d67e-CDG
+    body:
+      encoding: UTF-8
+      string: "{\"object\":\"list\",\"results\":[{\"object\":\"block\",\"id\":\"2c3c3f04-448f-4921-aed9-880094afe981\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"image\",\"image\":{\"caption\":[{\"type\":\"text\",\"text\":{\"content\":\"John
+        Rambo having a coffee.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"John
+        Rambo having a coffee.\",\"href\":null}],\"type\":\"external\",\"external\":{\"url\":\"https://media.gqmagazine.fr/photos/5bb5a42b46d32e001186b6b5/16:9/w_1280,c_limit/Rambo_Fist_blood_-_017photo1.jpg\"}}},{\"object\":\"block\",\"id\":\"9a95bfa9-9ae0-4df9-9edc-7071be3b5e9b\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T22:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_1\",\"heading_1\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Heading
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Heading
+        1\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"8531af87-084f-44ad-9765-8e3a95949e21\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"c0464dfa-79df-4900-b951-08bca090927a\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T22:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_2\",\"heading_2\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Heading
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Heading
+        2\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"3c508c22-3236-45e6-a87f-e0a56df99ba0\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis posuere nec sit amet erat. Morbi congue velit quis ante accumsan
+        volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum dolor
+        sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget egestas
+        magna. Nunc non orci at ante placerat pretium in id justo. Morbi a mattis
+        lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"a14768af-7278-4412-a72a-3774127d5f66\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T22:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Heading
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Heading
+        3\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"ffad3032-bd23-49a1-bab7-2e379bdef4ef\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque vel odio
+        lobortis \",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"0a05c609-f785-458f-b9cd-923fe2bc2899\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lists\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lists\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"4650c82e-5809-40d8-bac0-025b181ae96d\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"104fbf5a-71e2-4850-964b-6c674f154c2f\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        2\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"d1aebea3-32d2-49e4-9cba-3ebed2f0dcf7\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        3\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"441edb5a-6dff-4eb0-9cd9-21ee9b787db2\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"c940676d-5bd3-4a72-aad6-4a7bae270b64\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        2\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"df1b3a3b-5d79-44df-af34-711f31fdee09\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        3\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"afe10ac3-04cf-4c79-8523-db40cdba0ade\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-03T12:45:00.000Z\",\"last_edited_time\":\"2022-09-03T12:45:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Nested
+        Lists\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Nested
+        Lists\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5db39f27-3de4-4469-94b8-3cf512f812e8\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-03T12:45:00.000Z\",\"last_edited_time\":\"2022-09-03T12:45:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":true,\"archived\":false,\"type\":\"bulleted_list_item\",\"bulleted_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"49fcc456-2bec-43af-81ba-962dc4cf9465\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-03T12:45:00.000Z\",\"last_edited_time\":\"2022-09-03T12:45:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":true,\"archived\":false,\"type\":\"numbered_list_item\",\"numbered_list_item\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"item
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"item
+        1\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"05427342-2a4c-4051-9345-01ba8eb26887\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Quotes\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Quotes\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"8839f961-85d0-49f4-b365-7abce7e537ad\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"quote\",\"quote\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Blablabla.
+        This is a very large quote. Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Nulla quis neque vel odio lobortis posuere nec sit amet erat. Morbi
+        congue velit quis ante accumsan volutpat. Nam ornare enim eu metus consectetur
+        facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        ut convallis erat, eget egestas magna. Nunc non orci at ante placerat pretium
+        in id justo. Morbi a mattis lacus. Nulla tempus, massa a cursus porta, risus
+        leo varius urna, euismod tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Blablabla.
+        This is a very large quote. Lorem ipsum dolor sit amet, consectetur adipiscing
+        elit. Nulla quis neque vel odio lobortis posuere nec sit amet erat. Morbi
+        congue velit quis ante accumsan volutpat. Nam ornare enim eu metus consectetur
+        facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+        ut convallis erat, eget egestas magna. Nunc non orci at ante placerat pretium
+        in id justo. Morbi a mattis lacus. Nulla tempus, massa a cursus porta, risus
+        leo varius urna, euismod tristique ante metus vitae lacus.\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"4e428819-9685-46b2-acad-33a609cc8710\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Callout\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Callout\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"eb470ab1-fa8a-42cb-816a-389b39d881db\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"callout\",\"callout\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Callout.
+        \ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque
+        vel odio lobortis posuere nec sit amet erat. Morbi congue velit quis ante
+        accumsan volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget
+        egestas magna. Nunc non orci at ante placerat pretium in id justo. Morbi a
+        mattis lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Callout.
+        \ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quis neque
+        vel odio lobortis posuere nec sit amet erat. Morbi congue velit quis ante
+        accumsan volutpat. Nam ornare enim eu metus consectetur facilisis. Lorem ipsum
+        dolor sit amet, consectetur adipiscing elit. Quisque ut convallis erat, eget
+        egestas magna. Nunc non orci at ante placerat pretium in id justo. Morbi a
+        mattis lacus. Nulla tempus, massa a cursus porta, risus leo varius urna, euismod
+        tristique ante metus vitae lacus.\",\"href\":null}],\"icon\":{\"type\":\"emoji\",\"emoji\":\"\U0001F4A1\"},\"color\":\"gray_background\"}},{\"object\":\"block\",\"id\":\"40db4303-300c-46e2-ab21-e6eb5382d0f6\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Embed\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Embed\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5c631365-f7cd-4506-8699-8495fe054ba3\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"embed\",\"embed\":{\"caption\":[],\"url\":\"https://www.google.com/maps/place/Guadalajara,+Jal.,+M%C3%A9xico/@20.6737883,-103.3704326,13z/data=!3m1!4b1!4m5!3m4!1s0x8428b18cb52fd39b:0xd63d9302bf865750!8m2!3d20.6596988!4d-103.3496092\"}},{\"object\":\"block\",\"id\":\"c481f321-7cbc-47a0-beba-333021de2fb1\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Bookmark\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Bookmark\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"f84879f3-2670-4a6b-b1fd-e8fc3da09f88\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"bookmark\",\"bookmark\":{\"caption\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla\",\"href\":null}],\"url\":\"https://enriq.me\"}},{\"object\":\"block\",\"id\":\"dca2c1e0-95fa-41a2-8eb3-62d814c7191c\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"divider\",\"divider\":{}},{\"object\":\"block\",\"id\":\"96950caf-66bf-4db7-809a-f0fb0076493c\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"equation\",\"equation\":{\"expression\":\"E=mc^2\"},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"E=mc^2\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"511d0765-ca1f-4b35-aa8c-8d3f6fbd0860\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Links\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Links\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"131bd7c8-418a-45fa-a53a-980c9df402c0\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum dolor sit amet\",\"link\":{\"url\":\"https://google.fr/\"}},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum dolor sit amet\",\"href\":\"https://google.fr/\"},{\"type\":\"text\",\"text\":{\"content\":\",
+        consectetur adipiscing elit. Nulla quis neque vel odio lobortis posuere nec
+        sit amet erat. Morbi congue velit quis ante accumsan volutpat. Nam ornare
+        enim eu metus consectetur facilisis. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Quisque ut convallis erat, eget egestas magna. Nunc non orci
+        at ante placerat pretium in id justo. Morbi a mattis lacus. \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\",
+        consectetur adipiscing elit. Nulla quis neque vel odio lobortis posuere nec
+        sit amet erat. Morbi congue velit quis ante accumsan volutpat. Nam ornare
+        enim eu metus consectetur facilisis. Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Quisque ut convallis erat, eget egestas magna. Nunc non orci
+        at ante placerat pretium in id justo. Morbi a mattis lacus. \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"Nulla
+        tempus, massa a cursus porta, risus leo varius urna, euismod tristique ante
+        metus vitae lacus\",\"link\":{\"url\":\"https://swile.co/\"}},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Nulla
+        tempus, massa a cursus porta, risus leo varius urna, euismod tristique ante
+        metus vitae lacus\",\"href\":\"https://swile.co/\"},{\"type\":\"text\",\"text\":{\"content\":\".\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\".\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5f3b0190-111a-4c9f-bee1-0fd733d004bf\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Code\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Code\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"624e9289-dab7-4980-b266-636f57a7b8c0\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"code\",\"code\":{\"caption\":[],\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"function
+        fn(a) {\\n\\treturn a;\\n}\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"function
+        fn(a) {\\n\\treturn a;\\n}\",\"href\":null}],\"language\":\"javascript\"}},{\"object\":\"block\",\"id\":\"ac0beca3-f45e-4e38-9c34-cf1f6fad46f9\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-08-03T12:36:00.000Z\",\"last_edited_time\":\"2022-08-03T12:37:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"code\",\"code\":{\"caption\":[],\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"This
+        is a plain text\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"This
+        is a plain text\",\"href\":null}],\"language\":\"plain text\"}},{\"object\":\"block\",\"id\":\"afd5ba80-2c56-4a15-8e3e-ed4cd65660fa\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-08-03T12:36:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"To
+        do\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"To
+        do\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"5ec52bf9-8923-4f9d-92d7-b4220016c1de\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"to_do\",\"to_do\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla
+        1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla
+        1\",\"href\":null}],\"checked\":true,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"f6e03735-cd6b-40e5-ace1-fc8ce5124628\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-02-13T14:12:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"to_do\",\"to_do\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla
+        2\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla
+        2\",\"href\":null}],\"checked\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"9c7cbdbc-04e6-4df6-b89c-f9b726c4f68e\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-02-13T14:12:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"to_do\",\"to_do\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"blabla
+        3\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"blabla
+        3\",\"href\":null}],\"checked\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"fe4cc13c-4a33-4df3-b4e7-f20560e04986\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"04395ba7-5858-4cdf-bcca-6e0656de3667\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:15:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"italic
+        \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"italic
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"bold \",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"bold
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"strike \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":true,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"strike
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"inline-code \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":true,\"color\":\"default\"},\"plain_text\":\"inline-code
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"underline\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":true,\"code\":false,\"color\":\"default\"},\"plain_text\":\"underline\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"fe993569-504e-49b6-8252-00120b69253b\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"6c48a070-7a58-4a73-a971-6cc72bed0860\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"italic\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"italic\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"173c6135-47dc-4341-933e-4ee39aa020d8\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"bold\",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"bold\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"120525d0-794f-413c-9c6e-78a57ed50a5d\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"strike-trough\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":true,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"strike-trough\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"524e6f1f-6461-4858-a6e0-be80d1c55847\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-03-18T10:13:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"underline\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":true,\"code\":false,\"color\":\"default\"},\"plain_text\":\"underline\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"6f903eac-0704-4f2f-958d-402d4612c369\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-03-18T10:13:00.000Z\",\"last_edited_time\":\"2022-10-04T20:23:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"paragraph\",\"paragraph\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"inline-code\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":true,\"color\":\"default\"},\"plain_text\":\"inline-code\",\"href\":null}],\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"bc6fa4ec-7edf-468b-b436-59d9379f0b41\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-16T03:45:00.000Z\",\"last_edited_time\":\"2022-09-16T16:14:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":false,\"archived\":false,\"type\":\"heading_3\",\"heading_3\":{\"rich_text\":[{\"type\":\"text\",\"text\":{\"content\":\"Tables\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Tables\",\"href\":null}],\"is_toggleable\":false,\"color\":\"default\"}},{\"object\":\"block\",\"id\":\"fffe8b14-de13-420e-af3b-c000cc73fb89\",\"parent\":{\"type\":\"page_id\",\"page_id\":\"9dc17c9c-9d2e-469d-bbf0-f9648f3288d3\"},\"created_time\":\"2022-09-16T03:46:00.000Z\",\"last_edited_time\":\"2022-10-04T20:23:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"has_children\":true,\"archived\":false,\"type\":\"table\",\"table\":{\"table_width\":3,\"has_column_header\":true,\"has_row_header\":false}}],\"next_cursor\":null,\"has_more\":false,\"type\":\"block\",\"block\":{}}"
+  recorded_at: Mon, 04 Sep 2023 10:31:27 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/5db39f27-3de4-4469-94b8-3cf512f812e8/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:28 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 27676f83-3c5b-454c-b555-de1648ce3b37
+      etag:
+      - W/"5e6-lPIpPMa1d+jzcEBK/XvP2v1OK70"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=pH0l7GAhzWwDYu9S7vT8SJv95K2UC5LlxU72mduRIas-1693823488-0-ARk839cUUQhRWz/khN/sp9x2vjW5MWt6q9sMLqqlWGK0ho7QyTu7OPDcUq1wTZCBcCl3ELZnO8mAVxzd5I5Jl5Y=;
+        path=/; expires=Mon, 04-Sep-23 11:01:28 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 8015901f38d52a3a-CDG
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"a7084141-6cc5-42a4-add6-f29f8b74d8e8","parent":{"type":"block_id","block_id":"5db39f27-3de4-4469-94b8-3cf512f812e8"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":true,"archived":false,"type":"bulleted_list_item","bulleted_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        2","href":null}],"color":"default"}},{"object":"block","id":"b9f715d0-9b99-4519-8e55-72d099e3f455","parent":{"type":"block_id","block_id":"5db39f27-3de4-4469-94b8-3cf512f812e8"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"bulleted_list_item","bulleted_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        3","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:28 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/a7084141-6cc5-42a4-add6-f29f8b74d8e8/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:28 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - '09123102-e5fe-47aa-ba12-80a19ee6596e'
+      etag:
+      - W/"321-LZy8N/Woy59mWLbAe+t6T21U4q8"
+      vary:
+      - Accept-Encoding
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=vMzngqVoy79euRaT7ySucE.uNhMpNUZeDpTk3n3tzy0-1693823488-0-AW6urNckUqgw06aPfqz67B1ez13Aif2frz/ziINDbBulsrOWGPFkO09ZETp3Q64lNDalZTGBfOl5MHDL/p+nSzY=;
+        path=/; expires=Mon, 04-Sep-23 11:01:28 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 801590213f41d6da-CDG
+      content-encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"540bd8c0-200e-4630-b87a-7827bcd311b0","parent":{"type":"block_id","block_id":"a7084141-6cc5-42a4-add6-f29f8b74d8e8"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"bulleted_list_item","bulleted_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        3","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:28 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/49fcc456-2bec-43af-81ba-962dc4cf9465/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:28 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - 61b8d1db-9353-4403-b829-77f231c6cfba
+      etag:
+      - W/"5e6-Vw5yhjSCAK7eTGwD0WF5DHfkZtg"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=fLIrsdwzOPiaQGsR.sPTiTmg5HTDu4rGvSULFhCV8oA-1693823488-0-AZJ6OfvoWS30waJxB/iQThi3/3+pQolQ7bEBDbXT4QBwOFB/xhtgnIJsP5lpWM1Bbzy8gSehPXKcslyZmvjsnTY=;
+        path=/; expires=Mon, 04-Sep-23 11:01:28 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 80159022fc9401cc-CDG
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"9134a99f-b20a-4ba0-adfb-253a4da8ae10","parent":{"type":"block_id","block_id":"49fcc456-2bec-43af-81ba-962dc4cf9465"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":true,"archived":false,"type":"numbered_list_item","numbered_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        2","href":null}],"color":"default"}},{"object":"block","id":"a2e61f44-22d9-4454-aba9-0b34dc5d8b73","parent":{"type":"block_id","block_id":"49fcc456-2bec-43af-81ba-962dc4cf9465"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"numbered_list_item","numbered_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        3","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:28 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/9134a99f-b20a-4ba0-adfb-253a4da8ae10/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:29 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - d9e31d9b-bad0-47c2-89a0-4e9fa43a0679
+      etag:
+      - W/"321-7/Q9CMRndQapTmeLIPyR2wm88qU"
+      vary:
+      - Accept-Encoding
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=4n2v.FOU7ySMdOvkCinhc_OIgLApYseNv0k2.XBiwtY-1693823489-0-AUiGafj3mTaqwnCXfv0nmwYePme6Dv5NASnVb1571TEwyo80vR1mKM37o8peAG+Be+RXRPFuMEvVhNqRlMzAwfc=;
+        path=/; expires=Mon, 04-Sep-23 11:01:29 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 80159025bcd72a2e-CDG
+      content-encoding:
+      - gzip
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"32a9f186-d1ae-496c-98f6-f56df912ec18","parent":{"type":"block_id","block_id":"9134a99f-b20a-4ba0-adfb-253a4da8ae10"},"created_time":"2022-09-03T12:45:00.000Z","last_edited_time":"2022-09-03T12:45:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"numbered_list_item","numbered_list_item":{"rich_text":[{"type":"text","text":{"content":"item
+        4","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"item
+        4","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:29 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/fffe8b14-de13-420e-af3b-c000cc73fb89/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.1
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 04 Sep 2023 10:31:29 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      x-powered-by:
+      - Express
+      x-notion-request-id:
+      - dfff63c7-3b71-4ffa-b235-282f75fa2ca0
+      etag:
+      - W/"c51-IaIQB4bp0ty8ctWIvcR4RwqFPoE"
+      vary:
+      - Accept-Encoding
+      content-encoding:
+      - gzip
+      cf-cache-status:
+      - DYNAMIC
+      set-cookie:
+      - __cf_bm=1b8Vw_KfaE3M6NoMF2zdiGGle71aacwhVWTsMqo6AS8-1693823489-0-AaWtfTkPjvVhQ1oPKXXBDPcZDN9ahw3Ss0jcWFmlOu0qJswchU/zEjr11WG/MaKCo+YZ8IbG6bQh/6PMmdvHKCM=;
+        path=/; expires=Mon, 04-Sep-23 11:01:29 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None
+      server:
+      - cloudflare
+      cf-ray:
+      - 801590284e3e016d-CDG
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"9446a67d-ec5e-4738-85e7-7f3f028c5f4e","parent":{"type":"block_id","block_id":"fffe8b14-de13-420e-af3b-c000cc73fb89"},"created_time":"2022-09-16T03:46:00.000Z","last_edited_time":"2022-09-16T03:47:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"table_row","table_row":{"cells":[[],[{"type":"text","text":{"content":"Column
+        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Column
+        1","href":null}],[{"type":"text","text":{"content":"Column 1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Column
+        1","href":null}]]}},{"object":"block","id":"5db51bf0-5dbf-4c6c-9231-46ea9d1ecc2a","parent":{"type":"block_id","block_id":"fffe8b14-de13-420e-af3b-c000cc73fb89"},"created_time":"2022-09-16T03:46:00.000Z","last_edited_time":"2022-09-16T03:47:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"table_row","table_row":{"cells":[[{"type":"text","text":{"content":"Row
+        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Row
+        1","href":null}],[{"type":"text","text":{"content":"ñaña","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"ñaña","href":null}],[{"type":"text","text":{"content":"blabla","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"blabla","href":null}]]}},{"object":"block","id":"5f0644ce-d674-476d-8182-b2985abc8a87","parent":{"type":"block_id","block_id":"fffe8b14-de13-420e-af3b-c000cc73fb89"},"created_time":"2022-09-16T03:46:00.000Z","last_edited_time":"2022-09-16T03:47:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"type":"table_row","table_row":{"cells":[[{"type":"text","text":{"content":"Row
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Row
+        2","href":null}],[{"type":"text","text":{"content":"prupru","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"prupru","href":null}],[{"type":"text","text":{"content":"tinonino","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"tinonino","href":null}]]}}],"next_cursor":null,"has_more":false,"type":"block","block":{}}'
+  recorded_at: Mon, 04 Sep 2023 10:31:29 GMT
+recorded_with: VCR 6.2.0
