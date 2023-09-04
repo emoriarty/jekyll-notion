@@ -155,6 +155,42 @@ notion:
 
 And that's all. Each page in the notion database will be included in the selected collection.
 
+### Cache
+
+Starting from version 2.4.0, every request to Notion is cached locally. The cache enables the retrieval of Notion resources only during the first request. Subsequent requests are fetched from the cache, which can significantly reduce build times.
+
+The cache mechanism is based on the [vcr](https://github.com/vcr/vcr) gem, which records HTTP requests. Every Notion resource, whether it is a database or page, is stored in an independent file using the document ID as the filename. For example, a database ID e42383cd49754897b967ce453760499f will be stored in the following path:
+
+```bash
+.cache/jekyll-notion/vcr_cassetes/e42383cd49754897b967ce453760499f.yml
+```
+
+**Note: The `cache` option invalidates the fetch_on_watch feature.**
+
+#### Cache folder
+
+By default, the cache folder is `.cache/jekyll-notion/vcr_cassetes`, but you can change this folder by setting the `cache_dir` property in the `_config.yml` file as follows.
+
+```yaml
+notion:
+  cache_dir: another/folder
+```
+
+The path must be relative to the working folder.
+
+#### Cleaning cache
+
+To clear the cache, delete the cache folder. If you want to remove a specific cache file, locate the file that matches the Notion resource ID and delete it.
+
+#### Disabling cache
+
+If you're not interested in the cache or you just want to disable it, set the ˋcache` option to false.
+
+```yaml
+notion:
+  cache: false
+```
+
 ## Notion properties
 
 Notion page properties are set for each document in the front matter.

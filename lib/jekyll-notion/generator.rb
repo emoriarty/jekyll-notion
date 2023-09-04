@@ -9,6 +9,8 @@ module JekyllNotion
 
       return unless notion_token? && config?
 
+      setup
+
       if fetch_on_watch? || cache_empty?
         read_notion_databases
         read_notion_pages
@@ -90,6 +92,20 @@ module JekyllNotion
         return false
       end
       true
+    end
+
+    def setup
+      # Cache Notion API responses
+      if cache?
+        JekyllNotion::Cacheable.setup(config["cache_dir"])
+        Notion::Client.prepend JekyllNotion::Cacheable
+      end
+    end
+
+    def cache?
+      return true if config["cache"].nil?
+
+      config["cache"] == true.to_s
     end
   end
 end
