@@ -24,7 +24,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores multi_select into the data object" do
-    expected_value = ["mselect1", "mselect2", "mselect3"]
+    expected_value = %w(mselect1 mselect2 mselect3)
     expect(site.data[data_name]).to include("multi_select" => expected_value)
   end
 
@@ -41,7 +41,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores phone_number into the data object" do
-    expect(site.data[data_name]).to include("phone" =>  "983788379")
+    expect(site.data[data_name]).to include("phone" => "983788379")
   end
 
   it "stores files into the data object" do
@@ -49,7 +49,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores email into the data object" do
-    expect(site.data[data_name]).to include("email" =>  "hola@test.com")
+    expect(site.data[data_name]).to include("email" => "hola@test.com")
   end
 
   it "stores checkbox into the data object" do

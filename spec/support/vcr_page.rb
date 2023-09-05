@@ -24,7 +24,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores multi_select into page data" do
-    expected_value = ["mselect1", "mselect2", "mselect3"]
+    expected_value = %w(mselect1 mselect2 mselect3)
     expect(site.pages.first.data).to include("multi_select" => expected_value)
   end
 
@@ -41,7 +41,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores phone_number into page data" do
-    expect(site.pages.first.data).to include("phone" =>  983788379)
+    expect(site.pages.first.data).to include("phone" => 983_788_379)
   end
 
   it "stores files into page data" do
@@ -49,7 +49,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores email into page data" do
-    expect(site.pages.first.data).to include("email" =>  "hola@test.com")
+    expect(site.pages.first.data).to include("email" => "hola@test.com")
   end
 
   it "stores checkbox into page data" do

@@ -41,7 +41,8 @@ describe(JekyllNotion) do
       it "logs a warning" do
         VCR.use_cassette("notion_page") { site.process }
 
-        expect(Jekyll.logger).to have_received(:warn).with("Jekyll Notion:", "No configuration provided")
+        expect(Jekyll.logger).to have_received(:warn).with("Jekyll Notion:",
+                                                           "No configuration provided")
       end
 
       it "does not create an instance of Notion::Client" do
@@ -55,6 +56,30 @@ describe(JekyllNotion) do
 
     context "when NOTION_TOKEN is empty" do
       it_behaves_like "NOTION_TOKEN is not provided", ""
+    end
+
+    context "when the databases property is nil" do
+      before do
+        VCR.use_cassette("notion_database_empty") { site.process }
+      end
+
+      let(:notion_config) { { "databases" => nil } }
+
+      it "does not create a collection" do
+        expect_any_instance_of(Notion::Client).not_to receive(:database_query).and_call_original
+      end
+    end
+
+    context "when the databases property id is nil" do
+      before do
+        VCR.use_cassette("notion_database_empty") { site.process }
+      end
+
+      let(:notion_config) { { "databases" => [{ id => nil }] } }
+
+      it "does not create a collection" do
+        expect_any_instance_of(Notion::Client).not_to receive(:database_query).and_call_original
+      end
     end
   end
 
@@ -133,11 +158,11 @@ describe(JekyllNotion) do
     end
 
     context "with a custom collection" do
-      let(:collections) {{ "articles" => { "output" => true } }}
+      let(:collections) { { "articles" => { "output" => true } } }
       let(:notion_config) do
         {
           "databases" => [{
-            "id" => "1ae33dd5f3314402948069517fa40ae2",
+            "id"         => "1ae33dd5f3314402948069517fa40ae2",
             "collection" => "articles",
           }],
         }

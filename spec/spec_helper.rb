@@ -3,8 +3,8 @@
 require "jekyll"
 require "yaml"
 require File.expand_path("../lib/jekyll-notion", __dir__)
-require 'simplecov'
-require 'vcr'
+require "simplecov"
+require "vcr"
 
 SimpleCov.start do
   enable_coverage :branch
@@ -27,7 +27,7 @@ VCR.configure do |config|
   end
   config.default_cassette_options = {
     :allow_playback_repeats => true,
-    :record => :new_episodes
+    :record                 => :new_episodes,
   }
 end
 

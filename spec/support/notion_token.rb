@@ -18,6 +18,7 @@ RSpec.shared_examples "NOTION_TOKEN is not provided" do |notion_token|
   end
 
   it "logs a warning" do
-    expect(Jekyll.logger).to have_received(:warn).with("Jekyll Notion:", "Cannot read from Notion becuase NOTION_TOKEN was not provided")
+    expect(Jekyll.logger).to have_received(:warn).with("Jekyll Notion:",
+                                                       "Cannot read from Notion becuase NOTION_TOKEN was not provided")
   end
 end

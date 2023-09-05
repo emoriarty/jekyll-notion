@@ -80,7 +80,8 @@ module JekyllNotion
 
     def notion_token?
       if ENV["NOTION_TOKEN"].nil? || ENV["NOTION_TOKEN"].empty?
-        Jekyll.logger.warn("Jekyll Notion:", "Cannot read from Notion becuase NOTION_TOKEN was not provided")
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "Cannot read from Notion becuase NOTION_TOKEN was not provided")
         return false
       end
       true
