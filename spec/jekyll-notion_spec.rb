@@ -59,26 +59,22 @@ describe(JekyllNotion) do
     end
 
     context "when the databases property is nil" do
-      before do
-        VCR.use_cassette("notion_database_empty") { site.process }
-      end
-
       let(:notion_config) { { "databases" => nil } }
 
       it "does not create a collection" do
-        expect_any_instance_of(Notion::Client).not_to receive(:database_query).and_call_original
+        expect_any_instance_of(Notion::Client).not_to receive(:database_query)
+
+        VCR.use_cassette("notion_database_empty") { site.process }
       end
     end
 
     context "when the databases property id is nil" do
-      before do
-        VCR.use_cassette("notion_database_empty") { site.process }
-      end
-
-      let(:notion_config) { { "databases" => [{ id => nil }] } }
+      let(:notion_config) { { "databases" => [{ "id" => nil }] } }
 
       it "does not create a collection" do
-        expect_any_instance_of(Notion::Client).not_to receive(:database_query).and_call_original
+        expect_any_instance_of(Notion::Client).not_to receive(:database_query)
+
+        VCR.use_cassette("notion_database_empty") { site.process }
       end
     end
   end
@@ -155,6 +151,12 @@ describe(JekyllNotion) do
       end
 
       it_behaves_like "a jekyll collection", "posts"
+
+      it "matches the YYYY-MM-DD-title.md format for each post" do
+        site.posts.each do |post|
+          expect(post.path).to match(%r!_posts/\d{4}-\d{2}-\d{2}-.*.md$!)
+        end
+      end
     end
 
     context "with a custom collection" do
@@ -169,6 +171,100 @@ describe(JekyllNotion) do
       end
 
       it_behaves_like "a jekyll collection", "articles"
+    end
+  end
+
+  context "when filter is set" do
+    let(:filter) { { :property => "blabla", :checkbox => { :equals => true } } }
+    let(:notion_config) do
+      {
+        "databases" => [{
+          "id"     => "1ae33dd5f3314402948069517fa40ae2",
+          "filter" => filter,
+        }],
+      }
+    end
+
+    it do
+      expect_any_instance_of(Notion::Client).to receive(:database_query)
+        .with(hash_including(:filter => filter)).and_call_original
+
+      VCR.use_cassette("notion_database") { site.process }
+    end
+  end
+
+  context "when sort is set" do
+    let(:sorts) { [{ :timestamp => "created_time", :direction => "ascending" }] }
+    let(:notion_config) do
+      {
+        "databases" => [{
+          "id"    => "1ae33dd5f3314402948069517fa40ae2",
+          "sorts" => sorts,
+        }],
+      }
+    end
+
+    it do
+      expect_any_instance_of(Notion::Client).to receive(:database_query)
+        .with(hash_including(:sorts => sorts)).and_call_original
+
+      VCR.use_cassette("notion_database") { site.process }
+    end
+  end
+
+  context "when the site is rebuilt in watch mode" do
+    let(:notion_config) do
+      {
+        "pages"          => [{
+          "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
+        }],
+        "databases"      => [{
+          "id"    => "1ae33dd5f3314402948069517fa40ae2",
+        }],
+      }
+    end
+    let(:notion_client) { instance_double(Notion::Client) }
+
+    before do
+      allow(NotionToMd::Blocks).to receive(:build)
+      allow(NotionToMd::Page).to receive(:new)
+      allow(Notion::Client).to receive(:new).and_return(notion_client)
+      allow(notion_client).to receive(:page).and_return({})
+      allow(notion_client).to receive(:database_query).and_return({ results: [] })
+      allow(notion_client).to receive(:block_children).and_return([])
+
+      site.process 
+      site.process 
+    end
+
+    it "queries notion database once" do
+      expect(notion_client).to have_received(:database_query).once
+    end
+
+    it "queries the notion page once" do
+      expect(notion_client).to have_received(:page).once
+    end
+
+    context "when fetch_on_watch is set" do
+      let(:notion_config) do
+        {
+          "fetch_on_watch" => true,
+          "pages"          => [{
+            "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
+          }],
+          "databases"      => [{
+            "id"    => "1ae33dd5f3314402948069517fa40ae2",
+          }],
+        }
+      end
+
+      it "queries notion database as many times as the site rebuild" do
+        expect(notion_client).to have_received(:database_query).twice
+      end
+
+      it "queries the notion page as many times as the site rebuild" do
+        expect(notion_client).to have_received(:page).twice
+      end
     end
   end
 end
