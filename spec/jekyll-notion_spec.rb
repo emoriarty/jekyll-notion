@@ -4,6 +4,7 @@ require "spec_helper"
 require "support/vcr_page"
 require "support/vcr_data_page"
 require "support/vcr_collection"
+require "support/notion_token"
 
 describe(JekyllNotion) do
   let(:source_dir) { SOURCE_DIR }
@@ -25,6 +26,37 @@ describe(JekyllNotion) do
   let(:collections) { nil }
   let(:notion_config) { nil }
   let(:site) { Jekyll::Site.new(config) }
+
+  before do
+    allow(Jekyll.logger).to receive(:info)
+    allow(Jekyll.logger).to receive(:warn)
+  end
+
+  describe "configuration" do
+    before do
+      allow(Notion::Client).to receive(:new).and_call_original
+    end
+
+    context "when no configuration is provided" do
+      it "logs a warning" do
+        VCR.use_cassette("notion_page") { site.process }
+
+        expect(Jekyll.logger).to have_received(:warn).with("Jekyll Notion:", "No configuration provided")
+      end
+
+      it "does not create an instance of Notion::Client" do
+        expect(Notion::Client).not_to have_received(:new)
+      end
+    end
+
+    context "when NOTION_TOKEN is not present" do
+      it_behaves_like "NOTION_TOKEN is not provided", nil
+    end
+
+    context "when NOTION_TOKEN is empty" do
+      it_behaves_like "NOTION_TOKEN is not provided", ""
+    end
+  end
 
   context "when declaring a notion page" do
     before do
@@ -88,18 +120,30 @@ describe(JekyllNotion) do
       VCR.use_cassette("notion_database") { site.process }
     end
 
-    let(:notion_config) do
-      {
-        "databases" => [{
-          "id" => "1ae33dd5f3314402948069517fa40ae2",
-        }],
-      }
+    context "with the default collection" do
+      let(:notion_config) do
+        {
+          "databases" => [{
+            "id" => "1ae33dd5f3314402948069517fa40ae2",
+          }],
+        }
+      end
+
+      it_behaves_like "a jekyll collection", "posts"
     end
 
-    it_behaves_like "a jekyll collection", "posts"
+    context "with a custom collection" do
+      let(:collections) {{ "articles" => { "output" => true } }}
+      let(:notion_config) do
+        {
+          "databases" => [{
+            "id" => "1ae33dd5f3314402948069517fa40ae2",
+            "collection" => "articles",
+          }],
+        }
+      end
 
-    it "the posts collection is the same length" do
-      puts site.collections["posts"].inspect
+      it_behaves_like "a jekyll collection", "articles"
     end
   end
 end
