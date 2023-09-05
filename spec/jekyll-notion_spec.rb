@@ -288,4 +288,29 @@ describe(JekyllNotion) do
     it_behaves_like "a jekyll collection", "posts"
     it_behaves_like "a jekyll collection", "articles"
   end
+
+  context "when there is a post present in source dir" do
+    let(:source_dir) { SOURCE_DIR_2 }
+    let(:notion_config) do
+      {
+        "databases" => [{
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
+        }],
+      }
+    end
+
+    before do
+      VCR.use_cassette("notion_database") { site.process }
+    end
+
+    it "adds the document to the posts collection" do
+      expect(site.posts.size).to be == 6 
+    end
+
+    it "keeps the local post" do
+      # Files present in the source dir are added to the posts collection as Jekyll::Document instances
+      post = site.posts.find { |p| p.path.end_with?("2022-01-23-page-1.md") }
+      expect(post).to be_an_instance_of(Jekyll::Document)
+    end
+  end
 end
