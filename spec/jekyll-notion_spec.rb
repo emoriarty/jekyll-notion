@@ -267,4 +267,25 @@ describe(JekyllNotion) do
       end
     end
   end
+
+  context "when multiple databases" do
+    let(:collections) { { "articles" => { "output" => true } } }
+    let(:notion_config) do
+      {
+        "databases" => [{
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
+        },{
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
+          "collection" => "articles",
+        }],
+      }
+    end
+
+    before do
+      VCR.use_cassette("notion_database") { site.process }
+    end
+
+    it_behaves_like "a jekyll collection", "posts"
+    it_behaves_like "a jekyll collection", "articles"
+  end
 end
