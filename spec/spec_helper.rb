@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require "jekyll"
-require "yaml"
 require File.expand_path("../lib/jekyll-notion", __dir__)
 require "simplecov"
 require "vcr"
