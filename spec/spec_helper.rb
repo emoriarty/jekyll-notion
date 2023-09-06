@@ -1,15 +1,42 @@
 # frozen_string_literal: true
 
 require "jekyll"
-require "yaml"
 require File.expand_path("../lib/jekyll-notion", __dir__)
-require 'simplecov'
+require "simplecov"
+require "vcr"
 
 SimpleCov.start do
   enable_coverage :branch
 end
 
+ENV["JEKYLL_ENV"] = "test"
+
 Jekyll.logger.log_level = :error
+
+VCR.configure do |config|
+  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.hook_into :faraday
+
+  # Redact the Notion token from the VCR cassettes
+  config.before_record do |interaction|
+    to_be_redacted = interaction.request.headers["Authorization"]
+
+    to_be_redacted.each do |redacted_text|
+      interaction.filter!(redacted_text, "<REDACTED>")
+    end
+
+    sensitive_values = (ENV["NOTION_SENSITIVE_VALUES"] || "").split("|")
+    replacement_values = (ENV["NOTION_SENSITIVE_REPLACEMENTS"] || "").split("|")
+    sensitive_values.each_with_index do |sensitive_value, index|
+      interaction.filter!(sensitive_value, replacement_values[index])
+    end
+  end
+
+  config.default_cassette_options = {
+    :allow_playback_repeats => true,
+    :record                 => :new_episodes,
+  }
+end
 
 RSpec.configure do |config|
   config.run_all_when_everything_filtered = true
@@ -18,63 +45,8 @@ RSpec.configure do |config|
   SOURCE_DIR = File.expand_path("fixtures/my_site", __dir__)
   SOURCE_DIR_2 = File.expand_path("fixtures/my_site_2", __dir__)
   DEST_DIR = File.expand_path("dest", __dir__)
-  if Gem::Version.new(RUBY_VERSION) >= Gem::Version.new("3.1")
-    NOTION_RESULTS = YAML.load_file(
-      File.expand_path("fixtures/notion/results.yml", __dir__),
-      :permitted_classes => [Hashie::Array, Notion::Messages::Message]
-    )
-    NOTION_RESULTS_2 = YAML.load_file(
-      File.expand_path("fixtures/notion/results_2.yml", __dir__),
-      :permitted_classes => [Hashie::Array, Notion::Messages::Message]
-    )
-    NOTION_RESULTS_3 = YAML.load_file(
-      File.expand_path("fixtures/notion/results_3.yml", __dir__),
-      :permitted_classes => [Hashie::Array, Notion::Messages::Message]
-    )
-    NOTION_FILMS = YAML.load_file(
-      File.expand_path("fixtures/notion/films.yml", __dir__),
-      :permitted_classes => [Hashie::Array, Notion::Messages::Message]
-    )
-    NOTION_PAGE = YAML.load_file(
-      File.expand_path("fixtures/notion/single_page.yml", __dir__),
-      :permitted_classes => [Hashie::Array, Notion::Messages::Message]
-    )
-    NOTION_PAGE_BLOCKS = YAML.load_file(
-      File.expand_path("fixtures/notion/single_page_blocks.yml", __dir__),
-      :permitted_classes => [Hashie::Array, Notion::Messages::Message]
-    )
-  else
-    NOTION_RESULTS = YAML.load_file(
-      File.expand_path("fixtures/notion/results.yml", __dir__),
-    )
-    NOTION_RESULTS_2 = YAML.load_file(
-      File.expand_path("fixtures/notion/results_2.yml", __dir__),
-    )
-    NOTION_RESULTS_3 = YAML.load_file(
-      File.expand_path("fixtures/notion/results_3.yml", __dir__),
-    )
-    NOTION_FILMS = YAML.load_file(
-      File.expand_path("fixtures/notion/films.yml", __dir__),
-    )
-    NOTION_PAGE = YAML.load_file(
-      File.expand_path("fixtures/notion/single_page.yml", __dir__),
-    )
-    NOTION_PAGE_BLOCKS = YAML.load_file(
-      File.expand_path("fixtures/notion/single_page_blocks.yml", __dir__),
-    )
-  end
-  MD_FILES = Dir[File.expand_path("fixtures/md_files/*.md",
-                                  __dir__)].each_with_object({}) do |file, memo|
-    value = File.read(file)
-    key = File.basename(file, ".md")
-    memo[key] = value
-  end
 
   def dest_dir(*files)
     File.join(DEST_DIR, *files)
-  end
-
-  def md_files
-    MD_FILES
   end
 end

@@ -80,7 +80,8 @@ module JekyllNotion
 
     def notion_token?
       if ENV["NOTION_TOKEN"].nil? || ENV["NOTION_TOKEN"].empty?
-        Jekyll.logger.warn("Jekyll Notion:", "NOTION_TOKEN not provided. Cannot read from Notion.")
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "Cannot read from Notion becuase NOTION_TOKEN was not provided")
         return false
       end
       true
@@ -88,7 +89,7 @@ module JekyllNotion
 
     def config?
       if config.empty?
-        Jekyll.logger.warn("Jekyll Notion:", "No config provided.")
+        Jekyll.logger.warn("Jekyll Notion:", "No configuration provided")
         return false
       end
       true
@@ -96,7 +97,7 @@ module JekyllNotion
 
     def setup
       # Cache Notion API responses
-      if cache?
+      if ENV["JEKYLL_ENV"] != "test" && cache?
         JekyllNotion::Cacheable.setup(config["cache_dir"])
         Notion::Client.prepend JekyllNotion::Cacheable
       end
