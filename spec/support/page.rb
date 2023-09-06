@@ -45,7 +45,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores files into page data" do
-    expect(site.pages.first.data).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230906T091210Z&X-Amz-Expires=3600&X-Amz-Signature=019e30f0afe2427bed5f34a5c3b64b4712fd6044def9c2789109c409bfee7e9f&X-Amz-SignedHeaders=host&x-id=GetObject"])
+    expect(site.pages.first.data).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230906T093549Z&X-Amz-Expires=3600&X-Amz-Signature=2d80c6c080aa1f52f2c9dfe9dfc5f684c6b4ef21c1f7513c789d4a6f5fad0f43&X-Amz-SignedHeaders=host&x-id=GetObject"])
   end
 
   it "stores email into page data" do

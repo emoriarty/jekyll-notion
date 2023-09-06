@@ -25,13 +25,12 @@ VCR.configure do |config|
     to_be_redacted.each do |redacted_text|
       interaction.filter!(redacted_text, "<REDACTED>")
     end
-  end
 
-  # Redact sensitive values from the VCR cassettes
-  sensitive_values = (ENV["NOTION_SENSITIVE_VALUES"] || "").split("|")
-  replacement_values = (ENV["NOTION_SENSITIVE_REPLACEMENTS"] || "").split("|")
-  sensitive_values.each_with_index do |sensitive_value, index|
-    config.filter_sensitive_data(sensitive_value) { replacement_values[index] }
+    sensitive_values = (ENV["NOTION_SENSITIVE_VALUES"] || "").split("|")
+    replacement_values = (ENV["NOTION_SENSITIVE_REPLACEMENTS"] || "").split("|")
+    sensitive_values.each_with_index do |sensitive_value, index|
+      interaction.filter!(sensitive_value, replacement_values[index])
+    end
   end
 
   config.default_cassette_options = {
