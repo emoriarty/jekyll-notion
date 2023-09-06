@@ -1,9 +1,9 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "support/vcr_page"
-require "support/vcr_data_page"
-require "support/vcr_collection"
+require "support/page"
+require "support/page_data"
+require "support/collection"
 require "support/notion_token"
 
 describe(JekyllNotion) do
@@ -215,11 +215,11 @@ describe(JekyllNotion) do
   context "when the site is rebuilt in watch mode" do
     let(:notion_config) do
       {
-        "pages"          => [{
+        "pages"     => [{
           "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
         }],
-        "databases"      => [{
-          "id"    => "1ae33dd5f3314402948069517fa40ae2",
+        "databases" => [{
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
         }],
       }
     end
@@ -230,11 +230,11 @@ describe(JekyllNotion) do
       allow(NotionToMd::Page).to receive(:new)
       allow(Notion::Client).to receive(:new).and_return(notion_client)
       allow(notion_client).to receive(:page).and_return({})
-      allow(notion_client).to receive(:database_query).and_return({ results: [] })
+      allow(notion_client).to receive(:database_query).and_return({ :results => [] })
       allow(notion_client).to receive(:block_children).and_return([])
 
-      site.process 
-      site.process 
+      site.process
+      site.process
     end
 
     it "queries notion database once" do
@@ -253,7 +253,7 @@ describe(JekyllNotion) do
             "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
           }],
           "databases"      => [{
-            "id"    => "1ae33dd5f3314402948069517fa40ae2",
+            "id" => "1ae33dd5f3314402948069517fa40ae2",
           }],
         }
       end
@@ -274,10 +274,10 @@ describe(JekyllNotion) do
       {
         "databases" => [{
           "id" => "1ae33dd5f3314402948069517fa40ae2",
-        },{
-          "id" => "1ae33dd5f3314402948069517fa40ae2",
+        }, {
+          "id"         => "1ae33dd5f3314402948069517fa40ae2",
           "collection" => "articles",
-        }],
+        },],
       }
     end
 
@@ -304,7 +304,7 @@ describe(JekyllNotion) do
     end
 
     it "adds the document to the posts collection" do
-      expect(site.posts.size).to be == 6 
+      expect(site.posts.size).to be == 6
     end
 
     it "keeps the local post" do

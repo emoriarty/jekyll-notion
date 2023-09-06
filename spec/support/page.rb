@@ -1,91 +1,70 @@
 RSpec.shared_examples "a jekyll page" do
-  context "with front matter properties mapped to data" do
-    it "id is mapped into page data" do
-      expect(site.pages.first.data).to include("id" => NOTION_PAGE.id)
-    end
+  it "stores id into page data" do
+    expect(site.pages.first.data).to include("id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3")
+  end
 
-    it "created_time is mapped into page data" do
-      expect(site.pages.first.data).to include("created_time" => Time.parse(NOTION_PAGE.created_time))
-    end
+  it "stores created_time into page data" do
+    expect(site.pages.first.data).to include("created_time" => Time.parse("2022-01-23T12:31:00.000Z"))
+  end
 
-    it "last_edited_time is mapped into page data" do
-      expect(site.pages.first.data).to include("last_edited_time" => Time.parse(NOTION_PAGE.last_edited_time))
-    end
+  it "stores last_edited_time into page data" do
+    expect(site.pages.first.data).to include("last_edited_time" => Time.parse("2022-10-04T20:23:00.000Z"))
+  end
 
-    it "cover is mapped into page data" do
-      expect(site.pages.first.data).to include("cover" => NOTION_PAGE.cover.dig("external",
-                                                                                "url"))
-    end
+  it "stores cover into page data" do
+    expect(site.pages.first.data).to include("cover" => "https://www.notion.so/images/page-cover/met_canaletto_1720.jpg")
+  end
 
-    it "icon is mapped into page data" do
-      expect(site.pages.first.data).to include("icon" => NOTION_PAGE.icon.emoji)
-    end
+  it "stores icon into page data" do
+    expect(site.pages.first.data).to include("icon" => "💥")
+  end
 
-    it "archived is mapped into page data" do
-      expect(site.pages.first.data).to include("archived" => NOTION_PAGE.archived)
-    end
+  it "stores archived into page data" do
+    expect(site.pages.first.data).to include("archived" => false)
+  end
 
-    it "archived is mapped into page data" do
-      expect(site.pages.first.data).to include("archived" => NOTION_PAGE.archived)
-    end
+  it "stores multi_select into page data" do
+    expected_value = %w(mselect1 mselect2 mselect3)
+    expect(site.pages.first.data).to include("multi_select" => expected_value)
+  end
 
-    it "multi_select type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Multi Select",
-                                                  "multi_select").map(&:name)
-      expect(site.pages.first.data).to include("multi_select" => expected_value)
-    end
+  it "stores select into page data" do
+    expect(site.pages.first.data).to include("select" => "select1")
+  end
 
-    it "select type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Select", "select").name
-      expect(site.pages.first.data).to include("select" => expected_value)
-    end
+  it "stores people into page data" do
+    expect(site.pages.first.data).to include("person" => ["Julie Guiraud"])
+  end
 
-    it "people type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Person",
-                                                  "people").map(&:name)
-      expect(site.pages.first.data).to include("person" => expected_value)
-    end
+  it "stores number into page data" do
+    expect(site.pages.first.data).to include("numbers" => 12)
+  end
 
-    it "number type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Numbers", "number")
-      expect(site.pages.first.data).to include("numbers" => expected_value)
-    end
+  it "stores phone_number into page data" do
+    expect(site.pages.first.data).to include("phone" => 983_788_379)
+  end
 
-    it "phone_number type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Phone", "phone_number")
-      expect(site.pages.first.data).to include("phone" => expected_value.to_i)
-    end
+  it "stores files into page data" do
+    expect(site.pages.first.data).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230904T103127Z&X-Amz-Expires=3600&X-Amz-Signature=1215cb42dc11192ac75ce34f709b1e09f8a3cfec232e34e97958f866bc310453&X-Amz-SignedHeaders=host&x-id=GetObject"])
+  end
 
-    it "files type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("File", "files").map do |f|
-        f.file.url
-      end
-      expect(site.pages.first.data).to include("file" => expected_value)
-    end
+  it "stores email into page data" do
+    expect(site.pages.first.data).to include("email" => "hola@test.com")
+  end
 
-    it "email type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Email", "email")
-      expect(site.pages.first.data).to include("email" => expected_value)
-    end
+  it "stores checkbox into page data" do
+    expect(site.pages.first.data).to include("checkbox" => false)
+  end
 
-    it "checkbox type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Checkbox", "checkbox")
-      expect(site.pages.first.data).to include("checkbox" => expected_value)
-    end
+  it "stores title into page data" do
+    expect(site.pages.first.data).to include("title" => "Page 1")
+  end
 
-    it "title type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.Name.title[0].plain_text
-      expect(site.pages.first.data).to include("title" => expected_value)
-    end
-
-    it "date type is mapped into page data" do
-      expected_value = NOTION_PAGE.properties.dig("Date", "date", "start")
-      expect(site.pages.first.data).to include("date" => DateTime.parse(expected_value))
-    end
+  it "stores date into page data" do
+    expect(site.pages.first.data).to include("date" => DateTime.parse("2022-01-28"))
   end
 
   it "page is stored in destination directory" do
-    expected_path = site.pages.first.destination(".")
-    expect(File).to exist(expected_path)
+    expect(File).to exist(site.pages.first.destination("."))
   end
 end
