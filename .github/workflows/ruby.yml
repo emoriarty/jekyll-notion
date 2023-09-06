@@ -32,7 +32,7 @@ jobs:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
     - name: Run tests
-      run: NOTION_TOKEN=dummy_token bundle exec rspec
+      run: NOTION_TOKEN=dummy_secret_token bundle exec rspec
     - name: Archive code coverage results
       uses: actions/upload-artifact@v3
       with:
