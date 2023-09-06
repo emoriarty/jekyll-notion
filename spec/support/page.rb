@@ -33,7 +33,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores people into page data" do
-    expect(site.pages.first.data).to include("person" => ["Julie Guiraud"])
+    expect(site.pages.first.data).to include("person" => ["Armando Broncas"])
   end
 
   it "stores number into page data" do
@@ -45,7 +45,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores files into page data" do
-    expect(site.pages.first.data).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230904T103127Z&X-Amz-Expires=3600&X-Amz-Signature=1215cb42dc11192ac75ce34f709b1e09f8a3cfec232e34e97958f866bc310453&X-Amz-SignedHeaders=host&x-id=GetObject"])
+    expect(site.pages.first.data).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230906T091210Z&X-Amz-Expires=3600&X-Amz-Signature=019e30f0afe2427bed5f34a5c3b64b4712fd6044def9c2789109c409bfee7e9f&X-Amz-SignedHeaders=host&x-id=GetObject"])
   end
 
   it "stores email into page data" do

@@ -313,4 +313,8 @@ describe(JekyllNotion) do
       expect(post).to be_an_instance_of(Jekyll::Document)
     end
   end
+
+  context "when the cache is enabled" do
+    # tODO
+  end
 end

@@ -17,7 +17,8 @@ Jekyll.logger.log_level = :error
 VCR.configure do |config|
   config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
   config.hook_into :faraday
-  config.filter_sensitive_data("Authorization") { "NOTION_TOKEN" }
+
+  # Redact the Notion token from the VCR cassettes
   config.before_record do |interaction|
     to_be_redacted = interaction.request.headers["Authorization"]
 
@@ -25,6 +26,14 @@ VCR.configure do |config|
       interaction.filter!(redacted_text, "<REDACTED>")
     end
   end
+
+  # Redact sensitive values from the VCR cassettes
+  sensitive_values = (ENV["NOTION_SENSITIVE_VALUES"] || "").split("|")
+  replacement_values = (ENV["NOTION_SENSITIVE_REPLACEMENTS"] || "").split("|")
+  sensitive_values.each_with_index do |sensitive_value, index|
+    config.filter_sensitive_data(sensitive_value) { replacement_values[index] }
+  end
+
   config.default_cassette_options = {
     :allow_playback_repeats => true,
     :record                 => :new_episodes,

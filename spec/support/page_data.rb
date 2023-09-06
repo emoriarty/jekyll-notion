@@ -33,7 +33,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores people into the data object" do
-    expect(site.data[data_name]).to include("person" => ["Julie Guiraud"])
+    expect(site.data[data_name]).to include("person" => ["Armando Broncas"])
   end
 
   it "stores number into the data object" do
@@ -45,7 +45,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores files into the data object" do
-    expect(site.data[data_name]).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230904T103125Z&X-Amz-Expires=3600&X-Amz-Signature=250596ea09ae9ed8e592a155dd45f20476f0cf34c1dfb3b6032b5c41ccc03976&X-Amz-SignedHeaders=host&x-id=GetObject"])
+    expect(site.data[data_name]).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230906T091207Z&X-Amz-Expires=3600&X-Amz-Signature=1cade4671e93a012aee1870bc078dd32fdb3695bbde91e22c259b0193ba98f88&X-Amz-SignedHeaders=host&x-id=GetObject"])
   end
 
   it "stores email into the data object" do
