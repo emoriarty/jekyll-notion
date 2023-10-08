@@ -307,7 +307,7 @@ describe(JekyllNotion) do
       expect(site.posts.size).to be == 7
     end
 
-    it "keeps the locals posts" do
+    it "keeps local posts" do
       # Files present in the source dir are added to the posts collection as Jekyll::Document instances
       post_1 = site.posts.find { |p| p.path.end_with?("2022-01-23-page-1.md") }
       post_2 = site.posts.find { |p| p.path.end_with?("2022-01-01-my-post.md") }
