@@ -304,22 +304,26 @@ describe(JekyllNotion) do
     end
 
     it "adds the document to the posts collection" do
-      expect(site.posts.size).to be == 6
+      expect(site.posts.size).to be == 7
     end
 
-    it "keeps the local post" do
+    it "keeps the locals posts" do
       # Files present in the source dir are added to the posts collection as Jekyll::Document instances
-      post = site.posts.find { |p| p.path.end_with?("2022-01-23-page-1.md") }
-      expect(post).to be_an_instance_of(Jekyll::Document)
+      post_1 = site.posts.find { |p| p.path.end_with?("2022-01-23-page-1.md") }
+      post_2 = site.posts.find { |p| p.path.end_with?("2022-01-01-my-post.md") }
+      expect(post_1).to be_an_instance_of(Jekyll::Document)
+      expect(post_2).to be_an_instance_of(Jekyll::Document)
     end
   end
 
-  context "when the creation date property is provided" do
+  context "when the date property is declared in a notion page" do
+    # There's only one document in the database with the "Date" property set to "2021-12-30"
+    #
+    let(:date) { "2021-12-30" }
     let(:notion_config) do
       {
         "databases" => [{
           "id" => "1ae33dd5f3314402948069517fa40ae2",
-          "date" => "Date",
         }],
       }
     end
@@ -328,8 +332,37 @@ describe(JekyllNotion) do
       VCR.use_cassette("notion_database") { site.process }
     end
 
-    it "sets the publishing date" do
-      expect(site.posts.find { |p| p.path.end_with?("2021-12-30-page-1.md") }).not_to be_nil
+    it "sets the post date" do
+      expect(site.posts.find { |p| p.data["date"] == Time.parse(date) }).not_to be_nil
+    end
+
+    it "sets the date in the filename" do
+      expect(site.posts.find { |p| p.path.end_with?("#{date}-page-1.md") }).not_to be_nil
+    end
+  end
+
+  context "when the date property is not declared in a notion page" do
+    # There's only one document in the database with the "created_time" property set to "2022-09-17"
+    #
+    let(:created_time) { "2022-09-17" }
+    let(:notion_config) do
+      {
+        "databases" => [{
+          "id"   => "1ae33dd5f3314402948069517fa40ae2",
+        }],
+      }
+    end
+
+    before do
+      VCR.use_cassette("notion_database") { site.process }
+    end
+
+    it "sets the post from the created_time" do
+      expect(site.posts.find { |p| p.data["date"] == Time.parse(created_time) }).not_to be_nil
+    end
+
+    it "sets the date from created_time in the filename" do
+      expect(site.posts.find { |p| p.path.end_with?("#{created_time}-tables.md") }).not_to be_nil
     end
   end
 end
