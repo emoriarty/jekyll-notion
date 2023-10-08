@@ -40,7 +40,7 @@ module JekyllNotion
 
     def make_filename(page)
       if @notion_resource.collection_name == "posts"
-        "#{page.created_time.to_date}-#{Jekyll::Utils.slugify(page.title,
+        "#{(date_for(page) || page.created_time).to_date}-#{Jekyll::Utils.slugify(page.title,
                                                               :mode => "latin")}.md"
       else
         "#{page.title.downcase.parameterize}.md"
@@ -60,6 +60,13 @@ module JekyllNotion
                            "URL => #{collection.docs.last.url}")
       end
       Jekyll.logger.debug("", "Props => #{collection.docs.last.data.keys.inspect}")
+    end
+
+    def date_for(page)
+      property_name = @notion_resource.config['date'].downcase.parameterize
+      DateTime.parse(page.props[property_name])
+    rescue TypeError, NoMethodError
+      nil
     end
   end
 end
