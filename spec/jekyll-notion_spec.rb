@@ -313,4 +313,23 @@ describe(JekyllNotion) do
       expect(post).to be_an_instance_of(Jekyll::Document)
     end
   end
+
+  context "when the creation date property is provided" do
+    let(:notion_config) do
+      {
+        "databases" => [{
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
+          "date" => "Date",
+        }],
+      }
+    end
+
+    before do
+      VCR.use_cassette("notion_database") { site.process }
+    end
+
+    it "sets the publishing date" do
+      expect(site.posts.find { |p| p.path.end_with?("2021-12-30-page-1.md") }).not_to be_nil
+    end
+  end
 end
