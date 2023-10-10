@@ -84,7 +84,7 @@ notion:
 
 The `created_time` property of a notion page is used to set the date in the post filename. This is the date used for the `date` variable of the [predefined variables for posts](https://jekyllrb.com/docs/front-matter/#predefined-variables-for-posts).
 
-It's important to note that the date cannot be modifed. However, if you wish to change the date of a post, you can create a new page propery named "date" (or "Date"). This way, the posts collection will use the `date` property for the post date variable instead of the `created_time`.
+It's important to note that the `created_time` cannot be modifed. However, if you wish to change the date of a post, you can create a new page property named "date" (or "Date"). This way, the posts collection will use the `date` property for the post date variable instead of the `created_time`.
 
 ### Pages
 
