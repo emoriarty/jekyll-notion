@@ -40,8 +40,7 @@ module JekyllNotion
 
     def make_filename(page)
       if @notion_resource.collection_name == "posts"
-        "#{page.created_time.to_date}-#{Jekyll::Utils.slugify(page.title,
-                                                              :mode => "latin")}.md"
+        "#{date_for(page)}-#{Jekyll::Utils.slugify(page.title, :mode => "latin")}.md"
       else
         "#{page.title.downcase.parameterize}.md"
       end
@@ -60,6 +59,16 @@ module JekyllNotion
                            "URL => #{collection.docs.last.url}")
       end
       Jekyll.logger.debug("", "Props => #{collection.docs.last.data.keys.inspect}")
+    end
+
+    def date_for(page)
+      # The "date" property overwrites the Jekyll::Document#data["date"] key
+      # which is the date used by Jekyll to set the post date.
+      DateTime.parse(page.props["date"]).to_date
+    rescue TypeError, NoMethodError
+      # Because the "date" property is not required,
+      # it fallbacks to the created_time which is always present.
+      page.created_time.to_date
     end
   end
 end
