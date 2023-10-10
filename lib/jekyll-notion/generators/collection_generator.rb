@@ -43,7 +43,7 @@ module JekyllNotion
         "#{page.created_time.to_date}-#{Jekyll::Utils.slugify(page.title,
                                                               :mode => "latin")}.md"
       else
-        "#{page.title.downcase.parameterize}.md"
+        "#{Jekyll::Utils.slugify(page.title, :mode => "latin")}.md"
       end
     end
 
