@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-notion (2.4.0)
+    jekyll-notion (2.4.1)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 1.0)
       notion_to_md (~> 2.2)
@@ -39,6 +39,7 @@ GEM
     ffi (1.15.5)
     forwardable-extended (2.6.0)
     google-protobuf (3.24.2)
+    google-protobuf (3.24.2-x86_64-darwin)
     hashie (5.0.0)
     http_parser.rb (0.8.0)
     i18n (1.14.1)
@@ -133,6 +134,8 @@ GEM
     sass-embedded (1.63.6)
       google-protobuf (~> 3.23)
       rake (>= 13.0.0)
+    sass-embedded (1.63.6-x86_64-darwin)
+      google-protobuf (~> 3.23)
     simplecov (0.22.0)
       docile (~> 1.1)
       simplecov-html (~> 0.11)
@@ -159,4 +162,4 @@ DEPENDENCIES
   simplecov (~> 0.21)
 
 BUNDLED WITH
-   2.3.1
+   2.4.20
