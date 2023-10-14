@@ -42,7 +42,7 @@ module JekyllNotion
       if @notion_resource.collection_name == "posts"
         "#{date_for(page)}-#{Jekyll::Utils.slugify(page.title, :mode => "latin")}.md"
       else
-        "#{page.title.downcase.parameterize}.md"
+        "#{Jekyll::Utils.slugify(page.title, :mode => "latin")}.md"
       end
     end
 
