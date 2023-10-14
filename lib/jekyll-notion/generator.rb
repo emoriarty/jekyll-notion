@@ -99,7 +99,9 @@ module JekyllNotion
       # Cache Notion API responses
       if ENV["JEKYLL_ENV"] != "test" && cache?
         JekyllNotion::Cacheable.setup(config["cache_dir"])
-        Notion::Client.prepend JekyllNotion::Cacheable
+        JekyllNotion::CollectionGenerator.prepend(JekyllNotion::Cacheable)
+        JekyllNotion::PageGenerator.prepend(JekyllNotion::Cacheable)
+        JekyllNotion::DataGenerator.prepend(JekyllNotion::Cacheable)
       end
     end
 

@@ -26,16 +26,8 @@ module JekyllNotion
       end
     end
 
-    def database_query(*args)
-      VCR.use_cassette((args[0][:database_id]).to_s) { super(*args) }
-    end
-
-    def block_children(*args)
-      VCR.use_cassette((args[0][:block_id]).to_s) { super(*args) }
-    end
-
-    def page(*args)
-      VCR.use_cassette((args[0][:page_id]).to_s) { super(*args) }
+    def generate(*args)
+      VCR.use_cassette(resource_id) { super(*args) }
     end
   end
 end
