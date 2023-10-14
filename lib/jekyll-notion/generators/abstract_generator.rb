@@ -11,5 +11,9 @@ module JekyllNotion
     def generate
       raise "Do not use the AbstractGenerator class. Implement the generate method in a subclass."
     end
+
+    def resource_id
+      @notion_resource.id
+    end
   end
 end
