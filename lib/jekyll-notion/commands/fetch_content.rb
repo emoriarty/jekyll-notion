@@ -17,6 +17,10 @@ module JekyllNotion
 
       return unless notion_token? && fetch_mode?
 
+      # requires plugins (and _plugins/ directory) to be able to
+      # define custom notion_to_md blocks via monkey-patching
+      site = Jekyll::Site.new(@config)
+
       config_databases.each do |db_config|
         db = NotionDatabase.new(:config => db_config)
         CollectionGenerator.new(:notion_resource => db, :site => nil, :plugin => nil, :config => @config, :fetch_mode => true).generate
