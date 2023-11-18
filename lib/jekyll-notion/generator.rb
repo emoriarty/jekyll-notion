@@ -76,7 +76,7 @@ module JekyllNotion
 
     def fetch_on_watch?
       Jekyll.logger.warn("Jekyll Notion:",
-                         "The fetch_on_watch feature is deprecated in preference to the cache mechanism. It will be removed in the next major release.")
+                         "[Warning] The fetch_on_watch feature is deprecated in preference to the cache mechanism. It will be removed in the next major release.")
 
       config["fetch_on_watch"] == true
     end
