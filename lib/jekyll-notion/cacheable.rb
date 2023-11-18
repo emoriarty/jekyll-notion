@@ -9,7 +9,7 @@ module JekyllNotion
       VCR.configure do |config|
         config.cassette_library_dir = cache_path(cache_dir)
         config.hook_into :faraday # Faraday is used by notion-ruby-client gem
-        config.filter_sensitive_data("<NOTION_TOKEN>") { ENV["NOTION_TOKEN"] }
+        config.filter_sensitive_data("<NOTION_TOKEN>") { ENV.fetch("NOTION_TOKEN", nil) }
         config.allow_http_connections_when_no_cassette = true
         config.default_cassette_options = {
           :allow_playback_repeats => true,
