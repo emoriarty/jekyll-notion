@@ -2,6 +2,12 @@
 
 Import notion pages to jekyll.
 
+You can learn more about how to use jekyll-notion with the following links:
+
+* [Load notion pages in jekyll](https://enrq.me/dev/2022/03/20/load-notion-pages-in-jekyll/)
+* [Managing Jekyll posts in Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/)
+* [Embedding videos with jekyll-notion](https://enrq.me/dev/2023/03/31/embedding-videos-with-jekyll-notion/)
+
 ## Installation
 
 Use gem to install.
