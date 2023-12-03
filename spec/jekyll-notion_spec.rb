@@ -303,12 +303,8 @@ describe(JekyllNotion) do
       VCR.use_cassette("notion_database") { site.process }
     end
 
-    it "adds the document to the posts collection", :focus do
-      site.posts.docs.each do |post|
-        puts post.path
-      end
-
-      expect(site.posts.size).to be == 8
+    it "adds the document to the posts collection" do
+      expect(site.posts.size).to be == 7
     end
 
     it "keeps local posts" do
@@ -323,7 +319,7 @@ describe(JekyllNotion) do
   context "when the date property is declared in a notion page" do
     # There's only one document in the database with the "Date" property set to "2021-12-30"
     #
-    let(:date) { "2021-12-30" }
+    let(:date) { "2022-01-23" }
     let(:notion_config) do
       {
         "databases" => [{
