@@ -319,7 +319,7 @@ describe(JekyllNotion) do
   context "when the date property is declared in a notion page" do
     # There's only one document in the database with the "Date" property set to "2021-12-30"
     #
-    let(:date) { "2021-12-30" }
+    let(:date) { "2022-01-23" }
     let(:notion_config) do
       {
         "databases" => [{
