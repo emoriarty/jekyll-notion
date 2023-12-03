@@ -43,7 +43,7 @@ GEM
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (2.7.11)
+    faraday (2.7.12)
       base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
@@ -81,7 +81,7 @@ GEM
       sass-embedded (~> 1.54)
     jekyll-watch (2.2.1)
       listen (~> 3.0)
-    json (2.6.3)
+    json (2.7.0)
     kramdown (2.4.0)
       rexml
     kramdown-parser-gfm (1.1.0)
@@ -99,6 +99,9 @@ GEM
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
       hashie (~> 5)
+    notion_to_md (2.3.0)
+      activesupport (~> 7)
+      notion-ruby-client (~> 1)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
