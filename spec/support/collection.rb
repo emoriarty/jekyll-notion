@@ -6,7 +6,7 @@ RSpec.shared_examples "a jekyll collection" do |collection_name|
 
   it "stores every page title in the collection" do
     site.collections[collection_name].each do |page|
-      expect(["Page 1", "Page 2", "Page 3", "lists", "tables"]).to be_include(page.title)
+      expect(["Page 1", "Page 2", "Page 3", "lists", "tables", "Title: with “double quotes” and ‘single quotes’ and :colons:"]).to be_include(page.title)
     end
   end
 
@@ -16,7 +16,7 @@ RSpec.shared_examples "a jekyll collection" do |collection_name|
     end
 
     it "keeps the collection with the same length" do
-      expect(site.collections[collection_name].size).to be(5)
+      expect(site.collections[collection_name].size).to be(6)
     end
   end
 end

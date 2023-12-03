@@ -1,4 +1,11 @@
 PATH
+  remote: ../notion_to_md
+  specs:
+    notion_to_md (2.3.0)
+      activesupport (~> 7)
+      notion-ruby-client (~> 1)
+
+PATH
   remote: .
   specs:
     jekyll-notion (2.4.1)
@@ -92,9 +99,6 @@ GEM
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
       hashie (~> 5)
-    notion_to_md (2.2.4)
-      activesupport (~> 7)
-      notion-ruby-client (~> 1)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -171,6 +175,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2)
   jekyll-notion!
+  notion_to_md!
   rspec (~> 3.0)
   rubocop-jekyll (~> 0.12)
   simplecov (~> 0.21)

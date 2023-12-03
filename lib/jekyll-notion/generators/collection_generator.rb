@@ -4,9 +4,12 @@ module JekyllNotion
   class CollectionGenerator < AbstractGenerator
     def generate
       @notion_resource.fetch.each do |page|
+        puts "Page: #{page.title}"
         next if file_exists?(make_path(page))
+        puts "=> Page: #{page.title}"
 
         collection.docs << make_doc(page)
+        puts "=> Doc: #{collection.docs.map(&:title)}"
         log_new_page(page)
       end
       # Caching current collection
@@ -64,11 +67,11 @@ module JekyllNotion
     def date_for(page)
       # The "date" property overwrites the Jekyll::Document#data["date"] key
       # which is the date used by Jekyll to set the post date.
-      DateTime.parse(page.props["date"]).to_date
+      Time.parse(page.props["date"]).to_date
     rescue TypeError, NoMethodError
       # Because the "date" property is not required,
       # it fallbacks to the created_time which is always present.
-      page.created_time.to_date
+      Time.parse(page.created_time).to_date
     end
   end
 end

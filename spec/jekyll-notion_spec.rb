@@ -303,8 +303,12 @@ describe(JekyllNotion) do
       VCR.use_cassette("notion_database") { site.process }
     end
 
-    it "adds the document to the posts collection" do
-      expect(site.posts.size).to be == 7
+    it "adds the document to the posts collection", :focus do
+      site.posts.docs.each do |post|
+        puts post.path
+      end
+
+      expect(site.posts.size).to be == 8
     end
 
     it "keeps local posts" do

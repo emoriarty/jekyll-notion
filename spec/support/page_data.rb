@@ -4,11 +4,11 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores created_time into the data object" do
-    expect(site.data[data_name]).to include("created_time" => DateTime.parse("Sun, 23 Jan 2022 12:31:00.000000000 +0000"))
+    expect(site.data[data_name]).to include("created_time" => "2022-01-23T12:31:00+00:00".dump)
   end
 
   it "stores last_edited_time into the data object" do
-    expect(site.data[data_name]).to include("last_edited_time" => DateTime.parse("Tue, 04 Oct 2022 20:23:00.000000000 +0000"))
+    expect(site.data[data_name]).to include("last_edited_time" => "2022-10-04T20:23:00+00:00".dump)
   end
 
   it "stores cover into the data object" do
@@ -29,7 +29,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores select into the data object" do
-    expect(site.data[data_name]).to include("select" => "select1")
+    expect(site.data[data_name]).to include("select" => "select1".dump)
   end
 
   it "stores people into the data object" do
@@ -57,7 +57,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores title into the data object" do
-    expect(site.data[data_name]).to include("title" => "Page 1")
+    expect(site.data[data_name]).to include("title" => "Page 1".dump)
   end
 
   it "stores date into the data object" do

@@ -4,11 +4,11 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores created_time into page data" do
-    expect(site.pages.first.data).to include("created_time" => Time.parse("2022-01-23T12:31:00.000Z"))
+    expect(site.pages.first.data).to include("created_time" => Time.parse("2022-01-23 12:31:00.000000000 +0000"))
   end
 
   it "stores last_edited_time into page data" do
-    expect(site.pages.first.data).to include("last_edited_time" => Time.parse("2022-10-04T20:23:00.000Z"))
+    expect(site.pages.first.data).to include("last_edited_time" => Time.parse("2023-12-02 07:19:00.000000000 +0000"))
   end
 
   it "stores cover into page data" do
@@ -45,7 +45,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores files into page data" do
-    expect(site.pages.first.data).to include("file" => ["https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20230906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20230906T093549Z&X-Amz-Expires=3600&X-Amz-Signature=2d80c6c080aa1f52f2c9dfe9dfc5f684c6b4ef21c1f7513c789d4a6f5fad0f43&X-Amz-SignedHeaders=host&x-id=GetObject"])
+    expect(site.pages.first.data).to include("file" => ["https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231202%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231202T220456Z&X-Amz-Expires=3600&X-Amz-Signature=2eb8ba4f47d5dc76e76b8702332b827367d4fb32fe2c42b09a7c4b41302eb6b1&X-Amz-SignedHeaders=host&x-id=GetObject"])
   end
 
   it "stores email into page data" do
@@ -61,7 +61,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores date into page data" do
-    expect(site.pages.first.data).to include("date" => DateTime.parse("2022-01-28"))
+    expect(site.pages.first.data).to include("date" => Time.parse("2021-12-30"))
   end
 
   it "page is stored in destination directory" do
