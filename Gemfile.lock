@@ -1,5 +1,7 @@
-PATH
-  remote: ../notion_to_md
+GIT
+  remote: https://github.com/emoriarty/notion_to_md.git
+  revision: c5e8cac6f6fbd2492d9dade792644954f38b4a2d
+  branch: main
   specs:
     notion_to_md (2.3.0)
       activesupport (~> 7)
@@ -99,9 +101,6 @@ GEM
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
       hashie (~> 5)
-    notion_to_md (2.3.0)
-      activesupport (~> 7)
-      notion-ruby-client (~> 1)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
