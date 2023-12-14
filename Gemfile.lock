@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    jekyll-notion (2.4.1)
+    jekyll-notion (2.4.2)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 1.2.0)
       notion_to_md (~> 2.3.0)
