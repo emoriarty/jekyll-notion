@@ -4,7 +4,7 @@ PATH
     jekyll-notion (2.4.2)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 1.2.0)
-      notion_to_md (>= 2.0.0, < 2.4)
+      notion_to_md (>= 2.0, < 2.4)
       vcr (~> 6.2.0)
 
 GEM
@@ -81,11 +81,11 @@ GEM
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
       hashie (~> 5)
-    notion_to_md (2.2.3)
+    notion_to_md (2.3.0)
       activesupport (~> 7)
       notion-ruby-client (~> 1)
-    parallel (1.22.1)
-    parser (3.2.1.0)
+    parallel (1.23.0)
+    parser (3.2.2.4)
       ast (~> 2.4.1)
     pathutil (0.16.2)
       forwardable-extended (~> 2.6)
