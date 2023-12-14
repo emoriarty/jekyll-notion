@@ -3,9 +3,9 @@ PATH
   specs:
     jekyll-notion (2.4.1)
       jekyll (>= 3.7, < 5.0)
-      notion-ruby-client (~> 1.0)
-      notion_to_md (~> 2.2)
-      vcr (~> 6.2)
+      notion-ruby-client (~> 1.2.0)
+      notion_to_md (~> 2.3.0)
+      vcr (~> 6.2.0)
 
 GEM
   remote: https://rubygems.org/
