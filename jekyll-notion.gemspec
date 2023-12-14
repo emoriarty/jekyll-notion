@@ -19,9 +19,9 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.5.0"
 
   spec.add_dependency "jekyll", ">= 3.7", "< 5.0"
-  spec.add_dependency "notion-ruby-client", "~> 1.0"
-  spec.add_dependency "notion_to_md", "~> 2.2"
-  spec.add_dependency "vcr", "~> 6.2"
+  spec.add_dependency "notion-ruby-client", "~> 1.2.0"
+  spec.add_dependency "notion_to_md", "~> 2.3.0"
+  spec.add_dependency "vcr", "~> 6.2.0"
 
   spec.add_development_dependency "bundler", "~> 2"
   spec.add_development_dependency "rspec", "~> 3.0"
