@@ -4,12 +4,9 @@ module JekyllNotion
   class CollectionGenerator < AbstractGenerator
     def generate
       @notion_resource.fetch.each do |page|
-        puts "Page: #{page.title}"
         next if file_exists?(make_path(page))
-        puts "=> Page: #{page.title}"
 
         collection.docs << make_doc(page)
-        puts "=> Doc: #{collection.docs.map(&:title)}"
         log_new_page(page)
       end
       # Caching current collection
