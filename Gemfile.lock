@@ -10,24 +10,34 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activesupport (7.0.7.2)
+    activesupport (7.1.2)
+      base64
+      bigdecimal
       concurrent-ruby (~> 1.0, >= 1.0.2)
+      connection_pool (>= 2.2.5)
+      drb
       i18n (>= 1.6, < 2)
       minitest (>= 5.1)
+      mutex_m
       tzinfo (~> 2.0)
     addressable (2.8.5)
       public_suffix (>= 2.0.2, < 6.0)
     ast (2.4.2)
+    base64 (0.2.0)
+    bigdecimal (3.1.5)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
+    connection_pool (2.4.1)
     diff-lcs (1.5.0)
     docile (1.4.0)
-    dotenv (2.8.1)
+    drb (2.2.0)
+      ruby2_keywords
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
     eventmachine (1.2.7)
-    faraday (2.7.10)
+    faraday (2.8.0)
+      base64
       faraday-net_http (>= 2.0, < 3.1)
       ruby2_keywords (>= 0.0.4)
     faraday-mashify (0.1.1)
@@ -75,8 +85,8 @@ GEM
     mercenary (0.4.0)
     minitest (5.20.0)
     multipart-post (2.3.0)
-    notion-ruby-client (1.2.1)
-      dotenv
+    mutex_m (0.2.0)
+    notion-ruby-client (1.2.2)
       faraday (>= 2.0)
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
