@@ -152,7 +152,9 @@ Notice, the page body is stored in the key `content`.
 
 The rest of properties are mapped as expected. For more info go to [notion properties](#notion-properties).
 
-### Watch
+### Watch (Deprecated)
+
+_Use the cache mechanism instead._
 
 By default, databases are only requested during the first build. Subsequent builds use the results from the cache.
 
