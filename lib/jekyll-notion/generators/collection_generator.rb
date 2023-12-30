@@ -2,15 +2,30 @@
 
 module JekyllNotion
   class CollectionGenerator < AbstractGenerator
-    def generate
-      @notion_resource.fetch.each do |page|
-        next if file_exists?(make_path(page))
+    attr_reader :fetch_mode, :config
 
-        collection.docs << make_doc(page)
-        log_new_page(page)
+    def initialize(notion_resource:, site:, plugin:, config:, fetch_mode:)
+      super(:notion_resource => notion_resource, :site => site, :plugin => plugin)
+      @config = config
+      @fetch_mode = fetch_mode
+    end
+
+    def generate
+      if @fetch_mode
+        @notion_resource.fetch.each do |page|
+          make_doc(page)
+          log_new_page(page)
+        end
+      else
+        @notion_resource.fetch.each do |page|
+          next if file_exists?(make_path(page))
+
+          collection.docs << make_doc(page)
+          log_new_page(page)
+        end
+        # Caching current collection
+        @plugin.collections[@notion_resource.collection_name] = collection
       end
-      # Caching current collection
-      @plugin.collections[@notion_resource.collection_name] = collection
     end
 
     def collection
@@ -21,21 +36,29 @@ module JekyllNotion
 
     # Checks if a file already exists in the site source
     def file_exists?(file_path)
-      File.exist? @site.in_source_dir(file_path)
+      if @fetch_mode
+        File.exist?(file_path)
+      else
+        File.exist? @site.in_source_dir(file_path)
+      end
     end
 
     def make_doc(page)
-      new_post = DocumentWithoutAFile.new(
-        make_path(page),
-        { :site => @site, :collection => collection }
-      )
-      new_post.content = make_md(page)
-      new_post.read
-      new_post
+      if @fetch_mode
+        FileCreator.new(make_path(page), make_md(page)).create!
+      else
+        new_post = DocumentWithoutAFile.new(
+          make_path(page),
+          { :site => @site, :collection => collection }
+        )
+        new_post.content = make_md(page)
+        new_post.read
+        new_post
+      end
     end
 
     def make_path(page)
-      "_#{@notion_resource.collection_name}/#{make_filename(page)}"
+      "#{@config["source"]}/_#{@notion_resource.collection_name}/#{make_filename(page)}"
     end
 
     def make_filename(page)
@@ -52,6 +75,9 @@ module JekyllNotion
 
     def log_new_page(page)
       Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
+
+      return if @fetch_mode
+
       if @site.config.dig(
         "collections", @notion_resource.collection_name, "output"
       )

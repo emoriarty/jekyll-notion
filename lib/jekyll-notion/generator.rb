@@ -7,7 +7,7 @@ module JekyllNotion
     def generate(site)
       @site = site
 
-      return unless notion_token? && config?
+      return unless notion_token? && config? && !fetch_mode?
 
       setup
 
@@ -72,6 +72,14 @@ module JekyllNotion
 
     def config
       @config ||= @site.config["notion"] || {}
+    end
+
+    def fetch_mode?
+      if config["fetch_mode"] == true
+        Jekyll.logger.warn("Jekyll Notion:", "fetch_mode is true, skipping the generator.")
+        return true
+      end
+      false
     end
 
     def fetch_on_watch?

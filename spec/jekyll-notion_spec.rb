@@ -159,6 +159,21 @@ describe(JekyllNotion) do
       end
     end
 
+    context "with fetch_mode" do
+      let(:notion_config) do
+        {
+          "fetch_mode" => true,
+          "databases" => [{
+            "id" => "1ae33dd5f3314402948069517fa40ae2",
+          }],
+        }
+      end
+
+      it "does not pull anything" do
+        expect(site.posts.size).to be == 0
+      end
+    end
+
     context "with a custom collection" do
       let(:collections) { { "articles" => { "output" => true } } }
       let(:notion_config) do
@@ -365,4 +380,39 @@ describe(JekyllNotion) do
       expect(site.posts.find { |p| p.path.end_with?("#{created_time}-tables.md") }).not_to be_nil
     end
   end
+
+  describe(JekyllNotion::FetchCommand) do
+    let(:notion_config) do
+      {
+        "fetch_mode" => true,
+        "databases" => [{
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
+        }],
+      }
+    end
+
+    before do
+      VCR.use_cassette("notion_database") {
+        described_class.process([], config)
+        site.process
+      }
+    end
+
+    after(:each) do
+      FileUtils.rm_rf("#{site.source}/_posts/") if File.exist? "#{site.source}/_posts/"
+    end
+
+    it "has only 'fetched' posts" do
+      expect(site.posts.size).to be 5
+      site.posts.each { |p|
+        # ensure they are pre-added
+        expect(p).to be_an_instance_of(Jekyll::Document)
+        # ensure correct path
+        expect(p.path).to match(%r!#{site.source}/_posts/\d{4}-\d{2}-\d{2}-.*.md$!)
+        # ensure they exist
+        expect(File.exist?(p.path)).to be true
+      }
+    end
+  end
+
 end
