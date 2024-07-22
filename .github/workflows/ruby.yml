@@ -34,7 +34,7 @@ jobs:
     - name: Run tests
       run: NOTION_TOKEN=dummy_secret_token bundle exec rspec
     - name: Archive code coverage results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: code-coverage-report
         path: coverage
