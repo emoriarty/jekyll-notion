@@ -21,6 +21,9 @@ Or add it to the `Gemfile`.
 gem 'jekyll-notion'
 ```
 
+> [!IMPORTANT]  
+> When using jekyll-archives, make sure that jekyll-notion is placed before jekyll-archives in the gemfile. Otherwise pages imported by jekyll-notion won't be collected by jekyll-archives. More info [here](https://github.com/emoriarty/jekyll-notion/issues/95#issuecomment-2732112458).
+
 And update your jekyll plugins property in `_config.yml`.
 
 ```yml
