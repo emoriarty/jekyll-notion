@@ -348,7 +348,7 @@ describe(JekyllNotion) do
     let(:notion_config) do
       {
         "databases" => [{
-          "id"   => "1ae33dd5f3314402948069517fa40ae2",
+          "id" => "1ae33dd5f3314402948069517fa40ae2",
         }],
       }
     end

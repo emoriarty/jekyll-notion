@@ -21,6 +21,9 @@ Or add it to the `Gemfile`.
 gem 'jekyll-notion'
 ```
 
+> [!IMPORTANT]  
+> When using jekyll-archives, make sure that jekyll-notion is placed before jekyll-archives in the gemfile. Otherwise pages imported by jekyll-notion won't be collected by jekyll-archives. More info [here](https://github.com/emoriarty/jekyll-notion/issues/95#issuecomment-2732112458).
+
 And update your jekyll plugins property in `_config.yml`.
 
 ```yml
@@ -152,7 +155,9 @@ Notice, the page body is stored in the key `content`.
 
 The rest of properties are mapped as expected. For more info go to [notion properties](#notion-properties).
 
-### Watch
+### Watch (Deprecated)
+
+_Use the cache mechanism instead._
 
 By default, databases are only requested during the first build. Subsequent builds use the results from the cache.
 

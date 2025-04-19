@@ -10,7 +10,7 @@ require "vcr"
 NotionToMd::Logger.level = Logger::ERROR
 
 Notion.configure do |config|
-  config.token = ENV["NOTION_TOKEN"]
+  config.token = ENV.fetch("NOTION_TOKEN", nil)
 end
 
 module JekyllNotion
