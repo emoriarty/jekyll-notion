@@ -1,4 +1,12 @@
 PATH
+  remote: ../notion_to_md
+  specs:
+    notion_to_md (2.4.0)
+      activesupport (~> 7)
+      callee (~> 0.3.6)
+      notion-ruby-client (~> 1)
+
+PATH
   remote: .
   specs:
     jekyll-notion (2.4.3)
@@ -25,6 +33,8 @@ GEM
     ast (2.4.2)
     base64 (0.2.0)
     bigdecimal (3.1.4)
+    callee (0.3.6)
+      dry-initializer (>= 2.5)
     colorator (1.1.0)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
@@ -32,6 +42,7 @@ GEM
     docile (1.4.0)
     drb (2.2.0)
       ruby2_keywords
+    dry-initializer (3.1.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -92,9 +103,6 @@ GEM
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
       hashie (~> 5)
-    notion_to_md (2.4.0)
-      activesupport (~> 7)
-      notion-ruby-client (~> 1)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -173,6 +181,7 @@ PLATFORMS
 DEPENDENCIES
   bundler (~> 2)
   jekyll-notion!
+  notion_to_md!
   rspec (~> 3.0)
   rubocop-jekyll (~> 0.12)
   simplecov (~> 0.21)

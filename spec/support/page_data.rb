@@ -29,7 +29,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores select into the data object" do
-    expect(site.data[data_name]).to include("select" => "select1".dump)
+    expect(site.data[data_name]).to include("select" => "select1")
   end
 
   it "stores people into the data object" do
@@ -57,7 +57,7 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
   end
 
   it "stores title into the data object" do
-    expect(site.data[data_name]).to include("title" => "Page 1".dump)
+    expect(site.data[data_name]).to include("title" => "Page 1")
   end
 
   it "stores date into the data object" do
