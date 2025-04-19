@@ -5,7 +5,7 @@ PATH
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 1.2.0)
       notion_to_md (~> 2.5.0)
-      vcr (~> 6.2.0)
+      vcr (~> 6.3.1)
 
 GEM
   remote: https://rubygems.org/
@@ -179,7 +179,8 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    vcr (6.2.0)
+    vcr (6.3.1)
+      base64
     webrick (1.9.1)
 
 PLATFORMS
