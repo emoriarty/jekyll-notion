@@ -365,4 +365,22 @@ describe(JekyllNotion) do
       expect(site.posts.find { |p| p.path.end_with?("#{created_time}-tables.md") }).not_to be_nil
     end
   end
+
+  context "when blocks must be paginated" do
+    let(:notion_config) do
+      {
+        "pages" => [{
+          "id" => "25adb135281c80828cb1dc59437ae243",
+        }]
+      }
+    end
+
+    before do
+      VCR.use_cassette("a_very_long_notion_page") { site.process }
+    end
+
+    it "blabla" do
+      puts site.pages.inspect
+    end
+  end
 end
