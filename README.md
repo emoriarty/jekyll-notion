@@ -5,11 +5,12 @@
 Import [Notion](https://www.notion.so) pages into
 [Jekyll](https://jekyllrb.com/).
 
-📚 Learn more with these guides: - [Load Notion pages in
-Jekyll](https://enrq.me/dev/2022/03/20/load-notion-pages-in-jekyll/) -
-[Managing Jekyll posts in
-Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/) -
-[Embedding videos with
+📚 Learn more with these guides: 
+- [Load Notion pages in
+Jekyll](https://enrq.me/dev/2022/03/20/load-notion-pages-in-jekyll/) 
+-[Managing Jekyll posts in
+Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/) 
+-[Embedding videos with
 jekyll-notion](https://enrq.me/dev/2023/03/31/embedding-videos-with-jekyll-notion/)
 
 ## Installation
@@ -89,11 +90,11 @@ and `films` collections will contain pages from the specified databases.
 
 Each database supports the following options:
 
--   `id`: the unique Notion database ID\
+-   `id`: the unique Notion database ID
 -   `collection`: which collection to assign pages to (`posts` by
-    default)\
+    default)
 -   `filter`: a database
-    [filter](https://developers.notion.com/reference/post-database-query-filter)\
+    [filter](https://developers.notion.com/reference/post-database-query-filter)
 -   `sorts`: database [sorting
     criteria](https://developers.notion.com/reference/post-database-query-sort)
 
