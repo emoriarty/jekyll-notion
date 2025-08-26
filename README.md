@@ -12,8 +12,6 @@ Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/) -
 [Embedding videos with
 jekyll-notion](https://enrq.me/dev/2023/03/31/embedding-videos-with-jekyll-notion/)
 
-------------------------------------------------------------------------
-
 ## Installation
 
 Install via RubyGems:
@@ -42,9 +40,6 @@ Then enable the plugin in `_config.yml`:
 plugins:
   - jekyll-notion
 ```
-
-------------------------------------------------------------------------
-
 ## Usage
 
 Before using the gem, [create a Notion
@@ -56,8 +51,6 @@ Export the token as an environment variable:
 ``` bash
 export NOTION_TOKEN=<secret_...>
 ```
-
-------------------------------------------------------------------------
 
 ### Databases
 
@@ -123,8 +116,6 @@ Since `created_time` cannot be modified, you can override it by adding a
 custom Notion property named `date` (or `Date`). That property will be
 used instead.
 
-------------------------------------------------------------------------
-
 ### Pages
 
 You can also load individual Notion pages:
@@ -151,8 +142,6 @@ filename](#page-filename)).
 All page properties are exposed as Jekyll front matter. For example, if
 a page has a `permalink` property set to `/about/`, Jekyll will generate
 `/about/index.html`.
-
-------------------------------------------------------------------------
 
 ### Data
 
@@ -188,8 +177,6 @@ Example:
 
 Other properties are mapped normally (see [Notion
 properties](#notion-properties)).
-
-------------------------------------------------------------------------
 
 ### Cache
 
@@ -231,8 +218,6 @@ notion:
   cache: false
 ```
 
-------------------------------------------------------------------------
-
 ## Notion properties
 
 Notion page properties are mapped into each Jekyll document's front
@@ -240,8 +225,6 @@ matter.
 
 See the companion gem
 [notion_to_md](https://github.com/emoriarty/notion_to_md/) for details.
-
-------------------------------------------------------------------------
 
 ## Page filename
 
@@ -253,4 +236,3 @@ Jekyll distinguishes between **posts** and **other documents**:
 -   **Other documents**: filenames are derived from the Notion page
     title.
 
-------------------------------------------------------------------------
