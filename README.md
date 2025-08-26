@@ -8,9 +8,9 @@ Import [Notion](https://www.notion.so) pages into
 📚 Learn more with these guides: 
 - [Load Notion pages in
 Jekyll](https://enrq.me/dev/2022/03/20/load-notion-pages-in-jekyll/) 
--[Managing Jekyll posts in
+- [Managing Jekyll posts in
 Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/) 
--[Embedding videos with
+- [Embedding videos with
 jekyll-notion](https://enrq.me/dev/2023/03/31/embedding-videos-with-jekyll-notion/)
 
 ## Installation
