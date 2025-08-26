@@ -1,4 +1,4 @@
-`<img src="https://ik.imagekit.io/gxidvqvc9/jekyll_notion_logo_Thmlxy7GZ.png?updatedAt=1756230501479" width="150">`{=html}
+<img src="https://ik.imagekit.io/gxidvqvc9/jekyll_notion_logo_Thmlxy7GZ.png?updatedAt=1756230501479" width="200">
 
 # jekyll-notion
 
