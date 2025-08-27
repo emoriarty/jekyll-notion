@@ -31,6 +31,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+        rubygems: latest
+        bundler: latest
     - name: Run tests
       run: NOTION_TOKEN=dummy_secret_token bundle exec rspec
     - name: Archive code coverage results
