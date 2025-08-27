@@ -24,6 +24,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency "vcr", "~> 6.3.1"
 
   spec.add_development_dependency "bundler", "~> 2"
+  spec.add_development_dependency "json", ">= 2.10" # Required to prevent NameError: uninitialized constant JSON::Fragment
   spec.add_development_dependency "rspec", "~> 3.0"
   spec.add_development_dependency "rubocop-jekyll", "~> 0.12"
   spec.add_development_dependency "simplecov", "~> 0.21"

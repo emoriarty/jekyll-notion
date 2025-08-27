@@ -20,9 +20,11 @@ jobs:
   test:
 
     runs-on: ubuntu-latest
+    env:
+      RUBYOPT: -ruri # ensure URI is defined to prevent NameError: uninitialized constant FileUtils::URI
     strategy:
       matrix:
-        ruby-version: ['2.7', '3.0', '3.1', '3.2']
+        ruby-version: ['2.7', '3.0', '3.1', '3.2', '3.3', '3.4']
 
     steps:
     - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4
@@ -31,6 +33,8 @@ jobs:
       with:
         ruby-version: ${{ matrix.ruby-version }}
         bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+        rubygems: latest
+        bundler: latest
     - name: Run tests
       run: NOTION_TOKEN=dummy_secret_token bundle exec rspec
     - name: Archive code coverage results
