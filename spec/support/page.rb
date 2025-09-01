@@ -45,7 +45,7 @@ RSpec.shared_examples "a jekyll page" do
   end
 
   it "stores files into page data" do
-    expect(site.pages.first.data).to include("file" => ["https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231203T065054Z&X-Amz-Expires=3600&X-Amz-Signature=f141e8d63e2155c14c08a6787b2a1ede1c528a189c49179e972c914a76b0a272&X-Amz-SignedHeaders=host&x-id=GetObject"])
+    expect(site.pages.first.data).to include("file" => ["https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231203T065050Z&X-Amz-Expires=3600&X-Amz-Signature=c0b4d6da2da758e947be9abec351edebc1fdb115805aec69b85835954b0a597a&X-Amz-SignedHeaders=host&x-id=GetObject"])
   end
 
   it "stores email into page data" do

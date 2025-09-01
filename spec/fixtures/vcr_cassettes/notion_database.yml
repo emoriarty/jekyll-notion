@@ -5687,4 +5687,90 @@ http_interactions:
         2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Row
         2","href":null}],[{"type":"text","text":{"content":"prupru","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"prupru","href":null}],[{"type":"text","text":{"content":"tinonino","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"tinonino","href":null}]]}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"e749b8b5-57d4-47c8-a3c0-666bec6971e4"}'
   recorded_at: Mon, 25 Aug 2025 18:10:59 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/databases/1ae33dd5f3314402948069517fa40ae2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.2
+      Authorization:
+      - "<REDACTED>"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Mon, 01 Sep 2025 12:47:02 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      cf-ray:
+      - 9784dfb75e8a9dee-MRS
+      cf-cache-status:
+      - DYNAMIC
+      content-encoding:
+      - gzip
+      etag:
+      - W/"1142-2HmNrI9ZoG/CCHU5OB+bHmeUYZU"
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - 42ecc54e-8396-47c9-b619-4fef43d2d142
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+      set-cookie:
+      - __cf_bm=8XcYqg4GkI24rwGnuiEa7TZj3rPEwx0tSLTBwdfNTOo-1756730822-1.0.1.1-evT70l2t0r1wHcuKUYD2wnRKbg_bV5qPH4B.ezxaNKmjdRVmzOG6EKboTKxQaPVCqbdPb82DJ_zjknUTMg6PivAa.HqhJBsP.RVtoiw7HPg;
+        path=/; expires=Mon, 01-Sep-25 13:17:02 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=zJyMOR6.u7QuY3KDEgZEg5wAmoINVEz0tUt6R2nR8fo-1756730822638-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "{\"object\":\"database\",\"id\":\"1ae33dd5-f331-4402-9480-69517fa40ae2\",\"cover\":{\"type\":\"external\",\"external\":{\"url\":\"https://www.notion.so/images/page-cover/met_silk_kashan_carpet.jpg\"}},\"icon\":{\"type\":\"emoji\",\"emoji\":\"\U0001F5E1️\"},\"created_time\":\"2022-01-23T12:31:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_time\":\"2025-08-29T14:54:00.000Z\",\"title\":[{\"type\":\"text\",\"text\":{\"content\":\"jekyll-notion
+        \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"jekyll-notion
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"test \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"test
+        \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"\U0001F1EA\U0001F1E6\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"\U0001F1EA\U0001F1E6\",\"href\":null}],\"description\":[{\"type\":\"text\",\"text\":{\"content\":\"Lorem
+        ipsum\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Lorem
+        ipsum\",\"href\":null}],\"is_inline\":false,\"properties\":{\"empty date\":{\"id\":\"%3A%7BfH\",\"name\":\"empty
+        date\",\"description\":null,\"type\":\"date\",\"date\":{}},\"Multi Select\":{\"id\":\"%3C%7Bn%7B\",\"name\":\"Multi
+        Select\",\"description\":null,\"type\":\"multi_select\",\"multi_select\":{\"options\":[{\"id\":\"ddf5e30e-fde6-4023-98a4-864674e8ae87\",\"name\":\"mselect1\",\"color\":\"gray\",\"description\":null},{\"id\":\"1be80fca-a275-4384-8268-6bb2f6a21616\",\"name\":\"mselect2\",\"color\":\"pink\",\"description\":null},{\"id\":\"32e731fc-3fee-41d8-83f5-398b2981f1ac\",\"name\":\"mselect3\",\"color\":\"blue\",\"description\":null},{\"id\":\"5e2d600e-43b9-4c5c-84dc-db9504353981\",\"name\":\"dsd:
+        dd\",\"color\":\"brown\",\"description\":null}]}},\"Select\":{\"id\":\"%3EzjF\",\"name\":\"Select\",\"description\":null,\"type\":\"select\",\"select\":{\"options\":[{\"id\":\"fa788fbc-176b-49cb-be2e-552cc985cf7c\",\"name\":\"select1\",\"color\":\"yellow\",\"description\":null},{\"id\":\"54e5217b-e8ab-4996-9839-6bed82b39519\",\"name\":\"select2\",\"color\":\"orange\",\"description\":null},{\"id\":\"9b81da08-b30b-4c5b-ba69-29b6414ce81e\",\"name\":\"blabl:
+        bka\",\"color\":\"default\",\"description\":null}]}},\"date with time\":{\"id\":\"CUEj\",\"name\":\"date
+        with time\",\"description\":null,\"type\":\"date\",\"date\":{}},\"Person\":{\"id\":\"TFSp\",\"name\":\"Person\",\"description\":null,\"type\":\"people\",\"people\":{}},\"Date\":{\"id\":\"T~YB\",\"name\":\"Date\",\"description\":null,\"type\":\"date\",\"date\":{}},\"Tags\":{\"id\":\"UT%3Fx\",\"name\":\"Tags\",\"description\":null,\"type\":\"multi_select\",\"multi_select\":{\"options\":[{\"id\":\"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8\",\"name\":\"tag1\",\"color\":\"green\",\"description\":null},{\"id\":\"83961a4e-e3a8-442d-8b47-6a2e43bacd85\",\"name\":\"tag2\",\"color\":\"gray\",\"description\":null},{\"id\":\"3b7a831b-ad2b-4a5b-8e90-6c6de8d0b8e3\",\"name\":\"tag3\",\"color\":\"red\",\"description\":null},{\"id\":\"1776d835-ee8c-4a20-8726-511b99fa0a95\",\"name\":\"tag:
+        tag\",\"color\":\"yellow\",\"description\":null}]}},\"Numbers\":{\"id\":\"a~dg\",\"name\":\"Numbers\",\"description\":null,\"type\":\"number\",\"number\":{\"format\":\"euro\"}},\"Rich
+        Text\":{\"id\":\"jJWo\",\"name\":\"Rich Text\",\"description\":null,\"type\":\"rich_text\",\"rich_text\":{}},\"Phone\":{\"id\":\"k%5DEi\",\"name\":\"Phone\",\"description\":null,\"type\":\"phone_number\",\"phone_number\":{}},\"File\":{\"id\":\"x%60rF\",\"name\":\"File\",\"description\":null,\"type\":\"files\",\"files\":{}},\"empty
+        rich text\":{\"id\":\"xtDO\",\"name\":\"empty rich text\",\"description\":null,\"type\":\"rich_text\",\"rich_text\":{}},\"Email\":{\"id\":\"x%7Bcw\",\"name\":\"Email\",\"description\":null,\"type\":\"email\",\"email\":{}},\"Checkbox\":{\"id\":\"%7CMPu\",\"name\":\"Checkbox\",\"description\":null,\"type\":\"checkbox\",\"checkbox\":{}},\"empty_select\":{\"id\":\"%7DSr%3F\",\"name\":\"empty_select\",\"description\":null,\"type\":\"select\",\"select\":{\"options\":[{\"id\":\"273e7a74-3487-4ba8-a68c-40e2bbae6819\",\"name\":\"blabl:
+        abla\",\"color\":\"yellow\",\"description\":null},{\"id\":\"95b04fdd-d0af-423a-8ad2-9561f61430b7\",\"name\":\"as:
+        \\\"as\\\"\",\"color\":\"brown\",\"description\":null}]}},\"Name\":{\"id\":\"title\",\"name\":\"Name\",\"description\":null,\"type\":\"title\",\"title\":{}}},\"parent\":{\"type\":\"workspace\",\"workspace\":true},\"url\":\"https://www.notion.so/1ae33dd5f3314402948069517fa40ae2\",\"public_url\":null,\"archived\":false,\"in_trash\":false,\"request_id\":\"42ecc54e-8396-47c9-b619-4fef43d2d142\"}"
+  recorded_at: Mon, 01 Sep 2025 12:46:45 GMT
 recorded_with: VCR 6.3.1

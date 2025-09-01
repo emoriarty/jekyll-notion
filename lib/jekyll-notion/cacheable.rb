@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-#
-
 module JekyllNotion
   module Cacheable
     def self.setup(cache_dir)
@@ -26,8 +24,8 @@ module JekyllNotion
       end
     end
 
-    def generate(*args)
-      VCR.use_cassette(resource_id) { super(*args) }
+    def call(*args)
+      VCR.use_cassette(args.first) { super(*args) }
     end
   end
 end

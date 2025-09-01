@@ -14,16 +14,8 @@ Notion.configure do |config|
 end
 
 module JekyllNotion
-  autoload :DatabaseFactory, "jekyll-notion/factories/database_factory"
-  autoload :PageFactory, "jekyll-notion/factories/page_factory"
-  autoload :AbstractGenerator, "jekyll-notion/generators/abstract_generator"
-  autoload :DataGenerator, "jekyll-notion/generators/data_generator"
-  autoload :PageGenerator, "jekyll-notion/generators/page_generator"
-  autoload :CollectionGenerator, "jekyll-notion/generators/collection_generator"
+  autoload :Generators, "jekyll-notion/generators"
   autoload :DocumentWithoutAFile, "jekyll-notion/document_without_a_file"
   autoload :PageWithoutAFile, "jekyll-notion/page_without_a_file"
-  autoload :AbstractNotionResource, "jekyll-notion/abstract_notion_resource"
-  autoload :NotionDatabase, "jekyll-notion/notion_database"
-  autoload :NotionPage, "jekyll-notion/notion_page"
   autoload :Cacheable, "jekyll-notion/cacheable"
 end
