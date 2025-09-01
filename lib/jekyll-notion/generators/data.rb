@@ -4,16 +4,16 @@ module JekyllNotion
   module Generators
     class Data < Support::Generator
       # pages => Array of NotionToMd::Page
-      def call(notion_pages:)
+      def call
         data ||= if notion_pages.size > 1
-                    notion_pages.map { |page| page.props.merge({ "content" => convert(page) }) }
-                  else
-                    notion_page.first.props.merge({ "content" => convert(notion_page) })
-                  end
+                   notion_pages.map { |page| page.props.merge({ "content" => convert(page) }) }
+                 else
+                   notion_pages.first.send(:frontmatter_properties).merge({ "content" => convert(notion_pages.first) })
+                 end
 
-        @site.data[config["data_name"]] = data
+        @site.data[config["data"]] = data
         # Caching current data in Generator instance (plugin)
-        @plugin.data[config["data_name"]] = data
+        @plugin.data[config["data"]] = data
 
         log_data(data)
       end
@@ -49,7 +49,7 @@ module JekyllNotion
 
       def _log_data(page, type)
         Jekyll.logger.info("Jekyll Notion:", "Page => #{page["title"]}")
-        Jekyll.logger.info("", "#{type} => site.data.#{@notion_resource.data_name}")
+        Jekyll.logger.info("", "#{type} => site.data.#{config["data"]}")
         Jekyll.logger.debug("", "Props => #{page.keys.inspect}")
       end
     end

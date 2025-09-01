@@ -4,10 +4,11 @@ module JekyllNotion
   module Generators
     class Page < Support::Generator
       def call
-        if config["data_name"].nil?
+        if config["data"].nil?
           notion_pages.each { |notion_page| generate_page(notion_page) }
         else
-          DataGenerator.call(config: config, site: site, plugin: plugin, notion_pages: notion_pages)
+          Data.call(:config => config, :site => site, :plugin => plugin,
+                    :notion_pages => notion_pages)
         end
       end
 

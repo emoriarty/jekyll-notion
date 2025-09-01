@@ -223,26 +223,24 @@ describe(JekyllNotion) do
         }],
       }
     end
-    let(:notion_client) { instance_double(Notion::Client) }
 
     before do
-      allow(NotionToMd::Blocks).to receive(:build)
-      allow(NotionToMd::Page).to receive(:new)
-      allow(Notion::Client).to receive(:new).and_return(notion_client)
-      allow(notion_client).to receive(:page).and_return({})
-      allow(notion_client).to receive(:database_query).and_return({ :results => [] })
-      allow(notion_client).to receive(:block_children).and_return([])
+      allow(NotionToMd::Database).to receive(:call).and_return(instance_double(
+                                                                 NotionToMd::Database, :pages => []
+                                                               ))
+      allow(NotionToMd::Page).to receive(:call).and_return(instance_double(NotionToMd::Page,
+                                                                           :title => "title", :to_md => "content", :properties => {}))
 
       site.process
       site.process
     end
 
     it "queries notion database once" do
-      expect(notion_client).to have_received(:database_query).once
+      expect(NotionToMd::Database).to have_received(:call).once
     end
 
     it "queries the notion page once" do
-      expect(notion_client).to have_received(:page).once
+      expect(NotionToMd::Page).to have_received(:call).once
     end
 
     context "when fetch_on_watch is set" do
@@ -259,11 +257,11 @@ describe(JekyllNotion) do
       end
 
       it "queries notion database as many times as the site rebuild" do
-        expect(notion_client).to have_received(:database_query).twice
+        expect(NotionToMd::Database).to have_received(:call).twice
       end
 
       it "queries the notion page as many times as the site rebuild" do
-        expect(notion_client).to have_received(:page).twice
+        expect(NotionToMd::Page).to have_received(:call).twice
       end
     end
   end
@@ -363,24 +361,6 @@ describe(JekyllNotion) do
 
     it "sets the date from created_time in the filename" do
       expect(site.posts.find { |p| p.path.end_with?("#{created_time}-tables.md") }).not_to be_nil
-    end
-  end
-
-  context "when blocks must be paginated" do
-    let(:notion_config) do
-      {
-        "pages" => [{
-          "id" => "25adb135281c80828cb1dc59437ae243",
-        }]
-      }
-    end
-
-    before do
-      VCR.use_cassette("a_very_long_notion_page") { site.process }
-    end
-
-    it "blabla" do
-      puts site.pages.inspect
     end
   end
 end

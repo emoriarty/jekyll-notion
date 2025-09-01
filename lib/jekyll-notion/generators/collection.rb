@@ -4,8 +4,9 @@ module JekyllNotion
   module Generators
     class Collection < Support::Generator
       def call
-        if config["data_name"].empty?
+        if config["data"].nil?
           notion_pages.each { |notion_page| generate_document(notion_page) }
+          plugin_collection = site_collection
         else
           DataGenerator.call(notion_pages.pages)
         end
@@ -14,12 +15,11 @@ module JekyllNotion
       private
 
       def generate_document(notion_page)
-        next if file_exists?(make_path(notion_page))
+        return if file_exists?(make_path(notion_page))
 
         document = make_doc(notion_page)
 
-        site_collection.docs << documment
-        plugin_collection.docs << site_collection
+        site_collection.docs << document
 
         log_page(notion_page)
       end
@@ -28,7 +28,7 @@ module JekyllNotion
         @site.collections[collection_name]
       end
 
-      def plugin_colletions
+      def plugin_collection
         @plugin.collections[collection_name]
       end
 

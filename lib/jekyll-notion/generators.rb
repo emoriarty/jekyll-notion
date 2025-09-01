@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module JekyllNotion
   module Generators
     autoload :Support, "jekyll-notion/generators/support"

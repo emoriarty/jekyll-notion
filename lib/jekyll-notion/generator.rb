@@ -62,8 +62,10 @@ module JekyllNotion
       config_databases.each do |db_config|
         next if db_config["id"].nil?
 
-        notion_database = NotionToMd::Database.call(id: db_config["id"], notion_client: @notion_client, frontmatter: true)
-        JekyllNotion::Generators::Collection.call(config: db_config, site: @site, plugin: self, pages: notions_database.pages)
+        notion_database = NotionToMd::Database.call(:id => db_config["id"],
+                                                    :notion_client => @notion_client, :filter => db_config["filter"], :sorts => db_config["sorts"], :frontmatter => true)
+        JekyllNotion::Generators::Collection.call(:config => db_config, :site => @site, :plugin => self,
+                                                  :notion_pages => notion_database.pages)
       end
     end
 
@@ -71,8 +73,10 @@ module JekyllNotion
       config_pages.each do |page_config|
         next if page_config["id"].nil?
 
-        notion_page = NotionToMd::Page.call(id: page_config["id"], notion_client: @notion_client, frontmatter: true)
-        JekyllNotion::Generators::Page.call(config: page_config, site: @site, plugin: self, notion_pages: [notion_page])
+        notion_page = NotionToMd::Page.call(:id => page_config["id"], :notion_client => @notion_client,
+                                            :frontmatter => true)
+        JekyllNotion::Generators::Page.call(:config => page_config, :site => @site, :plugin => self,
+                                            :notion_pages => [notion_page])
       end
     end
 
