@@ -4,8 +4,9 @@ PATH
     jekyll-notion (2.4.3)
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 1.2.0)
-      notion_to_md (~> 2.5.0)
+      notion_to_md (= 3.0.0.beta1)
       vcr (~> 6.3.1)
+      zeitwerk (~> 2.6)
 
 GEM
   remote: https://rubygems.org/
@@ -29,8 +30,6 @@ GEM
     base64 (0.3.0)
     benchmark (0.4.1)
     bigdecimal (3.2.2)
-    callee (0.3.6)
-      dry-initializer (>= 2.5)
     colorator (1.1.0)
     concurrent-ruby (1.3.5)
     connection_pool (2.5.3)
@@ -38,7 +37,6 @@ GEM
     diff-lcs (1.6.2)
     docile (1.4.1)
     drb (2.2.3)
-    dry-initializer (3.1.1)
     em-websocket (0.5.3)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0)
@@ -105,10 +103,10 @@ GEM
       faraday-mashify (>= 0.1.1)
       faraday-multipart (>= 1.0.4)
       hashie (~> 5)
-    notion_to_md (2.5.1)
+    notion_to_md (3.0.0.beta1)
       activesupport (~> 7)
-      callee (~> 0.3.6)
       notion-ruby-client (~> 1)
+      zeitwerk (~> 2.6)
     parallel (1.27.0)
     parser (3.3.9.0)
       ast (~> 2.4.1)
@@ -182,6 +180,7 @@ GEM
     vcr (6.3.1)
       base64
     webrick (1.9.1)
+    zeitwerk (2.6.18)
 
 PLATFORMS
   ruby
