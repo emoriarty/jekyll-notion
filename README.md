@@ -2,6 +2,10 @@
 
 # jekyll-notion
 
+> [!WARNING]  
+> The **main branch** is under active development for version 3.  
+> For the current **stable release**, please check out the [v2.x.x branch](https://github.com/emoriarty/jekyll-notion/tree/v2.x.x).
+
 Import [Notion](https://www.notion.so) pages into
 [Jekyll](https://jekyllrb.com/).
 
