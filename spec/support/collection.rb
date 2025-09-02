@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "a jekyll collection" do |collection_name|
   it "page is stored in destination directory" do
     expected_path = site.collections[collection_name].first.destination(".")

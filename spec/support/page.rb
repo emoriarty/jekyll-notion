@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "a jekyll page" do
   it "stores id into page data" do
     expect(site.pages.first.data).to include("id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3")

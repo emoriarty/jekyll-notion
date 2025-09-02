@@ -117,14 +117,14 @@ module JekyllNotion
 
     def assert_configuration
       # Check for deprecated or removed options
-      if config.keys.include?("fetch_on_watch")
+      if config.key?("fetch_on_watch")
         Jekyll.logger.warn(
           "Jekyll Notion:",
           "The `fetch_on_watch` option was removed in v3. Please use the cache mechanism instead: https://github.com/emoriarty/jekyll-notion#cache"
         )
       end
 
-      if config.keys.include?("database")
+      if config.key?("database")
         Jekyll.logger.warn("Jekyll Notion:",
                            "The `database` key is deprecated. Please use `databases` instead.")
       end

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "NOTION_TOKEN is not provided" do |notion_token|
   before do
     allow(ENV).to receive(:[]).with("NOTION_TOKEN").and_return(notion_token)

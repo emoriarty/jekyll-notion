@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "a jekyll data object" do
   it "creates a the declared key in data object" do
     expect(site.data).to have_key(data_name)
