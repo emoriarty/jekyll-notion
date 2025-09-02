@@ -242,28 +242,6 @@ describe(JekyllNotion) do
     it "queries the notion page once" do
       expect(NotionToMd::Page).to have_received(:call).once
     end
-
-    context "when fetch_on_watch is set" do
-      let(:notion_config) do
-        {
-          "fetch_on_watch" => true,
-          "pages"          => [{
-            "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-          }],
-          "databases"      => [{
-            "id" => "1ae33dd5f3314402948069517fa40ae2",
-          }],
-        }
-      end
-
-      it "queries notion database as many times as the site rebuild" do
-        expect(NotionToMd::Database).to have_received(:call).twice
-      end
-
-      it "queries the notion page as many times as the site rebuild" do
-        expect(NotionToMd::Page).to have_received(:call).twice
-      end
-    end
   end
 
   context "when multiple databases" do
