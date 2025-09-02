@@ -7,13 +7,15 @@ module JekyllNotion
     def generate(site)
       @site = site
 
+      assert_configuration
+
       return unless notion_token? && config?
 
       setup
 
       @notion_client = Notion::Client.new
 
-      if fetch_on_watch? || cache_empty?
+      if cache_empty?
         read_notion_databases
         read_notion_pages
       else
@@ -84,13 +86,6 @@ module JekyllNotion
       @config ||= @site.config["notion"] || {}
     end
 
-    def fetch_on_watch?
-      Jekyll.logger.warn("Jekyll Notion:",
-                         "[Warning] The fetch_on_watch feature is deprecated in preference to the cache mechanism. It will be removed in the next major release.")
-
-      config["fetch_on_watch"] == true
-    end
-
     def notion_token?
       if ENV["NOTION_TOKEN"].nil? || ENV["NOTION_TOKEN"].empty?
         Jekyll.logger.warn("Jekyll Notion:",
@@ -120,6 +115,16 @@ module JekyllNotion
       return true if config["cache"].nil?
 
       config["cache"] == true.to_s
+    end
+
+    def assert_configuration
+      # Check for deprecated or removed options
+      if config.keys.include?("fetch_on_watch")
+        Jekyll.logger.warn(
+          "Jekyll Notion:",
+          "The `fetch_on_watch` option was removed in v3. Please use the cache mechanism instead: https://github.com/emoriarty/jekyll-notion#cache"
+        )
+      end
     end
   end
 end

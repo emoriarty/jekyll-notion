@@ -49,4 +49,7 @@ RSpec.configure do |config|
   def dest_dir(*files)
     File.join(DEST_DIR, *files)
   end
+
+  # Load support files
+  Dir[File.join(__dir__, 'support/**/*.rb')].sort.each { |f| require f }
 end
