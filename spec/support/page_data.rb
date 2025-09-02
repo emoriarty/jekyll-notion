@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "a jekyll data object" do |data_name|
   it "stores id into the data object" do
     expect(site.data[data_name]).to include("id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3")

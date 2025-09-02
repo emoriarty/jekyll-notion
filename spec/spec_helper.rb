@@ -51,5 +51,5 @@ RSpec.configure do |config|
   end
 
   # Load support files
-  Dir[File.join(__dir__, 'support/**/*.rb')].sort.each { |f| require f }
+  Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |f| require f }
 end
