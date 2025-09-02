@@ -7,10 +7,9 @@ module JekyllNotion
     def generate(site)
       @site = site
 
+      return unless config? && notion_token?
+
       assert_configuration
-
-      return unless notion_token? && config?
-
       setup
 
       @notion_client = Notion::Client.new
@@ -25,20 +24,15 @@ module JekyllNotion
       end
     end
 
-    def config_databases
-      if config["database"]
-        Jekyll.logger.warn("Jekyll Notion:",
-                           "database property is deprecated, use databases instead.")
-      end
+    def config
+      @config ||= @site.config["notion"]
+    end
 
+    def config_databases
       config["databases"] || []
     end
 
     def config_pages
-      if config["page"]
-        Jekyll.logger.warn("Jekyll Notion:",
-                           "page property is deprecated, use pages instead.")
-      end
       config["pages"] || []
     end
 
@@ -66,8 +60,8 @@ module JekyllNotion
 
         notion_database = NotionToMd::Database.call(:id => db_config["id"],
                                                     :notion_client => @notion_client, :filter => db_config["filter"], :sorts => db_config["sorts"], :frontmatter => true)
-        JekyllNotion::Generators::Collection.call(:config => db_config, :site => @site, :plugin => self,
-                                                  :notion_pages => notion_database.pages)
+        Generators::Collection.call(:config => db_config, :site => @site, :plugin => self,
+                                    :notion_pages => notion_database.pages)
       end
     end
 
@@ -77,13 +71,13 @@ module JekyllNotion
 
         notion_page = NotionToMd::Page.call(:id => page_config["id"], :notion_client => @notion_client,
                                             :frontmatter => true)
-        JekyllNotion::Generators::Page.call(:config => page_config, :site => @site, :plugin => self,
-                                            :notion_pages => [notion_page])
+        Generators::Page.call(:config => page_config, :site => @site, :plugin => self,
+                              :notion_pages => [notion_page])
       end
     end
 
-    def config
-      @config ||= @site.config["notion"] || {}
+    def notion_token
+      ENV.fetch("NOTION_TOKEN", nil)
     end
 
     def notion_token?
@@ -96,10 +90,14 @@ module JekyllNotion
     end
 
     def config?
-      if config.empty?
-        Jekyll.logger.warn("Jekyll Notion:", "No configuration provided")
+      return false if config.nil?
+
+      if config.empty? || (config_databases.empty? && config_pages.empty?)
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "The `databases` or `pages` configuration are not declared. Skipping import.")
         return false
       end
+
       true
     end
 
@@ -124,6 +122,16 @@ module JekyllNotion
           "Jekyll Notion:",
           "The `fetch_on_watch` option was removed in v3. Please use the cache mechanism instead: https://github.com/emoriarty/jekyll-notion#cache"
         )
+      end
+
+      if config.keys.include?("database")
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "The `database` key is deprecated. Please use `databases` instead.")
+      end
+
+      if config["page"]
+        Jekyll.logger.warn("Jekyll Notion:",
+                           "The `page` key is deprecated. Please use `pages` instead.")
       end
     end
   end

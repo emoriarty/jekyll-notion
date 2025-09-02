@@ -38,13 +38,6 @@ describe(JekyllNotion) do
     end
 
     context "when no configuration is provided" do
-      it "logs a warning" do
-        VCR.use_cassette("notion_page") { site.process }
-
-        expect(Jekyll.logger).to have_received(:warn).with("Jekyll Notion:",
-                                                           "No configuration provided")
-      end
-
       it "does not create an instance of Notion::Client" do
         expect(Notion::Client).not_to have_received(:new)
       end

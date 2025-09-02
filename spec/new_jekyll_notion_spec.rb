@@ -24,6 +24,10 @@ RSpec.describe(JekyllNotion) do
 
   describe "setup" do
     context "when deprecated options are still used" do
+      include_examples "setup without configuration"
+    end
+
+    context "when deprecated options are still used" do
       include_examples "setup with deprecated options"
     end
   end
