@@ -2,18 +2,18 @@
 
 # jekyll-notion
 
-> [!WARNING]  
-> The **main branch** is under active development for version 3.  
+> [!WARNING]
+> The **main branch** is under active development for version 3.
 > For the current **stable release**, please check out the [v2.x.x branch](https://github.com/emoriarty/jekyll-notion/tree/v2.x.x).
 
 Import [Notion](https://www.notion.so) pages into
 [Jekyll](https://jekyllrb.com/).
 
-📚 Learn more with these guides: 
+📚 Learn more with these guides:
 - [Load Notion pages in
-Jekyll](https://enrq.me/dev/2022/03/20/load-notion-pages-in-jekyll/) 
+Jekyll](https://enrq.me/dev/2022/03/20/load-notion-pages-in-jekyll/)
 - [Managing Jekyll posts in
-Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/) 
+Notion](https://enrq.me/dev/2022/03/24/managing-jekyll-posts-in-notion/)
 - [Embedding videos with
 jekyll-notion](https://enrq.me/dev/2023/03/31/embedding-videos-with-jekyll-notion/)
 
@@ -193,9 +193,6 @@ The cache uses the [vcr](https://github.com/vcr/vcr) gem. Each resource
 (page or database) is stored in a file named after its Notion ID, e.g.:
 
     .cache/jekyll-notion/vcr_cassettes/e42383cd49754897b967ce453760499f.yml
-
-> **Note:** enabling `cache` disables the deprecated `fetch_on_watch`
-> option.
 
 #### Cache folder
 
