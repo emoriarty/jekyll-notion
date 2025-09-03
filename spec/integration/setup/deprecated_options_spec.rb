@@ -3,20 +3,20 @@
 require "spec_helper"
 
 RSpec.describe "Setup: deprecated options" do
+  subject(:build!) { site.process }
+
   let(:source_dir) { SOURCE_DIR }
-  let(:dest_dir)   { DEST_DIR }
+  let(:dest_dir)   { DEST_TMP_DIR }
   let(:site)       { Jekyll::Site.new(config) }
 
   before do
     allow(Jekyll.logger).to receive(:warn)
-    allow(NotionToMd::Database).to receive(:call)
-      .and_return(instance_double("NotionToMd::Database", :pages => []))
-    allow(NotionToMd::Page).to receive(:call)
-    allow(JekyllNotion::Generators::Collection).to receive(:call)
-    allow(JekyllNotion::Generators::Page).to receive(:call)
-  end
 
-  subject(:build!) { site.process }
+    VCR.use_cassettes([
+      { :name => "notion_page" },
+      { :name => "notion_database" },
+    ]) { build! }
+  end
 
   context "with fetch_on_watch" do
     let(:config) do
@@ -32,18 +32,14 @@ RSpec.describe "Setup: deprecated options" do
     end
 
     it "logs a warning message" do
-      cassettes = [
-        { :name => "notion_page" },
-        { :name => "notion_database" },
-      ]
-
-      VCR.use_cassettes(cassettes) { build! }
-
       expect(Jekyll.logger).to have_received(:warn).with(
         a_string_matching(%r!Jekyll Notion:!i),
         a_string_matching(%r!fetch_on_watch!i)
       )
     end
+
+    it_behaves_like "a page is rendered correctly", "Page 1"
+    it_behaves_like "a collection is renderded correctly", "posts"
   end
 
   context "with database" do
@@ -59,18 +55,14 @@ RSpec.describe "Setup: deprecated options" do
     end
 
     it "logs a warning message" do
-      cassettes = [
-        { :name => "notion_page" },
-      ]
-
-      VCR.use_cassettes(cassettes) { build! }
-
-      build!
       expect(Jekyll.logger).to have_received(:warn).with(
         a_string_matching(%r!Jekyll Notion:!i),
         a_string_matching(%r!`database` key is deprecated!i)
       )
     end
+
+    it_behaves_like "a page is rendered correctly", "Page 1"
+    it_behaves_like "a collection is not renderded", "posts"
   end
 
   context "with page" do
@@ -86,16 +78,13 @@ RSpec.describe "Setup: deprecated options" do
     end
 
     it "logs a warning message" do
-      cassettes = [
-        { :name => "notion_database" },
-      ]
-
-      VCR.use_cassettes(cassettes) { build! }
-
       expect(Jekyll.logger).to have_received(:warn).with(
         a_string_matching(%r!Jekyll Notion:!i),
         a_string_matching(%r!`page` key is deprecated!i)
       )
     end
+
+    it_behaves_like "a page is not rendered", "Page 1"
+    it_behaves_like "a collection is renderded correctly", "posts"
   end
 end

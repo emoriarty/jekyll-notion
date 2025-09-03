@@ -4,6 +4,8 @@ require "jekyll"
 require File.expand_path("../lib/jekyll-notion", __dir__)
 require "simplecov"
 require "vcr"
+require "tmpdir"
+require "fileutils"
 
 SimpleCov.start do
   enable_coverage :branch
@@ -39,17 +41,19 @@ VCR.configure do |config|
 end
 
 RSpec.configure do |config|
+  # Load support files
+  Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |f| require f }
+
+  config.include GoldenHelper
   config.run_all_when_everything_filtered = true
   config.filter_run :focus
 
   SOURCE_DIR = File.expand_path("fixtures/my_site", __dir__)
   SOURCE_DIR_2 = File.expand_path("fixtures/my_site_2", __dir__)
   DEST_DIR = File.expand_path("dest", __dir__)
+  DEST_TMP_DIR = Dir.mktmpdir("jekyll-dest-")
 
   def dest_dir(*files)
-    File.join(DEST_DIR, *files)
+     File.join(DEST_DIR, *files)
   end
-
-  # Load support files
-  Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |f| require f }
 end
