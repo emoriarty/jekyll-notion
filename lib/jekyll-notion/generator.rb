@@ -118,7 +118,6 @@ module JekyllNotion
     end
 
     def assert_configuration
-      # Check for deprecated or removed options
       if config.key?("fetch_on_watch")
         Jekyll.logger.warn(
           "Jekyll Notion:",
@@ -135,6 +134,38 @@ module JekyllNotion
         Jekyll.logger.warn("Jekyll Notion:",
                            "The `page` key is deprecated. Please use `pages` instead.")
       end
+
+      duplicate_pages = find_duplicates(config_pages)
+      if duplicate_pages.any?
+        Jekyll.logger.warn(
+          "Jekyll Notion:",
+          "Duplicate pages detected: #{duplicate_pages.join(", ")}. Keeping only the last occurrence."
+        )
+
+        reject_duplicates!(config_pages)
+      end
+    end
+
+    def find_duplicates(list)
+      # Extract ids
+      ids = list.map { _1["id"] }
+
+      # Find duplicates
+      ids.group_by(&:itself).select { |_id, occurrences| occurrences.size > 1 }.keys
+    end
+
+    def reject_duplicates!(list, key: "id")
+      seen = {}
+      list.reverse!
+      list.reject! do |item|
+        if seen.key?(item[key])
+          true  # reject duplicate
+        else
+          seen[item[key]] = true
+          false # keep first time we see this key (from the end)
+        end
+      end
+      list.reverse!
     end
   end
 end
