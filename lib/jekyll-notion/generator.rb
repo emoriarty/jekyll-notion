@@ -14,9 +14,9 @@ module JekyllNotion
 
       @notion_client = Notion::Client.new
 
-      if cache_empty?
-        read_notion_databases
-        read_notion_pages
+      if !cache? || cache_empty?
+        import_notion_databases
+        import_notion_pages
       else
         collections.each_pair { |key, val| @site.collections[key] = val }
         data.each_pair { |key, val| @site.data[key] = val }
@@ -54,7 +54,7 @@ module JekyllNotion
       collections.empty? && pages.empty? && data.empty?
     end
 
-    def read_notion_databases
+    def import_notion_databases
       config_databases.each do |db_config|
         next if db_config["id"].nil?
 
@@ -65,7 +65,7 @@ module JekyllNotion
       end
     end
 
-    def read_notion_pages
+    def import_notion_pages
       config_pages.each do |page_config|
         next if page_config["id"].nil?
 
@@ -113,9 +113,8 @@ module JekyllNotion
     end
 
     def cache?
-      return true if config["cache"].nil?
-
-      config["cache"] == true.to_s
+      value = config["cache"]
+      value.nil? || value.to_s == "true"
     end
 
     def assert_configuration
