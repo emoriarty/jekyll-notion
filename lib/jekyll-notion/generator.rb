@@ -25,7 +25,7 @@ module JekyllNotion
     end
 
     def config
-      @config ||= @site.config["notion"]
+      @config ||= @site.config["notion"] || {}
     end
 
     def config_databases
@@ -90,7 +90,7 @@ module JekyllNotion
     end
 
     def config?
-      return false if config.nil?
+      return false unless @site.config.key?("notion")
 
       if config.empty? || (config_databases.empty? && config_pages.empty?)
         Jekyll.logger.warn("Jekyll Notion:",

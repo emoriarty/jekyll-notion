@@ -53,14 +53,12 @@ RSpec.describe "Setup: missing notion configuration" do
       expect(Notion::Client).not_to have_received(:new)
     end
 
-    it "does not log any error" do
+    it "logs a warning about skipping import" do
       build!
-      expect(Jekyll.logger).not_to have_received(:error)
-    end
-
-    it "does not log any warning" do
-      build!
-      expect(Jekyll.logger).not_to have_received(:warn)
+      expect(Jekyll.logger).to have_received(:warn).with(
+        a_string_matching(/Jekyll Notion:/i),
+        a_string_matching(/skipping import/i)
+      )
     end
   end
 
