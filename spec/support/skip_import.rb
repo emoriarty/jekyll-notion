@@ -1,5 +1,4 @@
-
-RSpec.shared_examples "skips import" do |page_name|
+RSpec.shared_examples "skips import" do
   before do
     allow(Notion::Client).to receive(:new)
   end

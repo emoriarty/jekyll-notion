@@ -12,7 +12,7 @@ RSpec.describe "Setup: missing NOTION_TOKEN" do
       "source"      => source_dir,
       "destination" => dest_dir,
       "notion"      => {
-        "pages" => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }] # Page 1
+        "pages" => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }], # Page 1
       }
     )
   end
