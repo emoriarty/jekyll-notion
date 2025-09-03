@@ -1,9 +1,6 @@
 # frozen_string_literal: true
 
 require "spec_helper"
-require "support/page"
-require "support/page_data"
-require "support/collection"
 
 describe(JekyllNotion) do
   let(:source_dir) { SOURCE_DIR }
@@ -31,33 +28,6 @@ describe(JekyllNotion) do
     allow(Jekyll.logger).to receive(:warn)
   end
 
-  context "when declaring a notion page" do
-    before do
-      VCR.use_cassette("notion_page") { site.process }
-    end
-
-    let(:notion_config) do
-      {
-        "pages" => [{
-          "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-        }],
-      }
-    end
-
-    context "when the data option is set" do
-      let(:notion_config) do
-        {
-          "pages" => [{
-            "id"   => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-            "data" => "page",
-          }],
-        }
-      end
-
-      it_behaves_like "a jekyll data object", "page"
-    end
-  end
-
   context "when multiple pages are declared" do
     before do
       VCR.use_cassette("notion_page") { site.process }
@@ -73,7 +43,7 @@ describe(JekyllNotion) do
       }
     end
 
-    it_behaves_like "a jekyll page"
+    it_behaves_like "a jekyll page", "Page 1"
   end
 
   context "when a notion database is declared" do

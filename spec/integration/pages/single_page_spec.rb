@@ -22,7 +22,7 @@ RSpec.describe "Pages: single page import" do
   end
 
   it_behaves_like "a page is rendered correctly", "Page 1"
-  it_behaves_like "a jekyll page"
+  it_behaves_like "a jekyll page", "Page 1"
 
   context "when site is processed a second time" do
     before do
@@ -37,7 +37,6 @@ RSpec.describe "Pages: single page import" do
   context "with cache disabled" do
     let(:config) do
       Jekyll.configuration(
-        "full_rebuild" => true,
         "source"      => SOURCE_DIR,
         "destination" => DEST_TMP_DIR,
         "notion"      => {
@@ -56,5 +55,24 @@ RSpec.describe "Pages: single page import" do
         expect(NotionToMd::Page).to have_received(:call).twice
       end
     end
+  end
+
+  context "with page imported as data" do
+    let(:config) do
+      Jekyll.configuration(
+        "source"      => SOURCE_DIR,
+        "destination" => DEST_TMP_DIR,
+        "notion"      => {
+          "pages" => [
+            {
+              "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3", # Page 1
+              "data" => "dummy",
+            }
+          ],
+        }
+      )
+    end
+
+    it_behaves_like "a jekyll data object", "dummy"
   end
 end
