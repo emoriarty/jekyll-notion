@@ -54,6 +54,6 @@ RSpec.configure do |config|
   DEST_TMP_DIR = Dir.mktmpdir("jekyll-dest-")
 
   def dest_dir(*files)
-     File.join(DEST_DIR, *files)
+    File.join(DEST_DIR, *files)
   end
 end
