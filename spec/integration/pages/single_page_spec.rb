@@ -40,7 +40,7 @@ RSpec.describe "Pages: single page import" do
         "source"      => SOURCE_DIR,
         "destination" => DEST_TMP_DIR,
         "notion"      => {
-          "cache"  => false,
+          "cache" => false,
           "pages" => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }], # Page 1
         }
       )
@@ -65,9 +65,9 @@ RSpec.describe "Pages: single page import" do
         "notion"      => {
           "pages" => [
             {
-              "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3", # Page 1
+              "id"   => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3", # Page 1
               "data" => "dummy",
-            }
+            },
           ],
         }
       )
