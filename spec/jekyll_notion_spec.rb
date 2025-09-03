@@ -273,7 +273,7 @@ describe(JekyllNotion) do
     end
 
     it "adds the document to the posts collection" do
-      expect(site.posts.size).to be == 7
+      expect(site.posts.size).to be == 8
     end
 
     it "keeps local posts" do
