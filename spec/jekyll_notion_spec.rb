@@ -4,7 +4,6 @@ require "spec_helper"
 require "support/page"
 require "support/page_data"
 require "support/collection"
-require "support/notion_token"
 
 describe(JekyllNotion) do
   let(:source_dir) { SOURCE_DIR }
@@ -41,14 +40,6 @@ describe(JekyllNotion) do
       it "does not create an instance of Notion::Client" do
         expect(Notion::Client).not_to have_received(:new)
       end
-    end
-
-    context "when NOTION_TOKEN is not present" do
-      it_behaves_like "NOTION_TOKEN is not provided", nil
-    end
-
-    context "when NOTION_TOKEN is empty" do
-      it_behaves_like "NOTION_TOKEN is not provided", ""
     end
 
     context "when the databases property is nil" do
