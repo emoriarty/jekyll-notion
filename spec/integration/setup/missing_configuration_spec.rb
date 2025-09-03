@@ -56,8 +56,8 @@ RSpec.describe "Setup: missing notion configuration" do
     it "logs a warning about skipping import" do
       build!
       expect(Jekyll.logger).to have_received(:warn).with(
-        a_string_matching(/Jekyll Notion:/i),
-        a_string_matching(/skipping import/i)
+        a_string_matching(%r!Jekyll Notion:!i),
+        a_string_matching(%r!skipping import!i)
       )
     end
   end
@@ -74,8 +74,8 @@ RSpec.describe "Setup: missing notion configuration" do
     it "logs a warning about skipping import" do
       build!
       expect(Jekyll.logger).to have_received(:warn).with(
-        a_string_matching(/Jekyll Notion:/i),
-        a_string_matching(/skipping import/i)
+        a_string_matching(%r!Jekyll Notion:!i),
+        a_string_matching(%r!skipping import!i)
       )
     end
 
@@ -97,8 +97,8 @@ RSpec.describe "Setup: missing notion configuration" do
     it "logs a warning about skipping import" do
       build!
       expect(Jekyll.logger).to have_received(:warn).with(
-        a_string_matching(/Jekyll Notion:/i),
-        a_string_matching(/skipping import/i)
+        a_string_matching(%r!Jekyll Notion:!i),
+        a_string_matching(%r!skipping import!i)
       )
     end
 
@@ -108,4 +108,3 @@ RSpec.describe "Setup: missing notion configuration" do
     end
   end
 end
-
