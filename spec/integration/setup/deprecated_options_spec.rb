@@ -26,7 +26,7 @@ RSpec.describe "Setup: deprecated options" do
         "notion"      => {
           "fetch_on_watch" => false, # deprecated
           "databases"      => [{ "id" => "1ae33dd5f3314402948069517fa40ae2" }],
-          "pages"          => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }],
+          "pages"          => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }], # Page 1
         }
       )
     end

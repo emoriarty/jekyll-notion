@@ -82,8 +82,11 @@ module JekyllNotion
 
     def notion_token?
       if ENV["NOTION_TOKEN"].nil? || ENV["NOTION_TOKEN"].empty?
-        Jekyll.logger.warn("Jekyll Notion:",
-                           "Cannot read from Notion becuase NOTION_TOKEN was not provided")
+        Jekyll.logger.warn(
+            "Jekyll Notion:",
+            "Skipping import: NOTION_TOKEN is missing. Please set the NOTION_TOKEN environment variable to enable Notion integration."
+          )
+
         return false
       end
       true

@@ -10,10 +10,9 @@ RSpec.describe "Setup: missing notion configuration" do
   before do
     allow(Jekyll.logger).to receive(:warn)
     allow(Jekyll.logger).to receive(:error)
-    allow(Notion::Client).to receive(:new)
-  end
 
-  subject(:build!) { site.process }
+    site.process
+  end
 
   context "when the notion property is not declared" do
     let(:config) do
@@ -23,18 +22,13 @@ RSpec.describe "Setup: missing notion configuration" do
       )
     end
 
-    it "does not instantiate Notion::Client when not configured" do
-      build!
-      expect(Notion::Client).not_to have_received(:new)
-    end
+    it_behaves_like "skips import"
 
     it "does not log any error" do
-      build!
       expect(Jekyll.logger).not_to have_received(:error)
     end
 
     it "does not log any warning" do
-      build!
       expect(Jekyll.logger).not_to have_received(:warn)
     end
   end
@@ -48,13 +42,9 @@ RSpec.describe "Setup: missing notion configuration" do
       )
     end
 
-    it "does not instantiate Notion::Client when not configured" do
-      build!
-      expect(Notion::Client).not_to have_received(:new)
-    end
+    it_behaves_like "skips import"
 
     it "logs a warning about skipping import" do
-      build!
       expect(Jekyll.logger).to have_received(:warn).with(
         a_string_matching(%r!Jekyll Notion:!i),
         a_string_matching(%r!skipping import!i)
@@ -72,17 +62,13 @@ RSpec.describe "Setup: missing notion configuration" do
     end
 
     it "logs a warning about skipping import" do
-      build!
       expect(Jekyll.logger).to have_received(:warn).with(
         a_string_matching(%r!Jekyll Notion:!i),
         a_string_matching(%r!skipping import!i)
       )
     end
 
-    it "does not set up a Notion client" do
-      build!
-      expect(Notion::Client).not_to have_received(:new)
-    end
+    it_behaves_like "skips import"
   end
 
   context "when notion > pages is nil" do
@@ -95,16 +81,12 @@ RSpec.describe "Setup: missing notion configuration" do
     end
 
     it "logs a warning about skipping import" do
-      build!
       expect(Jekyll.logger).to have_received(:warn).with(
         a_string_matching(%r!Jekyll Notion:!i),
         a_string_matching(%r!skipping import!i)
       )
     end
 
-    it "does not set up a Notion client" do
-      build!
-      expect(Notion::Client).not_to have_received(:new)
-    end
+    it_behaves_like "skips import"
   end
 end
