@@ -18,7 +18,7 @@ RSpec.describe "Pages: single page import" do
   before do
     allow(NotionToMd::Page).to receive(:call).and_call_original
 
-    VCR.use_cassette("notion_page") { site.process }
+    VCR.use_cassette("single_page") { site.process }
   end
 
   it_behaves_like "a page is rendered correctly", "Page 1"

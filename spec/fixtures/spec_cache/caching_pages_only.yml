@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 15:54:27 GMT
+      - Thu, 04 Sep 2025 17:17:40 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -31,13 +31,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 979eaa619fa42ace-MRS
+      - 979f24470da03ee8-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"1142-kB/mu4t7e2rSYiJXdS20rzFLGCc"
+      - W/"1142-/RvorkXdIpuzOYGbstRPNZse37M"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -55,15 +55,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - aff87905-3d86-414a-9694-16068833e85c
+      - 9e0d444f-c6e5-4d38-9385-afd5f90ddb3c
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=jJ3URAfcYeyelFHDDGNMQyY0HrT0voPGQj7izST0ppI-1757001267-1.0.1.1-twl6PyJYL_KZUsZq8KmswJG.Cykgn_EJnMC2rJZTxutqy4yPbp50ca0f5VuJlV6IJxxcYiGVs_HoWcFeQJcFmqiHMTa7E7cJ1F72mu0Xayo;
-        path=/; expires=Thu, 04-Sep-25 16:24:27 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=EC29UZ3XPUZUgsPQqOhiuEZ8ibK2txHgopnyeFSkJmo-1757001267816-0.0.1.1-604800000;
+      - __cf_bm=GmlCg10CRcrpY5jQfmP3kB6V3jgXWhWEfi87aics2Ww-1757006260-1.0.1.1-OnWG3uZ3gT_0tayQBrbNqgiMS352OW8ovifyqzK_pTsriMhpx36RRsrjNG_xVKqqtrmDQ8WOFsZA_u13_tv6ZsaPB3X6WLy02Xbh8Y6ZMeY;
+        path=/; expires=Thu, 04-Sep-25 17:47:40 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=OeCaecgd.4izm7ZJojYFs71HVNmSddNWhPhRMAJTyng-1757006260646-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       alt-svc:
       - h3=":443"; ma=86400
@@ -84,8 +84,8 @@ http_interactions:
         Text\":{\"id\":\"jJWo\",\"name\":\"Rich Text\",\"description\":null,\"type\":\"rich_text\",\"rich_text\":{}},\"Phone\":{\"id\":\"k%5DEi\",\"name\":\"Phone\",\"description\":null,\"type\":\"phone_number\",\"phone_number\":{}},\"File\":{\"id\":\"x%60rF\",\"name\":\"File\",\"description\":null,\"type\":\"files\",\"files\":{}},\"empty
         rich text\":{\"id\":\"xtDO\",\"name\":\"empty rich text\",\"description\":null,\"type\":\"rich_text\",\"rich_text\":{}},\"Email\":{\"id\":\"x%7Bcw\",\"name\":\"Email\",\"description\":null,\"type\":\"email\",\"email\":{}},\"Checkbox\":{\"id\":\"%7CMPu\",\"name\":\"Checkbox\",\"description\":null,\"type\":\"checkbox\",\"checkbox\":{}},\"empty_select\":{\"id\":\"%7DSr%3F\",\"name\":\"empty_select\",\"description\":null,\"type\":\"select\",\"select\":{\"options\":[{\"id\":\"273e7a74-3487-4ba8-a68c-40e2bbae6819\",\"name\":\"blabl:
         abla\",\"color\":\"yellow\",\"description\":null},{\"id\":\"95b04fdd-d0af-423a-8ad2-9561f61430b7\",\"name\":\"as:
-        \\\"as\\\"\",\"color\":\"brown\",\"description\":null}]}},\"Name\":{\"id\":\"title\",\"name\":\"Name\",\"description\":null,\"type\":\"title\",\"title\":{}}},\"parent\":{\"type\":\"workspace\",\"workspace\":true},\"url\":\"https://www.notion.so/1ae33dd5f3314402948069517fa40ae2\",\"public_url\":null,\"archived\":false,\"in_trash\":false,\"request_id\":\"aff87905-3d86-414a-9694-16068833e85c\"}"
-  recorded_at: Thu, 04 Sep 2025 15:54:06 GMT
+        \\\"as\\\"\",\"color\":\"brown\",\"description\":null}]}},\"Name\":{\"id\":\"title\",\"name\":\"Name\",\"description\":null,\"type\":\"title\",\"title\":{}}},\"parent\":{\"type\":\"workspace\",\"workspace\":true},\"url\":\"https://www.notion.so/1ae33dd5f3314402948069517fa40ae2\",\"public_url\":null,\"archived\":false,\"in_trash\":false,\"request_id\":\"9e0d444f-c6e5-4d38-9385-afd5f90ddb3c\"}"
+  recorded_at: Thu, 04 Sep 2025 17:17:18 GMT
 - request:
     method: post
     uri: https://api.notion.com/v1/databases/1ae33dd5f3314402948069517fa40ae2/query
@@ -109,23 +109,21 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 15:54:28 GMT
+      - Thu, 04 Sep 2025 17:17:41 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
       - chunked
       connection:
       - keep-alive
-      server:
-      - cloudflare
       cf-ray:
-      - 979eaa644e8834b8-MRS
+      - 979f24497fea8749-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"49f3-JDHkSUU+wyxFwW5O2ju/5osfUvQ"
+      - W/"49e3-M6LVc0MbFuqZHHtRsaG1P4vGTpg"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -143,16 +141,18 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - 2bfe416b-d6ac-417f-b47c-fb1df4980376
+      - a24b46d5-98f6-4f7b-9501-f24ca3851f92
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=fQ5Ici6ljp3AK3vtT.3DCJieBRKss8jQnYnZiPZ1.to-1757001268-1.0.1.1-niv_xK8op72oaMBg.L1Gc5I60OVJLN1it.oY8K0ZWRnk7gGOFEcPLhOj_h8smS1m0DzgvVmNbV0nXMI0rKYk.HzKX04YdoB6eIdxdx1WH38;
-        path=/; expires=Thu, 04-Sep-25 16:24:28 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=fQRmh4UOthIm2DMJcFOhQaE8SSn2WqVPmzoU6juNqoo-1757001268227-0.0.1.1-604800000;
+      - __cf_bm=AYCm2Q8U8jXb0SK9fYCzRBDdr8R8mR1iAbG4I2ZdAFc-1757006261-1.0.1.1-hxa_OqjjiAoGosH1g9OvR_HxEpilapqwL6hoy_J1xMnI7rmBkhLfI7Y_CEEBDv3xGWs.TypSP_y_G3YVMqOBXX4.Dq2hzQKEtPdeRkdureI;
+        path=/; expires=Thu, 04-Sep-25 17:47:41 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=sd6qeBMsFZujkCuUhdbdlep2MVJL7mjpTLJuGGz5AYM-1757006261070-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      server:
+      - cloudflare
       alt-svc:
       - h3=":443"; ma=86400
     body:
@@ -183,7 +183,7 @@ http_interactions:
         date\":{\"id\":\"%3A%7BfH\",\"type\":\"date\",\"date\":null},\"Multi Select\":{\"id\":\"%3C%7Bn%7B\",\"type\":\"multi_select\",\"multi_select\":[]},\"Select\":{\"id\":\"%3EzjF\",\"type\":\"select\",\"select\":null},\"date
         with time\":{\"id\":\"CUEj\",\"type\":\"date\",\"date\":null},\"Person\":{\"id\":\"TFSp\",\"type\":\"people\",\"people\":[]},\"Date\":{\"id\":\"T~YB\",\"type\":\"date\",\"date\":null},\"Tags\":{\"id\":\"UT%3Fx\",\"type\":\"multi_select\",\"multi_select\":[]},\"Numbers\":{\"id\":\"a~dg\",\"type\":\"number\",\"number\":null},\"Rich
         Text\":{\"id\":\"jJWo\",\"type\":\"rich_text\",\"rich_text\":[]},\"Phone\":{\"id\":\"k%5DEi\",\"type\":\"phone_number\",\"phone_number\":null},\"File\":{\"id\":\"x%60rF\",\"type\":\"files\",\"files\":[]},\"empty
-        rich text\":{\"id\":\"xtDO\",\"type\":\"rich_text\",\"rich_text\":[]},\"Email\":{\"id\":\"x%7Bcw\",\"type\":\"email\",\"email\":null},\"Checkbox\":{\"id\":\"%7CMPu\",\"type\":\"checkbox\",\"checkbox\":false},\"empty_select\":{\"id\":\"%7DSr%3F\",\"type\":\"select\",\"select\":null},\"Name\":{\"id\":\"title\",\"type\":\"title\",\"title\":[{\"type\":\"text\",\"text\":{\"content\":\"lists\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"lists\",\"href\":null}]}},\"url\":\"https://www.notion.so/lists-d7cb295f5ae14900916f53fc7b8362af\",\"public_url\":null},{\"object\":\"page\",\"id\":\"0b8c4501-2092-46c1-b800-529623746afc\",\"created_time\":\"2022-01-23T12:31:00.000Z\",\"last_edited_time\":\"2024-05-25T10:02:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"cover\":null,\"icon\":{\"type\":\"file\",\"file\":{\"url\":\"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664VETVAMC%2F20250904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250904T155428Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAgFOs9LMlvY97ce41hf%2B%2BKIDc0Jj9J%2FNZX7o%2BWThvplAiEAjJnYLGdAWLWgPRD95xpdkWbLPSl1r7nKDKIIDv%2BK%2B%2Foq%2FwMIYRAAGgw2Mzc0MjMxODM4MDUiDOuwqxIpOxm3VCuemyrcAxjXJdObPb%2FC19usj%2BIB9OOyL4zBeTHSg7YcRVzNwRd87T4GkRsHqDmtM5GEOcc8RkJ0cWPLe5seXbaMFVZbni2h%2FkXhfGrg9l6ck4rvtcOVHbWXEyORSjjJa16zXeCTiYVTo6gj6OwEyvBkjKXlQXuUamaibn4FtWE%2Fg5TOArfok5Eiyk6I8kTp%2FpwDqkzwMNltXNdZjtsqJ6WcsYcPAdZjvtzIkMdosXJ1IckI39qUfRdq8fFpALvsJ%2BGUCWn1yeB7RqfIGSR8Atd8yVUkj8pP4eqalwY3WE3qr4cjzl7dA27GB%2FH79mUgKIpXQ3U6s7FRkjwmU76STVS3kNTqN35yK7VlUtffSPMguD%2FElUIJfVr0w3eQYQpz4TBCGepSSJ%2Fqu5Wlf0wjBieL2lblrCd%2FpU5HCpFedvQdrAreP9kL%2Fl9pGcd3zzlgjmUEzjOarCYym4y6e7r%2B%2FQMBp%2FveF7yIDJCBBfssxJz%2FDivPkJEeSVYbSCl9QQx1sYllWgo4%2FZ%2BM6YF7%2BmBjg17YJi76Z4Uy%2FXX5sx6i6S4cE%2BVz6kdkeE3RMJyQm25xcXPhJNxZVwZ6%2F6lMh%2BtcqoP81%2FdmSeVSiDqGkxnPJmgsxT%2FPseVONRUMXFlTWmZMxshKMOHl5sUGOqUB3KlkZszVU9ZJUdP02cRnrcPWndsMOEH3eS29W5bK9K0ABIumcdkoapO5YdY%2F48ER%2FIEKz%2Bm6SjUqgzXThSOYwTkRPESD0RgAHDjd0utGqvmr%2FtUF7a3w6pMy5uzQS%2BIF2aukwW16loptpJpNcl7JxF8vWq%2F2yJB6a80NTvWdXo47hhNlbbIFQlMWle6QPCAAw3t8TPCyhW4vHE3RHdNXvDcoaRMQ&X-Amz-Signature=eca80fe0a3f0a66beda5a4b24adc684cbcb64e37449b9f714d632402695ac696&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject\",\"expiry_time\":\"2025-09-04T16:54:28.136Z\"}},\"parent\":{\"type\":\"database_id\",\"database_id\":\"1ae33dd5-f331-4402-9480-69517fa40ae2\"},\"archived\":false,\"in_trash\":false,\"properties\":{\"empty
+        rich text\":{\"id\":\"xtDO\",\"type\":\"rich_text\",\"rich_text\":[]},\"Email\":{\"id\":\"x%7Bcw\",\"type\":\"email\",\"email\":null},\"Checkbox\":{\"id\":\"%7CMPu\",\"type\":\"checkbox\",\"checkbox\":false},\"empty_select\":{\"id\":\"%7DSr%3F\",\"type\":\"select\",\"select\":null},\"Name\":{\"id\":\"title\",\"type\":\"title\",\"title\":[{\"type\":\"text\",\"text\":{\"content\":\"lists\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"lists\",\"href\":null}]}},\"url\":\"https://www.notion.so/lists-d7cb295f5ae14900916f53fc7b8362af\",\"public_url\":null},{\"object\":\"page\",\"id\":\"0b8c4501-2092-46c1-b800-529623746afc\",\"created_time\":\"2022-01-23T12:31:00.000Z\",\"last_edited_time\":\"2024-05-25T10:02:00.000Z\",\"created_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"last_edited_by\":{\"object\":\"user\",\"id\":\"db313571-0280-411f-a6de-70e826421d12\"},\"cover\":null,\"icon\":{\"type\":\"file\",\"file\":{\"url\":\"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SMFWZ5LF%2F20250904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250904T171740Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDmkef0IA0KamaAQHGemfGuF6m88WszvF2M9m%2BIKkyVGgIhANrcnH4Mx9STQ6M73qqQBwTNbr6%2FmNcMZ6sMEPApos3WKv8DCGIQABoMNjM3NDIzMTgzODA1Igxi1pbz1AiS41VQigIq3AOUmj9HzwZEJ6TRl73bkK7ExQZuQDdMxAzF0v1xZME7cljh4tRKls5RGOV%2BWEsrld5y6jBdVhsxTRMVUx21n9DTtXe5m%2B0BzY%2F%2F9TFyXkev%2F9TciiDaUM7r0Byu5zQ0jMg5jut%2FqlfUSg3DSsCoZaun9t2rQjlg%2BMiyVSAeLS%2BO3WKKVO8QjDut0qRgU2VHmEHR2OXWRYvq7v5wxxWTSm34ZFZ1ExTyeJwtAUrAugJOZyh5zy0iKNj3QqatuoC%2F847NOcXeUChu3l%2FtPfSW9arkZzNV9ciZDqHI1WWSoinJDsYdYWqQ2JRGPlRcWJ7OchtyVYMaMzFSrLmSOYOpNQntFocYcj03S21BaCbGsZf9h5BXUj%2Fe3v%2BjO7eSQEDs8aBkZMT3OcuO8%2FG3MJCQiGIO0v588NdihSibH%2B9hKOArwVrF7ADmHWukwPbebPe2S1eFWnByz6XZ6TQbMvnpyqpZxfzlQZaVW8r8%2BraWA2GIbg4%2B9k6EEKxiqKoN8gNJVrxJ1Wq3bdO4plVmHp99N7f2W8FiB1Z3ZjfGitriFoweX5G4BKk2yuf0Emry2L1T%2B6%2B8b%2FLJc%2BYGhAiCOzcZXJ6zApSjQxYMANvmaTV12w6oB7CuuVckH4WHiz9XXjCRjefFBjqkAXNgTwhZ%2F0%2BQYNGAx6YR5fF9cDtbin5Hy8%2FRrOGlk5Mei6bI4UGtmsK7anboR1Ehjtl8BzXgcSLI2XJubLaKb%2FRyegPW1pUMT9XAiZNRC3JcjcaXG1tYvdbJA%2FrV%2FI0nZxOxdYQ%2BsFXmC0Cq%2FKs%2B9hGCQ8n%2Bx35H932Jxq6fb16n3GFX4h5bvY%2FTO44YYAXQHX8Qv5sK%2FhnRt6TGF37gmzBzn5yk&X-Amz-Signature=4e6a2a5a27defd2ac9bddc3564f6f9e31e0a2e8b02c80600a8a79e9d73eb7010&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject\",\"expiry_time\":\"2025-09-04T18:17:40.981Z\"}},\"parent\":{\"type\":\"database_id\",\"database_id\":\"1ae33dd5-f331-4402-9480-69517fa40ae2\"},\"archived\":false,\"in_trash\":false,\"properties\":{\"empty
         date\":{\"id\":\"%3A%7BfH\",\"type\":\"date\",\"date\":null},\"Multi Select\":{\"id\":\"%3C%7Bn%7B\",\"type\":\"multi_select\",\"multi_select\":[]},\"Select\":{\"id\":\"%3EzjF\",\"type\":\"select\",\"select\":{\"id\":\"fa788fbc-176b-49cb-be2e-552cc985cf7c\",\"name\":\"select1\",\"color\":\"yellow\"}},\"date
         with time\":{\"id\":\"CUEj\",\"type\":\"date\",\"date\":null},\"Person\":{\"id\":\"TFSp\",\"type\":\"people\",\"people\":[]},\"Date\":{\"id\":\"T~YB\",\"type\":\"date\",\"date\":null},\"Tags\":{\"id\":\"UT%3Fx\",\"type\":\"multi_select\",\"multi_select\":[{\"id\":\"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8\",\"name\":\"tag1\",\"color\":\"green\"},{\"id\":\"83961a4e-e3a8-442d-8b47-6a2e43bacd85\",\"name\":\"tag2\",\"color\":\"gray\"}]},\"Numbers\":{\"id\":\"a~dg\",\"type\":\"number\",\"number\":null},\"Rich
         Text\":{\"id\":\"jJWo\",\"type\":\"rich_text\",\"rich_text\":[]},\"Phone\":{\"id\":\"k%5DEi\",\"type\":\"phone_number\",\"phone_number\":null},\"File\":{\"id\":\"x%60rF\",\"type\":\"files\",\"files\":[]},\"empty
@@ -203,9 +203,9 @@ http_interactions:
         is a \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"This
         is a \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"rich_text\",\"link\":null},\"annotations\":{\"bold\":true,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"rich_text\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"
         property. With \",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"
-        property. With \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"Italics\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Italics\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\".\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\".\",\"href\":null}]},\"Phone\":{\"id\":\"k%5DEi\",\"type\":\"phone_number\",\"phone_number\":\"983788379\"},\"File\":{\"id\":\"x%60rF\",\"type\":\"files\",\"files\":[{\"name\":\"me.jpeg\",\"type\":\"file\",\"file\":{\"url\":\"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664VETVAMC%2F20250904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250904T155428Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPj%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJHMEUCIAgFOs9LMlvY97ce41hf%2B%2BKIDc0Jj9J%2FNZX7o%2BWThvplAiEAjJnYLGdAWLWgPRD95xpdkWbLPSl1r7nKDKIIDv%2BK%2B%2Foq%2FwMIYRAAGgw2Mzc0MjMxODM4MDUiDOuwqxIpOxm3VCuemyrcAxjXJdObPb%2FC19usj%2BIB9OOyL4zBeTHSg7YcRVzNwRd87T4GkRsHqDmtM5GEOcc8RkJ0cWPLe5seXbaMFVZbni2h%2FkXhfGrg9l6ck4rvtcOVHbWXEyORSjjJa16zXeCTiYVTo6gj6OwEyvBkjKXlQXuUamaibn4FtWE%2Fg5TOArfok5Eiyk6I8kTp%2FpwDqkzwMNltXNdZjtsqJ6WcsYcPAdZjvtzIkMdosXJ1IckI39qUfRdq8fFpALvsJ%2BGUCWn1yeB7RqfIGSR8Atd8yVUkj8pP4eqalwY3WE3qr4cjzl7dA27GB%2FH79mUgKIpXQ3U6s7FRkjwmU76STVS3kNTqN35yK7VlUtffSPMguD%2FElUIJfVr0w3eQYQpz4TBCGepSSJ%2Fqu5Wlf0wjBieL2lblrCd%2FpU5HCpFedvQdrAreP9kL%2Fl9pGcd3zzlgjmUEzjOarCYym4y6e7r%2B%2FQMBp%2FveF7yIDJCBBfssxJz%2FDivPkJEeSVYbSCl9QQx1sYllWgo4%2FZ%2BM6YF7%2BmBjg17YJi76Z4Uy%2FXX5sx6i6S4cE%2BVz6kdkeE3RMJyQm25xcXPhJNxZVwZ6%2F6lMh%2BtcqoP81%2FdmSeVSiDqGkxnPJmgsxT%2FPseVONRUMXFlTWmZMxshKMOHl5sUGOqUB3KlkZszVU9ZJUdP02cRnrcPWndsMOEH3eS29W5bK9K0ABIumcdkoapO5YdY%2F48ER%2FIEKz%2Bm6SjUqgzXThSOYwTkRPESD0RgAHDjd0utGqvmr%2FtUF7a3w6pMy5uzQS%2BIF2aukwW16loptpJpNcl7JxF8vWq%2F2yJB6a80NTvWdXo47hhNlbbIFQlMWle6QPCAAw3t8TPCyhW4vHE3RHdNXvDcoaRMQ&X-Amz-Signature=2da8385761de8d65022ea4ed833799e4fcbe7d2d1da9292e9b847dd14c6b2b9f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject\",\"expiry_time\":\"2025-09-04T16:54:28.126Z\"}}]},\"empty
+        property. With \",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\"Italics\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":true,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Italics\",\"href\":null},{\"type\":\"text\",\"text\":{\"content\":\".\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\".\",\"href\":null}]},\"Phone\":{\"id\":\"k%5DEi\",\"type\":\"phone_number\",\"phone_number\":\"983788379\"},\"File\":{\"id\":\"x%60rF\",\"type\":\"files\",\"files\":[{\"name\":\"me.jpeg\",\"type\":\"file\",\"file\":{\"url\":\"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466SMFWZ5LF%2F20250904%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250904T171740Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEPn%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJIMEYCIQDmkef0IA0KamaAQHGemfGuF6m88WszvF2M9m%2BIKkyVGgIhANrcnH4Mx9STQ6M73qqQBwTNbr6%2FmNcMZ6sMEPApos3WKv8DCGIQABoMNjM3NDIzMTgzODA1Igxi1pbz1AiS41VQigIq3AOUmj9HzwZEJ6TRl73bkK7ExQZuQDdMxAzF0v1xZME7cljh4tRKls5RGOV%2BWEsrld5y6jBdVhsxTRMVUx21n9DTtXe5m%2B0BzY%2F%2F9TFyXkev%2F9TciiDaUM7r0Byu5zQ0jMg5jut%2FqlfUSg3DSsCoZaun9t2rQjlg%2BMiyVSAeLS%2BO3WKKVO8QjDut0qRgU2VHmEHR2OXWRYvq7v5wxxWTSm34ZFZ1ExTyeJwtAUrAugJOZyh5zy0iKNj3QqatuoC%2F847NOcXeUChu3l%2FtPfSW9arkZzNV9ciZDqHI1WWSoinJDsYdYWqQ2JRGPlRcWJ7OchtyVYMaMzFSrLmSOYOpNQntFocYcj03S21BaCbGsZf9h5BXUj%2Fe3v%2BjO7eSQEDs8aBkZMT3OcuO8%2FG3MJCQiGIO0v588NdihSibH%2B9hKOArwVrF7ADmHWukwPbebPe2S1eFWnByz6XZ6TQbMvnpyqpZxfzlQZaVW8r8%2BraWA2GIbg4%2B9k6EEKxiqKoN8gNJVrxJ1Wq3bdO4plVmHp99N7f2W8FiB1Z3ZjfGitriFoweX5G4BKk2yuf0Emry2L1T%2B6%2B8b%2FLJc%2BYGhAiCOzcZXJ6zApSjQxYMANvmaTV12w6oB7CuuVckH4WHiz9XXjCRjefFBjqkAXNgTwhZ%2F0%2BQYNGAx6YR5fF9cDtbin5Hy8%2FRrOGlk5Mei6bI4UGtmsK7anboR1Ehjtl8BzXgcSLI2XJubLaKb%2FRyegPW1pUMT9XAiZNRC3JcjcaXG1tYvdbJA%2FrV%2FI0nZxOxdYQ%2BsFXmC0Cq%2FKs%2B9hGCQ8n%2Bx35H932Jxq6fb16n3GFX4h5bvY%2FTO44YYAXQHX8Qv5sK%2FhnRt6TGF37gmzBzn5yk&X-Amz-Signature=d1e70004b3f42a81d423f56fd7e8753569fb82611b91ddd289ce232065ab439e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject\",\"expiry_time\":\"2025-09-04T18:17:40.972Z\"}}]},\"empty
         rich text\":{\"id\":\"xtDO\",\"type\":\"rich_text\",\"rich_text\":[]},\"Email\":{\"id\":\"x%7Bcw\",\"type\":\"email\",\"email\":\"hola@test.com\"},\"Checkbox\":{\"id\":\"%7CMPu\",\"type\":\"checkbox\",\"checkbox\":false},\"empty_select\":{\"id\":\"%7DSr%3F\",\"type\":\"select\",\"select\":null},\"Name\":{\"id\":\"title\",\"type\":\"title\",\"title\":[{\"type\":\"text\",\"text\":{\"content\":\"Page
         1\",\"link\":null},\"annotations\":{\"bold\":false,\"italic\":false,\"strikethrough\":false,\"underline\":false,\"code\":false,\"color\":\"default\"},\"plain_text\":\"Page
-        1\",\"href\":null}]}},\"url\":\"https://www.notion.so/Page-1-9dc17c9c9d2e469dbbf0f9648f3288d3\",\"public_url\":null}],\"next_cursor\":null,\"has_more\":false,\"type\":\"page_or_database\",\"page_or_database\":{},\"request_id\":\"2bfe416b-d6ac-417f-b47c-fb1df4980376\"}"
-  recorded_at: Thu, 04 Sep 2025 15:54:07 GMT
+        1\",\"href\":null}]}},\"url\":\"https://www.notion.so/Page-1-9dc17c9c9d2e469dbbf0f9648f3288d3\",\"public_url\":null}],\"next_cursor\":null,\"has_more\":false,\"type\":\"page_or_database\",\"page_or_database\":{},\"request_id\":\"a24b46d5-98f6-4f7b-9501-f24ca3851f92\"}"
+  recorded_at: Thu, 04 Sep 2025 17:17:18 GMT
 recorded_with: VCR 6.3.1
