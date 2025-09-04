@@ -14,14 +14,8 @@ module JekyllNotion
 
       @notion_client = Notion::Client.new
 
-      if !cache? || cache_empty?
-        import_notion_databases
-        import_notion_pages
-      else
-        collections.each_pair { |key, val| @site.collections[key] = val }
-        data.each_pair { |key, val| @site.data[key] = val }
-        pages.each { |page| @site.pages << page }
-      end
+      import_notion_databases
+      import_notion_pages
     end
 
     def config
@@ -49,10 +43,6 @@ module JekyllNotion
     end
 
     protected
-
-    def cache_empty?
-      collections.empty? && pages.empty? && data.empty?
-    end
 
     def import_notion_databases
       config_databases.each do |db_config|

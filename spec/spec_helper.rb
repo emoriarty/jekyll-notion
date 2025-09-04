@@ -17,7 +17,7 @@ ENV["JEKYLL_NOTION_CACHE"] = "false"
 Jekyll.logger.log_level = :error
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = "spec/fixtures/spec_cache"
   config.hook_into :faraday
 
   # Redact the Notion token from the VCR cassettes
