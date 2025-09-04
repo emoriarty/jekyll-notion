@@ -25,7 +25,7 @@ VCR.configure do |config|
     to_be_redacted = interaction.request.headers["Authorization"]
 
     to_be_redacted.each do |redacted_text|
-      interaction.filter!(redacted_text, "<REDACTED>")
+      interaction.filter!(redacted_text, "[REDACTED]")
     end
   end
 

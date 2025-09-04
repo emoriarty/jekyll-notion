@@ -12,7 +12,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "<REDACTED>"
+      - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
   response:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 17:32:56 GMT
+      - Thu, 04 Sep 2025 17:42:59 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -31,13 +31,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 979f3a9e0f5fe20d-MRS
+      - 979f4955f864e191-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"a66-tiiEKSEygJ1z/OXUEH6Pb3+zEOM"
+      - W/"a66-/9VQuD23v04r9zqA/FAWwIx2HV4"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -55,15 +55,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - 78b08aac-f246-4575-b6f3-05779743ddc2
+      - 6b4a7276-d18d-4c33-980a-037820a1b82f
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=lFbXM6O8n8f0vs5BJo9NCT_ITger3QyDK6TO5ajbIfk-1757007176-1.0.1.1-RFBYeU6qa_K6_BGS2f6i4xRDDNCXsMAOXiTW6P2jW4WgTAOhki7RY8a_DifgKxrtjHA0L5lnDKcDmPD6CpPQ_AiY86tfqMx7olMOuAhTDVM;
-        path=/; expires=Thu, 04-Sep-25 18:02:56 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=mnrNpaPBnIHMizJ6e8g7_PA0bYEYxmoPaDo3CNVVhbw-1757007176099-0.0.1.1-604800000;
+      - __cf_bm=.yOE6ib0hAyxq5vGS9ovpOAAib4BwZohsjb7IVccGds-1757007779-1.0.1.1-fiUz.XpDeGxGWyPGwmzf23JLQwCwkk2cZvpncNHPY4X0PS6vDre_buvuh2CtDGHSIlkEVwA7ZudP26o3uyPkVLllpnyFvZAQB3mKh7eCbUU;
+        path=/; expires=Thu, 04-Sep-25 18:12:59 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=GOFnblI4lg46Wg_g1EFd_FnFcAuvIlImiMZFxWnojUw-1757007779323-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       alt-svc:
       - h3=":443"; ma=86400
@@ -81,8 +81,8 @@ http_interactions:
         with “double quotes” and ‘single quotes’ and :colons: but forget àccénts:
         àáâãäāăȧǎȁȃ","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Title:
         with “double quotes” and ‘single quotes’ and :colons: but forget àccénts:
-        àáâãäāăȧǎȁȃ","href":null}]}},"url":"https://www.notion.so/Title-with-double-quotes-and-single-quotes-and-colons-but-forget-cc-nts-9349e5108c0e4c0ea772b187d63ecfe1","public_url":null,"request_id":"78b08aac-f246-4575-b6f3-05779743ddc2"}'
-  recorded_at: Thu, 04 Sep 2025 17:32:33 GMT
+        àáâãäāăȧǎȁȃ","href":null}]}},"url":"https://www.notion.so/Title-with-double-quotes-and-single-quotes-and-colons-but-forget-cc-nts-9349e5108c0e4c0ea772b187d63ecfe1","public_url":null,"request_id":"6b4a7276-d18d-4c33-980a-037820a1b82f"}'
+  recorded_at: Thu, 04 Sep 2025 17:42:36 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/9349e510-8c0e-4c0e-a772-b187d63ecfe1/children
@@ -95,7 +95,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "<REDACTED>"
+      - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
   response:
@@ -104,7 +104,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 17:32:56 GMT
+      - Thu, 04 Sep 2025 17:42:59 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -114,13 +114,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 979f3aa31de611b0-MRS
+      - 979f495d381ce15c-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"194a-AYHqP5Jxc9faRr+rw1sVZI0HR1A"
+      - W/"194a-+GOWYj2Gp2v35UpU45Rh7Gurk+g"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -138,15 +138,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - d8986827-e5a2-4fa1-85b6-f333e15c48e7
+      - 07afeb8b-1722-4862-b92c-dbbe565d0413
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=5THOTMuVTlxgD94Vz3N8QhZke.ti9wmvck6eq7NlPII-1757007176-1.0.1.1-Clss7eVRLW10iIFmr5YjzFTO7xa3XeOxnk4QFroTNdilT41QDAM1kPscDMH8BSy48hPzYrX8Vw4pBpey5ICABn19P6DiOAhY1i1s6Olnqe8;
-        path=/; expires=Thu, 04-Sep-25 18:02:56 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=vwUfIjjN0VBeSriRJMH.Ztw9ZTvaxV6zSj.zURCs9nc-1757007176471-0.0.1.1-604800000;
+      - __cf_bm=P2u9yAbhbBBuM1imnb0gnYRbhS0RnUvvQI5mOhjYfr8-1757007779-1.0.1.1-qIF.NEZWFcRsjOXiSNjkC2cxQbgj_J.ssPc76aFtMhhSK2kfF8nnQNA7aQX0biAbM.WfDtT_mTOaUg5jNcKaKUwpOe0WdfxCOmkPffH7FHE;
+        path=/; expires=Thu, 04-Sep-25 18:12:59 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=Osqq9Rp6wx0d3qEVwcWp8IFSDnOwfX8EAhJAV._uPM8-1757007779664-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       alt-svc:
       - h3=":443"; ma=86400
@@ -210,6 +210,6 @@ http_interactions:
         Integer venenatis lectus ut placerat maximus. Etiam hendrerit nisl eros, eu
         ultricies magna malesuada non. Maecenas at quam id elit elementum cursus.
         Cras fermentum arcu purus, ac vulputate sem pretium id. Ut placerat metus
-        turpis, id aliquet sapien placerat eget.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"d8986827-e5a2-4fa1-85b6-f333e15c48e7"}'
-  recorded_at: Thu, 04 Sep 2025 17:32:33 GMT
+        turpis, id aliquet sapien placerat eget.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"07afeb8b-1722-4862-b92c-dbbe565d0413"}'
+  recorded_at: Thu, 04 Sep 2025 17:42:37 GMT
 recorded_with: VCR 6.3.1

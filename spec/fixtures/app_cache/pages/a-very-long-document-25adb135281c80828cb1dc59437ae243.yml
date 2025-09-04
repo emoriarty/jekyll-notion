@@ -12,7 +12,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "<REDACTED>"
+      - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
   response:
@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 17:32:53 GMT
+      - Thu, 04 Sep 2025 17:42:54 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -31,13 +31,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 979f3a914fe6e240-MRS
+      - 979f493fbc041f90-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"771-WGaL37N++ahR/bzyhz/zhNJOC9g"
+      - W/"771-pwwnzk6qnu8sxVCE2CS2SQoGwsk"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -55,15 +55,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - 8b14109b-8e52-4a71-8b2b-1c3348622b83
+      - 903a1f43-d080-4919-afe1-924ba7d7426e
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=N_RkLm1f1jlrGxbrg7id7yctOfm9OnYK_PuS7TTwlSs-1757007173-1.0.1.1-DEfUwwIYiqUz9Z5AEwP1WIbStW.6CxAm3d55I6o9FjvGmCgX67Tq_i5XRErlzfbS6lZKhKc8PmZrdiT3mspGwF13r9SK3AazMxHGFCSSuCA;
-        path=/; expires=Thu, 04-Sep-25 18:02:53 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=LnfWsNVUVe1hC2DoMArdO1u3jCir9t7492R8iH6YuJY-1757007173563-0.0.1.1-604800000;
+      - __cf_bm=oa48js7xg4KpAF1gtT8FWBn5KjVZVvsqdNfUUXqOPdg-1757007774-1.0.1.1-GofRqmPbQKebxEVnhzYmTh6iq.kh228GqiZ61vnxtf_LoQkjM7s0r_JuPD5oT3t5e7ehNThC.KAUEhS8.iUj0LaX2fNO7XGPgOaJz5OEmwM;
+        path=/; expires=Thu, 04-Sep-25 18:12:54 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=RYBlw.WWEZE.9yGJqseh7SGeTmRyNLEie151v3HeDf4-1757007774955-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       alt-svc:
       - h3=":443"; ma=86400
@@ -75,8 +75,8 @@ http_interactions:
         Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
         rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"A
         very long document","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"A
-        very long document","href":null}]}},"url":"https://www.notion.so/A-very-long-document-25adb135281c80828cb1dc59437ae243","public_url":null,"request_id":"8b14109b-8e52-4a71-8b2b-1c3348622b83"}'
-  recorded_at: Thu, 04 Sep 2025 17:32:30 GMT
+        very long document","href":null}]}},"url":"https://www.notion.so/A-very-long-document-25adb135281c80828cb1dc59437ae243","public_url":null,"request_id":"903a1f43-d080-4919-afe1-924ba7d7426e"}'
+  recorded_at: Thu, 04 Sep 2025 17:42:32 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/25adb135-281c-8082-8cb1-dc59437ae243/children
@@ -89,7 +89,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "<REDACTED>"
+      - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
   response:
@@ -98,7 +98,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 17:32:54 GMT
+      - Thu, 04 Sep 2025 17:42:57 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -108,13 +108,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 979f3a933cbbe17d-MRS
+      - 979f4941e855872b-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"2ea74-YN0bL4pzPWFW6+WxuKUX+ljO0LA"
+      - W/"2ea74-lkj7+2o6O4fbMtox2Z6tl3UlR2k"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -132,15 +132,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - 2aaf3d81-17c3-4df2-bc41-e3d29f2444d0
+      - 32e74fef-e17b-4e72-805d-6959fddd3011
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=BLlGpXCiinqsukZukS0TmtpfhsKyNQnEQQuxT.f7ARc-1757007174-1.0.1.1-TaUh1eECBcKSmTCN5._xjM.GlkZ3acJooUj7veyuKh1DpkGSt6AbxoER5KH5gLP8xND7wR2vRzzVEqERmQ9PtIGD8NVEiD7KJVPXfoQA5xw;
-        path=/; expires=Thu, 04-Sep-25 18:02:54 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=PnVyQEvHDdj.kq5wL_pTNiomng8HGJUr1MqYMSC3quk-1757007174225-0.0.1.1-604800000;
+      - __cf_bm=.raXwVB5lLrElLNP5e.hVtR7qNWMlSEoCGC0Ws0RUu4-1757007777-1.0.1.1-VRGTyFqTqSM1GHU8k1CmhsnaA5vi8w5dBRjj97tbQL6tf4X9YVTGwalzuSRFBNzisGdquuehXfUcolKF4hspRa1H5gl5uyjHVPJujYJ4phU;
+        path=/; expires=Thu, 04-Sep-25 18:12:57 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=O3oGexw5aJ.M_3CcI9NCdAfjxfZx0lu6JVtVNxjOd5Q-1757007777689-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       alt-svc:
       - h3=":443"; ma=86400
@@ -1790,8 +1790,8 @@ http_interactions:
         ac purus ut eros bibendum aliquam ut sit amet erat. Praesent iaculis sem luctus
         tellus hendrerit, ultrices pretium arcu fringilla. Ut eget luctus arcu. Pellentesque
         fermentum ornare laoreet. Aliquam eu justo ut nibh blandit sodales quis sed
-        risus. Etiam at odio id quam rutrum bibendum.","href":null}],"color":"default"}}],"next_cursor":"25adb135-281c-80c5-8f7b-e51852bd47af","has_more":true,"type":"block","block":{},"request_id":"2aaf3d81-17c3-4df2-bc41-e3d29f2444d0"}'
-  recorded_at: Thu, 04 Sep 2025 17:32:31 GMT
+        risus. Etiam at odio id quam rutrum bibendum.","href":null}],"color":"default"}}],"next_cursor":"25adb135-281c-80c5-8f7b-e51852bd47af","has_more":true,"type":"block","block":{},"request_id":"32e74fef-e17b-4e72-805d-6959fddd3011"}'
+  recorded_at: Thu, 04 Sep 2025 17:42:35 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/25adb135-281c-8082-8cb1-dc59437ae243/children?start_cursor=25adb135-281c-80c5-8f7b-e51852bd47af
@@ -1804,7 +1804,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "<REDACTED>"
+      - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
   response:
@@ -1813,7 +1813,7 @@ http_interactions:
       message: OK
     headers:
       date:
-      - Thu, 04 Sep 2025 17:32:55 GMT
+      - Thu, 04 Sep 2025 17:42:58 GMT
       content-type:
       - application/json; charset=utf-8
       transfer-encoding:
@@ -1823,13 +1823,13 @@ http_interactions:
       server:
       - cloudflare
       cf-ray:
-      - 979f3a977943b684-MRS
+      - 979f49533914a630-MRS
       cf-cache-status:
       - DYNAMIC
       content-encoding:
       - gzip
       etag:
-      - W/"67e-QJ+6orxbZ665SErQqU/8xeVQN2w"
+      - W/"67e-7YPPrgGJ9Gn4ClTEF0jNPEDNe/I"
       strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
       vary:
@@ -1847,15 +1847,15 @@ http_interactions:
       x-frame-options:
       - SAMEORIGIN
       x-notion-request-id:
-      - 8e405e6e-e8dc-44f4-b76f-f567e2fbb2c9
+      - 2696cb75-fe4b-408d-b265-f8bbd55f677f
       x-permitted-cross-domain-policies:
       - none
       x-xss-protection:
       - '0'
       set-cookie:
-      - __cf_bm=5whSSe3TpWKP3XVM7v4LyuGgCbIAFpl1M9.cPBAiLUw-1757007175-1.0.1.1-lQFiOaQ6C3OiAsqq.JiUHctCtYyv3lm_ulzERbpRDMjutWBla8EmVpHVOZhWOrWZ1FfVGKqWGKSztcVBwoPG7NMcBX_CZyjI3J1EqunEgxQ;
-        path=/; expires=Thu, 04-Sep-25 18:02:55 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None, _cfuvid=guDnpaQ6AVtTz2KH0c.tNNAhkr999CbiXdKN3h0gPIY-1757007175290-0.0.1.1-604800000;
+      - __cf_bm=I1wBKu3AVg.ldW.kP1ZpiGNN22xaf8koKhNGaiZltag-1757007778-1.0.1.1-OEOdO6z70mOi2R1JdAa7MIRVkCjU8BClpcweSSz1QwaTi5grZirpK3vjYRpp4tLweu.5uyGPMj0KKpviB9LNBSMvxhFgFghvH136nePBZXo;
+        path=/; expires=Thu, 04-Sep-25 18:12:58 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=O3u3doqDAJbW.P7OgQjSeX8Pyk4chAcOkeIEvRppdAo-1757007778158-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       alt-svc:
       - h3=":443"; ma=86400
@@ -1873,6 +1873,6 @@ http_interactions:
         vulputate, nunc urna varius sem, non ullamcorper erat arcu ut leo. Duis luctus
         elit imperdiet, vulputate quam in, pretium ex. Ut odio metus, tempor vitae
         tellus et, iaculis hendrerit metus. Nunc mi enim, aliquam eu vehicula eu,
-        tempor nec odio.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"8e405e6e-e8dc-44f4-b76f-f567e2fbb2c9"}'
-  recorded_at: Thu, 04 Sep 2025 17:32:32 GMT
+        tempor nec odio.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"2696cb75-fe4b-408d-b265-f8bbd55f677f"}'
+  recorded_at: Thu, 04 Sep 2025 17:42:35 GMT
 recorded_with: VCR 6.3.1
