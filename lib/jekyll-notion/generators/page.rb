@@ -15,8 +15,7 @@ module JekyllNotion
       private
 
       def generate_page(notion_page)
-        # TODO: check if file exists to prevent overwriting an existing page
-        # next if file_exists?(make_path(page))
+        return if page_exists?(notion_page)
 
         page = make_page(notion_page)
 
@@ -35,6 +34,16 @@ module JekyllNotion
         Jekyll.logger.info("Jekyll Notion:", "Page => #{notion_page.title}")
         Jekyll.logger.info("", "URL => #{@site.pages.last.url}")
         Jekyll.logger.debug("", "Props => #{notion_page.properties.keys.inspect}")
+      end
+
+      def page_exists?(notion_page)
+        page_exists = site.pages.any? { |page| page.data["title"].downcase == notion_page.title.downcase }
+
+        if page_exists
+          Jekyll.logger.warn("Jekyll Notion:", "Page `#{notion_page.title}` exists — skipping Notion import.")
+        end
+
+        page_exists
       end
     end
   end
