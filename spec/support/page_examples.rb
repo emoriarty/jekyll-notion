@@ -14,7 +14,7 @@ RSpec.shared_examples "a jekyll page" do |page_name|
   end
 
   it "stores last_edited_time into page data" do
-    expect(page.data).to include("last_edited_time" => Time.parse("2025-08-29 12:35:00.000000000 +0000"))
+    expect(page.data).to include("last_edited_time" => Time.parse("2025-09-04 17:24:00.000000000 +0000"))
   end
 
   it "stores cover into page data" do
@@ -39,7 +39,7 @@ RSpec.shared_examples "a jekyll page" do |page_name|
   end
 
   it "stores people into page data" do
-    expect(page.data).to include("person" => ["Armando Broncas"])
+    expect(page.data).to include("person" => ["Enrique Moriarty"])
   end
 
   it "stores number into page data" do

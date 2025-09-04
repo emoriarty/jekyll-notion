@@ -27,12 +27,6 @@ VCR.configure do |config|
     to_be_redacted.each do |redacted_text|
       interaction.filter!(redacted_text, "<REDACTED>")
     end
-
-    sensitive_values = (ENV["NOTION_SENSITIVE_VALUES"] || "").split("|")
-    replacement_values = (ENV["NOTION_SENSITIVE_REPLACEMENTS"] || "").split("|")
-    sensitive_values.each_with_index do |sensitive_value, index|
-      interaction.filter!(sensitive_value, replacement_values[index])
-    end
   end
 
   config.default_cassette_options = {
