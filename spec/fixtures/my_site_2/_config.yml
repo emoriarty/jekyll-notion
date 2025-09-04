@@ -1,7 +1,0 @@
-defaults:
-  -
-    scope:
-      path: ""
-      type: pages
-    values:
-      layout: some_default
