@@ -10,8 +10,8 @@ RSpec.describe "Caching: pages only" do
       "source"      => SOURCE_DIR,
       "destination" => DEST_TMP_DIR,
       "notion"      => {
-        "cache"    => "true",
-        "cache_dir"=> app_cache_dir,
+        "cache"     => "true",
+        "cache_dir" => app_cache_dir,
         "pages"     => [
           { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }, # Notion "Page 1"
           { "id" => "0b8c4501209246c1b800529623746afc" }, # Notion "Page 2"
@@ -44,14 +44,12 @@ RSpec.describe "Caching: pages only" do
     site.pages.each do |page|
       filepath = compose_filepath(page.data["title"], page.data["id"])
 
-      puts "=> #{filepath}"
       expect(File.exist?(filepath)).to be true
     end
 
     site.posts.each do |post|
       filepath = compose_filepath(post.data["title"], post.data["id"])
 
-      puts "=> #{filepath}"
       expect(File.exist?(filepath)).to be true
     end
   end

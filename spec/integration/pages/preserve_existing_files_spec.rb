@@ -7,12 +7,12 @@ RSpec.describe "Pages: preserve existing pages" do
   let(:site) { Jekyll::Site.new(config) }
   let(:config) do
     Jekyll.configuration(
-      "source"      => SOURCE_DIR_2,   # contains a local "Page 1"
+      "source"      => SOURCE_DIR_2, # contains a local "Page 1"
       "destination" => DEST_TMP_DIR,
       "notion"      => {
         "pages" => [
-          { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" } # Notion "Page 1"
-        ]
+          { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }, # Notion "Page 1"
+        ],
       }
     )
   end
@@ -24,8 +24,8 @@ RSpec.describe "Pages: preserve existing pages" do
 
   it "logs a warning when a page with the same title exists" do
     expect(Jekyll.logger).to have_received(:warn).with(
-      a_string_matching(/Jekyll Notion:/i),
-      a_string_matching(/Page `Page 1` .*skipping .*Notion import/i)
+      a_string_matching(%r!Jekyll Notion:!i),
+      a_string_matching(%r!Page `Page 1` .*skipping .*Notion import!i)
     )
   end
 
@@ -43,20 +43,20 @@ RSpec.describe "Pages: preserve existing pages" do
     let(:cassette) { "notion_page_2" }
     let(:config) do
       Jekyll.configuration(
-        "source"      => SOURCE_DIR_2,   # contains a local "page 2"
+        "source"      => SOURCE_DIR_2, # contains a local "page 2"
         "destination" => DEST_TMP_DIR,
         "notion"      => {
           "pages" => [
-            { "id" => "0b8c4501209246c1b800529623746afc" } # Notion "Page 2"
-          ]
+            { "id" => "0b8c4501209246c1b800529623746afc" }, # Notion "Page 2"
+          ],
         }
       )
     end
 
     it "still logs a warning treating titles case-insensitively" do
       expect(Jekyll.logger).to have_received(:warn).with(
-        a_string_matching(/Jekyll Notion:/i),
-        a_string_matching(/Page `Page 2` .*skipping .*Notion import/i)
+        a_string_matching(%r!Jekyll Notion:!i),
+        a_string_matching(%r!Page `Page 2` .*skipping .*Notion import!i)
       )
     end
 
@@ -71,4 +71,3 @@ RSpec.describe "Pages: preserve existing pages" do
     end
   end
 end
-

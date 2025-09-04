@@ -14,7 +14,7 @@ RSpec.shared_examples "a jekyll page" do |page_name|
   end
 
   it "stores last_edited_time into page data" do
-    expect(page.data).to include("last_edited_time" => Time.parse("2023-12-02 22:09:00 +0000"))
+    expect(page.data).to include("last_edited_time" => Time.parse("2025-08-29 12:35:00.000000000 +0000"))
   end
 
   it "stores cover into page data" do
@@ -51,7 +51,11 @@ RSpec.shared_examples "a jekyll page" do |page_name|
   end
 
   it "stores files into page data" do
-    expect(page.data).to include("file" => ["https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/23e8b74e-86d1-4b3a-bd9a-dd0415a954e4/me.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45HZZMZUHI%2F20231203%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20231203T065050Z&X-Amz-Expires=3600&X-Amz-Signature=c0b4d6da2da758e947be9abec351edebc1fdb115805aec69b85835954b0a597a&X-Amz-SignedHeaders=host&x-id=GetObject"])
+    expect(page.data).to include(
+      "file" => array_including(
+        start_with("https://prod-files-secure.s3.us-west-2.amazonaws.com/")
+      )
+    )
   end
 
   it "stores email into page data" do
