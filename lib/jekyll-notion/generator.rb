@@ -106,15 +106,20 @@ module JekyllNotion
 
     def setup
       # Cache Notion API responses
-      if ENV["JEKYLL_ENV"] != "test" && cache?
-        JekyllNotion::Cacheable.setup(config["cache_dir"])
-        NotionToMd::Page.prepend(JekyllNotion::Cacheable)
+      if cache?
+        JekyllNotion::Cacheable.configure(:cache_dir => config["cache_dir"])
+        NotionToMd::Page.singleton_class.prepend(JekyllNotion::Cacheable)
       end
     end
 
     def cache?
-      value = config["cache"]
-      value.nil? || value.to_s == "true"
+      if config.key?("cache")
+        value = config["cache"]
+        value.nil? || value.to_s == "true"
+      else
+        value = ENV.fetch("JEKYLL_NOTION_CACHE", nil)
+        value.nil? || value.to_s == "true"
+      end
     end
 
     def assert_configuration

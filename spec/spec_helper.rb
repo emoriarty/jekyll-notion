@@ -12,6 +12,7 @@ SimpleCov.start do
 end
 
 ENV["JEKYLL_ENV"] = "test"
+ENV["JEKYLL_NOTION_CACHE"] = "false"
 
 Jekyll.logger.log_level = :error
 
