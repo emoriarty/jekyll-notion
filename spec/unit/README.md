@@ -38,8 +38,3 @@ site.process  # ← This makes it an integration test
 - **Isolated testing** - Tests specific functionality without dependencies
 - **Clear failures** - Failures point to specific components
 - **Easy debugging** - Focused scope makes issues easier to track down
-
-## Current Unit Tests
-
-- `cacheable_spec.rb` - Tests `JekyllNotion::Cacheable` module logic
-- `cacheable_path_resolution_spec.rb` - Tests cache directory path resolution
