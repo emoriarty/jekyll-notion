@@ -57,6 +57,21 @@ Export the token as an environment variable:
 export NOTION_TOKEN=<secret_...>
 ```
 
+### Environment Variables
+
+The plugin supports the following environment variables for configuration:
+
+- **`NOTION_TOKEN`** (required): Your Notion integration secret token
+- **`JEKYLL_NOTION_CACHE`**: Override the cache setting from `_config.yml` (`true` or `false`)
+- **`JEKYLL_NOTION_CACHE_DIR`**: Override the default cache directory location (defaults to `.cache/jekyll-notion/vcr_cassettes`)
+
+Example usage:
+``` bash
+export NOTION_TOKEN=secret_abc123...
+export JEKYLL_NOTION_CACHE=false
+export JEKYLL_NOTION_CACHE_DIR=/tmp/my-custom-cache
+```
+
 ### Databases
 
 Share a [Notion
@@ -196,15 +211,22 @@ The cache uses the [vcr](https://github.com/vcr/vcr) gem. Each resource
 
 #### Cache folder
 
-Default: `.cache/jekyll-notion/vcr_cassettes`\
-You can override it in `_config.yml`:
+Default: `.cache/jekyll-notion/vcr_cassettes`
 
+You can override the cache directory in two ways:
+
+**Option 1: Configuration file** (in `_config.yml`):
 ``` yaml
 notion:
   cache_dir: another/folder
 ```
 
-The path must be relative to the project root.
+**Option 2: Environment variable**:
+``` bash
+export JEKYLL_NOTION_CACHE_DIR=/path/to/custom/cache
+```
+
+The configuration file setting takes precedence over the environment variable. Both relative and absolute paths are supported - relative paths are resolved from the project root.
 
 #### Cleaning the cache
 

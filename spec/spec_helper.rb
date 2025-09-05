@@ -50,8 +50,8 @@ RSpec.configure do |config|
   SOURCE_DIR_2 = File.expand_path("fixtures/my_site_2", __dir__)
   DEST_DIR = File.expand_path("dest", __dir__)
   DEST_TMP_DIR = Dir.mktmpdir("jekyll-dest-")
-  APP_CACHE_DIR = File.expand_path("spec/fixtures/app_cache", Dir.getwd)
-  ENV_CACHE_DIR = File.expand_path("spec/fixtures/env_cache", Dir.getwd)
+  ENV_REL_CACHE_DIR = File.join("spec", "fixtures", "env_cache")
+  ENV_ABS_CACHE_DIR = File.expand_path(ENV_REL_CACHE_DIR, Dir.getwd)
 
   def dest_dir(*files)
     File.join(DEST_DIR, *files)
