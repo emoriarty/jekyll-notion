@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 Sep 2025 14:01:34 GMT
+      - Fri, 05 Sep 2025 14:02:09 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,11 +33,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97a64263ef8453a8-MRS
+      - 97a643413bb9531c-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"a66-J8+t8jy0kouuvlNUKFNXkbhPGk0"
+      - W/"a66-H9SZEVzarCTqFLcVfTioSOEMqfw"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -55,24 +55,24 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - b4e88be6-b3e0-44ec-af24-79821faf6bf4
+      - a78257a7-febc-45a9-8af4-85bd3e0dd7f4
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - __cf_bm=VAmcVYot675f8tZ4TLsTEC3ENh7bO8MqxUBYYQhBtno-1757080894-1.0.1.1-WakO5oTwQhZGE.4H4vS7IEIyD2Z4xudTZbhbAXLcFf1vu7VPO_vc2cZAs8sbNl1KpmAjtTw2vfry5fl3d5kbVgSJNUpZcGkYWrGfrtBzMAw;
-        path=/; expires=Fri, 05-Sep-25 14:31:34 GMT; domain=.notion.com; HttpOnly;
+      - __cf_bm=ZX_sBe1_5oqQYQ5ySvY92lvjSeaGRsyltSegnELLziM-1757080929-1.0.1.1-63LsHU15.WRcVM5fEvo8okYNk3rbAlsYKuWSFWdQlO5GoAcek1yt_y47YMkalDh8DgzWhanxky6l5oT7XZ7gxC9Ah2vH0c3b95dAJgxCEpw;
+        path=/; expires=Fri, 05-Sep-25 14:32:09 GMT; domain=.notion.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=aRHmw0ub8DWm5z3PkN7BaDQb8u756rjjrWiyepxdmzo-1757080894346-0.0.1.1-604800000;
+      - _cfuvid=Zq6j4I7jUlNkVB4LygoUhJk5gLvFZgFmQ1irbhlDldg-1757080929797-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJvYmplY3QiOiJwYWdlIiwiaWQiOiI5MzQ5ZTUxMC04YzBlLTRjMGUtYTc3Mi1iMTg3ZDYzZWNmZTEiLCJjcmVhdGVkX3RpbWUiOiIyMDIzLTEyLTAxVDE3OjE3OjAwLjAwMFoiLCJsYXN0X2VkaXRlZF90aW1lIjoiMjAyNS0wOC0zMFQwNToxMjowMC4wMDBaIiwiY3JlYXRlZF9ieSI6eyJvYmplY3QiOiJ1c2VyIiwiaWQiOiJkYjMxMzU3MS0wMjgwLTQxMWYtYTZkZS03MGU4MjY0MjFkMTIifSwibGFzdF9lZGl0ZWRfYnkiOnsib2JqZWN0IjoidXNlciIsImlkIjoiZGIzMTM1NzEtMDI4MC00MTFmLWE2ZGUtNzBlODI2NDIxZDEyIn0sImNvdmVyIjpudWxsLCJpY29uIjpudWxsLCJwYXJlbnQiOnsidHlwZSI6ImRhdGFiYXNlX2lkIiwiZGF0YWJhc2VfaWQiOiIxYWUzM2RkNS1mMzMxLTQ0MDItOTQ4MC02OTUxN2ZhNDBhZTIifSwiYXJjaGl2ZWQiOmZhbHNlLCJpbl90cmFzaCI6ZmFsc2UsInByb3BlcnRpZXMiOnsiZW1wdHkgZGF0ZSI6eyJpZCI6IiUzQSU3QmZIIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiTXVsdGkgU2VsZWN0Ijp7ImlkIjoiJTNDJTdCbiU3QiIsInR5cGUiOiJtdWx0aV9zZWxlY3QiLCJtdWx0aV9zZWxlY3QiOlt7ImlkIjoiNWUyZDYwMGUtNDNiOS00YzVjLTg0ZGMtZGI5NTA0MzUzOTgxIiwibmFtZSI6ImRzZDogZGQiLCJjb2xvciI6ImJyb3duIn0seyJpZCI6ImRkZjVlMzBlLWZkZTYtNDAyMy05OGE0LTg2NDY3NGU4YWU4NyIsIm5hbWUiOiJtc2VsZWN0MSIsImNvbG9yIjoiZ3JheSJ9XX0sIlNlbGVjdCI6eyJpZCI6IiUzRXpqRiIsInR5cGUiOiJzZWxlY3QiLCJzZWxlY3QiOnsiaWQiOiI5YjgxZGEwOC1iMzBiLTRjNWItYmE2OS0yOWI2NDE0Y2U4MWUiLCJuYW1lIjoiYmxhYmw6IGJrYSIsImNvbG9yIjoiZGVmYXVsdCJ9fSwiZGF0ZSB3aXRoIHRpbWUiOnsiaWQiOiJDVUVqIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiUGVyc29uIjp7ImlkIjoiVEZTcCIsInR5cGUiOiJwZW9wbGUiLCJwZW9wbGUiOltdfSwiRGF0ZSI6eyJpZCI6IlR+WUIiLCJ0eXBlIjoiZGF0ZSIsImRhdGUiOm51bGx9LCJUYWdzIjp7ImlkIjoiVVQlM0Z4IiwidHlwZSI6Im11bHRpX3NlbGVjdCIsIm11bHRpX3NlbGVjdCI6W3siaWQiOiIxNzc2ZDgzNS1lZThjLTRhMjAtODcyNi01MTFiOTlmYTBhOTUiLCJuYW1lIjoidGFnOiB0YWciLCJjb2xvciI6InllbGxvdyJ9XX0sIk51bWJlcnMiOnsiaWQiOiJhfmRnIiwidHlwZSI6Im51bWJlciIsIm51bWJlciI6bnVsbH0sIlJpY2ggVGV4dCI6eyJpZCI6ImpKV28iLCJ0eXBlIjoicmljaF90ZXh0IiwicmljaF90ZXh0IjpbeyJ0eXBlIjoidGV4dCIsInRleHQiOnsiY29udGVudCI6IlJpY2ggdGV4dDogd2l0aCDigJxkb3VibGUgcXVvdGVz4oCdIGFuZCDigJhzaW5nbGUgcXVvdGVz4oCZIGFuZCA6Y29sb25zOiIsImxpbmsiOm51bGx9LCJhbm5vdGF0aW9ucyI6eyJib2xkIjpmYWxzZSwiaXRhbGljIjpmYWxzZSwic3RyaWtldGhyb3VnaCI6ZmFsc2UsInVuZGVybGluZSI6ZmFsc2UsImNvZGUiOmZhbHNlLCJjb2xvciI6ImRlZmF1bHQifSwicGxhaW5fdGV4dCI6IlJpY2ggdGV4dDogd2l0aCDigJxkb3VibGUgcXVvdGVz4oCdIGFuZCDigJhzaW5nbGUgcXVvdGVz4oCZIGFuZCA6Y29sb25zOiIsImhyZWYiOm51bGx9XX0sIlBob25lIjp7ImlkIjoiayU1REVpIiwidHlwZSI6InBob25lX251bWJlciIsInBob25lX251bWJlciI6bnVsbH0sIkZpbGUiOnsiaWQiOiJ4JTYwckYiLCJ0eXBlIjoiZmlsZXMiLCJmaWxlcyI6W119LCJlbXB0eSByaWNoIHRleHQiOnsiaWQiOiJ4dERPIiwidHlwZSI6InJpY2hfdGV4dCIsInJpY2hfdGV4dCI6W119LCJFbWFpbCI6eyJpZCI6InglN0JjdyIsInR5cGUiOiJlbWFpbCIsImVtYWlsIjpudWxsfSwiQ2hlY2tib3giOnsiaWQiOiIlN0NNUHUiLCJ0eXBlIjoiY2hlY2tib3giLCJjaGVja2JveCI6ZmFsc2V9LCJlbXB0eV9zZWxlY3QiOnsiaWQiOiIlN0RTciUzRiIsInR5cGUiOiJzZWxlY3QiLCJzZWxlY3QiOm51bGx9LCJOYW1lIjp7ImlkIjoidGl0bGUiLCJ0eXBlIjoidGl0bGUiLCJ0aXRsZSI6W3sidHlwZSI6InRleHQiLCJ0ZXh0Ijp7ImNvbnRlbnQiOiJUaXRsZTogd2l0aCDigJxkb3VibGUgcXVvdGVz4oCdIGFuZCDigJhzaW5nbGUgcXVvdGVz4oCZIGFuZCA6Y29sb25zOiBidXQgZm9yZ2V0IMOgY2PDqW50czogw6DDocOiw6PDpMSBxIPIp8eOyIHIgyIsImxpbmsiOm51bGx9LCJhbm5vdGF0aW9ucyI6eyJib2xkIjpmYWxzZSwiaXRhbGljIjpmYWxzZSwic3RyaWtldGhyb3VnaCI6ZmFsc2UsInVuZGVybGluZSI6ZmFsc2UsImNvZGUiOmZhbHNlLCJjb2xvciI6ImRlZmF1bHQifSwicGxhaW5fdGV4dCI6IlRpdGxlOiB3aXRoIOKAnGRvdWJsZSBxdW90ZXPigJ0gYW5kIOKAmHNpbmdsZSBxdW90ZXPigJkgYW5kIDpjb2xvbnM6IGJ1dCBmb3JnZXQgw6BjY8OpbnRzOiDDoMOhw6LDo8OkxIHEg8inx47IgciDIiwiaHJlZiI6bnVsbH1dfX0sInVybCI6Imh0dHBzOi8vd3d3Lm5vdGlvbi5zby9UaXRsZS13aXRoLWRvdWJsZS1xdW90ZXMtYW5kLXNpbmdsZS1xdW90ZXMtYW5kLWNvbG9ucy1idXQtZm9yZ2V0LWNjLW50cy05MzQ5ZTUxMDhjMGU0YzBlYTc3MmIxODdkNjNlY2ZlMSIsInB1YmxpY191cmwiOm51bGwsInJlcXVlc3RfaWQiOiJiNGU4OGJlNi1iM2UwLTQ0ZWMtYWYyNC03OTgyMWZhZjZiZjQifQ==
-  recorded_at: Fri, 05 Sep 2025 14:01:11 GMT
+        eyJvYmplY3QiOiJwYWdlIiwiaWQiOiI5MzQ5ZTUxMC04YzBlLTRjMGUtYTc3Mi1iMTg3ZDYzZWNmZTEiLCJjcmVhdGVkX3RpbWUiOiIyMDIzLTEyLTAxVDE3OjE3OjAwLjAwMFoiLCJsYXN0X2VkaXRlZF90aW1lIjoiMjAyNS0wOC0zMFQwNToxMjowMC4wMDBaIiwiY3JlYXRlZF9ieSI6eyJvYmplY3QiOiJ1c2VyIiwiaWQiOiJkYjMxMzU3MS0wMjgwLTQxMWYtYTZkZS03MGU4MjY0MjFkMTIifSwibGFzdF9lZGl0ZWRfYnkiOnsib2JqZWN0IjoidXNlciIsImlkIjoiZGIzMTM1NzEtMDI4MC00MTFmLWE2ZGUtNzBlODI2NDIxZDEyIn0sImNvdmVyIjpudWxsLCJpY29uIjpudWxsLCJwYXJlbnQiOnsidHlwZSI6ImRhdGFiYXNlX2lkIiwiZGF0YWJhc2VfaWQiOiIxYWUzM2RkNS1mMzMxLTQ0MDItOTQ4MC02OTUxN2ZhNDBhZTIifSwiYXJjaGl2ZWQiOmZhbHNlLCJpbl90cmFzaCI6ZmFsc2UsInByb3BlcnRpZXMiOnsiZW1wdHkgZGF0ZSI6eyJpZCI6IiUzQSU3QmZIIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiTXVsdGkgU2VsZWN0Ijp7ImlkIjoiJTNDJTdCbiU3QiIsInR5cGUiOiJtdWx0aV9zZWxlY3QiLCJtdWx0aV9zZWxlY3QiOlt7ImlkIjoiNWUyZDYwMGUtNDNiOS00YzVjLTg0ZGMtZGI5NTA0MzUzOTgxIiwibmFtZSI6ImRzZDogZGQiLCJjb2xvciI6ImJyb3duIn0seyJpZCI6ImRkZjVlMzBlLWZkZTYtNDAyMy05OGE0LTg2NDY3NGU4YWU4NyIsIm5hbWUiOiJtc2VsZWN0MSIsImNvbG9yIjoiZ3JheSJ9XX0sIlNlbGVjdCI6eyJpZCI6IiUzRXpqRiIsInR5cGUiOiJzZWxlY3QiLCJzZWxlY3QiOnsiaWQiOiI5YjgxZGEwOC1iMzBiLTRjNWItYmE2OS0yOWI2NDE0Y2U4MWUiLCJuYW1lIjoiYmxhYmw6IGJrYSIsImNvbG9yIjoiZGVmYXVsdCJ9fSwiZGF0ZSB3aXRoIHRpbWUiOnsiaWQiOiJDVUVqIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiUGVyc29uIjp7ImlkIjoiVEZTcCIsInR5cGUiOiJwZW9wbGUiLCJwZW9wbGUiOltdfSwiRGF0ZSI6eyJpZCI6IlR+WUIiLCJ0eXBlIjoiZGF0ZSIsImRhdGUiOm51bGx9LCJUYWdzIjp7ImlkIjoiVVQlM0Z4IiwidHlwZSI6Im11bHRpX3NlbGVjdCIsIm11bHRpX3NlbGVjdCI6W3siaWQiOiIxNzc2ZDgzNS1lZThjLTRhMjAtODcyNi01MTFiOTlmYTBhOTUiLCJuYW1lIjoidGFnOiB0YWciLCJjb2xvciI6InllbGxvdyJ9XX0sIk51bWJlcnMiOnsiaWQiOiJhfmRnIiwidHlwZSI6Im51bWJlciIsIm51bWJlciI6bnVsbH0sIlJpY2ggVGV4dCI6eyJpZCI6ImpKV28iLCJ0eXBlIjoicmljaF90ZXh0IiwicmljaF90ZXh0IjpbeyJ0eXBlIjoidGV4dCIsInRleHQiOnsiY29udGVudCI6IlJpY2ggdGV4dDogd2l0aCDigJxkb3VibGUgcXVvdGVz4oCdIGFuZCDigJhzaW5nbGUgcXVvdGVz4oCZIGFuZCA6Y29sb25zOiIsImxpbmsiOm51bGx9LCJhbm5vdGF0aW9ucyI6eyJib2xkIjpmYWxzZSwiaXRhbGljIjpmYWxzZSwic3RyaWtldGhyb3VnaCI6ZmFsc2UsInVuZGVybGluZSI6ZmFsc2UsImNvZGUiOmZhbHNlLCJjb2xvciI6ImRlZmF1bHQifSwicGxhaW5fdGV4dCI6IlJpY2ggdGV4dDogd2l0aCDigJxkb3VibGUgcXVvdGVz4oCdIGFuZCDigJhzaW5nbGUgcXVvdGVz4oCZIGFuZCA6Y29sb25zOiIsImhyZWYiOm51bGx9XX0sIlBob25lIjp7ImlkIjoiayU1REVpIiwidHlwZSI6InBob25lX251bWJlciIsInBob25lX251bWJlciI6bnVsbH0sIkZpbGUiOnsiaWQiOiJ4JTYwckYiLCJ0eXBlIjoiZmlsZXMiLCJmaWxlcyI6W119LCJlbXB0eSByaWNoIHRleHQiOnsiaWQiOiJ4dERPIiwidHlwZSI6InJpY2hfdGV4dCIsInJpY2hfdGV4dCI6W119LCJFbWFpbCI6eyJpZCI6InglN0JjdyIsInR5cGUiOiJlbWFpbCIsImVtYWlsIjpudWxsfSwiQ2hlY2tib3giOnsiaWQiOiIlN0NNUHUiLCJ0eXBlIjoiY2hlY2tib3giLCJjaGVja2JveCI6ZmFsc2V9LCJlbXB0eV9zZWxlY3QiOnsiaWQiOiIlN0RTciUzRiIsInR5cGUiOiJzZWxlY3QiLCJzZWxlY3QiOm51bGx9LCJOYW1lIjp7ImlkIjoidGl0bGUiLCJ0eXBlIjoidGl0bGUiLCJ0aXRsZSI6W3sidHlwZSI6InRleHQiLCJ0ZXh0Ijp7ImNvbnRlbnQiOiJUaXRsZTogd2l0aCDigJxkb3VibGUgcXVvdGVz4oCdIGFuZCDigJhzaW5nbGUgcXVvdGVz4oCZIGFuZCA6Y29sb25zOiBidXQgZm9yZ2V0IMOgY2PDqW50czogw6DDocOiw6PDpMSBxIPIp8eOyIHIgyIsImxpbmsiOm51bGx9LCJhbm5vdGF0aW9ucyI6eyJib2xkIjpmYWxzZSwiaXRhbGljIjpmYWxzZSwic3RyaWtldGhyb3VnaCI6ZmFsc2UsInVuZGVybGluZSI6ZmFsc2UsImNvZGUiOmZhbHNlLCJjb2xvciI6ImRlZmF1bHQifSwicGxhaW5fdGV4dCI6IlRpdGxlOiB3aXRoIOKAnGRvdWJsZSBxdW90ZXPigJ0gYW5kIOKAmHNpbmdsZSBxdW90ZXPigJkgYW5kIDpjb2xvbnM6IGJ1dCBmb3JnZXQgw6BjY8OpbnRzOiDDoMOhw6LDo8OkxIHEg8inx47IgciDIiwiaHJlZiI6bnVsbH1dfX0sInVybCI6Imh0dHBzOi8vd3d3Lm5vdGlvbi5zby9UaXRsZS13aXRoLWRvdWJsZS1xdW90ZXMtYW5kLXNpbmdsZS1xdW90ZXMtYW5kLWNvbG9ucy1idXQtZm9yZ2V0LWNjLW50cy05MzQ5ZTUxMDhjMGU0YzBlYTc3MmIxODdkNjNlY2ZlMSIsInB1YmxpY191cmwiOm51bGwsInJlcXVlc3RfaWQiOiJhNzgyNTdhNy1mZWJjLTQ1YTktOGFmNC04NWJkM2UwZGQ3ZjQifQ==
+  recorded_at: Fri, 05 Sep 2025 14:01:47 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/9349e510-8c0e-4c0e-a772-b187d63ecfe1/children
@@ -96,7 +96,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 Sep 2025 14:01:34 GMT
+      - Fri, 05 Sep 2025 14:02:10 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -106,11 +106,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97a6426618d98e31-MRS
+      - 97a64343aa9f531c-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"194a-tz8Ram4MkSKXkn5xL+KHpiQTcG4"
+      - W/"194a-AK0nrPW0a8ojMCT/Hd91Uk8V43s"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -128,16 +128,16 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 4a9ba8d1-c41b-470c-97b0-dee80bd4d9a6
+      - 025a75bd-c7fe-4679-8ec6-fa1ca2197eda
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - __cf_bm=9ZpUR1y99b7ZfomYRA_bKBMihn7Q58R.imj6eNdoNNA-1757080894-1.0.1.1-4gc5RNgPmkgQg3BwRobegOegYR0iEuizKvFay.x3BIIYSRFXVFrXQtc1MapiEj1laFAqu9X9ize8zuZlbIkPBWwCadPk9qEXA593bvsd31w;
-        path=/; expires=Fri, 05-Sep-25 14:31:34 GMT; domain=.notion.com; HttpOnly;
+      - __cf_bm=u96TRpFAzEWTMskZpow747Y_z4YImk4rlUio8fSRfHA-1757080930-1.0.1.1-.kgujEgS_YqAj8K.hADmMlMIJ9azeS9n_s4zCoZSYRP_sHdz5.FmlMfwYZrqJGb8loHrOBBbClMHDY6GEJKKb5r5IXZ6irnf.zq2tfNJE20;
+        path=/; expires=Fri, 05-Sep-25 14:32:10 GMT; domain=.notion.com; HttpOnly;
         Secure; SameSite=None
-      - _cfuvid=Obt3mgiXyHif.sfUoEjGb8Tj6swDWZEbE4dqdVG.1KU-1757080894768-0.0.1.1-604800000;
+      - _cfuvid=jliD69XpWtt4oqSOqCcu9rzGJSJgDsVdKFRNOAeP4qM-1757080930184-0.0.1.1-604800000;
         path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
       Alt-Svc:
       - h3=":443"; ma=86400
@@ -201,6 +201,6 @@ http_interactions:
         Integer venenatis lectus ut placerat maximus. Etiam hendrerit nisl eros, eu
         ultricies magna malesuada non. Maecenas at quam id elit elementum cursus.
         Cras fermentum arcu purus, ac vulputate sem pretium id. Ut placerat metus
-        turpis, id aliquet sapien placerat eget.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"4a9ba8d1-c41b-470c-97b0-dee80bd4d9a6"}'
-  recorded_at: Fri, 05 Sep 2025 14:01:12 GMT
+        turpis, id aliquet sapien placerat eget.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"025a75bd-c7fe-4679-8ec6-fa1ca2197eda"}'
+  recorded_at: Fri, 05 Sep 2025 14:01:47 GMT
 recorded_with: VCR 6.3.1

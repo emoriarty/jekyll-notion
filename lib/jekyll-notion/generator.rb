@@ -96,10 +96,14 @@ module JekyllNotion
 
     def setup
       # Cache Notion API responses
-      if cache?
-        JekyllNotion::Cacheable.configure(:cache_dir => config["cache_dir"])
-        NotionToMd::Page.singleton_class.prepend(JekyllNotion::Cacheable)
-      end
+      JekyllNotion::Cacheable.configure(
+        :cache_dir     => config["cache_dir"],
+        :cache_enabled => cache?
+      )
+
+      # Prepend once
+      sc = NotionToMd::Page.singleton_class
+      sc.prepend(JekyllNotion::Cacheable) unless sc.ancestors.include?(JekyllNotion::Cacheable)
     end
 
     def cache?

@@ -21,7 +21,7 @@ RSpec.describe "Caching: pages only" do
   end
 
   before do
-    VCR.use_cassette("caching_pages_only") { site.process }
+    VCR.use_cassette("cache/cache_pages_only") { site.process }
   end
 
   it_behaves_like "pages are cached in the specified folder", ENV_ABS_CACHE_DIR

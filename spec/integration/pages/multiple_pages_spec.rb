@@ -21,7 +21,7 @@ RSpec.describe "Pages: multiple pages import" do
   before do
     allow(NotionToMd::Page).to receive(:call).and_call_original
 
-    VCR.use_cassette("multiple_pages") { site.process }
+    VCR.use_cassette("pages/multiple_pages") { site.process }
   end
 
   it_behaves_like "a page is rendered correctly", "Page 1"

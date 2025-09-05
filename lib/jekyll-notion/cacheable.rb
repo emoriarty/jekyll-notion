@@ -9,17 +9,24 @@ module JekyllNotion
     PAGES_DIR = "pages"
 
     class << self
-      def configure(cache_dir:)
+      def configure(cache_dir:, cache_enabled:)
         @cache_dir = cache_dir
+        @cache_enabled = cache_enabled
       end
 
       def cache_dir
         @cache_dir || ENV["JEKYLL_NOTION_CACHE_DIR"] || File.join(Dir.pwd, ".cache",
                                                                   "jekyll-notion", "vcr_cassettes")
       end
+
+      def enabled?
+        @cache_enabled
+      end
     end
 
     def call(**kwargs)
+      return super unless JekyllNotion::Cacheable.enabled?
+
       id = sanitize_id(kwargs[:id])
       dir = JekyllNotion::Cacheable.cache_dir
       cassette_name = preferred_cassette_name(dir, id)

@@ -5,6 +5,10 @@ require "spec_helper"
 RSpec.describe "Caching: cache directory path handling" do
   let(:site) { Jekyll::Site.new(config) }
 
+  before do
+    VCR.use_cassette("cache/cache_dir_paths") { site.process }
+  end
+
   describe "relative paths in config" do
     let(:relative_path) { ENV_REL_CACHE_DIR }
     let(:config) do
@@ -17,10 +21,6 @@ RSpec.describe "Caching: cache directory path handling" do
           "pages"     => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }],
         }
       )
-    end
-
-    before do
-      VCR.use_cassette("cache_dir_paths_relative") { site.process }
     end
 
     it "uses relative paths as provided in config" do
@@ -45,10 +45,6 @@ RSpec.describe "Caching: cache directory path handling" do
           "pages"     => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }],
         }
       )
-    end
-
-    before do
-      VCR.use_cassette("cache_dir_paths_absolute") { site.process }
     end
 
     it "handles absolute paths correctly" do

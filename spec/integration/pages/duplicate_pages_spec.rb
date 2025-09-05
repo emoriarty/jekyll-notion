@@ -20,15 +20,13 @@ RSpec.describe "Pages: duplicate page declarations" do
   before do
     allow(Jekyll.logger).to receive(:warn)
 
-    VCR.use_cassette("notion_page") { site.process }
+    VCR.use_cassette("pages/duplicate_pages") { site.process }
   end
 
   it_behaves_like "a page is rendered correctly", "Page 1"
   it_behaves_like "a jekyll page", "Page 1"
 
   it "logs a warning about duplicate page IDs" do
-    VCR.use_cassette("notion_page") { site.process }
-
     expect(Jekyll.logger).to have_received(:warn).with(
       a_string_matching(%r!Jekyll Notion:!i),
       a_string_matching(%r!Duplicate pages detected: 9dc17c9c-9d2e-469d-bbf0-f9648f3288d3!i)

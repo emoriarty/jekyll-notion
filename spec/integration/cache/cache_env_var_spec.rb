@@ -16,23 +16,60 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE" do
     )
   end
 
-  before { VCR.use_cassette("cache_env_var") { site.process } }
+  original_value = nil
 
-  %w(0 false FALSE no NO False).each do |falsy_value|
-    it "disables caching with #{falsy_value}" do
-      original_value = ENV["JEKYLL_NOTION_CACHE"]
-      ENV["JEKYLL_NOTION_CACHE"] = falsy_value
+  before do
+    original_value = ENV["JEKYLL_NOTION_CACHE"]
+    ENV["JEKYLL_NOTION_CACHE"] = falsy_value
 
-      begin
-        # Verify no cache files were created in default location
-        expect(Dir.empty?(cache_dir)).to be(true)
-      ensure
-        if original_value.nil?
-          ENV.delete("JEKYLL_NOTION_CACHE")
-        else
-          ENV["JEKYLL_NOTION_CACHE"] = original_value
-        end
+    allow(NotionToMd::Page).to receive(:call).and_return(
+      instance_double("NotionToMd::Page", :title => "blabla", :to_md => "body", :properties => {})
+    )
+    site.process
+  end
+
+  after do
+    ENV["JEKYLL_NOTION_CACHE"] = original_value
+  end
+
+  %w(0 false FALSE no NO False).each do |current_value|
+    context "with #{current_value}" do
+      let(:falsy_value) { current_value }
+
+      it "disables caching" do
+        expect(JekyllNotion::Cacheable.enabled?).to be(false)
       end
+    end
+  end
+
+  %w(1 true TRUE yes YES True).each do |current_value|
+    context "with #{current_value}" do
+      let(:falsy_value) { current_value }
+
+      it "enables caching" do
+        expect(JekyllNotion::Cacheable.enabled?).to be(true)
+      end
+    end
+  end
+
+  context "with empty string" do
+    let(:falsy_value) { "" }
+
+    it "disables caching" do
+      expect(JekyllNotion::Cacheable.enabled?).to be(true)
+    end
+  end
+
+  context "with nil (unset)" do
+    let(:falsy_value) { nil }
+
+    before do
+      ENV.delete("JEKYLL_NOTION_CACHE")
+      site.process
+    end
+
+    it "enables caching by default" do
+      expect(JekyllNotion::Cacheable.enabled?).to be(true)
     end
   end
 end

@@ -30,7 +30,7 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE_DIR" do
   end
 
   before do
-    VCR.use_cassette("cache_dir_env_var") { site.process }
+    VCR.use_cassette("cache/cache_dir_env_var") { site.process }
   end
 
   it_behaves_like "pages are cached in the specified folder", ENV_ABS_CACHE_DIR
