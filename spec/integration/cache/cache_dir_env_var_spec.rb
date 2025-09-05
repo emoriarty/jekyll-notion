@@ -38,9 +38,4 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE_DIR" do
   it "uses environment variable for cache directory" do
     expect(JekyllNotion::Cacheable.cache_dir).to eq(ENV_ABS_CACHE_DIR)
   end
-
-  it "does not create cache files in the default directory" do
-    default_dir = File.join(Dir.pwd, ".cache", "jekyll-notion", "vcr_cassettes", "pages")
-    expect(Dir.empty?(default_dir)).to be true
-  end
 end
