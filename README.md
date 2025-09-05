@@ -260,3 +260,20 @@ Jekyll distinguishes between **posts** and **other documents**:
 -   **Other documents**: filenames are derived from the Notion page
     title.
 
+## Testing
+
+Run the test suite:
+
+```bash
+bundle exec rspec                    # Run all tests
+bundle exec rspec spec/path/to/test  # Run specific test file
+```
+
+### Golden Files
+
+Tests use golden files to validate generated output against known-good snapshots. Update snapshots when expected output changes:
+
+```bash
+UPDATE_GOLDEN=1 bundle exec rspec
+```
+
