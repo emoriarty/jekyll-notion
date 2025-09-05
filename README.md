@@ -62,8 +62,8 @@ export NOTION_TOKEN=<secret_...>
 The plugin supports the following environment variables for configuration:
 
 - **`NOTION_TOKEN`** (required): Your Notion integration secret token
-- **`JEKYLL_NOTION_CACHE`**: Override the cache setting from `_config.yml` (`true` or `false`)
-- **`JEKYLL_NOTION_CACHE_DIR`**: Override the default cache directory location (defaults to `.cache/jekyll-notion/vcr_cassettes`)
+- **`JEKYLL_NOTION_CACHE`**: Fallback cache setting when not specified in `_config.yml` (`true` or `false`)
+- **`JEKYLL_NOTION_CACHE_DIR`**: Fallback cache directory when not specified in `_config.yml` (defaults to `.cache/jekyll-notion/vcr_cassettes`)
 
 Example usage:
 ``` bash
