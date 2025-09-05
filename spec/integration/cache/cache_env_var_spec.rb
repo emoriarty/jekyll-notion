@@ -25,6 +25,7 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE" do
     allow(NotionToMd::Page).to receive(:call).and_return(
       instance_double("NotionToMd::Page", :title => "blabla", :to_md => "body", :properties => {})
     )
+
     site.process
   end
 
