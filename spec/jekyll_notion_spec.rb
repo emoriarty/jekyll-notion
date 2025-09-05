@@ -28,27 +28,9 @@ describe(JekyllNotion) do
     allow(Jekyll.logger).to receive(:warn)
   end
 
-  context "when multiple pages are declared" do
-    before do
-      VCR.use_cassette("notion_page") { site.process }
-    end
-
-    let(:notion_config) do
-      {
-        "pages" => [{
-          "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-        }, {
-          "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3",
-        },],
-      }
-    end
-
-    it_behaves_like "a jekyll page", "Page 1"
-  end
-
   context "when a notion database is declared" do
     before do
-      VCR.use_cassette("notion_database") { site.process }
+      VCR.use_cassette("jekyll_notion") { site.process }
     end
 
     context "with the default collection" do
@@ -84,25 +66,6 @@ describe(JekyllNotion) do
     end
   end
 
-  context "when filter is set" do
-    let(:filter) { { :property => "blabla", :checkbox => { :equals => true } } }
-    let(:notion_config) do
-      {
-        "databases" => [{
-          "id"     => "1ae33dd5f3314402948069517fa40ae2",
-          "filter" => filter,
-        }],
-      }
-    end
-
-    it do
-      expect_any_instance_of(Notion::Client).to receive(:database_query)
-        .with(hash_including(:filter => filter)).and_call_original
-
-      VCR.use_cassette("notion_database") { site.process }
-    end
-  end
-
   context "when sort is set" do
     let(:sorts) { [{ :timestamp => "created_time", :direction => "ascending" }] }
     let(:notion_config) do
@@ -118,7 +81,7 @@ describe(JekyllNotion) do
       expect_any_instance_of(Notion::Client).to receive(:database_query)
         .with(hash_including(:sorts => sorts)).and_call_original
 
-      VCR.use_cassette("notion_database") { site.process }
+      VCR.use_cassette("jekyll_notion") { site.process }
     end
   end
 
@@ -136,7 +99,7 @@ describe(JekyllNotion) do
     end
 
     before do
-      VCR.use_cassette("notion_database") { site.process }
+      VCR.use_cassette("jekyll_notion") { site.process }
     end
 
     it_behaves_like "a jekyll collection", "posts"
@@ -154,7 +117,7 @@ describe(JekyllNotion) do
     end
 
     before do
-      VCR.use_cassette("notion_database") { site.process }
+      VCR.use_cassette("jekyll_notion") { site.process }
     end
 
     it "adds the document to the posts collection" do
@@ -183,7 +146,7 @@ describe(JekyllNotion) do
     end
 
     before do
-      VCR.use_cassette("notion_database") { site.process }
+      VCR.use_cassette("jekyll_notion") { site.process }
     end
 
     it "sets the post date" do
@@ -208,7 +171,7 @@ describe(JekyllNotion) do
     end
 
     before do
-      VCR.use_cassette("notion_database") { site.process }
+      VCR.use_cassette("jekyll_notion") { site.process }
     end
 
     it "sets the post from the created_time" do

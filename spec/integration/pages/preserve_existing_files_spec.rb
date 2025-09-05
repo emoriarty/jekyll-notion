@@ -3,7 +3,6 @@
 require "spec_helper"
 
 RSpec.describe "Pages: preserve existing pages" do
-  let(:cassette) { "notion_page" }
   let(:site) { Jekyll::Site.new(config) }
   let(:config) do
     Jekyll.configuration(
@@ -19,7 +18,7 @@ RSpec.describe "Pages: preserve existing pages" do
 
   before do
     allow(Jekyll.logger).to receive(:warn)
-    VCR.use_cassette(cassette) { site.process }
+    VCR.use_cassette("pages/preserve_existing_files") { site.process }
   end
 
   it "logs a warning when a page with the same title exists" do
