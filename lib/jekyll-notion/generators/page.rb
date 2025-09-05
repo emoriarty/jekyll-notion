@@ -37,10 +37,13 @@ module JekyllNotion
       end
 
       def page_exists?(notion_page)
-        page_exists = site.pages.any? { |page| page.data["title"].downcase == notion_page.title.downcase }
+        page_exists = site.pages.any? do |page|
+          page.data["title"].downcase == notion_page.title.downcase
+        end
 
         if page_exists
-          Jekyll.logger.warn("Jekyll Notion:", "Page `#{notion_page.title}` exists — skipping Notion import.")
+          Jekyll.logger.warn("Jekyll Notion:",
+                             "Page `#{notion_page.title}` exists — skipping Notion import.")
         end
 
         page_exists

@@ -57,6 +57,21 @@ Export the token as an environment variable:
 export NOTION_TOKEN=<secret_...>
 ```
 
+### Environment Variables
+
+The plugin supports the following environment variables for configuration:
+
+- **`NOTION_TOKEN`** (required): Your Notion integration secret token
+- **`JEKYLL_NOTION_CACHE`**: Fallback cache setting when not specified in `_config.yml` (`1`, `true`, `yes` to enable; `0`, `false`, `no` to disable)
+- **`JEKYLL_NOTION_CACHE_DIR`**: Fallback cache directory when not specified in `_config.yml` (defaults to `.cache/jekyll-notion/vcr_cassettes`)
+
+Example usage:
+``` bash
+export NOTION_TOKEN=secret_abc123...
+export JEKYLL_NOTION_CACHE=false
+export JEKYLL_NOTION_CACHE_DIR=/tmp/my-custom-cache
+```
+
 ### Databases
 
 Share a [Notion
@@ -185,7 +200,7 @@ properties](#notion-properties)).
 
 ### Cache
 
-Since version **2.4.0**, all Notion requests are cached locally. Only
+All Notion requests are cached locally. Only
 the first request fetches from Notion; subsequent builds use the cache,
 greatly reducing build times.
 
@@ -196,15 +211,22 @@ The cache uses the [vcr](https://github.com/vcr/vcr) gem. Each resource
 
 #### Cache folder
 
-Default: `.cache/jekyll-notion/vcr_cassettes`\
-You can override it in `_config.yml`:
+Default: `.cache/jekyll-notion/vcr_cassettes`
 
+You can override the cache directory in two ways:
+
+**Option 1: Configuration file** (in `_config.yml`):
 ``` yaml
 notion:
   cache_dir: another/folder
 ```
 
-The path must be relative to the project root.
+**Option 2: Environment variable**:
+``` bash
+export JEKYLL_NOTION_CACHE_DIR=/path/to/custom/cache
+```
+
+The configuration file setting takes precedence over the environment variable. Both relative and absolute paths are supported - relative paths are resolved from the project root.
 
 #### Cleaning the cache
 
@@ -218,6 +240,12 @@ To disable caching entirely:
 ``` yaml
 notion:
   cache: false
+```
+
+Or use the `JEKYLL_NOTION_CACHE` environment variable:
+
+```bash
+export JEKYLL_NOTION_CACHE=false  # or 0, no
 ```
 
 ## Notion properties
@@ -237,4 +265,21 @@ Jekyll distinguishes between **posts** and **other documents**:
     `created_time` (or the `date` property if present).\
 -   **Other documents**: filenames are derived from the Notion page
     title.
+
+## Testing
+
+Run the test suite:
+
+```bash
+bundle exec rspec                    # Run all tests
+bundle exec rspec spec/path/to/test  # Run specific test file
+```
+
+### Golden Files
+
+Tests use golden files to validate generated output against known-good snapshots. Update snapshots when expected output changes:
+
+```bash
+UPDATE_GOLDEN=1 bundle exec rspec
+```
 

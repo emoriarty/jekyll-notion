@@ -12,11 +12,12 @@ SimpleCov.start do
 end
 
 ENV["JEKYLL_ENV"] = "test"
+ENV["JEKYLL_NOTION_CACHE"] = "false"
 
 Jekyll.logger.log_level = :error
 
 VCR.configure do |config|
-  config.cassette_library_dir = "spec/fixtures/vcr_cassettes"
+  config.cassette_library_dir = "spec/fixtures/spec_cache"
   config.hook_into :faraday
 
   # Redact the Notion token from the VCR cassettes
@@ -24,13 +25,7 @@ VCR.configure do |config|
     to_be_redacted = interaction.request.headers["Authorization"]
 
     to_be_redacted.each do |redacted_text|
-      interaction.filter!(redacted_text, "<REDACTED>")
-    end
-
-    sensitive_values = (ENV["NOTION_SENSITIVE_VALUES"] || "").split("|")
-    replacement_values = (ENV["NOTION_SENSITIVE_REPLACEMENTS"] || "").split("|")
-    sensitive_values.each_with_index do |sensitive_value, index|
-      interaction.filter!(sensitive_value, replacement_values[index])
+      interaction.filter!(redacted_text, "[REDACTED]")
     end
   end
 
@@ -42,7 +37,10 @@ end
 
 RSpec.configure do |config|
   # Load support files
-  Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |f| require f }
+  Dir[
+    File.join(__dir__, "support/**/*.rb"),
+    File.join(__dir__, "integration/**/support/**/*.rb")
+  ].sort.each { |f| require f }
 
   config.include GoldenHelper
   config.run_all_when_everything_filtered = true
@@ -52,6 +50,8 @@ RSpec.configure do |config|
   SOURCE_DIR_2 = File.expand_path("fixtures/my_site_2", __dir__)
   DEST_DIR = File.expand_path("dest", __dir__)
   DEST_TMP_DIR = Dir.mktmpdir("jekyll-dest-")
+  ENV_REL_CACHE_DIR = File.join("spec", "fixtures", "env_cache")
+  ENV_ABS_CACHE_DIR = File.expand_path(ENV_REL_CACHE_DIR, Dir.getwd)
 
   def dest_dir(*files)
     File.join(DEST_DIR, *files)

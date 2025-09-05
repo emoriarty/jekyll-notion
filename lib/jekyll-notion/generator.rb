@@ -14,14 +14,8 @@ module JekyllNotion
 
       @notion_client = Notion::Client.new
 
-      if !cache? || cache_empty?
-        import_notion_databases
-        import_notion_pages
-      else
-        collections.each_pair { |key, val| @site.collections[key] = val }
-        data.each_pair { |key, val| @site.data[key] = val }
-        pages.each { |page| @site.pages << page }
-      end
+      import_notion_databases
+      import_notion_pages
     end
 
     def config
@@ -49,10 +43,6 @@ module JekyllNotion
     end
 
     protected
-
-    def cache_empty?
-      collections.empty? && pages.empty? && data.empty?
-    end
 
     def import_notion_databases
       config_databases.each do |db_config|
@@ -106,15 +96,26 @@ module JekyllNotion
 
     def setup
       # Cache Notion API responses
-      if ENV["JEKYLL_ENV"] != "test" && cache?
-        JekyllNotion::Cacheable.setup(config["cache_dir"])
-        NotionToMd::Page.prepend(JekyllNotion::Cacheable)
+      if cache?
+        JekyllNotion::Cacheable.configure(:cache_dir => config["cache_dir"])
+        NotionToMd::Page.singleton_class.prepend(JekyllNotion::Cacheable)
       end
     end
 
     def cache?
-      value = config["cache"]
-      value.nil? || value.to_s == "true"
+      if config.key?("cache")
+        value = config["cache"]
+        value.nil? || !falsy?(value)
+      else
+        value = ENV.fetch("JEKYLL_NOTION_CACHE", nil)
+        value.nil? || !falsy?(value)
+      end
+    end
+
+    private
+
+    def falsy?(value)
+      %w(0 false no).include?(value.to_s.downcase)
     end
 
     def assert_configuration
