@@ -105,11 +105,17 @@ module JekyllNotion
     def cache?
       if config.key?("cache")
         value = config["cache"]
-        value.nil? || value.to_s == "true"
+        value.nil? || !falsy?(value)
       else
         value = ENV.fetch("JEKYLL_NOTION_CACHE", nil)
-        value.nil? || value.to_s == "true"
+        value.nil? || !falsy?(value)
       end
+    end
+
+    private
+
+    def falsy?(value)
+      %w(0 false no).include?(value.to_s.downcase)
     end
 
     def assert_configuration

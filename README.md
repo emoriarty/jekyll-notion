@@ -62,7 +62,7 @@ export NOTION_TOKEN=<secret_...>
 The plugin supports the following environment variables for configuration:
 
 - **`NOTION_TOKEN`** (required): Your Notion integration secret token
-- **`JEKYLL_NOTION_CACHE`**: Fallback cache setting when not specified in `_config.yml` (`true` or `false`)
+- **`JEKYLL_NOTION_CACHE`**: Fallback cache setting when not specified in `_config.yml` (`1`, `true`, `yes` to enable; `0`, `false`, `no` to disable)
 - **`JEKYLL_NOTION_CACHE_DIR`**: Fallback cache directory when not specified in `_config.yml` (defaults to `.cache/jekyll-notion/vcr_cassettes`)
 
 Example usage:
@@ -200,7 +200,7 @@ properties](#notion-properties)).
 
 ### Cache
 
-Since version **2.4.0**, all Notion requests are cached locally. Only
+All Notion requests are cached locally. Only
 the first request fetches from Notion; subsequent builds use the cache,
 greatly reducing build times.
 
@@ -240,6 +240,12 @@ To disable caching entirely:
 ``` yaml
 notion:
   cache: false
+```
+
+Or use the `JEKYLL_NOTION_CACHE` environment variable:
+
+```bash
+export JEKYLL_NOTION_CACHE=false  # or 0, no
 ```
 
 ## Notion properties

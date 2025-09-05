@@ -9,8 +9,8 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE_DIR" do
       "source"      => SOURCE_DIR,
       "destination" => DEST_TMP_DIR,
       "notion"      => {
-        "cache"     => "true",
-        "pages"     => [
+        "cache" => "true",
+        "pages" => [
           { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }, # Notion "Page 1"
           { "id" => "0b8c4501209246c1b800529623746afc" }, # Notion "Page 2"
         ],
@@ -40,7 +40,7 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE_DIR" do
   end
 
   it "does not create cache files in the default directory" do
-    default_dir = File.join(Dir.pwd, ".cache", "jekyll-notion", "vcr_cassettes")
-    expect(Dir.exist?(default_dir)).to be false
+    default_dir = File.join(Dir.pwd, ".cache", "jekyll-notion", "vcr_cassettes", "pages")
+    expect(Dir.empty?(default_dir)).to be true
   end
 end
