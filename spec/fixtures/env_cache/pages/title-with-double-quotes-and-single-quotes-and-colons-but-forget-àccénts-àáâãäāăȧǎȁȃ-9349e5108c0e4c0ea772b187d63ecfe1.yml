@@ -1,0 +1,215 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.notion.com/v1/pages/9349e510-8c0e-4c0e-a772-b187d63ecfe1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.2
+      Authorization:
+      - "[REDACTED]"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 05 Sep 2025 08:42:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      cf-ray:
+      - 97a46f805cbeb416-MRS
+      cf-cache-status:
+      - DYNAMIC
+      content-encoding:
+      - gzip
+      etag:
+      - W/"a66-s0rPlgUXrhTEa7aDuDw82iCpV7Y"
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - 18c3f823-8274-47e9-b31e-0d099a771ff7
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+      set-cookie:
+      - __cf_bm=LX6kxKzQixUY7eDxLNcHnAhCj6wCeqDpO5j_paViUL8-1757061770-1.0.1.1-uB7IQY7dLsoShco8VVdVow7PxQyPdsjqkcrLUZQGfGeiOSTKINNNh3cHZgBmUNz8knb.6Had7BmgeMk6UvGxl1q7kcg4B4Te6.JnYQXdTys;
+        path=/; expires=Fri, 05-Sep-25 09:12:50 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=tRhRMJjsmv30OPgvAIscABaSVZpSx1nUbZkDprixISo-1757061770564-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"object":"page","id":"9349e510-8c0e-4c0e-a772-b187d63ecfe1","created_time":"2023-12-01T17:17:00.000Z","last_edited_time":"2025-08-30T05:12:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":null,"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
+        date":{"id":"%3A%7BfH","type":"date","date":null},"Multi Select":{"id":"%3C%7Bn%7B","type":"multi_select","multi_select":[{"id":"5e2d600e-43b9-4c5c-84dc-db9504353981","name":"dsd:
+        dd","color":"brown"},{"id":"ddf5e30e-fde6-4023-98a4-864674e8ae87","name":"mselect1","color":"gray"}]},"Select":{"id":"%3EzjF","type":"select","select":{"id":"9b81da08-b30b-4c5b-ba69-29b6414ce81e","name":"blabl:
+        bka","color":"default"}},"date with time":{"id":"CUEj","type":"date","date":null},"Person":{"id":"TFSp","type":"people","people":[]},"Date":{"id":"T~YB","type":"date","date":null},"Tags":{"id":"UT%3Fx","type":"multi_select","multi_select":[{"id":"1776d835-ee8c-4a20-8726-511b99fa0a95","name":"tag:
+        tag","color":"yellow"}]},"Numbers":{"id":"a~dg","type":"number","number":null},"Rich
+        Text":{"id":"jJWo","type":"rich_text","rich_text":[{"type":"text","text":{"content":"Rich
+        text: with “double quotes” and ‘single quotes’ and :colons:","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Rich
+        text: with “double quotes” and ‘single quotes’ and :colons:","href":null}]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
+        rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Title:
+        with “double quotes” and ‘single quotes’ and :colons: but forget àccénts:
+        àáâãäāăȧǎȁȃ","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Title:
+        with “double quotes” and ‘single quotes’ and :colons: but forget àccénts:
+        àáâãäāăȧǎȁȃ","href":null}]}},"url":"https://www.notion.so/Title-with-double-quotes-and-single-quotes-and-colons-but-forget-cc-nts-9349e5108c0e4c0ea772b187d63ecfe1","public_url":null,"request_id":"18c3f823-8274-47e9-b31e-0d099a771ff7"}'
+  recorded_at: Fri, 05 Sep 2025 08:42:27 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/9349e510-8c0e-4c0e-a772-b187d63ecfe1/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.2
+      Authorization:
+      - "[REDACTED]"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Fri, 05 Sep 2025 08:42:53 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      cf-ray:
+      - 97a46f828afbb93b-MRS
+      cf-cache-status:
+      - DYNAMIC
+      content-encoding:
+      - gzip
+      etag:
+      - W/"194a-CqR7MhkVGcBzFTMeWve+83qYOX4"
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - 0af72881-8f16-4653-a4fc-09d026737feb
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+      set-cookie:
+      - __cf_bm=7h7PYbEcDsj.5bAxN_K0NE7kLuAt.3QjsAGUlvWJccg-1757061773-1.0.1.1-GJp9LdmpLEyvQwUCRSkT5CLVGYf91jq6_7kGvAE.JjE3sZ1rsCOaKQ2EH2.G9Ocmszz24w6nDAi5PAOmURfZE6UGrIWXAwojGLEIG101xSo;
+        path=/; expires=Fri, 05-Sep-25 09:12:53 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=qFiBneSA2H1nUjBiqjM0fjSvm4Vnk24z6W6ZwE648ic-1757061773925-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"25fdb135-281c-8097-bb60-ea76959e300f","parent":{"type":"page_id","page_id":"9349e510-8c0e-4c0e-a772-b187d63ecfe1"},"created_time":"2025-08-30T05:12:00.000Z","last_edited_time":"2025-08-30T05:12:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sapien porttitor,
+        aliquet est dignissim, dapibus libero. Integer sapien tortor, volutpat sed
+        efficitur sit amet, sagittis ut nisi. Nunc sollicitudin condimentum finibus.
+        Cras auctor sit amet leo at porttitor. Donec dignissim laoreet tortor, ullamcorper
+        elementum magna aliquam a. Maecenas viverra, risus eu posuere fringilla, est
+        odio viverra nisl, sit amet accumsan erat metus egestas massa. Suspendisse
+        iaculis, ipsum eget viverra suscipit, tortor felis finibus nulla, at mattis
+        odio mi tincidunt sapien. Mauris quis augue quis risus elementum dapibus eu
+        ut leo. Etiam leo neque, eleifend sit amet rutrum in, malesuada in turpis.
+        Donec ex justo, fringilla at cursus id, fermentum eget ante. Nam vitae sapien
+        velit.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Proin nec sapien porttitor,
+        aliquet est dignissim, dapibus libero. Integer sapien tortor, volutpat sed
+        efficitur sit amet, sagittis ut nisi. Nunc sollicitudin condimentum finibus.
+        Cras auctor sit amet leo at porttitor. Donec dignissim laoreet tortor, ullamcorper
+        elementum magna aliquam a. Maecenas viverra, risus eu posuere fringilla, est
+        odio viverra nisl, sit amet accumsan erat metus egestas massa. Suspendisse
+        iaculis, ipsum eget viverra suscipit, tortor felis finibus nulla, at mattis
+        odio mi tincidunt sapien. Mauris quis augue quis risus elementum dapibus eu
+        ut leo. Etiam leo neque, eleifend sit amet rutrum in, malesuada in turpis.
+        Donec ex justo, fringilla at cursus id, fermentum eget ante. Nam vitae sapien
+        velit.","href":null}],"color":"default"}},{"object":"block","id":"25fdb135-281c-80ab-9f96-eeb88be58f23","parent":{"type":"page_id","page_id":"9349e510-8c0e-4c0e-a772-b187d63ecfe1"},"created_time":"2025-08-30T05:12:00.000Z","last_edited_time":"2025-08-30T05:12:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Nullam
+        vestibulum turpis at dignissim dapibus. In nec velit finibus, egestas purus
+        nec, accumsan enim. Maecenas in congue massa. Maecenas ipsum mauris, aliquet
+        quis ex eu, ornare feugiat ex. Sed convallis ullamcorper ipsum, vel ullamcorper
+        diam imperdiet vitae. Etiam efficitur neque in nibh elementum, non cursus
+        tellus maximus. Duis magna dui, mattis vitae felis non, fringilla accumsan
+        erat. Duis scelerisque scelerisque viverra. Sed luctus, mi suscipit bibendum
+        luctus, sem purus dictum ante, eu cursus ipsum quam sit amet augue.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Nullam
+        vestibulum turpis at dignissim dapibus. In nec velit finibus, egestas purus
+        nec, accumsan enim. Maecenas in congue massa. Maecenas ipsum mauris, aliquet
+        quis ex eu, ornare feugiat ex. Sed convallis ullamcorper ipsum, vel ullamcorper
+        diam imperdiet vitae. Etiam efficitur neque in nibh elementum, non cursus
+        tellus maximus. Duis magna dui, mattis vitae felis non, fringilla accumsan
+        erat. Duis scelerisque scelerisque viverra. Sed luctus, mi suscipit bibendum
+        luctus, sem purus dictum ante, eu cursus ipsum quam sit amet augue.","href":null}],"color":"default"}},{"object":"block","id":"25fdb135-281c-8059-8a52-fae0338537e5","parent":{"type":"page_id","page_id":"9349e510-8c0e-4c0e-a772-b187d63ecfe1"},"created_time":"2025-08-30T05:12:00.000Z","last_edited_time":"2025-08-30T05:12:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Praesent
+        rhoncus enim dolor, nec tincidunt lacus mollis ut. Phasellus eu ex leo. Donec
+        nec vulputate nisl. Fusce mattis blandit sem, ac molestie mi placerat quis.
+        Donec lacinia enim sed nunc pulvinar mattis. Etiam dictum neque quis lacus
+        congue pulvinar. Nam lectus purus, egestas id feugiat et, molestie sed lacus.
+        Sed laoreet molestie dolor nec tincidunt. In imperdiet dolor sit amet elit
+        placerat, et ullamcorper sapien rutrum. Sed elit tellus, rhoncus id erat in,
+        lobortis volutpat ex. Nullam sit amet commodo lectus, vitae finibus augue.
+        Integer venenatis lectus ut placerat maximus. Etiam hendrerit nisl eros, eu
+        ultricies magna malesuada non. Maecenas at quam id elit elementum cursus.
+        Cras fermentum arcu purus, ac vulputate sem pretium id. Ut placerat metus
+        turpis, id aliquet sapien placerat eget.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Praesent
+        rhoncus enim dolor, nec tincidunt lacus mollis ut. Phasellus eu ex leo. Donec
+        nec vulputate nisl. Fusce mattis blandit sem, ac molestie mi placerat quis.
+        Donec lacinia enim sed nunc pulvinar mattis. Etiam dictum neque quis lacus
+        congue pulvinar. Nam lectus purus, egestas id feugiat et, molestie sed lacus.
+        Sed laoreet molestie dolor nec tincidunt. In imperdiet dolor sit amet elit
+        placerat, et ullamcorper sapien rutrum. Sed elit tellus, rhoncus id erat in,
+        lobortis volutpat ex. Nullam sit amet commodo lectus, vitae finibus augue.
+        Integer venenatis lectus ut placerat maximus. Etiam hendrerit nisl eros, eu
+        ultricies magna malesuada non. Maecenas at quam id elit elementum cursus.
+        Cras fermentum arcu purus, ac vulputate sem pretium id. Ut placerat metus
+        turpis, id aliquet sapien placerat eget.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"0af72881-8f16-4653-a4fc-09d026737feb"}'
+  recorded_at: Fri, 05 Sep 2025 08:42:31 GMT
+recorded_with: VCR 6.3.1
