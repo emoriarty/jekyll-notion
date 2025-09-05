@@ -14,7 +14,8 @@ module JekyllNotion
       end
 
       def cache_dir
-        @cache_dir || File.join(Dir.pwd, ".cache", "jekyll-notion", "vcr_cassettes")
+        @cache_dir || ENV["JEKYLL_NOTION_CACHE_DIR"] || File.join(Dir.pwd, ".cache",
+                                                                  "jekyll-notion", "vcr_cassettes")
       end
     end
 

@@ -37,7 +37,10 @@ end
 
 RSpec.configure do |config|
   # Load support files
-  Dir[File.join(__dir__, "support/**/*.rb")].sort.each { |f| require f }
+  Dir[
+    File.join(__dir__, "support/**/*.rb"),
+    File.join(__dir__, "integration/**/support/**/*.rb")
+  ].sort.each { |f| require f }
 
   config.include GoldenHelper
   config.run_all_when_everything_filtered = true
@@ -47,6 +50,8 @@ RSpec.configure do |config|
   SOURCE_DIR_2 = File.expand_path("fixtures/my_site_2", __dir__)
   DEST_DIR = File.expand_path("dest", __dir__)
   DEST_TMP_DIR = Dir.mktmpdir("jekyll-dest-")
+  APP_CACHE_DIR = File.expand_path("spec/fixtures/app_cache", Dir.getwd)
+  ENV_CACHE_DIR = File.expand_path("spec/fixtures/env_cache", Dir.getwd)
 
   def dest_dir(*files)
     File.join(DEST_DIR, *files)

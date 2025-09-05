@@ -9,9 +9,9 @@ RSpec.describe "Pages: multiple pages import" do
       "destination" => DEST_TMP_DIR,
       "notion"      => {
         "pages" => [
-        { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }, # Page 1
-        { "id" => "0b8c4501209246c1b800529623746afc" }, # Page 2
-        ]
+          { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }, # Page 1
+          { "id" => "0b8c4501209246c1b800529623746afc" }, # Page 2
+        ],
       }
     )
   end
