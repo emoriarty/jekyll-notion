@@ -34,8 +34,7 @@ RSpec.describe "Caching: cache directory path handling" do
   end
 
   describe "absolute paths in config" do
-    let(:temp_dir) { Dir.mktmpdir("jekyll-notion-test-") }
-    let(:absolute_path) { File.join(temp_dir, "absolute_cache") }
+    let(:absolute_path) { ENV_ABS_CACHE_DIR }
     let(:config) do
       Jekyll.configuration(
         "source"      => SOURCE_DIR,
