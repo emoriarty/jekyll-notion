@@ -18,7 +18,7 @@ RSpec.describe "Pages: preserve existing pages" do
 
   before do
     allow(Jekyll.logger).to receive(:warn)
-    VCR.use_cassette("pages/preserve_existing_files") { site.process }
+    site.process
   end
 
   it "logs a warning when a page with the same title exists" do
