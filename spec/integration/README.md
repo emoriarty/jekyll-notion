@@ -65,6 +65,6 @@ test offline to confirm completeness.
 
 ## Benefits
 
--   **Interaction coverage** across components\
--   **Realistic scenarios** matching user usage\
+-   **Interaction coverage** across components
+-   **Realistic scenarios** matching user usage
 -   **Confidence** in overall correctness
