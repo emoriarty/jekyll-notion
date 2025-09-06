@@ -14,8 +14,14 @@ Notion.configure do |config|
 end
 
 module JekyllNotion
-  autoload :Generators, "jekyll-notion/generators"
   autoload :DocumentWithoutAFile, "jekyll-notion/document_without_a_file"
   autoload :PageWithoutAFile, "jekyll-notion/page_without_a_file"
   autoload :Cacheable, "jekyll-notion/cacheable"
+
+  module Generators
+    autoload :Generator, "jekyll-notion/generators/generator"
+    autoload :Data, "jekyll-notion/generators/data"
+    autoload :Page, "jekyll-notion/generators/page"
+    autoload :Collection, "jekyll-notion/generators/collection"
+  end
 end
