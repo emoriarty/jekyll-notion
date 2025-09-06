@@ -21,11 +21,14 @@ VCR.configure do |config|
   config.hook_into :webmock
 
   # Redact the Notion token from the VCR cassettes
-  config.before_record do |interaction|
-    to_be_redacted = interaction.request.headers["Authorization"]
+  config.filter_sensitive_data('[REDACTED]') do |interaction|
+    interaction.request.headers['Authorization']&.first
+  end
 
-    to_be_redacted.each do |redacted_text|
-      interaction.filter!(redacted_text, "[REDACTED]")
+  # Redact cookies from the VCR cassettes
+  config.before_record do |interaction|
+    if interaction.response.headers['Set-Cookie']
+      interaction.response.headers['Set-Cookie'].map! { |cookie| '[REDACTED]' }
     end
   end
 

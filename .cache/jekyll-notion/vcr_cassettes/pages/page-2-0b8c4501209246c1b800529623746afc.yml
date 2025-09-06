@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 Sep 2025 14:02:02 GMT
+      - Sat, 06 Sep 2025 06:03:19 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,11 +33,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97a64310b976708c-MRS
+      - 97abc333be5ce1ae-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"e45-SJBFLgg4rsfpRpeGhpp2stPUS40"
+      - W/"e59-8H2TKW/vs3/i/wz+RmCehUNJeqg"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -55,29 +55,26 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - e6ac1941-faee-493f-984c-c2274ee97992
+      - fc2508db-c0e9-4d45-8649-f743cf637a4d
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - __cf_bm=dwpk4ZDb7rarp01R5Is2.n4t.82lX8XJMnzewm1WTz8-1757080922-1.0.1.1-78fywjFmbe_hwAYRyazL1Gs6l15lWdolakQUWmRVVypGHweaIQ0WiYhvCSufvdJClUvx21aAl.WSXLo8p7aeoj3hCH4O1XwQ25xJnKw0n1A;
-        path=/; expires=Fri, 05-Sep-25 14:32:02 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=WjvsI.ducv1wUAXLG0j2rDkaEQ_WfUSCz3NLKSzuHGI-1757080922690-0.0.1.1-604800000;
-        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      - "[REDACTED]"
+      - "[REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4664VWYCUR2%2F20250905%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250905T140202Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJIMEYCIQCvCBakkcB5%2F26FVW8mWXJfnbCALG2MdztlgMyfaSgNxgIhAIWWouKnOFOF2vMcuMNtNwfVNmAdX6fQkSLOSYEcSoX%2BKv8DCHYQABoMNjM3NDIzMTgzODA1IgwvaxO7CKZ6GrY8a3Mq3ANC3pAMqA%2B8dyPWBez6l6JgByMXOyWPVJHVpOx8XH6qjle2EMogsespQcKa31cWGw4T3K8zQwUyfB2LLeAfL6Yw1m%2FZZAz8J7jE4RXXvND%2FHdfYqwP6ZxG%2Bx7W8R%2Bhc%2FUeiMzsHEE8vvNiYvPloJM%2FxEqljNdyT5YgtKEkj4Extd5AuPpuxfRXE6Q8iakw1rIF9574rw%2FiOmC%2Blijo1Z0wPzCxCTX%2BykSkPPrFwRo1vQzpVWvZzM4ZTLgNvFJq%2BRWEFJIv%2FkC0Z1pbE0G7GWgLvUqDg8NXsaowH2ZhlcDmiBTH4LTRRfl5vv7JxL2CT0U2cZECg98apm529u4d5hshAsFyAagMOP1lzkfNbMqO%2FE9CFH831pP8wGWXYQFA%2Fiw7sx%2FhoHyNX7rvIJTmFgXukk9xZPi6sOIfmKosEO6%2B51kabOqx5sHSuk%2FKZ6azrwByn4Komi418YL%2FgZGQykmrr7bSQTaEJyFdAoeZqkCMWlADAMFX1lkds4h%2FZYnHTonepD%2B4EkSynMelzrrJ%2B3tShjcwA6RvO5yQlwTwnVBkVnhch3GLMCXsp8AKvysfiW7Pl08UiKU10gmNU5Rq%2FLlk5%2BMiAAdSfJ%2B%2B2teJvef0RHUiOJF0EGqfvcGoiwDDttuvFBjqkAQybECSNCNDXbCzVPefb5%2BYsXDZkme0UywwQzyfyiWcAp5pIoe5dDyCZeF6x9h9yq8xmtj3t8TqSRkiSGfpH0B1PFSZICT%2F7XsSX3hTTzly6GsKDG0g0PXbP74EgFFVtn16BIqBiCnf7vTaq%2BPxt%2Ffp5wU2fUxQmLGxnv9ndIp948J3EryDiBEMuw%2BVbjISYkNloBhaauLRHH1ynx0M4C7cBrDqa&X-Amz-Signature=3e97ba8ae734b49bd3eb91714de9c9c9e77cf523fc9cb114c4356c882dc2f5f2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-05T15:02:02.582Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
+      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UEMPK5HI%2F20250906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250906T060319Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMiJHMEUCIH3BvM87nUFfO%2FuVb9yFnYvpi8rLVU4jiApHWcJslqZEAiEArpgMHUmDUSwY0AtIIMWaLHlre%2Fh4K3hb%2FZsFsTGBv1kqiAQIh%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPEQrPD7kxwyCR%2BSIircA31wm2gBia27vj8UajBe4d0%2BXtjBuPObKDvPMw3gBJmqTl7xsjZ0PUI%2FRq2Abv%2Bgq4lM6Oj%2Bmzs48opSEHL78T1kXSzpqJ6zT%2B8al24NDonE0liBXJ4e9QwzzRo9FNrAukAtJrIvhW1uOE%2BXnkWKxzd4KlH5dmKlAFvplpgfSHtrB%2F58v4ixzmG5XfoSBACqQLGzNdL7sEwc2bI7o7DrRqT2pSulUMc2T6BH18yfGxRU8yBE2ZmaXQ8ygYGVDiKtSgziBkXKNKQ617beenACBnpSfHS%2FtVn5yCfNn9SS5%2FjkVHp3xYvYUm45u3nonj81ckdi9xTRUoTHduxyKoRca3LaUHJNpGi0yqY4zibQSDxV5m0YF6ECVPwZpb9T%2Bus1CDFE%2BGtOHclDyJ9XbAE2ucPxZfrOuNQRcMC%2BIN2O4Sjvcwb4bao2BSAWp6rV26PrBqPlI%2FZXqXnOK7Fkl51ALSy2n81bLBD97We4T%2BHFj8uciwrDxA6Fps7EyED8i%2FoyqcyuWhZ9DhoSbk4IcElUOIAdgwLrcH6J8dHSk15%2FiPXvexbtADPNE8aEFf93de4p4ARmeV9HXAgaGkzHnfNtVPRNOJAiUtnfhfoQxS%2FcCS4YWrbsELq%2FFzBaw5Q4MPyM78UGOqUBA3hmrOAfTMHuHBJAkrtMclQrQ5QK2SB1ZxPxDMJmh66GfT1VbFIpsj7aYkrACZZ0mE7rs5QNsqaYxgSZwVUr9s%2BbOlq22euBOE5JjIEwb6gnGDOhlxhr1A4jDQhCtkoSOPIZIMHZYx2HkC%2BtmIyrjlvYjp7Sinq%2FIlN1T2Lu9Gzo9Uzr4E4rBmHhqAOVS5bqcxccVnhgY5vNYUaNx8CUHy8rXooE&X-Amz-Signature=6f1a99510c40b547dc110fe5fc4664b794a7cbd122b33a7b13de4148602e2779&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-06T07:03:19.701Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
         date":{"id":"%3A%7BfH","type":"date","date":null},"Multi Select":{"id":"%3C%7Bn%7B","type":"multi_select","multi_select":[]},"Select":{"id":"%3EzjF","type":"select","select":{"id":"fa788fbc-176b-49cb-be2e-552cc985cf7c","name":"select1","color":"yellow"}},"date
         with time":{"id":"CUEj","type":"date","date":null},"Person":{"id":"TFSp","type":"people","people":[]},"Date":{"id":"T~YB","type":"date","date":null},"Tags":{"id":"UT%3Fx","type":"multi_select","multi_select":[{"id":"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8","name":"tag1","color":"green"},{"id":"83961a4e-e3a8-442d-8b47-6a2e43bacd85","name":"tag2","color":"gray"}]},"Numbers":{"id":"a~dg","type":"number","number":null},"Rich
         Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
         rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Page
         2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Page
-        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"e6ac1941-faee-493f-984c-c2274ee97992"}'
-  recorded_at: Fri, 05 Sep 2025 14:01:40 GMT
+        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"fc2508db-c0e9-4d45-8649-f743cf637a4d"}'
+  recorded_at: Sat, 06 Sep 2025 06:02:55 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/0b8c4501209246c1b800529623746afc/children
@@ -101,7 +98,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 Sep 2025 14:02:03 GMT
+      - Sat, 06 Sep 2025 06:03:20 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -111,11 +108,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97a6431748c3c84f-MRS
+      - 97abc3392b70e181-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"313f-qiP7niqgHmH2ijQmeJUTCf7r98M"
+      - W/"313f-auf7TO4kcdQVkcKCXzanNTpJUEE"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -133,17 +130,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - e7f1fd57-c921-4ca7-8ae5-47c0d2680e65
+      - f6521586-ae98-4d37-9d09-de55fd95473b
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - __cf_bm=iEELDTPmvOovZt0dj_wVGRgfPao2d_18DVROHuq96iw-1757080923-1.0.1.1-BnBqt8_arKt.zFh.X8AyQ5qmuB21CAayTdUqLYf7Szs9OWKpXWkuxfZjnH5dqQB3k_qg7cVN9i3LnsxYA8fsvbuJENVrn_1Qf0UOuJ2kPQg;
-        path=/; expires=Fri, 05-Sep-25 14:32:03 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=8PyktQgR2K3CpB.GfLoEwlSnYaqOo34naiCgexosdIM-1757080923097-0.0.1.1-604800000;
-        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      - "[REDACTED]"
+      - "[REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -232,8 +226,8 @@ http_interactions:
         sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
         at felis eget congue.","href":null}],"color":"default"}},{"object":"block","id":"94d71b49-49d4-4427-a348-35ba175459db","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-03-05T23:49:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"la
         ncncsalmclasm cl;a ca a","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"la
-        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"e7f1fd57-c921-4ca7-8ae5-47c0d2680e65"}'
-  recorded_at: Fri, 05 Sep 2025 14:01:40 GMT
+        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"f6521586-ae98-4d37-9d09-de55fd95473b"}'
+  recorded_at: Sat, 06 Sep 2025 06:02:55 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/pages/0b8c4501-2092-46c1-b800-529623746afc
@@ -257,7 +251,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 Sep 2025 14:02:23 GMT
+      - Sat, 06 Sep 2025 06:03:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -267,11 +261,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97a643949b326e65-MRS
+      - 97abc3874e8c1a5e-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"e45-g2xWwDJWrdbxGXWA3UyLi2OPGNQ"
+      - W/"e63-a7+ksRhFS2Qs17m2VNVFSPeWnUY"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -289,29 +283,26 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 5f1c40f1-93aa-406c-9313-bdd9fe2283f3
+      - 8581dc4e-e961-4424-a06c-7bc02ce37351
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - __cf_bm=TcrT5w2MejAH9.FIdsMkH9.kvVBk_hxVTUvpUTPhhFk-1757080943-1.0.1.1-jgzUTTFpTocQdZDKpjc5u0SdDGyhVHr3CmtXmcwdToQBhBWhL2YYsBJa8CaZwFqHkYAW6oRSIARPfSrdSLjllpI2Fxj46_9LjHvoXBF2wDA;
-        path=/; expires=Fri, 05-Sep-25 14:32:23 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=qCE70sg7EDDKCTaBQUjD4Sby54SARVPQ1Buw8aC7QbY-1757080943247-0.0.1.1-604800000;
-        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      - "[REDACTED]"
+      - "[REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
-      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4662PJCOSRA%2F20250905%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250905T140223Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEA0aCXVzLXdlc3QtMiJHMEUCIQDKokRpbK0jXYXfSUUgiDbLKMhpIPt%2B37Ro4tDfbt0IhgIgUexpwQ76HWZb%2BR%2B7zwjP8DS19ApP7tORneEJ5DiUOBMq%2FwMIdhAAGgw2Mzc0MjMxODM4MDUiDONex6I0X1js5w4ewCrcAyzF6hpuE%2FVDB%2BqAJ%2B6BKDm34l5URrKktkqq%2B%2FMocUlOvBacRW9jgAM9tJGCQJw8eYxLkf0twYWg3rjp14WejjR0MSu0ZpH10pT6Q5FNO91dSb%2Bm2Dz8IlX67XdtwjAZ4QmlTUsifUQ5sKOreBHP82eLsxfRRDu4WuX2YBoaFG2KfyHi4jVTJEKuvh60biXBxPdxPeDNsfDlKvkL1WSP4J%2FXEN5TKUR9seKpVqQUrsv2o9d7O7FmOZpHwsgvdpZHYNTLTg27ioeVVF%2BEzBfDXWLDy58xBFFQ8M%2Fj0bMyUSWVXjPrGa2gviGzHx9zXB%2FokBwcxsFNttwEwFW4S%2FMq4Bv7Q1rBQ3%2BtS2b9HLMxkHxAusJ2PqeHyfBUP1SiCwpiJ0VoRGTd9qkkpOnjeWBJ66BbNey%2Fh3ljJ29UnTqamBnY%2BDZiKL%2FNRUs7RV9WDF260ONKebw540orz7By1oil5tuTtHQyBFUKv7dIuoPmDDOiQWdchjNZa%2FjCJ6INxsWNp4r02i8Oygsr3kH4bZnYNRWJ01Q%2BS1Izxet8oXtGZGk19qZj5rpefFd%2F%2BEsBWinuwuPxZJbwHO0lblGP8Roa71R7Y39kxbR33SbpPKSkHJs0XxGSVseu5atywHMiMO2268UGOqUBihkatlONddo7kxUfr%2BvBWQ2PYKvI5LLL3XFLIr9rjLAE7neDSqm9L5HT9Kzd565rQ3r6lP%2FLrFojWzBAUgQ%2BLc%2BlWua86lNd9I8NvPUlZx0%2B7qD3GC%2BXMF7eNXdLZMBKhzMFYjCCfLpd0yEJ5N7QJb6aRsIYOtjeagd7Jw6FMhYRbJbGlNZeyQsKKMo%2BUjUks3%2FY59rYWmQEFKBLRUXpYCD%2FgdRl&X-Amz-Signature=c3b33a640f1500ed5f0e1b318c1c3b13725298bf15e352f64369a59113248167&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-05T15:02:23.152Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
+      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XRYREFZ7%2F20250906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250906T060332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMiJHMEUCIFrjgpygDQWmVB21%2BpsuJpchkl7hT3QKQC70kdxRxlKvAiEA2DXrspY9BS0HrAPNE%2BVAHzW4THSYWjXOX2n9pkj5J%2F0qiAQIh%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDFZ%2FqHK%2FD8QJVLjByircA0Hhpmivm6JXQ5OxGX1XZmuMVZeESUyuqUpYf6lJ%2FMiByiXPUlkpvve4C9KzeegUltejq%2Fgm2HbT%2FuX3PQS%2FhPe26zlNHQPNmQGMxNkX3bAruJv%2BJaLo6i%2FfASzSV5erYrMihl6o7GkZu2haM0gdc2R3MDKJ6TEicCwuo0rivQp5d2fvdB6P5F89%2BdYwUUC1s1AkC1jpD4IUhOOojiOwitx81FRaowQ1jIjaPyTKjHetzUxX95Zd7nIx29pQ5%2FVg4U1zRnfBNYFsGcoEfsYOsGR56hZ7qGU0wPDY8hBEPcaLKAqFeHCR%2F5WHCMMNIRNMA7yMN%2BY9wdxqwyFOEMlgzapJN1A8WeUMydtTxbS09b1oeDI3Wg0N1%2BV50sVdIpVk%2BV6cSjp%2FtRstLZO3DcKMlkcITJoErDm4JhQXu4K0hUkw%2Bg%2BBaTq59GduTbsP9HxfgqLk5UZnI%2BVSReFSvs2Xs0JtwTQOY15T26N6BsT6cFO2XtQyYvezlL0acQVX8IQFN%2ByLflnQuXQ%2BSJpYRXjuME1DcXaN4w3HKPW4B8pT%2Fzmp5WgKhoCAH99jFKN%2BtVVh6G50az6gmM21RPcXDfoOZ84HeEfzpNbznDEB4qCFs7xMwUUWC%2FOSjjkfdhceMP6M78UGOqUBwcBLMCL18ezWioG4Bd5mmCPtHsydUmTGkbAIgmsg0PC2h1HzV7AFPEyh%2BaXqxtS0UHi%2BJYPDBqmAyAc24dZx5WhrwgKBSArBplwbeULZ1H8m96YZPvIaqNzzB8e3fzExzIR50Uo2Qwi%2FOtJywrcNLqePx7kP6xSCrhDGSNKR%2BZtWfhEnaQIkPAonuptn9HIXnb0e3Eo9quI78fU4KcNFAJyeNfS8&X-Amz-Signature=28ba03087b672c9d432a4bca6e98f6d6c84d50e00f828c6bc0f47b1ce8732fca&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-06T07:03:32.890Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
         date":{"id":"%3A%7BfH","type":"date","date":null},"Multi Select":{"id":"%3C%7Bn%7B","type":"multi_select","multi_select":[]},"Select":{"id":"%3EzjF","type":"select","select":{"id":"fa788fbc-176b-49cb-be2e-552cc985cf7c","name":"select1","color":"yellow"}},"date
         with time":{"id":"CUEj","type":"date","date":null},"Person":{"id":"TFSp","type":"people","people":[]},"Date":{"id":"T~YB","type":"date","date":null},"Tags":{"id":"UT%3Fx","type":"multi_select","multi_select":[{"id":"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8","name":"tag1","color":"green"},{"id":"83961a4e-e3a8-442d-8b47-6a2e43bacd85","name":"tag2","color":"gray"}]},"Numbers":{"id":"a~dg","type":"number","number":null},"Rich
         Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
         rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Page
         2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Page
-        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"5f1c40f1-93aa-406c-9313-bdd9fe2283f3"}'
-  recorded_at: Fri, 05 Sep 2025 14:02:00 GMT
+        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"8581dc4e-e961-4424-a06c-7bc02ce37351"}'
+  recorded_at: Sat, 06 Sep 2025 06:03:08 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/0b8c4501-2092-46c1-b800-529623746afc/children
@@ -335,7 +326,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 05 Sep 2025 14:02:23 GMT
+      - Sat, 06 Sep 2025 06:03:34 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -345,11 +336,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97a64397c924e169-MRS
+      - 97abc38b7f7ae1a2-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"313f-DiLADzFurzt/tjpK+DOSBq5W7yM"
+      - W/"313f-L5YxoV1/4YnvM/8sbcjUzSSNaUc"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -367,17 +358,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 79e2e93e-8338-4530-a33c-f1f74c60e1d0
+      - 903e3f11-d872-4539-a307-632947fb017c
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - __cf_bm=cRpIMx5ogGBOCLwDxNRj_EdWFKYPfptcCF5jm3qY6JI-1757080943-1.0.1.1-FaytziclXfKsQzmIXpOfkJuj2EzgoWG4WyDbGf6O1mqFPUkzmwX79SkuNLwZpOrEzEfjAo0YlD47_4HOSwxC1rLfaPU3n7qr2apBWn5xLlU;
-        path=/; expires=Fri, 05-Sep-25 14:32:23 GMT; domain=.notion.com; HttpOnly;
-        Secure; SameSite=None
-      - _cfuvid=gIViTYReW5b5Ps4JhPauFcxNd7_yJ0_yaN722raxc3I-1757080943652-0.0.1.1-604800000;
-        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      - "[REDACTED]"
+      - "[REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -466,6 +454,6 @@ http_interactions:
         sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
         at felis eget congue.","href":null}],"color":"default"}},{"object":"block","id":"94d71b49-49d4-4427-a348-35ba175459db","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-03-05T23:49:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"la
         ncncsalmclasm cl;a ca a","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"la
-        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"79e2e93e-8338-4530-a33c-f1f74c60e1d0"}'
-  recorded_at: Fri, 05 Sep 2025 14:02:00 GMT
+        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"903e3f11-d872-4539-a307-632947fb017c"}'
+  recorded_at: Sat, 06 Sep 2025 06:03:09 GMT
 recorded_with: VCR 6.3.1
