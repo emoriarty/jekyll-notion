@@ -26,7 +26,7 @@ module JekyllNotion
       # Initialize a new generator instance.
       #
       # @param config [Hash] Configuration hash for the generator
-      # @param site [Jekyll::Site] The Jekyll site instance  
+      # @param site [Jekyll::Site] The Jekyll site instance
       # @param notion_pages [Array<NotionToMd::Page>] Array of Notion pages to process
       def initialize(config:, site:, notion_pages:)
         @notion_pages = notion_pages

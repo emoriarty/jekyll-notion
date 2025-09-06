@@ -22,7 +22,7 @@ module GoldenHelper
 
   # @param document => JekyllNotion::DocumentWithoutAFile
   def expect_to_match_document(document)
-    golden_name = "#{document.basename_without_ext}.#{document.output_ext}"
+    golden_name = "#{document.basename_without_ext}#{document.output_ext}"
 
     expect_to_match_golden_file(document.output, golden_name)
   end
