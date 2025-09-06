@@ -26,9 +26,9 @@ end
 
 RSpec.shared_examples "a collection is renderded correctly" do |collection_name|
   it "imports database and generates documents" do
-    raise "The `#{collection_name}` collection is empty" if site.send(collection_name.to_sym).empty?
+    raise "The `#{collection_name}` collection is empty" if site.collections[collection_name].empty?
 
-    site.send(collection_name.to_sym).each do |document|
+    site.collections[collection_name].each do |document|
       expect_to_match_document(document)
     end
   end

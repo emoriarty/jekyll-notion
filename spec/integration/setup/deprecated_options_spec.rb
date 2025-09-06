@@ -10,7 +10,7 @@ RSpec.describe "Setup: deprecated options" do
   before do
     allow(Jekyll.logger).to receive(:warn)
 
-    VCR.use_cassette("setup/deprecated_options") { build! }
+    VCR.use_cassette("notion_database") { build! }
   end
 
   context "with fetch_on_watch" do

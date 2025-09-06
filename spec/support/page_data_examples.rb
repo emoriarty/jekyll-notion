@@ -78,3 +78,32 @@ RSpec.shared_examples "a jekyll data object" do |data_name|
     expect(site.data[data_name]["content"]).to include("Lorem ipsum")
   end
 end
+
+RSpec.shared_examples "a jekyll data array" do |data_name|
+  it "stores data as an array" do
+    expect(site.data[data_name]).to be_an(Array)
+    expect(site.data[data_name].size).to be > 0
+  end
+
+  it "contains entries with content property" do
+    site.data[data_name].each do |entry|
+      expect(entry).to have_key("content")
+      expect(entry).to have_key("title")
+    end
+  end
+
+  it "contains entries with common database properties" do
+    site.data[data_name].each do |entry|
+      expect(entry).to have_key("created_time")
+      expect(entry).to have_key("last_edited_time")
+    end
+  end
+
+  it "contains entries with various property types" do
+    all_entries = site.data[data_name]
+    property_types = all_entries.flat_map(&:keys).uniq
+
+    # Database typically contains various property types
+    expect(property_types).to include("title", "content")
+  end
+end
