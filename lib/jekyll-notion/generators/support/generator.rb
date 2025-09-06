@@ -5,20 +5,19 @@ module JekyllNotion
     module Support
       class Generator
         class << self
-          def call(config:, site:, plugin:, notion_pages:)
-            new(:config => config, :site => site, :plugin => plugin,
+          def call(config:, site:, notion_pages:)
+            new(:config => config, :site => site,
                 :notion_pages => notion_pages).call
           end
         end
 
-        def initialize(config:, site:, plugin:, notion_pages:)
+        def initialize(config:, site:, notion_pages:)
           @notion_pages = notion_pages
           @config = config
           @site = site
-          @plugin = plugin
         end
 
-        attr_reader :config, :notion_pages, :site, :plugin
+        attr_reader :config, :notion_pages, :site
       end
     end
   end
