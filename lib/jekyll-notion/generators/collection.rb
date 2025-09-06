@@ -6,9 +6,9 @@ module JekyllNotion
       def call
         if config["data"].nil?
           notion_pages.each { |notion_page| generate_document(notion_page) }
-          plugin_collection = site_collection
         else
-          DataGenerator.call(notion_pages.pages)
+          Data.call(:config => config, :site => site,
+                    :notion_pages => notion_pages)
         end
       end
 
@@ -26,10 +26,6 @@ module JekyllNotion
 
       def site_collection
         @site.collections[collection_name]
-      end
-
-      def plugin_collection
-        @plugin.collections[collection_name]
       end
 
       # Checks if a file already exists in the site source

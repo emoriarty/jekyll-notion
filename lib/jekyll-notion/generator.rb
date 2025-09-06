@@ -30,18 +30,6 @@ module JekyllNotion
       config["pages"] || []
     end
 
-    def collections
-      @collections ||= {}
-    end
-
-    def data
-      @data ||= {}
-    end
-
-    def pages
-      @pages ||= []
-    end
-
     protected
 
     def import_notion_databases
@@ -50,7 +38,7 @@ module JekyllNotion
 
         notion_database = NotionToMd::Database.call(:id => db_config["id"],
                                                     :notion_client => @notion_client, :filter => db_config["filter"], :sorts => db_config["sorts"], :frontmatter => true)
-        Generators::Collection.call(:config => db_config, :site => @site, :plugin => self,
+        Generators::Collection.call(:config => db_config, :site => @site,
                                     :notion_pages => notion_database.pages)
       end
     end
@@ -61,7 +49,7 @@ module JekyllNotion
 
         notion_page = NotionToMd::Page.call(:id => page_config["id"], :notion_client => @notion_client,
                                             :frontmatter => true)
-        Generators::Page.call(:config => page_config, :site => @site, :plugin => self,
+        Generators::Page.call(:config => page_config, :site => @site,
                               :notion_pages => [notion_page])
       end
     end

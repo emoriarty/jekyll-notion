@@ -12,8 +12,6 @@ module JekyllNotion
                  end
 
         @site.data[config["data"]] = data
-        # Caching current data in Generator instance (plugin)
-        @plugin.data[config["data"]] = data
 
         log_data(data)
       end
