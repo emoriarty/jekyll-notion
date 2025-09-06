@@ -2,7 +2,7 @@
 
 module JekyllNotion
   module Generators
-    class Data < Support::Generator
+    class Data < Generator
       # pages => Array of NotionToMd::Page
       def call
         data ||= if notion_pages.size > 1

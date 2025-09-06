@@ -7,7 +7,7 @@ RSpec.describe "Pages: duplicate page declarations" do
   let(:config) do
     Jekyll.configuration(
       "source"      => SOURCE_DIR,
-      "destination" => DEST_TMP_DIR,
+      "destination" => DEST_DIR,
       "notion"      => {
         "pages" => [
           { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" },
@@ -41,7 +41,7 @@ RSpec.describe "Pages: duplicate page declarations" do
     let(:config) do
       Jekyll.configuration(
         "source"      => SOURCE_DIR,
-        "destination" => DEST_TMP_DIR,
+        "destination" => DEST_DIR,
         "notion"      => {
           "pages" => [
             { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3", "data" => "page_1" },

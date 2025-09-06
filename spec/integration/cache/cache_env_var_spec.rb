@@ -8,7 +8,7 @@ RSpec.describe "Caching: JEKYLL_NOTION_CACHE" do
   let(:config) do
     Jekyll.configuration(
       "source"      => SOURCE_DIR,
-      "destination" => DEST_TMP_DIR,
+      "destination" => DEST_DIR,
       "notion"      => {
         "cache_dir" => cache_dir,
         "pages"     => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }],

@@ -10,6 +10,7 @@ require "fileutils"
 
 SimpleCov.start do
   enable_coverage :branch
+  add_filter "spec/"
 end
 
 ENV["JEKYLL_ENV"] = "test"
@@ -21,14 +22,14 @@ VCR.configure do |config|
   config.hook_into :webmock
 
   # Redact the Notion token from the VCR cassettes
-  config.filter_sensitive_data('[REDACTED]') do |interaction|
-    interaction.request.headers['Authorization']&.first
+  config.filter_sensitive_data("[REDACTED]") do |interaction|
+    interaction.request.headers["Authorization"]&.first
   end
 
   # Redact cookies from the VCR cassettes
   config.before_record do |interaction|
-    if interaction.response.headers['Set-Cookie']
-      interaction.response.headers['Set-Cookie'].map! { |cookie| '[REDACTED]' }
+    if interaction.response.headers["Set-Cookie"]
+      interaction.response.headers["Set-Cookie"].map! { |_cookie| "[REDACTED]" }
     end
   end
 
@@ -52,10 +53,5 @@ RSpec.configure do |config|
 
   SOURCE_DIR = File.expand_path("fixtures/my_site", __dir__)
   SOURCE_DIR_2 = File.expand_path("fixtures/my_site_2", __dir__)
-  DEST_DIR = File.expand_path("dest", __dir__)
-  DEST_TMP_DIR = Dir.mktmpdir("jekyll-dest-")
-
-  def dest_dir(*files)
-    File.join(DEST_DIR, *files)
-  end
+  DEST_DIR = Dir.mktmpdir("jekyll-site")
 end

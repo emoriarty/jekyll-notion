@@ -5,8 +5,6 @@ require "spec_helper"
 RSpec.describe "Setup: deprecated options" do
   subject(:build!) { site.process }
 
-  let(:source_dir) { SOURCE_DIR }
-  let(:dest_dir)   { DEST_TMP_DIR }
   let(:site)       { Jekyll::Site.new(config) }
 
   before do
@@ -18,8 +16,8 @@ RSpec.describe "Setup: deprecated options" do
   context "with fetch_on_watch" do
     let(:config) do
       Jekyll.configuration(
-        "source"      => source_dir,
-        "destination" => dest_dir,
+        "source"      => SOURCE_DIR,
+        "destination" => DEST_DIR,
         "notion"      => {
           "fetch_on_watch" => false, # deprecated
           "databases"      => [{ "id" => "1ae33dd5f3314402948069517fa40ae2" }],
@@ -42,8 +40,8 @@ RSpec.describe "Setup: deprecated options" do
   context "with database" do
     let(:config) do
       Jekyll.configuration(
-        "source"      => source_dir,
-        "destination" => dest_dir,
+        "source"      => SOURCE_DIR,
+        "destination" => DEST_DIR,
         "notion"      => {
           "database" => [{ "id" => "1ae33dd5f3314402948069517fa40ae2" }], # deprecated
           "pages"    => [{ "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }],
@@ -65,8 +63,8 @@ RSpec.describe "Setup: deprecated options" do
   context "with page" do
     let(:config) do
       Jekyll.configuration(
-        "source"      => source_dir,
-        "destination" => dest_dir,
+        "source"      => SOURCE_DIR,
+        "destination" => DEST_DIR,
         "notion"      => {
           "databases" => [{ "id" => "1ae33dd5f3314402948069517fa40ae2" }],
           "page"      => { "id" => "9dc17c9c-9d2e-469d-bbf0-f9648f3288d3" }, # deprecated

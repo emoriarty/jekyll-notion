@@ -2,7 +2,7 @@
 
 module JekyllNotion
   module Generators
-    class Page < Support::Generator
+    class Page < Generator
       def call
         if config["data"].nil?
           notion_pages.each { |notion_page| generate_page(notion_page) }
