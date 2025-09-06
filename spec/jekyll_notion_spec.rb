@@ -8,7 +8,7 @@ describe(JekyllNotion) do
     Jekyll.configuration({
       "full_rebuild" => true,
       "source"       => source_dir,
-      "destination"  => dest_dir,
+      "destination"  => DEST_DIR,
       "show_drafts"  => false,
       "url"          => "http://example.org",
       "name"         => "My site",
