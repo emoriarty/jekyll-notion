@@ -21,7 +21,7 @@ RSpec.describe "Setup: missing NOTION_TOKEN" do
     allow(Jekyll.logger).to receive(:warn)
     allow(ENV).to receive(:[]).with("NOTION_TOKEN").and_return(notion_token)
 
-    VCR.use_cassette("setup/missing_token") { site.process }
+    site.process
   end
 
   it_behaves_like "skips import"

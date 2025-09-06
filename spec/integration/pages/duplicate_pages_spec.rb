@@ -20,7 +20,7 @@ RSpec.describe "Pages: duplicate page declarations" do
   before do
     allow(Jekyll.logger).to receive(:warn)
 
-    VCR.use_cassette("pages/duplicate_pages") { site.process }
+    site.process
   end
 
   it_behaves_like "a page is rendered correctly", "Page 1"
