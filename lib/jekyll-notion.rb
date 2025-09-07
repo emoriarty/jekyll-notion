@@ -20,6 +20,7 @@ module JekyllNotion
 
   module Generators
     autoload :Generator, "jekyll-notion/generators/generator"
+    autoload :Collectionable, "jekyll-notion/generators/collectionable"
     autoload :Data, "jekyll-notion/generators/data"
     autoload :Page, "jekyll-notion/generators/page"
     autoload :Collection, "jekyll-notion/generators/collection"

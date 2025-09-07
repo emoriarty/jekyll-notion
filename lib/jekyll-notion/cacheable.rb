@@ -12,6 +12,17 @@ module JekyllNotion
       def configure(cache_dir:, cache_enabled:)
         @cache_dir = cache_dir
         @cache_enabled = cache_enabled
+
+        VCR.configure do |config|
+          config.cassette_library_dir = self.cache_dir
+          config.hook_into :faraday # Faraday is used by notion-ruby-client gem
+          config.filter_sensitive_data("<REDACTED>") { ENV.fetch("NOTION_TOKEN", nil) }
+          config.allow_http_connections_when_no_cassette = true
+          config.default_cassette_options = {
+            :allow_playback_repeats => true,
+            :record                 => :new_episodes,
+          }
+        end
       end
 
       def cache_dir
