@@ -2,234 +2,6 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.notion.com/v1/pages/0b8c4501209246c1b800529623746afc
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json; charset=utf-8
-      User-Agent:
-      - Notion Ruby Client/1.2.2
-      Authorization:
-      - "[REDACTED]"
-      Notion-Version:
-      - '2022-02-22'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 06 Sep 2025 06:03:19 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 97abc333be5ce1ae-MRS
-      Cf-Cache-Status:
-      - DYNAMIC
-      Etag:
-      - W/"e59-8H2TKW/vs3/i/wz+RmCehUNJeqg"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Vary:
-      - Accept-Encoding
-      Content-Security-Policy:
-      - default-src 'none'
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Content-Type-Options:
-      - nosniff
-      X-Dns-Prefetch-Control:
-      - 'off'
-      X-Download-Options:
-      - noopen
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Notion-Request-Id:
-      - fc2508db-c0e9-4d45-8649-f743cf637a4d
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      X-Xss-Protection:
-      - '0'
-      Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466UEMPK5HI%2F20250906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250906T060319Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMiJHMEUCIH3BvM87nUFfO%2FuVb9yFnYvpi8rLVU4jiApHWcJslqZEAiEArpgMHUmDUSwY0AtIIMWaLHlre%2Fh4K3hb%2FZsFsTGBv1kqiAQIh%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDPEQrPD7kxwyCR%2BSIircA31wm2gBia27vj8UajBe4d0%2BXtjBuPObKDvPMw3gBJmqTl7xsjZ0PUI%2FRq2Abv%2Bgq4lM6Oj%2Bmzs48opSEHL78T1kXSzpqJ6zT%2B8al24NDonE0liBXJ4e9QwzzRo9FNrAukAtJrIvhW1uOE%2BXnkWKxzd4KlH5dmKlAFvplpgfSHtrB%2F58v4ixzmG5XfoSBACqQLGzNdL7sEwc2bI7o7DrRqT2pSulUMc2T6BH18yfGxRU8yBE2ZmaXQ8ygYGVDiKtSgziBkXKNKQ617beenACBnpSfHS%2FtVn5yCfNn9SS5%2FjkVHp3xYvYUm45u3nonj81ckdi9xTRUoTHduxyKoRca3LaUHJNpGi0yqY4zibQSDxV5m0YF6ECVPwZpb9T%2Bus1CDFE%2BGtOHclDyJ9XbAE2ucPxZfrOuNQRcMC%2BIN2O4Sjvcwb4bao2BSAWp6rV26PrBqPlI%2FZXqXnOK7Fkl51ALSy2n81bLBD97We4T%2BHFj8uciwrDxA6Fps7EyED8i%2FoyqcyuWhZ9DhoSbk4IcElUOIAdgwLrcH6J8dHSk15%2FiPXvexbtADPNE8aEFf93de4p4ARmeV9HXAgaGkzHnfNtVPRNOJAiUtnfhfoQxS%2FcCS4YWrbsELq%2FFzBaw5Q4MPyM78UGOqUBA3hmrOAfTMHuHBJAkrtMclQrQ5QK2SB1ZxPxDMJmh66GfT1VbFIpsj7aYkrACZZ0mE7rs5QNsqaYxgSZwVUr9s%2BbOlq22euBOE5JjIEwb6gnGDOhlxhr1A4jDQhCtkoSOPIZIMHZYx2HkC%2BtmIyrjlvYjp7Sinq%2FIlN1T2Lu9Gzo9Uzr4E4rBmHhqAOVS5bqcxccVnhgY5vNYUaNx8CUHy8rXooE&X-Amz-Signature=6f1a99510c40b547dc110fe5fc4664b794a7cbd122b33a7b13de4148602e2779&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-06T07:03:19.701Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
-        date":{"id":"%3A%7BfH","type":"date","date":null},"Multi Select":{"id":"%3C%7Bn%7B","type":"multi_select","multi_select":[]},"Select":{"id":"%3EzjF","type":"select","select":{"id":"fa788fbc-176b-49cb-be2e-552cc985cf7c","name":"select1","color":"yellow"}},"date
-        with time":{"id":"CUEj","type":"date","date":null},"Person":{"id":"TFSp","type":"people","people":[]},"Date":{"id":"T~YB","type":"date","date":null},"Tags":{"id":"UT%3Fx","type":"multi_select","multi_select":[{"id":"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8","name":"tag1","color":"green"},{"id":"83961a4e-e3a8-442d-8b47-6a2e43bacd85","name":"tag2","color":"gray"}]},"Numbers":{"id":"a~dg","type":"number","number":null},"Rich
-        Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
-        rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Page
-        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Page
-        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"fc2508db-c0e9-4d45-8649-f743cf637a4d"}'
-  recorded_at: Sat, 06 Sep 2025 06:02:55 GMT
-- request:
-    method: get
-    uri: https://api.notion.com/v1/blocks/0b8c4501209246c1b800529623746afc/children
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      Accept:
-      - application/json; charset=utf-8
-      User-Agent:
-      - Notion Ruby Client/1.2.2
-      Authorization:
-      - "[REDACTED]"
-      Notion-Version:
-      - '2022-02-22'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Sat, 06 Sep 2025 06:03:20 GMT
-      Content-Type:
-      - application/json; charset=utf-8
-      Transfer-Encoding:
-      - chunked
-      Connection:
-      - keep-alive
-      Server:
-      - cloudflare
-      Cf-Ray:
-      - 97abc3392b70e181-MRS
-      Cf-Cache-Status:
-      - DYNAMIC
-      Etag:
-      - W/"313f-auf7TO4kcdQVkcKCXzanNTpJUEE"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-      Vary:
-      - Accept-Encoding
-      Content-Security-Policy:
-      - default-src 'none'
-      Referrer-Policy:
-      - strict-origin-when-cross-origin
-      X-Content-Type-Options:
-      - nosniff
-      X-Dns-Prefetch-Control:
-      - 'off'
-      X-Download-Options:
-      - noopen
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Notion-Request-Id:
-      - f6521586-ae98-4d37-9d09-de55fd95473b
-      X-Permitted-Cross-Domain-Policies:
-      - none
-      X-Xss-Protection:
-      - '0'
-      Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
-      Alt-Svc:
-      - h3=":443"; ma=86400
-    body:
-      encoding: ASCII-8BIT
-      string: '{"object":"list","results":[{"object":"block","id":"a783039e-6939-4375-9b41-082b373ee17f","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:02:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"table_of_contents","table_of_contents":{"color":"gray"}},{"object":"block","id":"8565a6f7-b99b-4c2d-b276-8113bf1306d5","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_1","heading_1":{"rich_text":[{"type":"text","text":{"content":"Heading
-        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
-        1","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"c0ad42f1-cd91-4dc7-879e-128f4598254d","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-02-05T16:29:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus semper risus,
-        non iaculis nisi. Praesent ut magna auctor, consequat metus in, hendrerit
-        ligula. Maecenas sagittis pulvinar metus, ut blandit ex tincidunt quis. Quisque
-        ullamcorper urna sapien, vitae malesuada libero auctor eget. Etiam eu neque
-        tellus. Nam et purus at orci aliquam malesuada non a libero. Vivamus at condimentum
-        dolor. Duis blandit tincidunt quam, quis pellentesque tellus auctor in. Praesent
-        vel ligula felis. Ut pellentesque scelerisque metus vitae vehicula. Vivamus
-        lacinia rhoncus maximus. Duis id ligula et ex suscipit tincidunt.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus semper risus,
-        non iaculis nisi. Praesent ut magna auctor, consequat metus in, hendrerit
-        ligula. Maecenas sagittis pulvinar metus, ut blandit ex tincidunt quis. Quisque
-        ullamcorper urna sapien, vitae malesuada libero auctor eget. Etiam eu neque
-        tellus. Nam et purus at orci aliquam malesuada non a libero. Vivamus at condimentum
-        dolor. Duis blandit tincidunt quam, quis pellentesque tellus auctor in. Praesent
-        vel ligula felis. Ut pellentesque scelerisque metus vitae vehicula. Vivamus
-        lacinia rhoncus maximus. Duis id ligula et ex suscipit tincidunt.","href":null}],"color":"default"}},{"object":"block","id":"73ddd3ca-a335-4356-8bec-e7588164a9dc","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_2","heading_2":{"rich_text":[{"type":"text","text":{"content":"Heading
-        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
-        2","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"898f9c4d-081c-4b88-a57f-92e40cc9f784","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-02-05T16:29:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Donec
-        mattis, magna at ornare laoreet, nisl nunc mollis est, vitae congue massa
-        felis a lorem. Suspendisse et facilisis ante. Nunc sapien nunc, dictum non
-        ex sed, accumsan dapibus orci. Morbi lacus dui, commodo eget felis id, lobortis
-        tempus purus. Mauris viverra, est eget congue feugiat, nunc lectus imperdiet
-        libero, vel vehicula mi mi gravida elit. Aenean mauris augue, aliquam eu quam
-        sit amet, porttitor faucibus diam. Aenean vel dolor pellentesque, pellentesque
-        nulla id, pretium lacus. Vivamus pretium quam et leo fermentum commodo. Quisque
-        facilisis non est a mattis. Phasellus eget placerat urna, sit amet lacinia
-        odio. Integer id auctor dolor, non sagittis velit. Aenean eu justo sit amet
-        dolor gravida efficitur.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Donec
-        mattis, magna at ornare laoreet, nisl nunc mollis est, vitae congue massa
-        felis a lorem. Suspendisse et facilisis ante. Nunc sapien nunc, dictum non
-        ex sed, accumsan dapibus orci. Morbi lacus dui, commodo eget felis id, lobortis
-        tempus purus. Mauris viverra, est eget congue feugiat, nunc lectus imperdiet
-        libero, vel vehicula mi mi gravida elit. Aenean mauris augue, aliquam eu quam
-        sit amet, porttitor faucibus diam. Aenean vel dolor pellentesque, pellentesque
-        nulla id, pretium lacus. Vivamus pretium quam et leo fermentum commodo. Quisque
-        facilisis non est a mattis. Phasellus eget placerat urna, sit amet lacinia
-        odio. Integer id auctor dolor, non sagittis velit. Aenean eu justo sit amet
-        dolor gravida efficitur.","href":null}],"color":"default"}},{"object":"block","id":"397d8d2d-efe1-4b67-b9db-0e4cc972d748","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_3","heading_3":{"rich_text":[{"type":"text","text":{"content":"Heading
-        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
-        3","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"b9eee21a-5d78-4a6e-8814-e307554aa2be","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-03-05T23:48:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Proin
-        aliquet lobortis ex. Ut eget purus blandit, cursus diam at, tincidunt tortor.
-        Suspendisse accumsan nulla ipsum, ac rutrum ipsum pellentesque eget. Praesent
-        in dolor mollis, scelerisque nulla quis, viverra est. Nam ut suscipit est.
-        Etiam in elit quis sapien tincidunt porta. Donec sed rutrum felis. Integer
-        turpis sapien, viverra a leo id, molestie ornare metus. Nulla ac libero tincidunt,
-        maximus neque eu, elementum lectus. Maecenas et urna at quam facilisis laoreet
-        a sit amet tortor. Suspendisse eget maximus lacus, ac facilisis arcu. Suspendisse
-        condimentum, mi mattis varius scelerisque, augue leo ultricies felis, sit
-        amet feugiat leo turpis a nisi. Nulla eget enim accumsan, laoreet lectus non,
-        faucibus lacus. Vivamus id justo nisl.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Proin
-        aliquet lobortis ex. Ut eget purus blandit, cursus diam at, tincidunt tortor.
-        Suspendisse accumsan nulla ipsum, ac rutrum ipsum pellentesque eget. Praesent
-        in dolor mollis, scelerisque nulla quis, viverra est. Nam ut suscipit est.
-        Etiam in elit quis sapien tincidunt porta. Donec sed rutrum felis. Integer
-        turpis sapien, viverra a leo id, molestie ornare metus. Nulla ac libero tincidunt,
-        maximus neque eu, elementum lectus. Maecenas et urna at quam facilisis laoreet
-        a sit amet tortor. Suspendisse eget maximus lacus, ac facilisis arcu. Suspendisse
-        condimentum, mi mattis varius scelerisque, augue leo ultricies felis, sit
-        amet feugiat leo turpis a nisi. Nulla eget enim accumsan, laoreet lectus non,
-        faucibus lacus. Vivamus id justo nisl.","href":null}],"color":"default"}},{"object":"block","id":"5bca94d1-fc0b-4f56-88c5-6c115431ee72","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_1","heading_1":{"rich_text":[{"type":"text","text":{"content":"Heading
-        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
-        1","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"0ff3af9a-5cd6-4af2-95ca-109543714da9","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"In
-        hac habitasse platea dictumst. Praesent et orci sapien. Morbi lobortis hendrerit
-        tortor eu placerat. Curabitur interdum tortor et dictum hendrerit. Morbi feugiat
-        lectus ac libero bibendum, auctor volutpat sem ultrices. Cras tincidunt congue
-        sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        et aliquam diam. Phasellus at massa nec dolor mollis laoreet. Donec elementum
-        quam hendrerit dui sodales, id facilisis odio porttitor. Vestibulum id sollicitudin
-        tortor. Vivamus non ex erat. Donec varius erat nec ex pharetra luctus. In
-        sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
-        at felis eget congue.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"In
-        hac habitasse platea dictumst. Praesent et orci sapien. Morbi lobortis hendrerit
-        tortor eu placerat. Curabitur interdum tortor et dictum hendrerit. Morbi feugiat
-        lectus ac libero bibendum, auctor volutpat sem ultrices. Cras tincidunt congue
-        sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
-        et aliquam diam. Phasellus at massa nec dolor mollis laoreet. Donec elementum
-        quam hendrerit dui sodales, id facilisis odio porttitor. Vestibulum id sollicitudin
-        tortor. Vivamus non ex erat. Donec varius erat nec ex pharetra luctus. In
-        sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
-        at felis eget congue.","href":null}],"color":"default"}},{"object":"block","id":"94d71b49-49d4-4427-a348-35ba175459db","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-03-05T23:49:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"la
-        ncncsalmclasm cl;a ca a","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"la
-        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"f6521586-ae98-4d37-9d09-de55fd95473b"}'
-  recorded_at: Sat, 06 Sep 2025 06:02:55 GMT
-- request:
-    method: get
     uri: https://api.notion.com/v1/pages/0b8c4501-2092-46c1-b800-529623746afc
     body:
       encoding: US-ASCII
@@ -243,66 +15,66 @@ http_interactions:
       - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sat, 06 Sep 2025 06:03:32 GMT
-      Content-Type:
+      date:
+      - Sun, 07 Sep 2025 16:25:26 GMT
+      content-type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Connection:
+      connection:
       - keep-alive
-      Server:
+      server:
       - cloudflare
-      Cf-Ray:
-      - 97abc3874e8c1a5e-MRS
-      Cf-Cache-Status:
+      cf-ray:
+      - 97b78fe55800a65d-MRS
+      cf-cache-status:
       - DYNAMIC
-      Etag:
-      - W/"e63-a7+ksRhFS2Qs17m2VNVFSPeWnUY"
-      Strict-Transport-Security:
+      etag:
+      - W/"e63-oRo6a3RFcnbaTzWDI3L6+P8Dquo"
+      strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
-      Vary:
+      vary:
       - Accept-Encoding
-      Content-Security-Policy:
+      content-security-policy:
       - default-src 'none'
-      Referrer-Policy:
+      referrer-policy:
       - strict-origin-when-cross-origin
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-Dns-Prefetch-Control:
+      x-dns-prefetch-control:
       - 'off'
-      X-Download-Options:
+      x-download-options:
       - noopen
-      X-Frame-Options:
+      x-frame-options:
       - SAMEORIGIN
-      X-Notion-Request-Id:
-      - 8581dc4e-e961-4424-a06c-7bc02ce37351
-      X-Permitted-Cross-Domain-Policies:
+      x-notion-request-id:
+      - 272a5abf-9a46-422d-a1d4-7a5c2520bc87
+      x-permitted-cross-domain-policies:
       - none
-      X-Xss-Protection:
+      x-xss-protection:
       - '0'
-      Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
-      Alt-Svc:
+      set-cookie:
+      - __cf_bm=EF5tXICdyzzGCJYjQC.yQTEczGvlGZ20oE5fWzjuAbk-1757262326-1.0.1.1-RVRy1.wNPjyCdzONH6Im3O_T1Dqz.7Hm4Bs8d0ySF7N8lg4Y1bfsgcoEc6hmNfUSK74med453DJC2leA3SYjD9epeML8QtRLCUWqF0A0BIk;
+        path=/; expires=Sun, 07-Sep-25 16:55:26 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=uw__kt7q86tQu8epzdEF6oZL7BYwWW2.3m8PaqrNj88-1757262326908-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
       - h3=":443"; ma=86400
     body:
-      encoding: ASCII-8BIT
-      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466XRYREFZ7%2F20250906%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250906T060332Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEB4aCXVzLXdlc3QtMiJHMEUCIFrjgpygDQWmVB21%2BpsuJpchkl7hT3QKQC70kdxRxlKvAiEA2DXrspY9BS0HrAPNE%2BVAHzW4THSYWjXOX2n9pkj5J%2F0qiAQIh%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDFZ%2FqHK%2FD8QJVLjByircA0Hhpmivm6JXQ5OxGX1XZmuMVZeESUyuqUpYf6lJ%2FMiByiXPUlkpvve4C9KzeegUltejq%2Fgm2HbT%2FuX3PQS%2FhPe26zlNHQPNmQGMxNkX3bAruJv%2BJaLo6i%2FfASzSV5erYrMihl6o7GkZu2haM0gdc2R3MDKJ6TEicCwuo0rivQp5d2fvdB6P5F89%2BdYwUUC1s1AkC1jpD4IUhOOojiOwitx81FRaowQ1jIjaPyTKjHetzUxX95Zd7nIx29pQ5%2FVg4U1zRnfBNYFsGcoEfsYOsGR56hZ7qGU0wPDY8hBEPcaLKAqFeHCR%2F5WHCMMNIRNMA7yMN%2BY9wdxqwyFOEMlgzapJN1A8WeUMydtTxbS09b1oeDI3Wg0N1%2BV50sVdIpVk%2BV6cSjp%2FtRstLZO3DcKMlkcITJoErDm4JhQXu4K0hUkw%2Bg%2BBaTq59GduTbsP9HxfgqLk5UZnI%2BVSReFSvs2Xs0JtwTQOY15T26N6BsT6cFO2XtQyYvezlL0acQVX8IQFN%2ByLflnQuXQ%2BSJpYRXjuME1DcXaN4w3HKPW4B8pT%2Fzmp5WgKhoCAH99jFKN%2BtVVh6G50az6gmM21RPcXDfoOZ84HeEfzpNbznDEB4qCFs7xMwUUWC%2FOSjjkfdhceMP6M78UGOqUBwcBLMCL18ezWioG4Bd5mmCPtHsydUmTGkbAIgmsg0PC2h1HzV7AFPEyh%2BaXqxtS0UHi%2BJYPDBqmAyAc24dZx5WhrwgKBSArBplwbeULZ1H8m96YZPvIaqNzzB8e3fzExzIR50Uo2Qwi%2FOtJywrcNLqePx7kP6xSCrhDGSNKR%2BZtWfhEnaQIkPAonuptn9HIXnb0e3Eo9quI78fU4KcNFAJyeNfS8&X-Amz-Signature=28ba03087b672c9d432a4bca6e98f6d6c84d50e00f828c6bc0f47b1ce8732fca&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-06T07:03:32.890Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
+      encoding: UTF-8
+      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466YZ7GPGFE%2F20250907%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250907T162526Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDwaCXVzLXdlc3QtMiJHMEUCIHp2%2B4AcrtUTeYysSbQRt2sr7JixlPpYfZ5mFpUJjv5QAiEAxmKAkbv%2FDpwyrj8AGdST9vJPF0MljG85vQv7RGeHigwqiAQIpf%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARAAGgw2Mzc0MjMxODM4MDUiDApV1SpQ0j906SMoEircA8umGFyT4dOdqvxLXPHajwgPst9WtYERE66tLFU5k4Xsfm0MwyH9FIaRBpnQRbqKE3kGdh%2FokkTsvKYjBibagInGV0gaMTS3bq3CZYo%2FyB27B4f42OsJYYsNB076E6Ux3E5U5wILwr6alr%2FRww5F3H5rAxJ5uILfMB3h5%2Fc85JckR7L5S1vVDAZ7%2BECahpwiwS4J5UaYMZZDnQrXcRJHAPCOIg%2FtWaYD%2BhznE7F0XUlM6ZySC8W%2FfyLR6%2BIc1K53aHRLKyWLRCXM%2Bnn0DzLgSwMEIn8QZUbeM1BLfgwM3c2YPzG2%2FyNrLrZc%2BAyzVtZH64N03%2BaK%2BR3ZShPCkV%2FFfe6RLOePwgIBjkO6jSn%2FiVWixZQag2HbT3uJKezFeW%2F%2BvgWU82lBPsHo4QmuT7cEBpujWifKERnRRgQQisQ5Y6eYqhw%2Fsk4M3LbJvhjmuFG1uLVCaNKkMH%2Bg2qiqS3%2BxM0QU0ZCh3lzoqluQkQQf66RYpwl2BVRt7YBKrNCdTCqakOoqLgxQzuSsLIQ6aM3NFB96WUBLaxanfHYvbuUkedIuMCw5C0nXTcM1OBFqzkcQuNi1%2FDlihFJtYjrdO8EHmgHd3DLaiDyyF5EykR%2B9SnU7eKs4Cz4jTHMDfhSYMKjm9cUGOqUBZMtu6Nqkv%2BTXykvugjlFKUcJZ0W2rWLMb3%2B7%2BCwG%2Bu4Rtg%2FW3VGcRQ2q9zdlFgAbZmX4HCQFEG5nLEOBaycU9FE51THrapE7vRIOyvFzJcfZ4x9OUUNz1NpNYYBoDfrllooXpVTkI6hBuuKUub7aYRdR9TWw86sHHnmukBljExptnkhCLrexeDYalvXHEhLLbOOMFbHybTPjdagdETtz%2BNdUoIsd&X-Amz-Signature=dbfc3a7bdcc3903631cd567c98b29d3175f3e88b9db37f6a42e97611519bb01b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-07T17:25:26.810Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
         date":{"id":"%3A%7BfH","type":"date","date":null},"Multi Select":{"id":"%3C%7Bn%7B","type":"multi_select","multi_select":[]},"Select":{"id":"%3EzjF","type":"select","select":{"id":"fa788fbc-176b-49cb-be2e-552cc985cf7c","name":"select1","color":"yellow"}},"date
         with time":{"id":"CUEj","type":"date","date":null},"Person":{"id":"TFSp","type":"people","people":[]},"Date":{"id":"T~YB","type":"date","date":null},"Tags":{"id":"UT%3Fx","type":"multi_select","multi_select":[{"id":"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8","name":"tag1","color":"green"},{"id":"83961a4e-e3a8-442d-8b47-6a2e43bacd85","name":"tag2","color":"gray"}]},"Numbers":{"id":"a~dg","type":"number","number":null},"Rich
         Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
         rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Page
         2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Page
-        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"8581dc4e-e961-4424-a06c-7bc02ce37351"}'
-  recorded_at: Sat, 06 Sep 2025 06:03:08 GMT
+        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"272a5abf-9a46-422d-a1d4-7a5c2520bc87"}'
+  recorded_at: Sun, 07 Sep 2025 16:25:00 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/0b8c4501-2092-46c1-b800-529623746afc/children
@@ -318,58 +90,58 @@ http_interactions:
       - "[REDACTED]"
       Notion-Version:
       - '2022-02-22'
-      Accept-Encoding:
-      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
   response:
     status:
       code: 200
       message: OK
     headers:
-      Date:
-      - Sat, 06 Sep 2025 06:03:34 GMT
-      Content-Type:
+      date:
+      - Sun, 07 Sep 2025 16:25:28 GMT
+      content-type:
       - application/json; charset=utf-8
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Connection:
+      connection:
       - keep-alive
-      Server:
+      server:
       - cloudflare
-      Cf-Ray:
-      - 97abc38b7f7ae1a2-MRS
-      Cf-Cache-Status:
+      cf-ray:
+      - 97b78fe79e3fe1b5-MRS
+      cf-cache-status:
       - DYNAMIC
-      Etag:
-      - W/"313f-L5YxoV1/4YnvM/8sbcjUzSSNaUc"
-      Strict-Transport-Security:
+      etag:
+      - W/"313f-IVpcBoxkdWbnxnbTSUWvzgL0LN8"
+      strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
-      Vary:
+      vary:
       - Accept-Encoding
-      Content-Security-Policy:
+      content-security-policy:
       - default-src 'none'
-      Referrer-Policy:
+      referrer-policy:
       - strict-origin-when-cross-origin
-      X-Content-Type-Options:
+      x-content-type-options:
       - nosniff
-      X-Dns-Prefetch-Control:
+      x-dns-prefetch-control:
       - 'off'
-      X-Download-Options:
+      x-download-options:
       - noopen
-      X-Frame-Options:
+      x-frame-options:
       - SAMEORIGIN
-      X-Notion-Request-Id:
-      - 903e3f11-d872-4539-a307-632947fb017c
-      X-Permitted-Cross-Domain-Policies:
+      x-notion-request-id:
+      - 3db31296-3e57-4001-af2b-4b9f9f194a91
+      x-permitted-cross-domain-policies:
       - none
-      X-Xss-Protection:
+      x-xss-protection:
       - '0'
-      Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
-      Alt-Svc:
+      set-cookie:
+      - __cf_bm=vYNLtMTqbH03dNHbhQgsO6s00ZNZNuFN1qghA6OZJpo-1757262328-1.0.1.1-nEx_sn0qoDoxokxCNMKNrO6vZ2SFAvWLTwmsGwb84l0x5Uoe_3j5B7Pof3jituweGfGvUYPIs6J3WvUcS78IU1sb5j1E.v.tkv6NRkeIUBk;
+        path=/; expires=Sun, 07-Sep-25 16:55:28 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=wnBuXHJTs4LzsbrJBjVE32t5ZJLCkMkkQxVyAQleVag-1757262328138-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
       - h3=":443"; ma=86400
     body:
-      encoding: ASCII-8BIT
+      encoding: UTF-8
       string: '{"object":"list","results":[{"object":"block","id":"a783039e-6939-4375-9b41-082b373ee17f","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:02:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"table_of_contents","table_of_contents":{"color":"gray"}},{"object":"block","id":"8565a6f7-b99b-4c2d-b276-8113bf1306d5","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_1","heading_1":{"rich_text":[{"type":"text","text":{"content":"Heading
         1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
         1","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"c0ad42f1-cd91-4dc7-879e-128f4598254d","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-02-05T16:29:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Lorem
@@ -454,6 +226,234 @@ http_interactions:
         sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
         at felis eget congue.","href":null}],"color":"default"}},{"object":"block","id":"94d71b49-49d4-4427-a348-35ba175459db","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-03-05T23:49:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"la
         ncncsalmclasm cl;a ca a","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"la
-        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"903e3f11-d872-4539-a307-632947fb017c"}'
-  recorded_at: Sat, 06 Sep 2025 06:03:09 GMT
+        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"3db31296-3e57-4001-af2b-4b9f9f194a91"}'
+  recorded_at: Sun, 07 Sep 2025 16:25:02 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/pages/0b8c4501209246c1b800529623746afc
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.2
+      Authorization:
+      - "[REDACTED]"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 07 Sep 2025 16:25:50 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      cf-ray:
+      - 97b790692cb25014-MRS
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"e69-UgbyV5K0F2wEv+5+KwfBzwq90z4"
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - 67c341a3-1325-45df-8dd4-969164587431
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+      set-cookie:
+      - __cf_bm=MqxYzXev_gAPhBFLrhKpXGWiGY0oyj49o8osThp3_gI-1757262350-1.0.1.1-wA81S2kUmp5qqoxbHp9oxafPCSS1viA.PHrzqILT5dHBPOymr18KRtuXRw8_dyeX47LHJDqtl41SzvqWHvUkpAt62aFoXdBmaR1ckytXlwQ;
+        path=/; expires=Sun, 07-Sep-25 16:55:50 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=KyKe.CBtKpIA3cvsB_z5zFTQuXmeAvt2fcWG6aQo9s0-1757262350429-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"object":"page","id":"0b8c4501-2092-46c1-b800-529623746afc","created_time":"2022-01-23T12:31:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"cover":null,"icon":{"type":"file","file":{"url":"https://prod-files-secure.s3.us-west-2.amazonaws.com/4783548e-2442-4bf3-bb3d-ed4ddd2dcdf0/73f70b17-2331-4012-99be-24fcbd1c85db/t-affirmative.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB466VOY5OLSC%2F20250907%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250907T162550Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEDwaCXVzLXdlc3QtMiJGMEQCIGthgZ2LK2Vh%2FUQwyegZyAVGByFXffVDHuvMcpgG0nK%2BAiAqTPswsNF1Cqth8%2BDKbYW60QVcEie2kPNcEr2r0yYHDSqIBAil%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMZz5cCK8nnsmk9qnzKtwDixJyhczYTXJZ4qnnmCotxI4aIWnUvR4OR7CLCSDaUwF3cdfHUtBa%2BFZqvJxM9ePAUT8vUwqOyXGkP3zTlCqIS218ZgaH3sio4%2BcCOx94B8cXcuB1tls94c%2F%2FZ5Um8KJsjfv67R7HXMyuQPexX6TvM32OLwUZ957F6nh4xyu6PEoBtrz%2BYvU2Tx40liBSd1N54zwMjSVnkvi%2FuMEewZ%2BFsp9gerF%2BTFVRf06SDAH3wfN9oVJHNu3pOxLK5cxpgZLHV%2F1dYCAbVICRYGfPmczVBq6FZxcGV0XT5F5%2FaeX%2FgumABVKcgc5a48GJ2mvUG40w%2FnxjdGAiayuXGvzl2pGh4NVjTjqGY4sCbGoWdkGKmV5zEnGty1vPwq4rPoeebIU0OCv1e2yTWK8cO%2BLLnKsEP193e%2BBkQte4OK4yMsR5gHjlDRq7%2BpcdHRZHbLMANAWVH5QUCi61Nw3q5HicPJeB%2FAMgmWqt%2FRYE87cjaNDNOpk552y67Gd980DkDA%2BAAnLFt99hqAi6Xn6sXteto9rBSEdZbCpWZtMW2e4PP7yjpS3sXiWIi1%2FCHb3CmG0Qo%2FDYiOL7E%2BKQArhfQikwmc5Qk0Tm%2FGoIxaFqdJ1k%2FMhAl1frhOgMtxlTuYCMhqMw6eb1xQY6pgFmpgmOthZ5lZWzHaqqpUe7%2FXwP5HIHMKbXvCLAbYuG64am0AcH7ZBw2gUnnw94OCOIxfG7elCiLfjI0S0%2F%2FUoitLQQC8jK4UVpetmHNf8yaC8g2R%2BY5l4L7uAcwroaKrxOdDfSed%2Fhu0o6GCNFbrQ2DQaGTd%2FZm4oiFsbsVnC2hWzNurQrXEMVbbiolqr50pWKPGJgzHS%2FDpEkCT%2B1UrrSo5ld55Bb&X-Amz-Signature=8d6bff15c00a046b08bd46b810a68174f807e9044eb955f82bc58ea8d8554038&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject","expiry_time":"2025-09-07T17:25:50.341Z"}},"parent":{"type":"database_id","database_id":"1ae33dd5-f331-4402-9480-69517fa40ae2"},"archived":false,"in_trash":false,"properties":{"empty
+        date":{"id":"%3A%7BfH","type":"date","date":null},"Multi Select":{"id":"%3C%7Bn%7B","type":"multi_select","multi_select":[]},"Select":{"id":"%3EzjF","type":"select","select":{"id":"fa788fbc-176b-49cb-be2e-552cc985cf7c","name":"select1","color":"yellow"}},"date
+        with time":{"id":"CUEj","type":"date","date":null},"Person":{"id":"TFSp","type":"people","people":[]},"Date":{"id":"T~YB","type":"date","date":null},"Tags":{"id":"UT%3Fx","type":"multi_select","multi_select":[{"id":"be6ae2f6-5ae4-496b-b413-f5e7dbeff2a8","name":"tag1","color":"green"},{"id":"83961a4e-e3a8-442d-8b47-6a2e43bacd85","name":"tag2","color":"gray"}]},"Numbers":{"id":"a~dg","type":"number","number":null},"Rich
+        Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
+        rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Page
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Page
+        2","href":null}]}},"url":"https://www.notion.so/Page-2-0b8c4501209246c1b800529623746afc","public_url":null,"request_id":"67c341a3-1325-45df-8dd4-969164587431"}'
+  recorded_at: Sun, 07 Sep 2025 16:25:24 GMT
+- request:
+    method: get
+    uri: https://api.notion.com/v1/blocks/0b8c4501209246c1b800529623746afc/children
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json; charset=utf-8
+      User-Agent:
+      - Notion Ruby Client/1.2.2
+      Authorization:
+      - "[REDACTED]"
+      Notion-Version:
+      - '2022-02-22'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      date:
+      - Sun, 07 Sep 2025 16:25:53 GMT
+      content-type:
+      - application/json; charset=utf-8
+      transfer-encoding:
+      - chunked
+      connection:
+      - keep-alive
+      server:
+      - cloudflare
+      cf-ray:
+      - 97b7907aa917e1b0-MRS
+      cf-cache-status:
+      - DYNAMIC
+      etag:
+      - W/"313f-6wIkDSQKvJe8BpL8ITzVH7oc5IM"
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      vary:
+      - Accept-Encoding
+      content-security-policy:
+      - default-src 'none'
+      referrer-policy:
+      - strict-origin-when-cross-origin
+      x-content-type-options:
+      - nosniff
+      x-dns-prefetch-control:
+      - 'off'
+      x-download-options:
+      - noopen
+      x-frame-options:
+      - SAMEORIGIN
+      x-notion-request-id:
+      - 16869567-e803-4c74-af0d-ffc30b9bd118
+      x-permitted-cross-domain-policies:
+      - none
+      x-xss-protection:
+      - '0'
+      set-cookie:
+      - __cf_bm=ZlZ8hNFFbrVZMVEfSvVcwUCpCCpvWC2w1QzkA_HGA00-1757262353-1.0.1.1-NjlMV.5kOg8rLijr7nyaIoBYxepOJ9gMvZWURcdRtQQn17bR.BKmZ0Qvr_wSGnoDJe7nceQ.e.dCk3xyY0M2IYZ2q7GpriQLpS5027RnWlM;
+        path=/; expires=Sun, 07-Sep-25 16:55:53 GMT; domain=.notion.com; HttpOnly;
+        Secure; SameSite=None, _cfuvid=ByrulF54ISmmOprOY8H1LmN4YEr0zEBwHqeCe4ojzd0-1757262353306-0.0.1.1-604800000;
+        path=/; domain=.notion.com; HttpOnly; Secure; SameSite=None
+      alt-svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"object":"list","results":[{"object":"block","id":"a783039e-6939-4375-9b41-082b373ee17f","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:02:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"table_of_contents","table_of_contents":{"color":"gray"}},{"object":"block","id":"8565a6f7-b99b-4c2d-b276-8113bf1306d5","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_1","heading_1":{"rich_text":[{"type":"text","text":{"content":"Heading
+        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
+        1","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"c0ad42f1-cd91-4dc7-879e-128f4598254d","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-02-05T16:29:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus semper risus,
+        non iaculis nisi. Praesent ut magna auctor, consequat metus in, hendrerit
+        ligula. Maecenas sagittis pulvinar metus, ut blandit ex tincidunt quis. Quisque
+        ullamcorper urna sapien, vitae malesuada libero auctor eget. Etiam eu neque
+        tellus. Nam et purus at orci aliquam malesuada non a libero. Vivamus at condimentum
+        dolor. Duis blandit tincidunt quam, quis pellentesque tellus auctor in. Praesent
+        vel ligula felis. Ut pellentesque scelerisque metus vitae vehicula. Vivamus
+        lacinia rhoncus maximus. Duis id ligula et ex suscipit tincidunt.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Integer tempus semper risus,
+        non iaculis nisi. Praesent ut magna auctor, consequat metus in, hendrerit
+        ligula. Maecenas sagittis pulvinar metus, ut blandit ex tincidunt quis. Quisque
+        ullamcorper urna sapien, vitae malesuada libero auctor eget. Etiam eu neque
+        tellus. Nam et purus at orci aliquam malesuada non a libero. Vivamus at condimentum
+        dolor. Duis blandit tincidunt quam, quis pellentesque tellus auctor in. Praesent
+        vel ligula felis. Ut pellentesque scelerisque metus vitae vehicula. Vivamus
+        lacinia rhoncus maximus. Duis id ligula et ex suscipit tincidunt.","href":null}],"color":"default"}},{"object":"block","id":"73ddd3ca-a335-4356-8bec-e7588164a9dc","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_2","heading_2":{"rich_text":[{"type":"text","text":{"content":"Heading
+        2","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
+        2","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"898f9c4d-081c-4b88-a57f-92e40cc9f784","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-02-05T16:29:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Donec
+        mattis, magna at ornare laoreet, nisl nunc mollis est, vitae congue massa
+        felis a lorem. Suspendisse et facilisis ante. Nunc sapien nunc, dictum non
+        ex sed, accumsan dapibus orci. Morbi lacus dui, commodo eget felis id, lobortis
+        tempus purus. Mauris viverra, est eget congue feugiat, nunc lectus imperdiet
+        libero, vel vehicula mi mi gravida elit. Aenean mauris augue, aliquam eu quam
+        sit amet, porttitor faucibus diam. Aenean vel dolor pellentesque, pellentesque
+        nulla id, pretium lacus. Vivamus pretium quam et leo fermentum commodo. Quisque
+        facilisis non est a mattis. Phasellus eget placerat urna, sit amet lacinia
+        odio. Integer id auctor dolor, non sagittis velit. Aenean eu justo sit amet
+        dolor gravida efficitur.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Donec
+        mattis, magna at ornare laoreet, nisl nunc mollis est, vitae congue massa
+        felis a lorem. Suspendisse et facilisis ante. Nunc sapien nunc, dictum non
+        ex sed, accumsan dapibus orci. Morbi lacus dui, commodo eget felis id, lobortis
+        tempus purus. Mauris viverra, est eget congue feugiat, nunc lectus imperdiet
+        libero, vel vehicula mi mi gravida elit. Aenean mauris augue, aliquam eu quam
+        sit amet, porttitor faucibus diam. Aenean vel dolor pellentesque, pellentesque
+        nulla id, pretium lacus. Vivamus pretium quam et leo fermentum commodo. Quisque
+        facilisis non est a mattis. Phasellus eget placerat urna, sit amet lacinia
+        odio. Integer id auctor dolor, non sagittis velit. Aenean eu justo sit amet
+        dolor gravida efficitur.","href":null}],"color":"default"}},{"object":"block","id":"397d8d2d-efe1-4b67-b9db-0e4cc972d748","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:01:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_3","heading_3":{"rich_text":[{"type":"text","text":{"content":"Heading
+        3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
+        3","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"b9eee21a-5d78-4a6e-8814-e307554aa2be","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-03-05T23:48:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"Proin
+        aliquet lobortis ex. Ut eget purus blandit, cursus diam at, tincidunt tortor.
+        Suspendisse accumsan nulla ipsum, ac rutrum ipsum pellentesque eget. Praesent
+        in dolor mollis, scelerisque nulla quis, viverra est. Nam ut suscipit est.
+        Etiam in elit quis sapien tincidunt porta. Donec sed rutrum felis. Integer
+        turpis sapien, viverra a leo id, molestie ornare metus. Nulla ac libero tincidunt,
+        maximus neque eu, elementum lectus. Maecenas et urna at quam facilisis laoreet
+        a sit amet tortor. Suspendisse eget maximus lacus, ac facilisis arcu. Suspendisse
+        condimentum, mi mattis varius scelerisque, augue leo ultricies felis, sit
+        amet feugiat leo turpis a nisi. Nulla eget enim accumsan, laoreet lectus non,
+        faucibus lacus. Vivamus id justo nisl.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Proin
+        aliquet lobortis ex. Ut eget purus blandit, cursus diam at, tincidunt tortor.
+        Suspendisse accumsan nulla ipsum, ac rutrum ipsum pellentesque eget. Praesent
+        in dolor mollis, scelerisque nulla quis, viverra est. Nam ut suscipit est.
+        Etiam in elit quis sapien tincidunt porta. Donec sed rutrum felis. Integer
+        turpis sapien, viverra a leo id, molestie ornare metus. Nulla ac libero tincidunt,
+        maximus neque eu, elementum lectus. Maecenas et urna at quam facilisis laoreet
+        a sit amet tortor. Suspendisse eget maximus lacus, ac facilisis arcu. Suspendisse
+        condimentum, mi mattis varius scelerisque, augue leo ultricies felis, sit
+        amet feugiat leo turpis a nisi. Nulla eget enim accumsan, laoreet lectus non,
+        faucibus lacus. Vivamus id justo nisl.","href":null}],"color":"default"}},{"object":"block","id":"5bca94d1-fc0b-4f56-88c5-6c115431ee72","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2024-05-25T10:01:00.000Z","last_edited_time":"2024-05-25T10:02:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"heading_1","heading_1":{"rich_text":[{"type":"text","text":{"content":"Heading
+        1","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Heading
+        1","href":null}],"is_toggleable":false,"color":"default"}},{"object":"block","id":"0ff3af9a-5cd6-4af2-95ca-109543714da9","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-02-05T16:29:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"In
+        hac habitasse platea dictumst. Praesent et orci sapien. Morbi lobortis hendrerit
+        tortor eu placerat. Curabitur interdum tortor et dictum hendrerit. Morbi feugiat
+        lectus ac libero bibendum, auctor volutpat sem ultrices. Cras tincidunt congue
+        sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        et aliquam diam. Phasellus at massa nec dolor mollis laoreet. Donec elementum
+        quam hendrerit dui sodales, id facilisis odio porttitor. Vestibulum id sollicitudin
+        tortor. Vivamus non ex erat. Donec varius erat nec ex pharetra luctus. In
+        sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
+        at felis eget congue.","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"In
+        hac habitasse platea dictumst. Praesent et orci sapien. Morbi lobortis hendrerit
+        tortor eu placerat. Curabitur interdum tortor et dictum hendrerit. Morbi feugiat
+        lectus ac libero bibendum, auctor volutpat sem ultrices. Cras tincidunt congue
+        sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
+        et aliquam diam. Phasellus at massa nec dolor mollis laoreet. Donec elementum
+        quam hendrerit dui sodales, id facilisis odio porttitor. Vestibulum id sollicitudin
+        tortor. Vivamus non ex erat. Donec varius erat nec ex pharetra luctus. In
+        sodales sagittis sollicitudin. Proin eu ullamcorper ante. Curabitur pharetra
+        at felis eget congue.","href":null}],"color":"default"}},{"object":"block","id":"94d71b49-49d4-4427-a348-35ba175459db","parent":{"type":"page_id","page_id":"0b8c4501-2092-46c1-b800-529623746afc"},"created_time":"2022-03-05T23:49:00.000Z","last_edited_time":"2022-03-05T23:49:00.000Z","created_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"last_edited_by":{"object":"user","id":"db313571-0280-411f-a6de-70e826421d12"},"has_children":false,"archived":false,"in_trash":false,"type":"paragraph","paragraph":{"rich_text":[{"type":"text","text":{"content":"la
+        ncncsalmclasm cl;a ca a","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"la
+        ncncsalmclasm cl;a ca a","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"16869567-e803-4c74-af0d-ffc30b9bd118"}'
+  recorded_at: Sun, 07 Sep 2025 16:25:27 GMT
 recorded_with: VCR 6.3.1
