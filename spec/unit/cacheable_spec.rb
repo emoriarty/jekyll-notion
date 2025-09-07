@@ -23,8 +23,6 @@ RSpec.describe JekyllNotion::Cacheable do
 
   before do
     JekyllNotion::Cacheable.configure(:cache_dir => cache_dir, :cache_enabled => true)
-    # Clear VCR configuration to avoid interference
-    allow(VCR.configuration).to receive(:cassette_library_dir).and_return(cache_dir)
   end
 
   after do
@@ -321,4 +319,5 @@ RSpec.describe "JekyllNotion::Cacheable.cache_dir" do
       expect(JekyllNotion::Cacheable.cache_dir).to eq("/tmp/jekyll-notion-env-test")
     end
   end
+
 end
