@@ -10,13 +10,33 @@ module JekyllNotion
 
     class << self
       def configure(cache_dir:, cache_enabled:)
-        @cache_dir = cache_dir
+        @cache_dir = cache_path(cache_dir)
         @cache_enabled = cache_enabled
+
+        VCR.configure do |config|
+          config.cassette_library_dir = self.cache_dir
+          config.hook_into :faraday # Faraday is used by notion-ruby-client gem
+          config.filter_sensitive_data("<REDACTED>") { ENV.fetch("NOTION_TOKEN", nil) }
+          config.allow_http_connections_when_no_cassette = true
+          config.default_cassette_options = {
+            :allow_playback_repeats => true,
+            :record                 => :new_episodes,
+          }
+        end
       end
 
       def cache_dir
-        @cache_dir || ENV["JEKYLL_NOTION_CACHE_DIR"] || File.join(Dir.pwd, ".cache",
-                                                                  "jekyll-notion", "vcr_cassettes")
+        @cache_dir
+      end
+
+      def cache_path(path = nil)
+        if path
+          File.join(Dir.getwd, path)
+        elsif ENV["JEKYLL_NOTION_CACHE_DIR"]
+          File.join(Dir.getwd, ENV["JEKYLL_NOTION_CACHE_DIR"])
+        else
+          File.join(Dir.pwd, ".cache", "jekyll-notion", "vcr_cassettes")
+        end
       end
 
       def enabled?
@@ -32,14 +52,12 @@ module JekyllNotion
       cassette_name = preferred_cassette_name(dir, id)
       result = nil
 
-      with_cassette_dir(dir) do
-        VCR.use_cassette(
-          cassette_name, # e.g., "pages/my_title-<id>" or "pages/<id>"
-          :record                 => :new_episodes,
-          :allow_playback_repeats => true
-        ) do
-          result = super(**kwargs)
-        end
+      VCR.use_cassette(
+        cassette_name, # e.g., "pages/my_title-<id>" or "pages/<id>"
+        :record                 => :new_episodes,
+        :allow_playback_repeats => true
+      ) do
+        result = super(**kwargs)
       end
 
       if (title = extract_title(result)).to_s != ""

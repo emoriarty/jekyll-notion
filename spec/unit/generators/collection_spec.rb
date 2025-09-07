@@ -150,28 +150,4 @@ RSpec.describe JekyllNotion::Generators::Collection do
       end
     end
   end
-
-  describe "#file_exists?" do
-    let(:file_path) { "_posts/2023-01-15-test.md" }
-
-    context "when file exists" do
-      it "returns true" do
-        allow(site).to receive(:in_source_dir).with(file_path).and_return("/source/_posts/2023-01-15-test.md")
-        allow(File).to receive(:exist?).with("/source/_posts/2023-01-15-test.md").and_return(true)
-
-        result = generator.send(:file_exists?, file_path)
-        expect(result).to be true
-      end
-    end
-
-    context "when file does not exist" do
-      it "returns false" do
-        allow(site).to receive(:in_source_dir).with(file_path).and_return("/source/_posts/2023-01-15-test.md")
-        allow(File).to receive(:exist?).with("/source/_posts/2023-01-15-test.md").and_return(false)
-
-        result = generator.send(:file_exists?, file_path)
-        expect(result).to be false
-      end
-    end
-  end
 end

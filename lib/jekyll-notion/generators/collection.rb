@@ -3,6 +3,8 @@
 module JekyllNotion
   module Generators
     class Collection < Generator
+      include Collectionable
+
       def call
         if config["data"].nil?
           notion_pages.each { |notion_page| generate_document(notion_page) }
@@ -15,22 +17,17 @@ module JekyllNotion
       private
 
       def generate_document(notion_page)
-        return if file_exists?(make_path(notion_page))
+        return if page_exists?(site_collection.docs, notion_page)
 
         document = make_doc(notion_page)
 
         site_collection.docs << document
 
-        log_page(notion_page)
+        log_page(document)
       end
 
       def site_collection
         @site.collections[collection_name]
-      end
-
-      # Checks if a file already exists in the site source
-      def file_exists?(file_path)
-        File.exist? @site.in_source_dir(file_path)
       end
 
       def make_doc(page)
@@ -57,17 +54,6 @@ module JekyllNotion
         else
           "#{Jekyll::Utils.slugify(page.title, :mode => "latin")}.md"
         end
-      end
-
-      def log_page(page)
-        Jekyll.logger.info("Jekyll Notion:", "Page => #{page.title}")
-        if @site.config.dig(
-          "collections", collection_name, "output"
-        )
-          Jekyll.logger.info("",
-                             "URL => #{site_collection.docs.last.url}")
-        end
-        Jekyll.logger.debug("", "Props => #{site_collection.docs.last.data.keys.inspect}")
       end
 
       def date_for(page)

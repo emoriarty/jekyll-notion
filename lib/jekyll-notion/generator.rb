@@ -127,8 +127,6 @@ module JekyllNotion
         Jekyll.logger.warn("Jekyll Notion:",
                            "The `page` key is deprecated. Please use `pages` instead.")
       end
-
     end
-
   end
 end
