@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency "jekyll", ">= 3.7", "< 5.0"
   spec.add_dependency "notion-ruby-client", "~> 1.2.0"
-  spec.add_dependency "notion_to_md", "3.0.0.beta1"
+  spec.add_dependency "notion_to_md", "3.0.0.beta2"
   spec.add_dependency "vcr", "~> 6.3.1"
   spec.add_dependency("zeitwerk", "~> 2.6")
 

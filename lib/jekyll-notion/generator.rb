@@ -89,9 +89,6 @@ module JekyllNotion
         :cache_enabled => cache?
       )
 
-      # Prepend once
-      sc = NotionToMd::Page.singleton_class
-      sc.prepend(JekyllNotion::Cacheable) unless sc.ancestors.include?(JekyllNotion::Cacheable)
     end
 
     def cache?

@@ -35,10 +35,10 @@ module JekyllNotion
       end
     end
 
-    def call(**kwargs)
+    def call
       return super unless JekyllNotion::Cacheable.enabled?
 
-      id = sanitize_id(kwargs[:id])
+      id = sanitize_id(self.id)
       dir = JekyllNotion::Cacheable.cache_dir
       cassette_name = preferred_cassette_name(dir, id)
       result = nil
@@ -49,7 +49,7 @@ module JekyllNotion
           :record                 => :new_episodes,
           :allow_playback_repeats => true
         ) do
-          result = super(**kwargs)
+          result = super
         end
       end
 
