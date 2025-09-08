@@ -200,14 +200,19 @@ properties](#notion-properties)).
 
 ### Cache
 
-All Notion requests are cached locally. Only
-the first request fetches from Notion; subsequent builds use the cache,
-greatly reducing build times.
+All Notion requests are cached locally with the [VCR](https://github.com/vcr/vcr) gem to speed up rebuilds.
+The first build fetches from the Notion API; subsequent builds reuse the cache.
 
-The cache uses the [vcr](https://github.com/vcr/vcr) gem. Each resource
-(page or database) is stored in a file named after its Notion ID, e.g.:
+The cache mechanism provides:
 
-    .cache/jekyll-notion/vcr_cassettes/e42383cd49754897b967ce453760499f.yml
+- Per-page cache files that include the Notion page title + ID, making them easy to identify.
+- Page-level deletion: remove a single cached page without affecting others.
+- Databases fetched on every rebuild: new content in Notion is always discovered, while cached pages prevent unnecessary re-fetches.
+
+**Example cached file (title + ID):**
+```bash
+.cache/jekyll-notion/vcr_cassettes/my-page-title-e42383cd49754897b967ce453760499f.yml
+```
 
 #### Cache folder
 
@@ -226,12 +231,14 @@ notion:
 export JEKYLL_NOTION_CACHE_DIR=/path/to/custom/cache
 ```
 
-The configuration file setting takes precedence over the environment variable. Both relative and absolute paths are supported - relative paths are resolved from the project root.
+The `_config.yml` setting takes precedence over the environment variable.
+Both relative and absolute paths are supported - relative paths are resolved
+from the project root.
 
 #### Cleaning the cache
 
-Delete the cache folder to clear everything, or remove an individual
-file matching the Notion resource ID.
+- Delete the entire cache folder to reset everything.
+- Or delete a single cached page file to refresh only that page.
 
 #### Disabling the cache
 
