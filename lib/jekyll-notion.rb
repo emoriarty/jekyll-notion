@@ -28,5 +28,5 @@ module JekyllNotion
   end
 end
 
-# Prepend Cacheable module to NotionToMd::Page for instance method caching  
+# Prepend Cacheable module to NotionToMd::Page for instance method caching
 NotionToMd::Page.prepend(JekyllNotion::Cacheable)

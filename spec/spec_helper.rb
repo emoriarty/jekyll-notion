@@ -44,7 +44,6 @@ JekyllNotion::Cacheable.singleton_class.prepend(Module.new do
                          false
                        end
 
-
     if integration_test
       # Integration test VCR configuration
       target_dir = "spec/fixtures/spec_cache"
@@ -60,9 +59,7 @@ JekyllNotion::Cacheable.singleton_class.prepend(Module.new do
 
         # Redact cookies from the VCR cassettes
         config.before_record do |interaction|
-          if interaction.response.headers["Set-Cookie"]
-            interaction.response.headers["Set-Cookie"].map! { |_cookie| "[COOKIE_REDACTED]" }
-          end
+          interaction.response.headers["Set-Cookie"]&.map! { |_cookie| "[COOKIE_REDACTED]" }
         end
 
         config.default_cassette_options = {

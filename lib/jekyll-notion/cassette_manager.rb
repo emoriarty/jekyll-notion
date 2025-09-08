@@ -14,12 +14,12 @@ module JekyllNotion
 
     def cassette_name_for(id)
       sanitized_id = sanitize_id(id)
-      
+
       # a) index mapping wins
       if (pretty = load_index_yaml[sanitized_id]) && File.exist?(cassette_path(pretty))
         return pretty
       end
-      
+
       # b) any existing "*-id.yml" (handles prior runs / title changes)
       if (found = find_existing_by_id(sanitized_id))
         return found
@@ -36,8 +36,8 @@ module JekyllNotion
       current_cassette = cassette_name_for(sanitized_id)
       pretty_name = "#{PAGES_DIR}/#{sanitize_title(title)}-#{sanitized_id}"
 
-      rename_cassette_if_needed(from: current_cassette, to: pretty_name)
-      update_index_yaml(id: sanitized_id, pretty: pretty_name)
+      rename_cassette_if_needed(:from => current_cassette, :to => pretty_name)
+      update_index_yaml(:id => sanitized_id, :pretty => pretty_name)
     end
 
     private
@@ -76,7 +76,7 @@ module JekyllNotion
     def load_index_yaml
       return {} unless File.exist?(index_path)
 
-      YAML.safe_load(File.read(index_path), permitted_classes: [], aliases: false) || {}
+      YAML.safe_load(File.read(index_path), :permitted_classes => [], :aliases => false) || {}
     rescue Psych::SyntaxError
       {}
     end

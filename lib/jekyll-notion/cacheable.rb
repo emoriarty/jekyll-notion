@@ -4,7 +4,6 @@ require_relative "cassette_manager"
 
 module JekyllNotion
   module Cacheable
-
     class << self
       def configure(cache_dir:, cache_enabled:)
         @cache_dir = cache_dir
@@ -27,7 +26,8 @@ module JekyllNotion
 
       def configure_vcr
         # Determine the directory to use based on configuration and environment
-        target_dir = @cache_dir || ENV["JEKYLL_NOTION_CACHE_DIR"] || File.join(Dir.pwd, ".cache", "jekyll-notion", "vcr_cassettes")
+        target_dir = @cache_dir || ENV["JEKYLL_NOTION_CACHE_DIR"] || File.join(Dir.pwd, ".cache",
+                                                                               "jekyll-notion", "vcr_cassettes")
 
         VCR.configure do |config|
           config.cassette_library_dir = target_dir
@@ -46,7 +46,7 @@ module JekyllNotion
       return super unless JekyllNotion::Cacheable.enabled?
 
       cassette_manager = CassetteManager.new(JekyllNotion::Cacheable.cache_dir)
-      cassette_name = cassette_manager.cassette_name_for(self.id)
+      cassette_name = cassette_manager.cassette_name_for(id)
       result = nil
 
       VCR.use_cassette(
@@ -57,10 +57,8 @@ module JekyllNotion
         result = super
       end
 
-      cassette_manager.update_after_call(self.id, result)
+      cassette_manager.update_after_call(id, result)
       result
     end
-
-
   end
 end

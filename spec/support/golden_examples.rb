@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 RSpec.shared_examples "a page is rendered correctly" do |page_name|
   it "imports and generates page" do
     page = site.pages.find { |p| p.basename == page_name }

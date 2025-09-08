@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/support/golden_helper.rb
 module GoldenHelper
   GOLDEN_DIR = File.expand_path("../fixtures/golden", __dir__)
