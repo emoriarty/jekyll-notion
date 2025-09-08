@@ -17,6 +17,7 @@ module JekyllNotion
   autoload :DocumentWithoutAFile, "jekyll-notion/document_without_a_file"
   autoload :PageWithoutAFile, "jekyll-notion/page_without_a_file"
   autoload :Cacheable, "jekyll-notion/cacheable"
+  autoload :CassetteManager, "jekyll-notion/cassette_manager"
 
   module Generators
     autoload :Generator, "jekyll-notion/generators/generator"
