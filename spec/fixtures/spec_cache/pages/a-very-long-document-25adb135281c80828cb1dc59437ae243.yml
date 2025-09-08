@@ -12,7 +12,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "[REDACTED]"
+      - "[AUTH_REDACTED]"
       Notion-Version:
       - '2022-02-22'
       Accept-Encoding:
@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 06 Sep 2025 06:03:22 GMT
+      - Mon, 08 Sep 2025 10:26:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,11 +33,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97abc3490ec1c1fb-MRS
+      - 97bdbf84b8bae285-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"771-zhvXNCd87NkhRWQeNnZRcE3sAeU"
+      - W/"771-Rj0qGJDzVoBkUZe+uPOSUUH0dvQ"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -55,21 +55,21 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 29fd18fd-5d82-46a9-959b-380e2e1052dc
+      - d8cf22c8-c194-493b-a1b1-20cdf0aaef86
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
+      - "[COOKIE_REDACTED]"
+      - "[COOKIE_REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJvYmplY3QiOiJwYWdlIiwiaWQiOiIyNWFkYjEzNS0yODFjLTgwODItOGNiMS1kYzU5NDM3YWUyNDMiLCJjcmVhdGVkX3RpbWUiOiIyMDI1LTA4LTI1VDE4OjE0OjAwLjAwMFoiLCJsYXN0X2VkaXRlZF90aW1lIjoiMjAyNS0wOC0zMFQwNToxMTowMC4wMDBaIiwiY3JlYXRlZF9ieSI6eyJvYmplY3QiOiJ1c2VyIiwiaWQiOiJkYjMxMzU3MS0wMjgwLTQxMWYtYTZkZS03MGU4MjY0MjFkMTIifSwibGFzdF9lZGl0ZWRfYnkiOnsib2JqZWN0IjoidXNlciIsImlkIjoiZGIzMTM1NzEtMDI4MC00MTFmLWE2ZGUtNzBlODI2NDIxZDEyIn0sImNvdmVyIjp7InR5cGUiOiJleHRlcm5hbCIsImV4dGVybmFsIjp7InVybCI6Imh0dHBzOi8vd3d3Lm5vdGlvbi5zby9pbWFnZXMvcGFnZS1jb3Zlci9yaWprc211c2V1bV9qYW5zel8xNjQxLmpwZyJ9fSwiaWNvbiI6eyJ0eXBlIjoiZW1vamkiLCJlbW9qaSI6IuKciO+4jyJ9LCJwYXJlbnQiOnsidHlwZSI6ImRhdGFiYXNlX2lkIiwiZGF0YWJhc2VfaWQiOiIxYWUzM2RkNS1mMzMxLTQ0MDItOTQ4MC02OTUxN2ZhNDBhZTIifSwiYXJjaGl2ZWQiOmZhbHNlLCJpbl90cmFzaCI6ZmFsc2UsInByb3BlcnRpZXMiOnsiZW1wdHkgZGF0ZSI6eyJpZCI6IiUzQSU3QmZIIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiTXVsdGkgU2VsZWN0Ijp7ImlkIjoiJTNDJTdCbiU3QiIsInR5cGUiOiJtdWx0aV9zZWxlY3QiLCJtdWx0aV9zZWxlY3QiOltdfSwiU2VsZWN0Ijp7ImlkIjoiJTNFempGIiwidHlwZSI6InNlbGVjdCIsInNlbGVjdCI6bnVsbH0sImRhdGUgd2l0aCB0aW1lIjp7ImlkIjoiQ1VFaiIsInR5cGUiOiJkYXRlIiwiZGF0ZSI6bnVsbH0sIlBlcnNvbiI6eyJpZCI6IlRGU3AiLCJ0eXBlIjoicGVvcGxlIiwicGVvcGxlIjpbXX0sIkRhdGUiOnsiaWQiOiJUfllCIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiVGFncyI6eyJpZCI6IlVUJTNGeCIsInR5cGUiOiJtdWx0aV9zZWxlY3QiLCJtdWx0aV9zZWxlY3QiOltdfSwiTnVtYmVycyI6eyJpZCI6ImF+ZGciLCJ0eXBlIjoibnVtYmVyIiwibnVtYmVyIjpudWxsfSwiUmljaCBUZXh0Ijp7ImlkIjoiakpXbyIsInR5cGUiOiJyaWNoX3RleHQiLCJyaWNoX3RleHQiOltdfSwiUGhvbmUiOnsiaWQiOiJrJTVERWkiLCJ0eXBlIjoicGhvbmVfbnVtYmVyIiwicGhvbmVfbnVtYmVyIjpudWxsfSwiRmlsZSI6eyJpZCI6InglNjByRiIsInR5cGUiOiJmaWxlcyIsImZpbGVzIjpbXX0sImVtcHR5IHJpY2ggdGV4dCI6eyJpZCI6Inh0RE8iLCJ0eXBlIjoicmljaF90ZXh0IiwicmljaF90ZXh0IjpbXX0sIkVtYWlsIjp7ImlkIjoieCU3QmN3IiwidHlwZSI6ImVtYWlsIiwiZW1haWwiOm51bGx9LCJDaGVja2JveCI6eyJpZCI6IiU3Q01QdSIsInR5cGUiOiJjaGVja2JveCIsImNoZWNrYm94IjpmYWxzZX0sImVtcHR5X3NlbGVjdCI6eyJpZCI6IiU3RFNyJTNGIiwidHlwZSI6InNlbGVjdCIsInNlbGVjdCI6bnVsbH0sIk5hbWUiOnsiaWQiOiJ0aXRsZSIsInR5cGUiOiJ0aXRsZSIsInRpdGxlIjpbeyJ0eXBlIjoidGV4dCIsInRleHQiOnsiY29udGVudCI6IkEgdmVyeSBsb25nIGRvY3VtZW50IiwibGluayI6bnVsbH0sImFubm90YXRpb25zIjp7ImJvbGQiOmZhbHNlLCJpdGFsaWMiOmZhbHNlLCJzdHJpa2V0aHJvdWdoIjpmYWxzZSwidW5kZXJsaW5lIjpmYWxzZSwiY29kZSI6ZmFsc2UsImNvbG9yIjoiZGVmYXVsdCJ9LCJwbGFpbl90ZXh0IjoiQSB2ZXJ5IGxvbmcgZG9jdW1lbnQiLCJocmVmIjpudWxsfV19fSwidXJsIjoiaHR0cHM6Ly93d3cubm90aW9uLnNvL0EtdmVyeS1sb25nLWRvY3VtZW50LTI1YWRiMTM1MjgxYzgwODI4Y2IxZGM1OTQzN2FlMjQzIiwicHVibGljX3VybCI6bnVsbCwicmVxdWVzdF9pZCI6IjI5ZmQxOGZkLTVkODItNDZhOS05NTliLTM4MGUyZTEwNTJkYyJ9
-  recorded_at: Sat, 06 Sep 2025 06:02:58 GMT
+        eyJvYmplY3QiOiJwYWdlIiwiaWQiOiIyNWFkYjEzNS0yODFjLTgwODItOGNiMS1kYzU5NDM3YWUyNDMiLCJjcmVhdGVkX3RpbWUiOiIyMDI1LTA4LTI1VDE4OjE0OjAwLjAwMFoiLCJsYXN0X2VkaXRlZF90aW1lIjoiMjAyNS0wOC0zMFQwNToxMTowMC4wMDBaIiwiY3JlYXRlZF9ieSI6eyJvYmplY3QiOiJ1c2VyIiwiaWQiOiJkYjMxMzU3MS0wMjgwLTQxMWYtYTZkZS03MGU4MjY0MjFkMTIifSwibGFzdF9lZGl0ZWRfYnkiOnsib2JqZWN0IjoidXNlciIsImlkIjoiZGIzMTM1NzEtMDI4MC00MTFmLWE2ZGUtNzBlODI2NDIxZDEyIn0sImNvdmVyIjp7InR5cGUiOiJleHRlcm5hbCIsImV4dGVybmFsIjp7InVybCI6Imh0dHBzOi8vd3d3Lm5vdGlvbi5zby9pbWFnZXMvcGFnZS1jb3Zlci9yaWprc211c2V1bV9qYW5zel8xNjQxLmpwZyJ9fSwiaWNvbiI6eyJ0eXBlIjoiZW1vamkiLCJlbW9qaSI6IuKciO+4jyJ9LCJwYXJlbnQiOnsidHlwZSI6ImRhdGFiYXNlX2lkIiwiZGF0YWJhc2VfaWQiOiIxYWUzM2RkNS1mMzMxLTQ0MDItOTQ4MC02OTUxN2ZhNDBhZTIifSwiYXJjaGl2ZWQiOmZhbHNlLCJpbl90cmFzaCI6ZmFsc2UsInByb3BlcnRpZXMiOnsiZW1wdHkgZGF0ZSI6eyJpZCI6IiUzQSU3QmZIIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiTXVsdGkgU2VsZWN0Ijp7ImlkIjoiJTNDJTdCbiU3QiIsInR5cGUiOiJtdWx0aV9zZWxlY3QiLCJtdWx0aV9zZWxlY3QiOltdfSwiU2VsZWN0Ijp7ImlkIjoiJTNFempGIiwidHlwZSI6InNlbGVjdCIsInNlbGVjdCI6bnVsbH0sImRhdGUgd2l0aCB0aW1lIjp7ImlkIjoiQ1VFaiIsInR5cGUiOiJkYXRlIiwiZGF0ZSI6bnVsbH0sIlBlcnNvbiI6eyJpZCI6IlRGU3AiLCJ0eXBlIjoicGVvcGxlIiwicGVvcGxlIjpbXX0sIkRhdGUiOnsiaWQiOiJUfllCIiwidHlwZSI6ImRhdGUiLCJkYXRlIjpudWxsfSwiVGFncyI6eyJpZCI6IlVUJTNGeCIsInR5cGUiOiJtdWx0aV9zZWxlY3QiLCJtdWx0aV9zZWxlY3QiOltdfSwiTnVtYmVycyI6eyJpZCI6ImF+ZGciLCJ0eXBlIjoibnVtYmVyIiwibnVtYmVyIjpudWxsfSwiUmljaCBUZXh0Ijp7ImlkIjoiakpXbyIsInR5cGUiOiJyaWNoX3RleHQiLCJyaWNoX3RleHQiOltdfSwiUGhvbmUiOnsiaWQiOiJrJTVERWkiLCJ0eXBlIjoicGhvbmVfbnVtYmVyIiwicGhvbmVfbnVtYmVyIjpudWxsfSwiRmlsZSI6eyJpZCI6InglNjByRiIsInR5cGUiOiJmaWxlcyIsImZpbGVzIjpbXX0sImVtcHR5IHJpY2ggdGV4dCI6eyJpZCI6Inh0RE8iLCJ0eXBlIjoicmljaF90ZXh0IiwicmljaF90ZXh0IjpbXX0sIkVtYWlsIjp7ImlkIjoieCU3QmN3IiwidHlwZSI6ImVtYWlsIiwiZW1haWwiOm51bGx9LCJDaGVja2JveCI6eyJpZCI6IiU3Q01QdSIsInR5cGUiOiJjaGVja2JveCIsImNoZWNrYm94IjpmYWxzZX0sImVtcHR5X3NlbGVjdCI6eyJpZCI6IiU3RFNyJTNGIiwidHlwZSI6InNlbGVjdCIsInNlbGVjdCI6bnVsbH0sIk5hbWUiOnsiaWQiOiJ0aXRsZSIsInR5cGUiOiJ0aXRsZSIsInRpdGxlIjpbeyJ0eXBlIjoidGV4dCIsInRleHQiOnsiY29udGVudCI6IkEgdmVyeSBsb25nIGRvY3VtZW50IiwibGluayI6bnVsbH0sImFubm90YXRpb25zIjp7ImJvbGQiOmZhbHNlLCJpdGFsaWMiOmZhbHNlLCJzdHJpa2V0aHJvdWdoIjpmYWxzZSwidW5kZXJsaW5lIjpmYWxzZSwiY29kZSI6ZmFsc2UsImNvbG9yIjoiZGVmYXVsdCJ9LCJwbGFpbl90ZXh0IjoiQSB2ZXJ5IGxvbmcgZG9jdW1lbnQiLCJocmVmIjpudWxsfV19fSwidXJsIjoiaHR0cHM6Ly93d3cubm90aW9uLnNvL0EtdmVyeS1sb25nLWRvY3VtZW50LTI1YWRiMTM1MjgxYzgwODI4Y2IxZGM1OTQzN2FlMjQzIiwicHVibGljX3VybCI6bnVsbCwicmVxdWVzdF9pZCI6ImQ4Y2YyMmM4LWMxOTQtNDkzYi1hMWIxLTIwY2RmMGFhZWY4NiJ9
+  recorded_at: Mon, 08 Sep 2025 10:26:05 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/25adb135-281c-8082-8cb1-dc59437ae243/children
@@ -82,7 +82,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "[REDACTED]"
+      - "[AUTH_REDACTED]"
       Notion-Version:
       - '2022-02-22'
       Accept-Encoding:
@@ -93,7 +93,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 06 Sep 2025 06:03:23 GMT
+      - Mon, 08 Sep 2025 10:26:32 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -103,11 +103,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97abc34b5e35c0ab-MRS
+      - 97bdbf869d12b924-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"2ea74-YZ1FFc6FmUm2MuAP/d/vJCvRw6c"
+      - W/"2ea74-vlQmtxtVZy7xSr+yczvzzaY2V/o"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -125,14 +125,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 93db07e9-a7c3-43fe-883d-b7625f54eda2
+      - f1f60b0d-edbb-4086-a639-cf89f648eea6
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
+      - "[COOKIE_REDACTED]"
+      - "[COOKIE_REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -1781,8 +1781,8 @@ http_interactions:
         ac purus ut eros bibendum aliquam ut sit amet erat. Praesent iaculis sem luctus
         tellus hendrerit, ultrices pretium arcu fringilla. Ut eget luctus arcu. Pellentesque
         fermentum ornare laoreet. Aliquam eu justo ut nibh blandit sodales quis sed
-        risus. Etiam at odio id quam rutrum bibendum.","href":null}],"color":"default"}}],"next_cursor":"25adb135-281c-80c5-8f7b-e51852bd47af","has_more":true,"type":"block","block":{},"request_id":"93db07e9-a7c3-43fe-883d-b7625f54eda2"}'
-  recorded_at: Sat, 06 Sep 2025 06:02:58 GMT
+        risus. Etiam at odio id quam rutrum bibendum.","href":null}],"color":"default"}}],"next_cursor":"25adb135-281c-80c5-8f7b-e51852bd47af","has_more":true,"type":"block","block":{},"request_id":"f1f60b0d-edbb-4086-a639-cf89f648eea6"}'
+  recorded_at: Mon, 08 Sep 2025 10:26:06 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/25adb135-281c-8082-8cb1-dc59437ae243/children?start_cursor=25adb135-281c-80c5-8f7b-e51852bd47af
@@ -1795,7 +1795,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "[REDACTED]"
+      - "[AUTH_REDACTED]"
       Notion-Version:
       - '2022-02-22'
       Accept-Encoding:
@@ -1806,7 +1806,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 06 Sep 2025 06:03:23 GMT
+      - Mon, 08 Sep 2025 10:26:33 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -1816,11 +1816,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97abc3502dcde16b-MRS
+      - 97bdbf8ba9fb3d46-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"67e-Xu7oW1ALY9lCGSD6Ja4By3bU6RI"
+      - W/"67e-MtBS+/NXZ6ojnFDR1x4LFIgT/n4"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -1838,14 +1838,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 0cb23f67-84be-4203-9514-071473dd4726
+      - d58ea5d6-caea-415a-8f07-e1d5bff61a55
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
+      - "[COOKIE_REDACTED]"
+      - "[COOKIE_REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -1862,6 +1862,6 @@ http_interactions:
         vulputate, nunc urna varius sem, non ullamcorper erat arcu ut leo. Duis luctus
         elit imperdiet, vulputate quam in, pretium ex. Ut odio metus, tempor vitae
         tellus et, iaculis hendrerit metus. Nunc mi enim, aliquam eu vehicula eu,
-        tempor nec odio.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"0cb23f67-84be-4203-9514-071473dd4726"}'
-  recorded_at: Sat, 06 Sep 2025 06:02:59 GMT
+        tempor nec odio.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"d58ea5d6-caea-415a-8f07-e1d5bff61a55"}'
+  recorded_at: Mon, 08 Sep 2025 10:26:06 GMT
 recorded_with: VCR 6.3.1

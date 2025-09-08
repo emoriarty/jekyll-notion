@@ -12,7 +12,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "[REDACTED]"
+      - "[AUTH_REDACTED]"
       Notion-Version:
       - '2022-02-22'
       Accept-Encoding:
@@ -23,7 +23,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 06 Sep 2025 06:03:34 GMT
+      - Mon, 08 Sep 2025 10:26:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -33,11 +33,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97abc3939d4144c2-MRS
+      - 97bdc010ab9273d3-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"7a5-TCL/mEJc8450Fs+VD8StlbnXjYQ"
+      - W/"7a5-pF1tmdhqdLFafBBHFuJxCHmvVSQ"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -55,14 +55,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 2877fcea-d90a-419b-82f4-06f43c9927ef
+      - e6ea6cef-2db3-40d6-bc03-2af801fa3e22
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
+      - "[COOKIE_REDACTED]"
+      - "[COOKIE_REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -73,8 +73,8 @@ http_interactions:
         Text":{"id":"jJWo","type":"rich_text","rich_text":[]},"Phone":{"id":"k%5DEi","type":"phone_number","phone_number":null},"File":{"id":"x%60rF","type":"files","files":[]},"empty
         rich text":{"id":"xtDO","type":"rich_text","rich_text":[]},"Email":{"id":"x%7Bcw","type":"email","email":null},"Checkbox":{"id":"%7CMPu","type":"checkbox","checkbox":false},"empty_select":{"id":"%7DSr%3F","type":"select","select":null},"Name":{"id":"title","type":"title","title":[{"type":"text","text":{"content":"Page
         3","link":null},"annotations":{"bold":false,"italic":false,"strikethrough":false,"underline":false,"code":false,"color":"default"},"plain_text":"Page
-        3","href":null}]}},"url":"https://www.notion.so/Page-3-6c9343606ef64b12abb6bb9dc0d53622","public_url":null,"request_id":"2877fcea-d90a-419b-82f4-06f43c9927ef"}'
-  recorded_at: Sat, 06 Sep 2025 06:03:09 GMT
+        3","href":null}]}},"url":"https://www.notion.so/Page-3-6c9343606ef64b12abb6bb9dc0d53622","public_url":null,"request_id":"e6ea6cef-2db3-40d6-bc03-2af801fa3e22"}'
+  recorded_at: Mon, 08 Sep 2025 10:26:28 GMT
 - request:
     method: get
     uri: https://api.notion.com/v1/blocks/6c934360-6ef6-4b12-abb6-bb9dc0d53622/children
@@ -87,7 +87,7 @@ http_interactions:
       User-Agent:
       - Notion Ruby Client/1.2.2
       Authorization:
-      - "[REDACTED]"
+      - "[AUTH_REDACTED]"
       Notion-Version:
       - '2022-02-22'
       Accept-Encoding:
@@ -98,7 +98,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 06 Sep 2025 06:03:36 GMT
+      - Mon, 08 Sep 2025 10:26:55 GMT
       Content-Type:
       - application/json; charset=utf-8
       Transfer-Encoding:
@@ -108,11 +108,11 @@ http_interactions:
       Server:
       - cloudflare
       Cf-Ray:
-      - 97abc3958eabcdcc-MRS
+      - 97bdc016fc2f168f-MRS
       Cf-Cache-Status:
       - DYNAMIC
       Etag:
-      - W/"1edb-/EEF7pkS7IeygqiMhB4rTbP7ve0"
+      - W/"1edb-BM8U5FqnCZH8DErak8upK9xjG/Q"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
       Vary:
@@ -130,14 +130,14 @@ http_interactions:
       X-Frame-Options:
       - SAMEORIGIN
       X-Notion-Request-Id:
-      - 01eb4d7d-e3a2-4f16-844d-d382512243e7
+      - c966bcf0-e22f-401d-b614-2026118ad531
       X-Permitted-Cross-Domain-Policies:
       - none
       X-Xss-Protection:
       - '0'
       Set-Cookie:
-      - "[REDACTED]"
-      - "[REDACTED]"
+      - "[COOKIE_REDACTED]"
+      - "[COOKIE_REDACTED]"
       Alt-Svc:
       - h3=":443"; ma=86400
     body:
@@ -206,6 +206,6 @@ http_interactions:
         tellus. Nam et purus at orci aliquam malesuada non a libero. Vivamus at condimentum
         dolor. Duis blandit tincidunt quam, quis pellentesque tellus auctor in. Praesent
         vel ligula felis. Ut pellentesque scelerisque metus vitae vehicula. Vivamus
-        lacinia rhoncus maximus. Duis id ligula et ex suscipit tincidunt.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"01eb4d7d-e3a2-4f16-844d-d382512243e7"}'
-  recorded_at: Sat, 06 Sep 2025 06:03:11 GMT
+        lacinia rhoncus maximus. Duis id ligula et ex suscipit tincidunt.","href":null}],"color":"default"}}],"next_cursor":null,"has_more":false,"type":"block","block":{},"request_id":"c966bcf0-e22f-401d-b614-2026118ad531"}'
+  recorded_at: Mon, 08 Sep 2025 10:26:29 GMT
 recorded_with: VCR 6.3.1
