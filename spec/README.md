@@ -16,7 +16,7 @@ Unit tests validate individual classes, modules, and methods in isolation withou
 
 ```ruby
 # Testing individual methods without site.process
-expect(JekyllNotion::Cacheable.cache_dir).to eq("/path")
+expect(JekyllNotion::Cacheable.enabled?).to be true
 instance.call(id: "test-123")
 ```
 
@@ -43,34 +43,29 @@ expect(site.posts.first.content).to include("notion content")
 > Does it call `site.process`? → ✅ Integration (`spec/integration/`)
 > Otherwise → ✅ Unit (`spec/unit/`)
 
-## VCR Caching (Integration Tests Only)
+## VCR Configuration
 
-Integration tests use [VCR](https://relishapp.com/vcr/vcr/docs) to record/replay Notion API calls for consistent, fast runs.
+The plugin uses [VCR](https://benoittgt.github.io/vcr) to record/replay Notion API calls with environment-specific configurations.
+
+### Environment-Aware VCR Setup
+
+VCR configuration automatically adapts based on test type:
+
+- **Integration Tests** (`spec/integration/`): Use webmock + shared cassettes in `spec/fixtures/spec_cache/`
+- **Unit Tests** (`spec/unit/`): Use faraday + isolated temporary directories for complete isolation
+
+The system detects test type by file path and applies appropriate configuration automatically.
 
 ### How VCR Works
 
-- **Pages**: Cached automatically in `.cache/jekyll-notion/vcr_cassettes/pages/[title]-[id].yml`
-- **Databases/others**: Must be wrapped in a cassette:
+#### Database/Other API Calls
+Must be wrapped in a cassette:
 
 ```ruby
 # For database requests and other non-page API calls
-VCR.use_cassette("setup/deprecated_options") { site.process }
+VCR.use_cassette("notion_database") { site.process }
 ```
 
 > [!TIP]
 > Wrap `site.process` when the `databases` key is declared in `_config.yml`.
 
-### VCR Configuration
-
-VCR is configured in `spec/spec_helper.rb` with:
-- Cassette storage in `spec/fixtures/spec_cache/`
-- Sensitive data filtering (Authorization tokens, cookies)
-- New episodes recording mode
-
-### Cassette Structure
-
-- **Pages**: `.cache/jekyll-notion/vcr_cassettes/pages/[page-title]-[id].yml`
-- **Other requests**: `spec/fixtures/spec_cache/[test-name].yml`
-
-> [!IMPORTANT]
-> Pages rely on the plugin's built-in cache; other requests use RSpec-managed fixtures.
