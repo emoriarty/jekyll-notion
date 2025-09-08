@@ -6,12 +6,12 @@ module JekyllNotion
       # pages => Array of NotionToMd::Page
       def call
         data = if notion_pages.size > 1
-                   notion_pages.map do |page|
-                     page.send(:frontmatter_properties).merge({ "content" => convert(page) })
-                   end
-                 else
-                   notion_pages.first.send(:frontmatter_properties).merge({ "content" => convert(notion_pages.first) })
+                 notion_pages.map do |page|
+                   page.send(:frontmatter_properties).merge({ "content" => convert(page) })
                  end
+               else
+                 notion_pages.first.send(:frontmatter_properties).merge({ "content" => convert(notion_pages.first) })
+               end
 
         @site.data[config["data"]] = data
 

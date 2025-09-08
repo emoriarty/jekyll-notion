@@ -88,17 +88,15 @@ module JekyllNotion
         :cache_dir     => config["cache_dir"],
         :cache_enabled => cache?
       )
-
     end
 
     def cache?
-      if config.key?("cache")
-        value = config["cache"]
-        value.nil? || !falsy?(value)
-      else
-        value = ENV.fetch("JEKYLL_NOTION_CACHE", nil)
-        value.nil? || !falsy?(value)
-      end
+      value = if config.key?("cache")
+                config["cache"]
+              else
+                ENV.fetch("JEKYLL_NOTION_CACHE", nil)
+              end
+      value.nil? || !falsy?(value)
     end
 
     private
