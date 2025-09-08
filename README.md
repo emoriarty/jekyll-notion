@@ -45,6 +45,24 @@ Then enable the plugin in `_config.yml`:
 plugins:
   - jekyll-notion
 ```
+
+### Beta version
+
+If you want to try the **beta release**, install with the `--pre` flag:
+
+```bash
+gem install jekyll-notion --pre
+```
+
+Or pin the beta in your Gemfile:
+
+```ruby
+gem "jekyll-notion", "3.0.0.beta1"
+```
+
+⚠️ This version is under active development. For stable usage, prefer the latest `2.x.x` release.
+
+
 ## Usage
 
 Before using the gem, [create a Notion
