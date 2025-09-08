@@ -312,7 +312,7 @@ Jekyll distinguishes between **posts** and **other documents**:
 
 -   **Posts**: filenames follow the format
     `YEAR-MONTH-DAY-title.MARKUP`, where the date comes from the Notion
-    `created_time` (or the `date` property if present).\
+    `created_time` (or the `date` property if present).
 -   **Other documents**: filenames are derived from the Notion page
     title.
 
