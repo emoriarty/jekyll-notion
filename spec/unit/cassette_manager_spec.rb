@@ -7,7 +7,7 @@ RSpec.describe JekyllNotion::CassetteManager do
   let(:manager) { described_class.new(cache_dir) }
   let(:page_id) { "test-123" }
 
-  after { FileUtils.remove_entry(cache_dir) if Dir.exist?(cache_dir) }
+  after { FileUtils.rm_rf(cache_dir) }
 
   describe "#cassette_name_for" do
     context "when index mapping exists and file exists" do

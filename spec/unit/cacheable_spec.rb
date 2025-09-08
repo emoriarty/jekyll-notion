@@ -29,7 +29,7 @@ RSpec.describe JekyllNotion::Cacheable do
   end
 
   after do
-    FileUtils.remove_entry(cache_dir) if Dir.exist?(cache_dir)
+    FileUtils.rm_rf(cache_dir)
   end
 
   describe ".configure" do
@@ -46,7 +46,7 @@ RSpec.describe JekyllNotion::Cacheable do
       expect(JekyllNotion::Cacheable.cache_dir).to eq(VCR.configuration.cassette_library_dir)
       expect(JekyllNotion::Cacheable.enabled?).to be false
 
-      FileUtils.remove_entry(temp_dir) if Dir.exist?(temp_dir)
+      FileUtils.rm_rf(temp_dir)
     end
   end
 
@@ -70,7 +70,7 @@ RSpec.describe JekyllNotion::Cacheable do
       expect(JekyllNotion::Cacheable.cache_dir).to eq(VCR.configuration.cassette_library_dir)
       expect(JekyllNotion::Cacheable.cache_dir).to eq(temp_dir)
 
-      FileUtils.remove_entry(temp_dir) if Dir.exist?(temp_dir)
+      FileUtils.rm_rf(temp_dir)
     end
   end
 
