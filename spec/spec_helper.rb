@@ -44,7 +44,6 @@ JekyllNotion::Cacheable.singleton_class.prepend(Module.new do
                          false
                        end
 
-
     if integration_test
       # Integration test VCR configuration
       target_dir = "spec/fixtures/spec_cache"

@@ -88,7 +88,6 @@ module JekyllNotion
         :cache_dir     => config["cache_dir"],
         :cache_enabled => cache?
       )
-
     end
 
     def cache?

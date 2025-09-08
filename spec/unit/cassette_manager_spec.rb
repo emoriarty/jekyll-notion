@@ -15,7 +15,7 @@ RSpec.describe JekyllNotion::CassetteManager do
         index_path = File.join(cache_dir, ".pages_index.yml")
         FileUtils.mkdir_p(File.dirname(index_path))
         File.write(index_path, { "test123" => "pages/pretty-name-test123" }.to_yaml)
-        
+
         pretty_file = File.join(cache_dir, "pages", "pretty-name-test123.yml")
         FileUtils.mkdir_p(File.dirname(pretty_file))
         File.write(pretty_file, "test")
@@ -50,11 +50,11 @@ RSpec.describe JekyllNotion::CassetteManager do
 
   describe "#update_after_call" do
     let(:result_with_title) do
-      double("result", title: "Test Page Title")
+      double("result", :title => "Test Page Title")
     end
 
     let(:result_without_title) do
-      double("result", title: "")
+      double("result", :title => "")
     end
 
     context "when result has a title" do
@@ -65,12 +65,12 @@ RSpec.describe JekyllNotion::CassetteManager do
         manager.update_after_call(page_id, result_with_title)
 
         expect(manager).to have_received(:rename_cassette_if_needed).with(
-          from: "pages/test123",
-          to: "pages/test-page-title-test123"
+          :from => "pages/test123",
+          :to   => "pages/test-page-title-test123"
         )
         expect(manager).to have_received(:update_index_yaml).with(
-          id: "test123",
-          pretty: "pages/test-page-title-test123"
+          :id     => "test123",
+          :pretty => "pages/test-page-title-test123"
         )
       end
     end
@@ -115,7 +115,7 @@ RSpec.describe JekyllNotion::CassetteManager do
       context "when source and destination are the same" do
         it "does nothing" do
           expect(FileUtils).not_to receive(:mv)
-          manager.send(:rename_cassette_if_needed, from: "pages/same", to: "pages/same")
+          manager.send(:rename_cassette_if_needed, :from => "pages/same", :to => "pages/same")
         end
       end
 
@@ -127,7 +127,8 @@ RSpec.describe JekyllNotion::CassetteManager do
         end
 
         it "renames the file" do
-          manager.send(:rename_cassette_if_needed, from: "pages/old-name", to: "pages/new-name")
+          manager.send(:rename_cassette_if_needed, :from => "pages/old-name",
+                                                   :to   => "pages/new-name")
 
           src_path = File.join(cache_dir, "pages", "old-name.yml")
           dst_path = File.join(cache_dir, "pages", "new-name.yml")
@@ -141,7 +142,8 @@ RSpec.describe JekyllNotion::CassetteManager do
       context "when source doesn't exist" do
         it "does nothing" do
           expect do
-            manager.send(:rename_cassette_if_needed, from: "pages/nonexistent", to: "pages/new-name")
+            manager.send(:rename_cassette_if_needed, :from => "pages/nonexistent",
+                                                     :to   => "pages/new-name")
           end.not_to raise_error
 
           expect(File.exist?(File.join(cache_dir, "pages", "new-name.yml"))).to be false
@@ -158,7 +160,8 @@ RSpec.describe JekyllNotion::CassetteManager do
         end
 
         it "does nothing to avoid overwriting" do
-          manager.send(:rename_cassette_if_needed, from: "pages/old-name", to: "pages/new-name")
+          manager.send(:rename_cassette_if_needed, :from => "pages/old-name",
+                                                   :to   => "pages/new-name")
 
           src_path = File.join(cache_dir, "pages", "old-name.yml")
           dst_path = File.join(cache_dir, "pages", "new-name.yml")
@@ -206,7 +209,7 @@ RSpec.describe JekyllNotion::CassetteManager do
 
     describe "#update_index_yaml" do
       it "creates new index file with mapping" do
-        manager.send(:update_index_yaml, id: "page123", pretty: "pages/nice-title")
+        manager.send(:update_index_yaml, :id => "page123", :pretty => "pages/nice-title")
 
         index_path = File.join(cache_dir, ".pages_index.yml")
         expect(File.exist?(index_path)).to be true
@@ -216,8 +219,8 @@ RSpec.describe JekyllNotion::CassetteManager do
       end
 
       it "updates existing index file" do
-        manager.send(:update_index_yaml, id: "page1", pretty: "pages/title1")
-        manager.send(:update_index_yaml, id: "new", pretty: "pages/new-title")
+        manager.send(:update_index_yaml, :id => "page1", :pretty => "pages/title1")
+        manager.send(:update_index_yaml, :id => "new", :pretty => "pages/new-title")
 
         index_path = File.join(cache_dir, ".pages_index.yml")
         content = YAML.safe_load(File.read(index_path))
@@ -227,13 +230,13 @@ RSpec.describe JekyllNotion::CassetteManager do
       end
 
       it "doesn't update if mapping is unchanged" do
-        manager.send(:update_index_yaml, id: "page1", pretty: "pages/same")
+        manager.send(:update_index_yaml, :id => "page1", :pretty => "pages/same")
 
         index_path = File.join(cache_dir, ".pages_index.yml")
         original_mtime = File.mtime(index_path)
 
         sleep 0.01
-        manager.send(:update_index_yaml, id: "page1", pretty: "pages/same")
+        manager.send(:update_index_yaml, :id => "page1", :pretty => "pages/same")
 
         expect(File.mtime(index_path)).to eq(original_mtime)
       end

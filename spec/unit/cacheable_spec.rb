@@ -23,8 +23,8 @@ RSpec.describe JekyllNotion::Cacheable do
 
   before do
     JekyllNotion::Cacheable.configure(
-      cache_dir: cache_dir,
-      cache_enabled: true
+      :cache_dir     => cache_dir,
+      :cache_enabled => true
     )
   end
 
@@ -36,16 +36,16 @@ RSpec.describe JekyllNotion::Cacheable do
     it "sets cache directory and enabled status" do
       # Use a valid temp directory instead of an invalid path
       temp_dir = Dir.mktmpdir("test-cache")
-      
+
       JekyllNotion::Cacheable.configure(
-        cache_dir: temp_dir,
-        cache_enabled: false
+        :cache_dir     => temp_dir,
+        :cache_enabled => false
       )
 
       # cache_dir now returns VCR.configuration.cassette_library_dir for consistency
       expect(JekyllNotion::Cacheable.cache_dir).to eq(VCR.configuration.cassette_library_dir)
       expect(JekyllNotion::Cacheable.enabled?).to be false
-      
+
       FileUtils.remove_entry(temp_dir) if Dir.exist?(temp_dir)
     end
   end
@@ -60,16 +60,16 @@ RSpec.describe JekyllNotion::Cacheable do
     it "maintains consistency when VCR configuration changes" do
       # Configure with a valid temp directory
       temp_dir = Dir.mktmpdir("consistency-test")
-      
+
       JekyllNotion::Cacheable.configure(
-        cache_dir: temp_dir,
-        cache_enabled: true
+        :cache_dir     => temp_dir,
+        :cache_enabled => true
       )
 
       # Both should be the same after configuration
       expect(JekyllNotion::Cacheable.cache_dir).to eq(VCR.configuration.cassette_library_dir)
       expect(JekyllNotion::Cacheable.cache_dir).to eq(temp_dir)
-      
+
       FileUtils.remove_entry(temp_dir) if Dir.exist?(temp_dir)
     end
   end
@@ -78,8 +78,8 @@ RSpec.describe JekyllNotion::Cacheable do
     context "when caching is disabled" do
       before do
         JekyllNotion::Cacheable.configure(
-          cache_dir: cache_dir,
-          cache_enabled: false
+          :cache_dir     => cache_dir,
+          :cache_enabled => false
         )
       end
 
@@ -94,14 +94,15 @@ RSpec.describe JekyllNotion::Cacheable do
 
     context "when caching is enabled" do
       before do
-        cassette_manager = instance_double(JekyllNotion::CassetteManager, cassette_name_for: "cassette_name", update_after_call: "")
+        cassette_manager = instance_double(JekyllNotion::CassetteManager,
+                                           :cassette_name_for => "cassette_name", :update_after_call => "")
 
         allow(JekyllNotion::CassetteManager).to receive(:new).and_return(cassette_manager)
         allow(VCR).to receive(:use_cassette).and_yield
 
         JekyllNotion::Cacheable.configure(
-          cache_dir: cache_dir,
-          cache_enabled: true
+          :cache_dir     => cache_dir,
+          :cache_enabled => true
         )
       end
 
@@ -110,8 +111,8 @@ RSpec.describe JekyllNotion::Cacheable do
 
         expect(VCR).to have_received(:use_cassette).with(
           "cassette_name",
-          record: :new_episodes,
-          allow_playback_repeats: true
+          :record                 => :new_episodes,
+          :allow_playback_repeats => true
         )
         expect(result).to eq("original result")
       end
