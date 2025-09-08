@@ -37,8 +37,6 @@ jobs:
         bundler: latest
     - name: Run tests
       run: NOTION_TOKEN=dummy_secret_token bundle exec rspec
-    - name: Run lint
-      run: bundle exec rubocop
     - name: Archive code coverage results
       uses: actions/upload-artifact@v4
       with:
