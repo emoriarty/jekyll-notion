@@ -255,6 +255,31 @@ Or use the `JEKYLL_NOTION_CACHE` environment variable:
 export JEKYLL_NOTION_CACHE=false  # or 0, no
 ```
 
+## Sensitive data
+
+The cache stores full request and response payloads from the Notion API.
+This may include sensitive information such as authentication tokens, URLs, or private content.
+
+If you intend to store cached files in version control or share them with others, be mindful of what they contain.
+By default, jekyll-notion automatically redacts the `NOTION_TOKEN` from all cache files.
+If you need to mask additional values, you can configure [VCR filters](https://benoittgt.github.io/vcr/#/configuration/filter_sensitive_data?id=filter-sensitive-data).
+
+For example, add a file `_plugins/vcr_config.rb`:
+
+```ruby
+VCR.configure do |config|
+  # Already handled by jekyll-notion: NOTION_TOKEN
+  # Example of masking a custom header or property:
+  config.filter_sensitive_data("[MASKED]") do |interaction|
+    interaction.request.headers["User-Agent"]&.first
+  end
+end
+```
+
+This file will be automatically picked up by Jekyll and merged into the VCR configuration provided by jekyll-notion.
+
+You can add filters for headers, query parameters, or any other values you don’t want exposed in the cache.
+
 ## Notion properties
 
 Notion page properties are mapped into each Jekyll document's front
