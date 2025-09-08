@@ -9,9 +9,15 @@ RSpec.describe JekyllNotion::Cacheable do
     Class.new do
       prepend JekyllNotion::Cacheable
 
-      def call(**kwargs)
+      attr_reader :id
+
+      def initialize(id)
+        @id = id
+      end
+
+      def call
         # Simulate API call behavior - this is what super calls
-        OpenStruct.new(:title => "Test Page #{kwargs[:id]}", :content => "Test content")
+        OpenStruct.new(:title => "Test Page #{@id}", :content => "Test content")
       end
 
       def extract_title(result)
@@ -19,7 +25,7 @@ RSpec.describe JekyllNotion::Cacheable do
       end
     end
   end
-  let(:instance) { test_class.new }
+  let(:instance) { test_class.new("test-123") }
 
   before do
     JekyllNotion::Cacheable.configure(:cache_dir => cache_dir, :cache_enabled => true)
@@ -41,7 +47,7 @@ RSpec.describe JekyllNotion::Cacheable do
         expect(instance).to receive(:call).and_call_original
         allow(VCR).to receive(:use_cassette)
 
-        result = instance.call(:id => "test-123")
+        result = instance.call
 
         expect(VCR).not_to have_received(:use_cassette)
         expect(result.title).to eq("Test Page test-123")
@@ -56,7 +62,7 @@ RSpec.describe JekyllNotion::Cacheable do
           :allow_playback_repeats => true
         ).and_yield
 
-        result = instance.call(:id => "test-123")
+        result = instance.call
         expect(result.title).to eq("Test Page test-123")
       end
 
@@ -65,7 +71,7 @@ RSpec.describe JekyllNotion::Cacheable do
         allow(instance).to receive(:rename_cassette_if_needed)
         allow(instance).to receive(:update_index_yaml)
 
-        result = instance.call(:id => "test-123")
+        result = instance.call
 
         expect(instance).to have_received(:rename_cassette_if_needed).with(
           cache_dir,
@@ -79,12 +85,13 @@ RSpec.describe JekyllNotion::Cacheable do
       end
 
       it "sanitizes IDs by removing dashes" do
+        dashed_instance = test_class.new("test-123-456")
         expect(VCR).to receive(:use_cassette).with(
           "pages/test123456",
           anything
         ).and_yield
 
-        instance.call(:id => "test-123-456")
+        dashed_instance.call
       end
     end
   end

@@ -26,3 +26,6 @@ module JekyllNotion
     autoload :Collection, "jekyll-notion/generators/collection"
   end
 end
+
+# Prepend Cacheable module to NotionToMd::Page for instance method caching  
+NotionToMd::Page.prepend(JekyllNotion::Cacheable)
