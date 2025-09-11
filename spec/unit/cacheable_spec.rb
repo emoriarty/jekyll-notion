@@ -110,9 +110,7 @@ RSpec.describe JekyllNotion::Cacheable do
         result = instance.call
 
         expect(VCR).to have_received(:use_cassette).with(
-          "cassette_name",
-          :record                 => :new_episodes,
-          :allow_playback_repeats => true
+          "cassette_name"
         )
         expect(result).to eq("original result")
       end
