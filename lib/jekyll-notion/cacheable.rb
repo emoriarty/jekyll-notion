@@ -49,11 +49,7 @@ module JekyllNotion
       cassette_name = cassette_manager.cassette_name_for(id)
       result = nil
 
-      VCR.use_cassette(
-        cassette_name,
-        :record                 => :new_episodes,
-        :allow_playback_repeats => true
-      ) do
+      VCR.use_cassette(cassette_name) do
         result = super
       end
 
