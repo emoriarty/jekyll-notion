@@ -4,7 +4,7 @@ source "https://rubygems.org"
 gemspec
 
 group :development, :test do
-  gem "bundler", "~> 2"
+  gem "bundler", "~> 4"
   gem "json", ">= 2.10"
   gem "rspec", "~> 3.0"
   gem "rubocop-jekyll", "~> 0.12"
