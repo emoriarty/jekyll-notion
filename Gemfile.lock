@@ -5,7 +5,7 @@ PATH
       jekyll (>= 3.7, < 5.0)
       notion-ruby-client (~> 1.2.0)
       notion_to_md (= 3.0.0.beta2)
-      vcr (~> 6.3.1)
+      vcr (~> 6.4.0)
       zeitwerk (~> 2.6)
 
 GEM
@@ -181,8 +181,7 @@ GEM
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.6.0)
-    vcr (6.3.1)
-      base64
+    vcr (6.4.1)
     webmock (3.26.4)
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
